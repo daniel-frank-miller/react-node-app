@@ -1,0 +1,157 @@
+
+.cleaningProfile-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  padding-top: 0;
+  padding-bottom: 0;
+  height: 92vh;
+  background: url('../../assets/profilebg.webp');
+}
+
+.img-container img{
+    height: 600px;
+    width: 520px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border: 0.5px solid grey;
+  border-radius: 12px;
+  width: 400px;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.form-container h1 {
+  align-self: center;
+}
+
+.form-container label {
+  font-size: 18px;
+  font-family: Arial;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.form-container select {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 90%;
+  height: 30px;
+  font-size: 14px;
+  padding: 5px;
+  background: transparent;
+}
+
+.form-container input {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 90%;
+  border: none;
+  border-bottom: 1px solid grey;
+  outline: none;
+  background: transparent;
+}
+
+#profileForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+#profileForm input ::placeholder {
+  font-size: 15px;
+  font-family: "Roboto";
+  font-weight: 400;
+}
+
+.btn {
+  background-color: #000;
+  color: #fff;
+  font-size: 15px;
+  height: 45px;
+  width: 140px;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: 70px;
+}
+
+.btn:hover {
+  background: transparent;
+  color: #000;
+  border: 0.5px solid black;
+  font-weight: 600;
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 767px) {
+  .main-container {
+    flex-direction: column;
+    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    height: 120vh;
+  }
+
+  .img-container img {
+    height: 300px;
+    width: 100%;
+    background-size: cover;
+  }
+
+  .form-container {
+    border: 0.5px solid grey;
+    border-radius: 12px;
+    max-width: 70vw;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+
+  .form-container label {
+    font-size: 15px;
+    font-family: Arial;
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+
+  .form-container select {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    width: 90%;
+    height: 27px;
+    font-size: 12px;
+    padding: 5px;
+    background: transparent;
+  }
+
+  .form-container input {
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+
+  #profileForm input ::placeholder {
+    font-size: 12px;
+  }
+
+  .btn {
+    font-size: 12px;
+    height: 30px;
+    width: 100px;
+    padding: 5px;
+    border-radius: 15px;
+    margin-top: 10px;
+  }
+  #con{
+    padding-top: 0;
+  }
+}

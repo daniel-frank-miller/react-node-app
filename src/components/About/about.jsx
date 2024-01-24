@@ -5,6 +5,9 @@ import Slider from "react-slick";
 import "./about.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
+import {Link} from 'react-router-dom';
+
 const settings = {
   dots: false,
   infinite: true,
@@ -76,9 +79,11 @@ const About = () => {
           revolutionise the way you experience not just cleanliness and
           organization but a culinary journey filled with delights and flavours.
         </p>
-        <button className="section-2-btn" id="getInTouch">
-          Get in Touch
-        </button>
+        <Link to="/contact">
+          <button className="section-2-btn" id="getInTouch">
+            Get in Touch
+          </button>
+        </Link>
       </div>
     </div>
   );

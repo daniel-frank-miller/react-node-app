@@ -1,4 +1,5 @@
 import "./services.css";
+import { Link } from "react-router-dom";
 const Services = () => {
   return (
     <>
@@ -16,9 +17,11 @@ const Services = () => {
                 Welcome to the world of flavour, innovation and endless
                 possibilties in kitchen.
               </p>
-              <button className="services-btn" id="cleaningBtn">
-                Book Now
-              </button>
+              <Link to="/cookingprofile">
+                <button className="services-btn" id="cleaningBtn">
+                  Book Now
+                </button>
+              </Link>
             </div>
           </div>
           <div className="custom-card">
@@ -31,9 +34,11 @@ const Services = () => {
                 We believe in transforming the chore of cleaning into a
                 delightful and efficient experience.
               </p>
-              <button className="services-btn" id="cleaningBtn">
-                Book Now
-              </button>
+              <Link to="/cleaningservices">
+                <button className="services-btn" id="cleaningBtn">
+                  Book Now
+                </button>
+              </Link>
             </div>
           </div>
         </div>
