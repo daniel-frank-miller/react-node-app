@@ -1,6 +1,19 @@
+import "./rating.css";
+import { useState } from "react";
+import ReactStars from "react-rating-star-with-type";
 
-import './rating.css';
 const Rating = () => {
+  const [cookingStar, setCookingStar] = useState(4);
+  const [cleaningStar, setCleaningStar] = useState(4);
+
+  const onChangeCookingStar = (nextValue) => {
+    setCookingStar(nextValue);
+  };
+
+  const onChangeCleaningStar = (nextValue) => {
+    setCleaningStar(nextValue);
+  };
+
   return (
     <div className="section6 prevent-select" id="ratingSection">
       <h1 className="review-heading1">
@@ -15,14 +28,16 @@ const Rating = () => {
             <div className="leftboxbackground">
               <h1 className="review-heading">Cooking Review</h1>
               <div className="stars-container1">
-                <i className="fa-solid fa-star"></i>
-                <i className="fa-solid fa-star"></i>
-                <i className="fa-solid fa-star"></i>
-                <i className="fa-solid fa-star"></i>
-                <i className="fa-solid fa-star"></i>
+                <ReactStars
+                  onChange={onChangeCookingStar}
+                  value={cookingStar}
+                  size={"30px"}
+                  isEdit={true}
+                  activeColors={["red", "orange", "orange", "orange", "green"]}
+                />
               </div>
               <p className="rating-text" id="output1">
-                You rated it ____
+                You rated it {cookingStar !== 0 ? cookingStar : "____"}
               </p>
             </div>
           </div>
@@ -44,14 +59,16 @@ const Rating = () => {
             <div className="rightboxbackground">
               <h1 className="review-heading">Cleaning Review</h1>
               <div className="stars-container2">
-                <i className="fa-solid fa-star"></i>
-                <i className="fa-solid fa-star"></i>
-                <i className="fa-solid fa-star"></i>
-                <i className="fa-solid fa-star"></i>
-                <i className="fa-solid fa-star"></i>
+                <ReactStars
+                  onChange={onChangeCleaningStar}
+                  value={cleaningStar}
+                  size={"30px"}
+                  isEdit={true}
+                  activeColors={["red", "orange", "orange", "orange", "green"]}
+                />
               </div>
               <p className="rating-text" id="output2">
-                You rated it ____
+                You rated it {cleaningStar !== 0 ? cleaningStar : "____"}
               </p>
             </div>
           </div>
