@@ -1,0 +1,139 @@
+.section6 {
+  max-width: 100vw;
+  padding: 10px;
+}
+.review-heading1 {
+  text-align: center;
+  color: #000;
+  font-family: "Noto Sans Glagolitic", sans-serif;
+  margin-top: 15px;
+}
+.review-container {
+  max-width: 95vw;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.reviewBox {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.leftboxbackground {
+  color: #fff;
+  text-align: center;
+  width: 75%;
+  max-width: 400px;
+  padding: 20px;
+  background-color: #4a5759;
+  border-radius: 15px;
+}
+.rightboxbackground {
+  color: #fff;
+  background-color: #edafb8;
+  border-radius: 15px;
+  text-align: center;
+  width: 75%;
+  max-width: 400px;
+  padding: 20px;
+}
+.cookingImage {
+  width: 50%;
+  text-align: center;
+  height: 100%;
+}
+.side-cook-img {
+  width: 75%;
+  background-size: cover;
+  height: 100%;
+}
+.top-container {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.bottom-container {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.stars-container1,
+.stars-container2 {
+  display: inline-block;
+  margin-top: 30px;
+}
+.fa-star {
+  font-size: 24px;
+  color: gray;
+  cursor: pointer;
+}
+.fa-star:hover,
+.fa-star.active {
+  color: yellow;
+}
+
+#output1,
+#output2 {
+  margin-top: 25px;
+  font-family: "Roboto";
+  color: #fff;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 786px) {
+  .review-heading {
+    font-size: 26px;
+    color: #fff;
+    font-family: "Noto Sans Glagolitic", sans-serif;
+  }
+  .review-heading1 {
+    font-size: 26px;
+  }
+  .rating-text {
+    color: #fff;
+    font-family: "Arial";
+    font-size: 16px;
+  }
+  .reviewBox {
+    width: 100%;
+  }
+  .cookingImage {
+    width: 100%;
+  }
+  .top-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .bottom-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .change1 {
+    order: 1;
+  }
+  .change2 {
+    order: 0;
+  }
+}
+
+@media screen and (min-width: 787px) {
+  .review-heading1 {
+    font-size: 40px;
+  }
+  .review-heading {
+    font-family: "Noto Sans Glagolitic", sans-serif;
+    font-size: 40px;
+    color: #fff;
+  }
+  .rating-text {
+    font-size: 26px;
+    font-family: "Arial";
+    color: #fff;
+  }
+}

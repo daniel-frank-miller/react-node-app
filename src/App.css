@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+    box-sizing: border-box;
+}
+.prevent-select {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/* scroll bar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #808080;
+  border-radius: 6px;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb {
+  background-color: #808080;
+}
+
+body.dark-mode {
+  scrollbar-width: thin;
+  scrollbar-color: #808080 transparent;
+}

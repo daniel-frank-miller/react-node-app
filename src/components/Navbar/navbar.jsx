@@ -1,16 +1,16 @@
 import { useState } from "react";
 
-import "./index.css";
+import "./navbar.css";
 import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav>
+    <div className="navbar prevent-select">
       <Link to="/">
         <img
-          src="https://res.cloudinary.com/dwsbjx12w/image/upload/v1705912684/logo_nobg_lz1dyj.webp"
+          src="/src/assets/logo_nobg.webp"
           alt="logo"
           className="title"
         />
@@ -37,7 +37,7 @@ const Navbar = () => {
           <NavLink to="/login">Login</NavLink>
         </li>
       </ul>
-    </nav>
+    </div>
   );
 };
 
