@@ -39,7 +39,7 @@ const Navbar = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/contact" onClick={toggleMenu}>
+          <NavLink to="/contactus" onClick={toggleMenu}>
             Contact
           </NavLink>
         </li>

@@ -1,4 +1,4 @@
-import Navbar from "../Navbar/navbar";
+import Navbar from "../Navbar/Navbar";
 import About from "../About/about";
 import Services from "../Services/services";
 import Testimonals from "../Testimonals/testimonals";
@@ -17,7 +17,6 @@ const Home = () => {
             Let us be your trusted partner in creating solutions that resonate
             with your vision.
           </p>
-
         </div>
         <div className="section1-rightcontent">
           <img

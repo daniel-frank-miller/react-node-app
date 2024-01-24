@@ -1,46 +1,72 @@
-import './contact.css'
+import Navbar from "../Navbar/Navbar";
+import "./contact.css";
 
 const ContactUs = () => {
   return (
-    <div className="section3" id="servicesSection">
-      <h1 className="services-heading prevent-select">What we offer?</h1>
-      <div className="cards-container">
-        <div className="card-element card--7">
-          <img
-            src="./src/assets/cooking-card-bg.webp"
-            alt="cleaning image"
-            className="card-image"
-          />
-          <div className="content">
-            <h1 className="card-heading">Cooking</h1>
-            <p className="card-desc prevent-select">
-              Welcome to the world of flavor, innovation, and endless
-              possibilities in the kitchen.
-            </p>
-          </div>
-          <button className="btn services-btn" id="cookingBtn">
-            Book Now
-          </button>
+    <>
+      <Navbar />
+      <div className="main-container">
+        <div className="upper-container">
+          <h1 className="heading">Contact Us</h1>
+          <p className="pg">
+            Need assistance or have a question? Connect with us for tailored
+            solutions and dedicated customer care!
+          </p>
         </div>
-        <div className="card-element card--7">
-          <img
-            src="./src/assets/cleaning-card-bg.webp"
-            alt="cleaning image"
-            className="card-image"
-          />
-          <div className="content">
-            <h1 className="card-heading">Cleaning</h1>
-            <p className="card-desc prevent-select">
-              We believe in transforming the chore of cleaning into a delightful
-              and efficient experience.
-            </p>
+        <div className="lower-container">
+          <div className="img-container">
+            <img
+              src="./src/assets/contact_page_side_img.webp"
+              alt="contact side image"
+            />
           </div>
-          <button className="btn services-btn" id="cleaningBtn">
-            Book Now
-          </button>
+          <div className="form-container">
+            <h1>Contact us</h1>
+            <form id="profileForm">
+              <label htmlFor="name">Name:</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Enter your Full Name"
+                required
+              />
+
+              <label htmlFor="email">Email:</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your Email"
+                required
+              />
+
+              <label htmlFor="phone">Phone Number:</label>
+              <input
+                type="number"
+                id="phone"
+                name="phone"
+                placeholder="Enter your Phone Number"
+                required
+              />
+
+              <label htmlFor="message">Type your Message:</label>
+              <input
+                type="text"
+                id="message"
+                name="message"
+                placeholder="Enter your Message"
+                required
+              />
+
+              <button type="submit" className="btn">
+                Submit
+              </button>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
