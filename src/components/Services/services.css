@@ -48,6 +48,7 @@
   box-shadow: 0 35px 80px rgba(0, 0, 0, 0.15);
 }
 
+
 .section3-container .custom-card:hover {
   height: 300px;
 }
@@ -148,7 +149,6 @@
     margin-top: 32px;
   }
 }
-
 
 /* section 4 styling */
 
@@ -295,11 +295,13 @@
   .sectioncleaningright,
   .sectioncleaningleft {
     min-width: 90vw;
+    flex-direction: column;
   }
   .section4right {
     max-width: 100%;
     padding: 10px;
     padding-bottom: 20px;
+    flex-direction: column;
   }
   .section4-heading,
   .section4-cleaning-heading {

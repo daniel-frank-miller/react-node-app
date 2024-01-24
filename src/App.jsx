@@ -7,6 +7,7 @@ import ContactUs from "./components/ContactUs/contact.jsx";
 import CookingProfile from "./components/CookingProfile/cp.jsx";
 import CleaningServices from "./components/CleaningServices/cs.jsx";
 import CleaningProfile from "./components/CleaningProfile/CleaningProfile.jsx";
+import ServicesNavbar from "./components/ServicesNavbar/ServicesNavbar.jsx";
 
 class App extends Component {
   render() {
@@ -15,6 +16,7 @@ class App extends Component {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/contactus" element={<ContactUs />} />
+          <Route exact path="/services" element={<ServicesNavbar />} />
           <Route exact path="/cookingprofile" element={<CookingProfile />} />
           <Route
             exact

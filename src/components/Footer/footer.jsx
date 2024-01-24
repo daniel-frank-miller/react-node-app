@@ -22,7 +22,7 @@ const Footer = () => {
             <h1 className="heading-footer">
               <span className="homaid-heading-span">H</span>omaid
             </h1>
-            <img src="/Images/logo_nobg.webp" alt="Logo" className="image" />
+            <img src="/src/assets/logo_nobg.webp" alt="Logo" className="foot-image" />
           </div>
           <p className="homaid-desc">
             Let us be your trusted partner in creating solutions that resonate

@@ -43,6 +43,7 @@ const Services = () => {
           </div>
         </div>
       </div>
+
       <div className="section4" id="blogsSection">
         <div className="section4left">
           <h1 className="section4-heading">Cleaning Blogs</h1>
@@ -72,6 +73,7 @@ const Services = () => {
           />
         </div>
       </div>
+      <hr />
       <div className="section-cleaning">
         <div className="sectioncleaningright">
           <img
