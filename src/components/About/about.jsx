@@ -79,7 +79,7 @@ const About = () => {
           revolutionise the way you experience not just cleanliness and
           organization but a culinary journey filled with delights and flavours.
         </p>
-        <Link to="/contact">
+        <Link to="/contactus">
           <button className="section-2-btn" id="getInTouch">
             Get in Touch
           </button>
