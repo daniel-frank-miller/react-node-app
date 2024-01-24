@@ -9,6 +9,8 @@
 @media screen and (max-width: 768px) {
   .section2 {
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
 .carousel {
@@ -46,6 +48,12 @@
   font-family: "Noto Sans Glagolitic", sans-serif;
   color: #969292;
 }
+@media screen and (max-width:768px) {
+  .section2-subtitle{
+    font-size: 18px;
+  }
+}
+
 .section-2-btn {
   background-color: #fff;
   color: #000;
