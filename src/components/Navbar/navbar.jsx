@@ -1,40 +1,52 @@
 import { useState } from "react";
-
-import "./navbar.css";
 import { Link, NavLink } from "react-router-dom";
+import { RxHamburgerMenu } from "react-icons/rx";
+import "./navbar.css";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <div className="navbar prevent-select">
       <Link to="/">
-        <img
-          src="/src/assets/logo_nobg.webp"
-          alt="logo"
-          className="title"
-        />
+        <img src="/src/assets/logo_nobg.webp" alt="logo" className="title" />
       </Link>
-      <div className="menu" onClick={() => setMenuOpen(!menuOpen)}>
-        <span></span>
-        <span></span>
-        <span></span>
+      <div className="menu" onClick={toggleMenu}>
+        <RxHamburgerMenu style={{ fontSize: "32px" }}/>
       </div>
-      <ul className={menuOpen ? "open" : ""}>
+      <div
+        className={`overlay ${menuOpen ? "show" : ""}`}
+        onClick={toggleMenu}
+      ></div>
+      <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
         <li>
-          <NavLink to="/">Home</NavLink>
+          <NavLink to="/" onClick={toggleMenu}>
+            Home
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/about">About</NavLink>
+          <NavLink to="/about" onClick={toggleMenu}>
+            About
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/services">Services</NavLink>
+          <NavLink to="/services" onClick={toggleMenu}>
+            Services
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/contact">Contact</NavLink>
+          <NavLink to="/contact" onClick={toggleMenu}>
+            Contact
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/login">Login</NavLink>
+          <NavLink to="/login" onClick={toggleMenu}>
+            Login
+          </NavLink>
         </li>
       </ul>
     </div>

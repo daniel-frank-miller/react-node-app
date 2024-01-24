@@ -65,9 +65,9 @@ const About = () => {
     );
   };
   return (
-    <div className="section2" id="aboutUs">
+    <div className="section2 prevent-select" id="aboutUs">
       <div className="carousel">{simpleSlider()}</div>
-      <div className="section2-content prevent-select">
+      <div className="section2-content">
         <h1 className="section2-heading ">About Homaid</h1>
         <p className="section2-subtitle">
           At Homaid, we are not just a cleaning service, we are your partners in

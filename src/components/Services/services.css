@@ -9,6 +9,12 @@
   margin-top: 3%;
 }
 
+@media screen and (max-width: 786px) {
+  .section3-heading {
+    font-size: 26px;
+  }
+}
+
 .section3-container {
   position: relative;
   display: flex;
@@ -85,7 +91,7 @@
 
 .section3-container .custom-card:hover .custom-content {
   top: 130px;
-  height: 250px;
+  height: 270px;
 }
 
 .section3-container .custom-card .custom-content .section3-title {
@@ -119,7 +125,7 @@
   background-color: #fff;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .section3-container .custom-card {
     width: 230px;
     border-radius: 15px;
@@ -132,10 +138,14 @@
 
   .section3-container .custom-card .custom-content .section3-subtitle {
     font-size: 16px;
+    padding-bottom: 15px;
   }
 
   .section3-container .custom-card .custom-content .services-btn {
     font-size: 14px;
+  }
+  .custom-card{
+    margin-top: 32px;
   }
 }
 
@@ -150,6 +160,7 @@
   justify-content: space-around;
   align-items: center;
 }
+
 .section4left {
   padding: 4%;
   width: 40%;

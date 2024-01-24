@@ -6,10 +6,9 @@
   background-color: #000;
   padding-top: 10px;
 }
-@media screen and (max-width: 786px) {
+@media screen and (max-width: 768px) {
   .section2 {
     flex-direction: column;
-    justify-content: space-evenly;
   }
 }
 .carousel {
