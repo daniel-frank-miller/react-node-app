@@ -6,10 +6,21 @@
   background-image: url("../../assets/loginpagebg.webp");
 }
 
+@media screen and (max-width:968px){
+  .RegisterContainer{
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
 .RegisterContainer-leftContent {
   width: 35%;
 }
-
+@media screen and (max-width:968px){
+  .RegisterContainer-leftContent{
+    width: 90%;
+  }
+}
 .RegisterContainer-rightContent {
   width: 35%;
   display: flex;
@@ -21,7 +32,11 @@
   height: 65%;
   background-image: radial-gradient(rgb(195, 210, 216),rgb(22, 169, 159));
 }
-
+@media screen and (max-width:968px){
+  .RegisterContainer-rightContent{
+    width: 80%;
+  }
+}
 .registerform-container {
   width: 100%;
   display: flex;
@@ -36,10 +51,21 @@
   font-weight: bold;
   margin-bottom: 10px;
 }
+@media screen and (max-width:768px){
+  .RegisterContainer-heading{
+    font-size: 32px;
+  }
+}
 .RegisterContainer-subtitle {
   font-size: 24px;
   width: 100%;
 }
+@media screen and (max-width:768px){
+  .RegisterContainer-subtitle{
+    font-size: 18px;
+  }
+}
+
 /*form styling */
 
 .register-title {

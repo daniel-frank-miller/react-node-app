@@ -6,7 +6,7 @@
   background-image: url("../../assets/loginpagebg.webp");
 }
 
-@media screen and (max-width:768px){
+@media screen and (max-width:968px){
   .LoginContainer{
     flex-direction: column;
     text-align: center;
@@ -17,7 +17,7 @@
   width: 35%;
 }
 
-@media screen and (max-width:768px){
+@media screen and (max-width:968px){
   .loginContainer-leftContent{
     width: 90%;
   }
@@ -35,7 +35,7 @@
   background-size: cover;
 }
 
-@media screen and (max-width:768px){
+@media screen and (max-width:968px){
   .loginContainer-rightContent{
     width: 80%;
   }
