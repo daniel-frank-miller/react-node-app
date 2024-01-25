@@ -1,193 +1,89 @@
-
-.main-container{
+.singlePage {
+  height: 100vh;
+}
+.contactus-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   align-items: center;
   padding: 20px;
-  padding-top: 0;
-  padding-bottom: 0;
-  background: url('../../assets/profilebg.webp');
-  max-width: 100vw;
+  height: 89.5%;
+  background: url("../../assets/profilebg.webp");
+  background-size: cover;
 }
-
-.upper-container{
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: -15px;
-}
-
-.upper-container h1{
-  font-size: 45px;
-}
-
-.upper-container p{
-  font-size: 20px;
-  margin-top: 8px;
-  color: grey;
-}
-
-.lower-container{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  /* border: 1px solid black; */
-  width: 80%;
-}
-
-.lower-container h1{
-  display: none;
-}
-.form-container{
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  border: 0.5px solid grey;
-  border-radius: 12px;
-  height: 60vh;
-  width: 400px;
-  padding: 10px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-
-.img-container img{
-  height: 450px;
-  width: 650px;
-}
-
-.form-container h1{
-  align-self: center;
-}
-
-.form-container label{
-  font-size: 18px;
-  font-family: Arial;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.form-container select{
-  margin-top: 10px;
-  margin-bottom: 10px;
-  width: 90%;
-  height: 30px;
-  font-size: 14px;
-  padding: 5px;
-  background: transparent;
-}
-
-.form-container input{
-  margin-top: 10px;
-  margin-bottom: 10px;
-  width: 90%;
-  border: none;
-  border-bottom: 1px solid grey;
-  outline: none;
-  background: transparent;
-}
-
-#profileForm{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
-#profileForm input ::placeholder{
-  font-size: 15px;
-  font-family: "Roboto";
-  font-weight: 400;
-}
-
-.btn{
-  background-color: #000;
-  color: #fff;
-  font-size: 15px;
-  height: 45px;
-  width: 140px;
-  padding: 10px;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  margin-top: 30px;
-}
-
-.btn:hover{
-  background: transparent;
+.contactus-title {
+  font-size: 32px;
+  font-family: "Bree Serif";
   color: #000;
-  border: 0.5px solid black;
-  font-weight: 600;
+}
+.contactus-subtitle {
+  color: #000;
+  font-size: 20px;
+  margin-top: 15px;
+  width: 70%;
+  text-align: center;
 }
 
+@media screen and (max-width:768px){
+  .contactus-subtitle{
+    font-size: 18px;
+  }
+}
+.contactus-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
 
-
-/* Media Queries */
-
-@media only screen and (max-width:600px){
-
-  .upper-container{
+.contactpage-img {
+  width: 45%;
+}
+@media screen and (max-width:768px){
+  .contactpage-img{
     display: none;
   }
+}
+.contactus-form {
+  background-image: radial-gradient(rgb(195, 210, 216), rgb(22, 169, 159));
+  border: 1px solid #000;
+  border-radius: 10px;
+  width: 40%;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
-  .lower-container{
-    flex-direction: column;
+@media screen and (max-width:768px){
+  .contactus-form{
+    width: 80%;
   }
+}
+.user-input {
+  border: 0;
+  outline: 0;
+  margin-left: 10px;
+  font-size: 16px;
+  color: #0e564c;
+  background-color: transparent;
+  font-family: "Bree Serif";
+}
 
-  .lower-container h1{
-    display:block;
-  }
-
-  .img-container img{
-    height: 200px;
-    width: 250px;
-  }
-
-  .form-container{
-    border: 0.5px solid grey;
-    border-radius: 12px;
-    height: 65vh;
-    max-width: 70vw;
-    padding: 10px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  }
-
-  .form-container label{
-    font-size: 15px;
-    font-family: Arial;
-    margin-top: 12px;
-    margin-bottom: 12px;
-  }
-  
-  .form-container select{
-    margin-top: 12px;
-    margin-bottom: 12px;
-    width: 90%;
-    height: 27px;
-    font-size: 12px;
-    padding: 5px;
-    background: transparent;
-  }
-  
-  .form-container input{
-    margin-top: 12px;
-    margin-bottom: 12px;
-  }
-
-  #profileForm input ::placeholder{
-    font-size: 12px;
-  }
-  
-  .btn{
-    font-size: 12px;
-    height: 30px;
-    width: 100px;
-    padding: 5px;
-    border-radius: 15px;
-    margin-top: 10px;
-  }
-
+.submit-form {
+  background-color: #0e564c;
+  color: #fff;
+  border: 0;
+  outline: 0;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: "Bree Serif";
+  cursor: pointer;
+  margin-top: 10px;
+}
+.submit-form:hover {
+  background-color: #205962;
+  font-weight: bold;
 }

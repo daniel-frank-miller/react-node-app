@@ -5,12 +5,13 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  height: 89.5%;
 }
 
 .ServicesSection-heading {
   font-size: 40px;
   font-family: "Bree Serif";
-  margin: 25px 0;
+  margin: 25px 0px;
 }
 
 .ServicesSection-cards-container {
@@ -96,8 +97,4 @@
   }
 }
 
-@media screen and (min-width: 768px) {
-  .ServicesSection-card-element {
-    margin-top: 10%;
-  }
-}
+

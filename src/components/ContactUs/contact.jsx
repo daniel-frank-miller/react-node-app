@@ -1,72 +1,79 @@
 import Navbar from "../Navbar/Navbar";
 import "./contact.css";
-
+import { MdOutlineMailLock } from "react-icons/md";
+import { MdOutlineDriveFileRenameOutline } from "react-icons/md";
+import { FiPhoneCall } from "react-icons/fi";
 const ContactUs = () => {
+  const onSubmit = (e) => {
+    e.preventDefault();
+    console.log("Submitted");
+    // complete the logic for db connection
+  };
   return (
-    <>
+    <div className="singlePage">
       <Navbar />
-      <div className="main-container">
-        <div className="upper-container">
-          <h1 className="heading">Contact Us</h1>
-          <p className="pg">
-            Need assistance or have a question? Connect with us for tailored
-            solutions and dedicated customer care!
-          </p>
-        </div>
-        <div className="lower-container">
-          <div className="img-container">
-            <img
-              src="./src/assets/contact_page_side_img.webp"
-              alt="contact side image"
-            />
-          </div>
-          <div className="form-container">
-            <h1>Contact us</h1>
-            <form id="profileForm">
-              <label htmlFor="name">Name:</label>
+      <div className="contactus-container prevent-select">
+        <h1 className="contactus-title">Contact Us</h1>
+        <p className="contactus-subtitle">
+          Need assistance or have a question? Connect with us for tailored
+          solutions and dedicated customer care!
+        </p>
+        <div className="contactus-content">
+          <img
+            src="/src/assets/contact_page_side_img.webp"
+            className="contactpage-img"
+            alt=""
+          />
+          <form className="contactus-form" onSubmit={""}>
+            <h2 className="contactus-form-title">Get in Touch</h2>
+            <div className="input-field">
+              <MdOutlineDriveFileRenameOutline />
               <input
                 type="text"
                 id="name"
-                name="name"
-                placeholder="Enter your Full Name"
+                placeholder="Enter your name"
+                className="user-input"
                 required
               />
-
-              <label htmlFor="email">Email:</label>
+            </div>
+            <div className="input-field">
+              <MdOutlineMailLock />
               <input
                 type="email"
                 id="email"
-                name="email"
-                placeholder="Enter your Email"
+                placeholder="Enter your email"
+                className="user-input"
                 required
               />
-
-              <label htmlFor="phone">Phone Number:</label>
-              <input
-                type="number"
-                id="phone"
-                name="phone"
-                placeholder="Enter your Phone Number"
-                required
-              />
-
-              <label htmlFor="message">Type your Message:</label>
+            </div>
+            <div className="input-field">
+              <FiPhoneCall />
               <input
                 type="text"
-                id="message"
-                name="message"
-                placeholder="Enter your Message"
+                id="subject"
+                placeholder="Enter your phone number"
+                className="user-input"
                 required
               />
-
-              <button type="submit" className="btn">
-                Submit
-              </button>
-            </form>
-          </div>
+            </div>
+            <div className="input-field">
+              <textarea
+                name="message"
+                id="message"
+                cols="30"
+                rows="10"
+                placeholder="Enter your message"
+                className="user-input"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" className="submit-form" onSubmit={onSubmit}>
+              Submit
+            </button>
+          </form>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

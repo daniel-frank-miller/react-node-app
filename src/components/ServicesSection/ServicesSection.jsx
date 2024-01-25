@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 const ServicesSection = () => {
   return (
-    <>
+    <div className="singlePage">
       <Navbar />
       <div className="ServicesSection prevent-select">
         <h1 className="ServicesSection-heading">Services</h1>
@@ -50,7 +50,7 @@ const ServicesSection = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
