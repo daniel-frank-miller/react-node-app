@@ -1,6 +1,6 @@
 .CleaningContainer {
   display: flex;
-  min-height: 92vh;
+  height: 89.5vh;
   max-width: 100vw;
   flex-direction: row;
   justify-content: space-around;
@@ -8,7 +8,7 @@
   padding: 20px;
   padding-top: 0;
   padding-bottom: 0;
-  background: url("../images/profilebg.webp");
+  background: url("../../assets/profilebg.webp");
 }
 
 .form-container {

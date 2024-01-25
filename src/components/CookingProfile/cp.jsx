@@ -1,5 +1,6 @@
 import Navbar from "../Navbar/Navbar";
 import "./cp.css";
+
 const CookingProfile = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -7,7 +8,7 @@ const CookingProfile = () => {
   };
 
   return (
-    <>
+    <div className="singlePage">
       <Navbar />
       <div className="CleaningContainer">
         <div className="img-container">
@@ -72,7 +73,7 @@ const CookingProfile = () => {
           </form>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
