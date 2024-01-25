@@ -6,10 +6,22 @@
   background-image: url("../../assets/loginpagebg.webp");
 }
 
+@media screen and (max-width:768px){
+  .LoginContainer{
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
 .loginContainer-leftContent {
   width: 35%;
 }
 
+@media screen and (max-width:768px){
+  .loginContainer-leftContent{
+    width: 90%;
+  }
+}
 .loginContainer-rightContent {
   width: 35%;
   display: flex;
@@ -21,6 +33,12 @@
   height: 65%;
   background-image: radial-gradient(rgb(195, 210, 216),rgb(22, 169, 159));
   background-size: cover;
+}
+
+@media screen and (max-width:768px){
+  .loginContainer-rightContent{
+    width: 80%;
+  }
 }
 
 .loginform-container {
@@ -37,9 +55,20 @@
   font-weight: bold;
   margin-bottom: 10px;
 }
+@media screen and (max-width:768px){
+  .loginContainer-heading{
+    font-size: 32px;
+  }
+}
 .loginContainer-subtitle {
   font-size: 24px;
   width: 100%;
+}
+
+@media screen and (max-width:768px){
+  .loginContainer-subtitle{
+    font-size: 18px;
+  }
 }
 /*form styling */
 
