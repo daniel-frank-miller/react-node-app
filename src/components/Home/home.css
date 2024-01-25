@@ -27,6 +27,7 @@
 @media screen and (max-width: 768px) {
   .section1-leftcontent {
     width: 100%;
+    align-items: center;
     order: 1;
   }
 }
@@ -85,8 +86,18 @@
     font-size: 20px;
   }
 }
-.section1-button {
+.section1-button-link{
   background-color: #000;
+  color: #fff;
+  height: 45px;
+  width: 180px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+.section1-button {
+  background-color: transparent;
   color: #fff;
   font-size: 22px;
   height: 45px;
@@ -96,7 +107,7 @@
   cursor: pointer;
 }
 .section1-button:hover {
-  background-color: transparent;
+  background-color: #fff;
   color: #38b49d;
   border: 0.5px solid #000;
   font-weight: 600;

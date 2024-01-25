@@ -118,4 +118,21 @@
     font-size: 18px;
   }
 }
+/* scroll bar */
+.subcontainer::-webkit-scrollbar {
+  width: 12px;
+}
 
+.subcontainer::-webkit-scrollbar-thumb {
+  background-color: #808080;
+  border-radius: 6px;
+}
+
+body.dark-mode .subcontainer::-webkit-scrollbar-thumb {
+  background-color: #808080;
+}
+
+body.dark-mode .subcontainer {
+  scrollbar-width: thin;
+  scrollbar-color: #808080 transparent;
+}

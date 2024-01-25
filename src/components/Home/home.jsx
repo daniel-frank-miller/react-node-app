@@ -4,6 +4,7 @@ import Services from "../Services/services";
 import Testimonals from "../Testimonals/testimonals";
 import Rating from "../Rating/rating";
 import Footer from "../Footer/footer";
+import { Link } from "react-router-dom";
 import "./home.css";
 
 const Home = () => {
@@ -17,6 +18,9 @@ const Home = () => {
             Let us be your trusted partner in creating solutions that resonate
             with your vision.
           </p>
+          <Link to="/about" className="section1-button-link">
+            <button className="section1-button">Know More</button>
+          </Link>
         </div>
         <div className="section1-rightcontent">
           <img

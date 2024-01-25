@@ -1,22 +1,46 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { Events } from "react-scroll";
 import { Link, NavLink } from "react-router-dom";
 import { RxHamburgerMenu } from "react-icons/rx";
 import "./navbar.css";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolling, setScrolling] = useState(false);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
+  const handleScroll = () => {
+    if (window.scrollY > 0) {
+      setScrolling(true);
+    } else {
+      setScrolling(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    Events.scrollEvent.register("begin", () => {});
+    Events.scrollEvent.register("end", () => {});
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      Events.scrollEvent.remove("begin");
+      Events.scrollEvent.remove("end");
+    };
+  }, []);
+
+  const navbarClassName = scrolling ? "navbar scrolled" : "navbar";
+
+
   return (
-    <div className="navbar prevent-select">
+    <div className={`${navbarClassName} prevent-select`}>
       <Link to="/">
         <img src="/src/assets/logo_nobg.webp" alt="logo" className="title" />
       </Link>
       <div className="menu" onClick={toggleMenu}>
-        <RxHamburgerMenu style={{ fontSize: "32px" }}/>
+        <RxHamburgerMenu style={{ fontSize: "32px" }} />
       </div>
       <div
         className={`overlay ${menuOpen ? "show" : ""}`}

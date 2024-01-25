@@ -10,6 +10,11 @@
   top: 0;
   z-index: 999;
   width: 100%;
+  transition: background-color 0.3s ease;
+}
+.scrolled {
+  background-image: linear-gradient(to right, #353b4f, #2497df); 
+  backdrop-filter: blur(10px);
 }
 
 .navbar .title {
@@ -46,12 +51,13 @@
 .navbar .menu {
   display: none;
   position: absolute;
-  top: 0.75rem;
+  top: 1.5rem;
   right: 0.5rem;
   flex-direction: column;
   justify-content: space-between;
   width: 2.25rem;
   height: 2rem;
+  cursor: pointer;
 }
 
 .navbar .menu span {
@@ -101,7 +107,7 @@
 
   .nav-links {
     position: absolute;
-    top: 60px; /* Adjust as needed based on your header height */
+    top: 75px; /* Adjust as needed based on your header height */
     left: 0;
     width: 100%;
     background-color: #fff;

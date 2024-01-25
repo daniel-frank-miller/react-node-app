@@ -1,13 +1,13 @@
 
 .CleaningServices-Container{
   width: 100%;
-  height: 92vh;
 }
 
 .heading{
   text-align: center;
   font-size: 40px;
   padding-bottom: 4%;
+  margin: 25px 0;
 }
 
 .content {

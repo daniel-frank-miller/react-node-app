@@ -12,7 +12,7 @@ const CleaningServices = () => {
           <div className="card">
             <div className="top-card">
               <img
-                src="/src/assets/clean2.webp"
+                src="/src/assets/clean1.webp"
                 alt="Regular Cleaning"
                 className="img"
               />
@@ -39,7 +39,7 @@ const CleaningServices = () => {
           <div className="card">
             <div className="top-card">
               <img
-                src="./src/assets/clean1.webp"
+                src="./src/assets/clean2.webp"
                 alt="Washroom Cleaning"
                 className="img"
               />

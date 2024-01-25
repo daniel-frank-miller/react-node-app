@@ -7,16 +7,18 @@ import ContactUs from "./components/ContactUs/contact.jsx";
 import CookingProfile from "./components/CookingProfile/cp.jsx";
 import CleaningServices from "./components/CleaningServices/cs.jsx";
 import CleaningProfile from "./components/CleaningProfile/CleaningProfile.jsx";
-import ServicesNavbar from "./components/ServicesNavbar/ServicesNavbar.jsx";
-
+import ServicesSection from "./components/ServicesSection/ServicesSection.jsx";
+import AboutSection from "./components/AboutSection/AboutSection.jsx";
+import Signup from './components/Signup/signup.jsx';
 class App extends Component {
   render() {
     return (
       <Router>
         <Routes>
           <Route exact path="/" element={<Home />} />
+          <Route exact path="/about" element={<AboutSection />} />
+          <Route exact path="/services" element={<ServicesSection />} />
           <Route exact path="/contactus" element={<ContactUs />} />
-          <Route exact path="/services" element={<ServicesNavbar />} />
           <Route exact path="/cookingprofile" element={<CookingProfile />} />
           <Route
             exact
@@ -25,6 +27,7 @@ class App extends Component {
           />
           <Route exact path="/cleaningprofile" element={<CleaningProfile />} />
           <Route exact path="/login" element={<Login />} />
+          <Route exact path="/signup" element={<Signup />} />
         </Routes>
       </Router>
     );

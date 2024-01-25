@@ -73,3 +73,7 @@
   border: 0.5px solid #fff;
   font-weight: 700;
 }
+.slick-next,
+.slick-prev {
+  display: none !important;
+}
