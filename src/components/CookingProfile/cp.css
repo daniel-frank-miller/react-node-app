@@ -1,6 +1,6 @@
 .CleaningContainer {
   display: flex;
-  height: 89.5vh;
+  min-height: 90vh;
   max-width: 100vw;
   flex-direction: row;
   justify-content: space-around;

@@ -7,7 +7,7 @@
   padding: 20px;
   padding-top: 0;
   padding-bottom: 0;
-  height: 92vh;
+  min-height: 90vh;
   background: url('../../assets/profilebg.webp');
 }
 
@@ -94,13 +94,17 @@
 /* Media Queries */
 
 @media only screen and (max-width: 767px) {
+  .cleaningProfile-container{
+    flex-direction: column;
+    padding-bottom: 35px;
+  }
   .main-container {
     flex-direction: column;
     justify-content: space-around;
     justify-content: center;
     align-items: center;
     padding: 10px;
-    height: 120vh;
+    min-height: 90vh;
   }
 
   .img-container img {

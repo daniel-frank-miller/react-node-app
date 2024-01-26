@@ -5,7 +5,7 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  height: 89.5%;
+  min-height: 89%;
 }
 
 .ServicesSection-heading {
@@ -42,7 +42,6 @@
   box-shadow: 1px 8px 20px grey, 0 0 20px rgba(0, 0, 0, 0.8);
   transition: box-shadow 0.6s ease-out;
 }
-
 
 .ServicesSection-card-image {
   height: 250px;
@@ -96,5 +95,3 @@
     margin-top: 0;
   }
 }
-
-
