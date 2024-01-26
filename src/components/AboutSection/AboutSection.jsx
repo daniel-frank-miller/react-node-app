@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React from 'react';
 import Navbar from "./../Navbar/navbar.jsx"
 import Footer from "./../Footer/footer.jsx"
@@ -93,3 +94,6 @@ const AboutSection = () => {
 };
 
 export default AboutSection;
+=======
+
+>>>>>>> e58743debd6d33e4dba2bb7ab09cc0e8953660bf
