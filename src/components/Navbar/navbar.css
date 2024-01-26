@@ -13,8 +13,9 @@
   transition: background-color 0.3s ease;
 }
 .scrolled {
-  background-image: linear-gradient(to right, #353b4f, #2497df); 
+  background-image: linear-gradient(to right, #f2f3e4, #6ecbdd);
   backdrop-filter: blur(10px);
+  transition-duration: 3s;
 }
 
 .navbar .title {

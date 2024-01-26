@@ -1,6 +1,21 @@
+.Outcontainer{
+  font-family: "Arial";
+  width: 100vw;
+  text-align: center;
+}
 .about-us-container {
-  max-width: 600px;
+  max-width: 90%;
   margin: 0 auto;
   padding: 20px;
   text-align: justify;
+}
+.aboutHeading{
+  font-size: 36px;
+  text-decoration: underline;
+  text-align: center;
+}
+
+.aboutpara{
+  font-size: medium;
+  padding-top: 2em;
 }
