@@ -53,6 +53,8 @@ const ContactUs = () => {
                 id="subject"
                 placeholder="Enter your phone number"
                 className="user-input"
+                min="1000000000"
+                max="9999999999"
                 required
               />
             </div>
