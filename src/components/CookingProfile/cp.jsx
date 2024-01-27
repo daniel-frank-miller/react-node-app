@@ -62,6 +62,7 @@ const CookingProfile = () => {
               id="family-member-count"
               name="family-member-count"
               placeholder="Enter No. of Members"
+              min="1"
               required
             />
 
