@@ -20,11 +20,7 @@ class App extends Component {
           <Route exact path="/services" element={<ServicesSection />} />
           <Route exact path="/contactus" element={<ContactUs />} />
           <Route exact path="/cookingprofile" element={<CookingProfile />} />
-          <Route
-            exact
-            path="/cleaningservices"
-            element={<CleaningServices />}
-          />
+          <Route exact path="/cleaningservices" element={<CleaningServices />} />
           <Route exact path="/cleaningprofile" element={<CleaningProfile />} />
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/signup" element={<Signup />} />

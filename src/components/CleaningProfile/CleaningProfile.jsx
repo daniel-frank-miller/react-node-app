@@ -12,11 +12,7 @@ const CleaningProfile = () => {
       <Navbar />
       <div className="cleaningProfile-container">
         <div className="img-container">
-          <img
-            src="./src/assets/cleaningpic.webp"
-            alt="Cleaning Profile"
-            className="img-container"
-          />
+          <img src="./src/assets/cleaningpic.webp" alt="Cleaning Profile" className="img-container-cleaning" />
         </div>
         <div className="form-container">
           <h1>Cleaning Profile</h1>

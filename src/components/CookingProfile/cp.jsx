@@ -11,12 +11,8 @@ const CookingProfile = () => {
     <div className="singlePage">
       <Navbar />
       <div className="CleaningContainer">
-        <div className="img-container">
-          <img
-            src="/src/assets/cute_girl.webp"
-            alt="Cooking Profile"
-            className="image"
-          />
+        <div className="img-container-cooking">
+          <img src="/src/assets/cute_girl.webp" alt="Cooking Profile" className="image-cutegirl" />
         </div>
         <div className="form-container">
           <h1>Cooking Profile</h1>

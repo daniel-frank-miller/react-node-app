@@ -23,10 +23,10 @@
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.img-container {
+.img-container-cooking {
   width: 50%;
 }
-.image {
+.image-cutegirl {
   width: 80%;
   background-size: cover;
 }
@@ -106,11 +106,11 @@
     padding: 10px;
   }
 
-  .img-container {
+  .img-container-cooking {
     width: 100%;
     text-align: center;
   }
-  .image {
+  .image-cutegirl {
     width: 85%;
     background-size: cover;
   }

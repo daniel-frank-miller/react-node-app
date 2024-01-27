@@ -3,6 +3,7 @@
   min-height: 89vh;
   background-image: url("../../assets/30.webp");
   background-size: cover;
+  padding-bottom: 20px;
 }
 
 .heading {

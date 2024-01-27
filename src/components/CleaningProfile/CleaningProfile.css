@@ -11,8 +11,7 @@
   background: url('../../assets/profilebg.webp');
 }
 
-.img-container img{
-    height: 600px;
+.img-container-cleaning {
     width: 520px;
 }
 
@@ -107,7 +106,7 @@
     min-height: 90vh;
   }
 
-  .img-container img {
+  .img-container-cleaning {
     height: 300px;
     width: 100%;
     background-size: cover;
