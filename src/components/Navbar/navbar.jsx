@@ -1,13 +1,16 @@
 import { useState, useEffect } from "react";
 import { Events } from "react-scroll";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { RxHamburgerMenu } from "react-icons/rx";
 import "./navbar.css";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolling, setScrolling] = useState(false);
-
+  const location=useLocation()
+  useEffect(()=>{
+    window.scrollTo(0, 0);
+  },[location])
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
