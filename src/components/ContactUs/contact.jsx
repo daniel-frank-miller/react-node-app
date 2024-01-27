@@ -49,7 +49,7 @@ const ContactUs = () => {
             <div className="input-field">
               <FiPhoneCall />
               <input
-                type="text"
+                type="number"
                 id="subject"
                 placeholder="Enter your phone number"
                 className="user-input"

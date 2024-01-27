@@ -22,7 +22,14 @@
   width: 70%;
   text-align: center;
 }
-
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 @media screen and (max-width:768px){
   .contactus-subtitle{
     font-size: 18px;
