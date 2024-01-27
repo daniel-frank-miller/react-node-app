@@ -40,3 +40,11 @@
 .personposition{
   font-size: 15px;
 }
+.miniheading{
+  padding-top: 10px;
+}
+.note{
+  background-color: chocolate;
+  margin-top: 20px;
+  padding: 3px;
+}
