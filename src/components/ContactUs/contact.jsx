@@ -3,12 +3,18 @@ import "./contact.css";
 import { MdOutlineMailLock } from "react-icons/md";
 import { MdOutlineDriveFileRenameOutline } from "react-icons/md";
 import { FiPhoneCall } from "react-icons/fi";
+import { useState } from "react";
 const ContactUs = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     console.log("Submitted");
     // complete the logic for db connection
   };
+  const [phonenumber,ChangePhoneNumber]=useState('')
+  const updatephonenumber=(e)=>{
+    if(String(e.target.value).length<=10)
+    ChangePhoneNumber(e.target.value)
+  }
   return (
     <div className="singlePage">
       <Navbar />
@@ -53,6 +59,10 @@ const ContactUs = () => {
                 id="subject"
                 placeholder="Enter your phone number"
                 className="user-input"
+                min="1000000000"
+                max="9999999999"
+                value={phonenumber}
+                onChange={updatephonenumber}
                 required
               />
             </div>
