@@ -34,9 +34,9 @@ const CleaningProfile = () => {
           <img src="./src/assets/cleaningpic.webp" alt="Cleaning Profile" className="img-container-cleaning" />
         </div>
         <div className="form-container">
-          <h1>Cleaning Profile</h1>
+          <h1 className="form-container-h1">Cleaning Profile</h1>
           <form id="profileForm" onSubmit={handleSubmit}>
-            <label htmlFor="name">Name:</label>
+            <label className="form-container-label" htmlFor="name">Name:</label>
             <input
               type="text"
               id="name"
@@ -45,7 +45,7 @@ const CleaningProfile = () => {
               required
             />
 
-            <label htmlFor="location">Location:</label>
+            <label className="form-container-label" htmlFor="location">Location:</label>
             <input
               type="text"
               id="location"
@@ -54,7 +54,7 @@ const CleaningProfile = () => {
               required
             />
 
-            <label htmlFor="sp">Recurring :</label>
+            <label className="form-container-label" htmlFor="sp">Recurring :</label>
             <select id="sp" name="schedulingPreference">
               <option value="Select">Select</option>
               <option value="Once">Once</option>
@@ -63,7 +63,7 @@ const CleaningProfile = () => {
               <option value="Monthly">Monthly</option>
             </select>
 
-            <label htmlFor="time">Date & Time:</label>
+            <label className="form-container-label" htmlFor="time">Date & Time:</label>
             <input
               type="datetime-local"
               id="time"
@@ -71,7 +71,7 @@ const CleaningProfile = () => {
               placeholder="Enter Date and Time"
             />
 
-            <label htmlFor="house-type">House Type:</label>
+            <label className="form-container-label" htmlFor="house-type">House Type:</label>
             <select id="house-type" name="house-type">
               <option value="1BHK">1BHK</option>
               <option value="2BHK">2BHK</option>

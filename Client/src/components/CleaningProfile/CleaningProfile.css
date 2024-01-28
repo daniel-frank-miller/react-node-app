@@ -26,11 +26,11 @@
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.form-container h1 {
+.form-container-h1 {
   align-self: center;
 }
 
-.form-container label {
+.form-container-label {
   font-size: 18px;
   font-family: Arial;
   margin-top: 10px;
@@ -120,7 +120,7 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
 
-  .form-container label {
+  .form-container-label {
     font-size: 15px;
     font-family: Arial;
     margin-top: 12px;
