@@ -1,21 +1,40 @@
+import "./CleaningProfile.css";
 import Navbar from "../Navbar/Navbar";
-import "./cp.css";
 
-const CookingProfile = () => {
+const CleaningProfile = () => {
+
+  const handlePayment = async () => {
+    const data = {
+      name: 'Waleed',
+      amount: 100,
+      number: '7498608775',
+      MUID: 'MUID' + Date.now(),
+      transactionId: 'T' + Date.now(),
+    };
+
+    try {
+      const response = await axios.post('http://localhost:3000/api/payment/phonepe', { ...data });
+      console.log('Success:', response.data);
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
+    console.log('Form Submitted');
+    handlePayment();
   };
 
   return (
-    <div className="singlePage">
+    <>
       <Navbar />
-      <div className="CleaningContainer">
-        <div className="img-container-cooking">
-          <img src="/src/assets/cute_girl.webp" alt="Cooking Profile" className="image-cutegirl" />
+      <div className="cleaningProfile-container">
+        <div className="img-container">
+          <img src="./src/assets/cleaningpic.webp" alt="Cleaning Profile" className="img-container-cleaning" />
         </div>
         <div className="form-container">
-          <h1>Cooking Profile</h1>
+          <h1>Cleaning Profile</h1>
           <form id="profileForm" onSubmit={handleSubmit}>
             <label htmlFor="name">Name:</label>
             <input
@@ -52,17 +71,16 @@ const CookingProfile = () => {
               placeholder="Enter Date and Time"
             />
 
-            <label htmlFor="family-member-count">Family Member Count:</label>
-            <input
-              type="number"
-              id="family-member-count"
-              name="family-member-count"
-              placeholder="Enter No. of Members"
-              min="1"
-              required
-            />
+            <label htmlFor="house-type">House Type:</label>
+            <select id="house-type" name="house-type">
+              <option value="1BHK">1BHK</option>
+              <option value="2BHK">2BHK</option>
+              <option value="3BHK">3BHK</option>
+              <option value="4BHK">4BHK</option>
+              <option value="VILLA">Villa</option>
+            </select>
 
-            <div style={{ alignSelf: "center" }}>
+            <div id="con" style={{ width: "100%", textAlign: "center" }}>
               <button type="submit" className="btn">
                 Submit
               </button>
@@ -70,8 +88,8 @@ const CookingProfile = () => {
           </form>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
-export default CookingProfile;
+export default CleaningProfile;

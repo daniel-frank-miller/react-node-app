@@ -1,21 +1,23 @@
-import "./CleaningProfile.css";
 import Navbar from "../Navbar/Navbar";
+import paymentGateway from "../../razorpay";
+import "./cp.css";
 
-const CleaningProfile = () => {
+const CookingProfile = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission logic here
+    paymentGateway(100);
   };
 
   return (
-    <>
+    <div className="singlePage">
       <Navbar />
-      <div className="cleaningProfile-container">
-        <div className="img-container">
-          <img src="./src/assets/cleaningpic.webp" alt="Cleaning Profile" className="img-container-cleaning" />
+      <div className="CleaningContainer">
+        <div className="img-container-cooking">
+          <img src="/src/assets/cute_girl.webp" alt="Cooking Profile" className="image-cutegirl" />
         </div>
         <div className="form-container">
-          <h1>Cleaning Profile</h1>
+          <h1>Cooking Profile</h1>
           <form id="profileForm" onSubmit={handleSubmit}>
             <label htmlFor="name">Name:</label>
             <input
@@ -52,16 +54,17 @@ const CleaningProfile = () => {
               placeholder="Enter Date and Time"
             />
 
-            <label htmlFor="house-type">House Type:</label>
-            <select id="house-type" name="house-type">
-              <option value="1BHK">1BHK</option>
-              <option value="2BHK">2BHK</option>
-              <option value="3BHK">3BHK</option>
-              <option value="4BHK">4BHK</option>
-              <option value="VILLA">Villa</option>
-            </select>
+            <label htmlFor="family-member-count">Family Member Count:</label>
+            <input
+              type="number"
+              id="family-member-count"
+              name="family-member-count"
+              placeholder="Enter No. of Members"
+              min="1"
+              required
+            />
 
-            <div id="con" style={{ width: "100%", textAlign: "center" }}>
+            <div style={{ alignSelf: "center" }}>
               <button type="submit" className="btn">
                 Submit
               </button>
@@ -69,8 +72,8 @@ const CleaningProfile = () => {
           </form>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
-export default CleaningProfile;
+export default CookingProfile;

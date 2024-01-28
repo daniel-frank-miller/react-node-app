@@ -1,0 +1,55 @@
+.Outcontainer{
+  background-image: url("https://imgs.search.brave.com/OnaYmIDj5qLxqzty8yLcC_iEDhLdUVYg02wFz6hztQA/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudW5zcGxhc2gu/Y29tL3Bob3RvLTE1/MzE2ODUyNTA3ODQt/NzU2OTk1MjU5M2Qy/P3E9ODAmdz0xMDAw/JmF1dG89Zm9ybWF0/JmZpdD1jcm9wJml4/bGliPXJiLTQuMC4z/Jml4aWQ9TTN3eE1q/QTNmREI4TUh4elpX/RnlZMmg4T0h4OGQy/VmljMmwwWlNVeU1H/SmhZMnRuY205MWJt/UjhaVzU4TUh4OE1I/eDhmREE9");
+  font-family: "Chakra Petch", sans-serif;
+  width: 100vw;
+  text-align: center;
+}
+.about-us-container {
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: justify;
+}
+.aboutHeading{
+  font-size: 36px;
+  color: rgb(10, 138, 27)
+}
+.aboutpara{
+  font-size: medium;
+  padding-top: 2em;
+}
+.images-container{
+  padding-top: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.image-box{
+  height: 500px;
+  width: 300px;
+  text-align: center;
+}
+.image{
+  width: 100%;
+  height: 300px;
+  border: 2px solid lightcoral;
+}
+.personname{
+  font-weight: bold;
+  font-size: 20px;
+}
+.personposition{
+  font-size: 15px;
+}
+.miniheading{
+  padding-top: 10px;
+  color: rgb(96, 46, 221);
+}
+.note{
+  background-color: chocolate;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin-top: 20px;
+  padding: 3px;
+}
