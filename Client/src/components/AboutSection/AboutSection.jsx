@@ -1,7 +1,7 @@
 import React from 'react';
-import Navbar from "./../Navbar/navbar.jsx"
-import Footer from "./../Footer/footer.jsx"
-import './AboutSection.css'
+import Navbar from "/src/components/Navbar/navbar.jsx"
+import Footer from "/src/components/Footer/footer.jsx"
+import '/src/components/About/AboutSection.css'
 
 const AboutSection = () => {
   return (
