@@ -1,4 +1,4 @@
-import "./rating.css";
+import "/src/components/Rating/rating.css";
 import { useState } from "react";
 import ReactStars from "react-rating-star-with-type";
 

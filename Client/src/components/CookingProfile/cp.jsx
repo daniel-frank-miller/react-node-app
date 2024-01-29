@@ -1,6 +1,6 @@
-import Navbar from "../Navbar/Navbar";
-import paymentGateway from "../../razorpay";
-import "./cp.css";
+import Navbar from "/src/components/Navbar/navbar.jsx";
+import paymentGateway from "/src/components/razorpay";
+import "/src/components/CookingProfile/cp.css";
 
 const CookingProfile = () => {
   const handleSubmit = (e) => {

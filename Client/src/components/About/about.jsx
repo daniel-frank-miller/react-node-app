@@ -1,12 +1,10 @@
-//  import React from "react";
 import Slider from "react-slick";
-// Import css files
-
-import "/src/components/About/about.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import {Link} from 'react-router-dom';
+
+import "/src/components/About/about.css";
 
 const settings = {
   dots: false,

@@ -1,8 +1,8 @@
-import "./ServicesSection.css";
-
 import { Link } from "react-router-dom";
 
-import Navbar from "../Navbar/Navbar";
+import Navbar from "/src/components/Navbar/navbar.jsx";
+import "/src/components/ServicesSection/ServicesSection.css";
+
 const ServicesSection = () => {
   return (
     <div className="singlePage">

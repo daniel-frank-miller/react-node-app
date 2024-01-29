@@ -1,9 +1,11 @@
-import Navbar from "../Navbar/Navbar";
-import "./contact.css";
 import { MdOutlineMailLock } from "react-icons/md";
 import { MdOutlineDriveFileRenameOutline } from "react-icons/md";
 import { FiPhoneCall } from "react-icons/fi";
 import { useState } from "react";
+
+import Navbar from "/src/components/Navbar/navbar.jsx";
+import "/src/components/ContactUs/contact.css";
+
 const ContactUs = () => {
   const onSubmit = (e) => {
     e.preventDefault();

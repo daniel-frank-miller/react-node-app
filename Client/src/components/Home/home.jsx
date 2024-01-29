@@ -1,11 +1,11 @@
-import Navbar from "../Navbar/Navbar";
-import About from "../About/about";
-import Services from "../Services/services";
-import Testimonals from "../Testimonals/testimonals";
-import Rating from "../Rating/rating";
-import Footer from "../Footer/footer";
 import { Link } from "react-router-dom";
-import "./home.css";
+import Navbar from "/src/components/Navbar/navbar.jsx";
+import About from "/src/components/About/about.jsx";
+import Services from "/src/components/Services/services.jsx";
+import Testimonals from "/src/components/Testimonals/testimonals.jsx";
+import Rating from "/src/components/Rating/rating.jsx";
+import Footer from "/src/components/Footer/footer.jsx";
+import "/src/components/Home/home.css";
 
 const Home = () => {
   const SectionOne = () => {

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Events } from "react-scroll";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { RxHamburgerMenu } from "react-icons/rx";
-import "./navbar.css";
+import "/src/components/Navbar/navbar.css";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);

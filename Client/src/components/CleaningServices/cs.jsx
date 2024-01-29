@@ -1,6 +1,7 @@
-import "./cs.css";
-import Navbar from "../Navbar/Navbar";
 import { Link } from "react-router-dom";
+import Navbar from "/src/components/Navbar/navbar.jsx";
+
+import "/src/components/CleaningServices/cs.css";
 
 const CleaningServices = () => {
   return (

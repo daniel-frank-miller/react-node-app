@@ -1,4 +1,4 @@
-import "./login.css";
+import "/src/components/Login/login.css";
 import { MdOutlineMailLock } from "react-icons/md";
 import { MdLock } from "react-icons/md";
 import { FcGoogle } from "react-icons/fc";

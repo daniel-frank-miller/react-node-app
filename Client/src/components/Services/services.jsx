@@ -1,5 +1,7 @@
-import "./services.css";
 import { Link } from "react-router-dom";
+
+import "/src/components/Services/services.css";
+
 const Services = () => {
   return (
     <>

@@ -1,4 +1,4 @@
-import "./signup.css";
+import "/src/components/Signup/signup.css";
 import { MdOutlineMailLock } from "react-icons/md";
 import { MdLock, MdOutlineDriveFileRenameOutline } from "react-icons/md";
 import { FcGoogle } from "react-icons/fc";

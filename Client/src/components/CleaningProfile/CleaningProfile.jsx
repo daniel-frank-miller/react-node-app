@@ -1,5 +1,6 @@
-import "./CleaningProfile.css";
-import Navbar from "../Navbar/Navbar";
+import Navbar from "/src/componets/Navbar/navbar.jsx";
+
+import "/src/components/CleaningProfile/CleaningProfile.css";
 
 const CleaningProfile = () => {
 
