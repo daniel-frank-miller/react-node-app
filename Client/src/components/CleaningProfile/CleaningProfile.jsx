@@ -1,4 +1,4 @@
-import Navbar from "/src/componets/Navbar/navbar.jsx";
+import Navbar from "/src/components/Navbar/navbar.jsx";
 
 import "/src/components/CleaningProfile/CleaningProfile.css";
 
