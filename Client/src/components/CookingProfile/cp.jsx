@@ -1,5 +1,5 @@
 import Navbar from "/src/components/Navbar/navbar.jsx";
-import paymentGateway from "/src/components/razorpay";
+import paymentGateway from "/src/razorpay";
 import "/src/components/CookingProfile/cp.css";
 
 const CookingProfile = () => {
