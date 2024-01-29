@@ -1,15 +1,15 @@
 import "./App.css";
 import { Component } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Home from "./components/Home/home.jsx";
-import Login from "./components/Login/login.jsx";
-import ContactUs from "./components/ContactUs/contact.jsx";
-import CookingProfile from "./components/CookingProfile/cp.jsx";
-import CleaningServices from "./components/CleaningServices/cs.jsx";
-import CleaningProfile from "./components/CleaningProfile/CleaningProfile.jsx";
-import ServicesSection from "./components/ServicesSection/ServicesSection.jsx";
-import AboutSection from "./components/AboutSection/AboutSection.jsx";
-import Signup from './components/Signup/signup.jsx';
+import Home from "/src/components/Home/home.jsx";
+import Login from "/src/components/Login/login.jsx";
+import ContactUs from "/src/components/ContactUs/contact.jsx";
+import CookingProfile from "/src/components/CookingProfile/cp.jsx";
+import CleaningServices from "/src/components/CleaningServices/cs.jsx";
+import CleaningProfile from "/src/components/CleaningProfile/CleaningProfile.jsx";
+import ServicesSection from "/src/components/ServicesSection/ServicesSection.jsx";
+import AboutSection from "/src/components/AboutSection/AboutSection.jsx";
+import Signup from '/src/components/Signup/signup.jsx';
 class App extends Component {
   render() {
     return (
