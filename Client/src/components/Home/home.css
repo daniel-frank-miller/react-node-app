@@ -5,7 +5,7 @@
 }
 
 .section1 {
-  background-image: url("../../assets/main-bg.webp");
+  background-image: url("/src/assets/main-bg.webp");
   background-size: cover;
   height: 92vh;
   display: flex;

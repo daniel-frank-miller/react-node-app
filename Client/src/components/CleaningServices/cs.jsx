@@ -37,7 +37,7 @@ const CleaningServices = () => {
 
           <div className="card">
             <img
-              src="./src/assets/clean2.webp"
+              src="/src/assets/clean2.webp"
               alt="Washroom Cleaning"
               className="img"
             />
@@ -63,7 +63,7 @@ const CleaningServices = () => {
 
           <div className="card">
             <img
-              src="./src/assets/clean3.webp"
+              src="/src/assets/clean3.webp"
               alt="Dusting & Setting"
               className="img"
             />

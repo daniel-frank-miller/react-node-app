@@ -12,7 +12,7 @@ const ServicesSection = () => {
         <div className="ServicesSection-cards-container">
           <div className="ServicesSection-card-element">
             <img
-              src="./src/assets/cooking-card-bg.webp"
+              src="/src/assets/cooking-card-bg.webp"
               alt="cooking image"
               className="ServicesSection-card-image"
             />
@@ -31,7 +31,7 @@ const ServicesSection = () => {
           </div>
           <div className="ServicesSection-card-element">
             <img
-              src="./src/assets/cleaning-card-bg.webp"
+              src="/src/assets/cleaning-card-bg.webp"
               alt="cleaning image"
               className="ServicesSection-card-image"
             />

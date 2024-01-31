@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background-image: url("../../assets/loginpagebg.webp");
+  background-image: url("/src/assets/loginpagebg.webp");
 }
 
 @media screen and (max-width:968px){

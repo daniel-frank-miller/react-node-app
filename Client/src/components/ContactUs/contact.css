@@ -7,7 +7,7 @@
   align-items: center;
   padding: 20px;
   min-height: 91.3%;
-  background: url("../../assets/profilebg.webp");
+  background: url("/src/assets/profilebg.webp");
   background-size: cover;
 }
 .contactus-title {

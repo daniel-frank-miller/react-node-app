@@ -1,5 +1,5 @@
 .ServicesSection {
-  background-image: url("../../assets/30.webp");
+  background-image: url("/src/assets/30.webp");
   background-size: cover;
   display: flex;
   flex-direction: column;
