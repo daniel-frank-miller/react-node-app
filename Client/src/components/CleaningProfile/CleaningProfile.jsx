@@ -2,6 +2,7 @@ import Navbar from "/src/components/Navbar/navbar.jsx";
 
 import "/src/components/CleaningProfile/CleaningProfile.css";
 
+
 const CleaningProfile = () => {
 
   const handlePayment = async () => {
