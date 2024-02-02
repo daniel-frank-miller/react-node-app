@@ -24,7 +24,7 @@ const Register = () => {
         </p>
       </div>
       <div className="RegisterContainer-rightContent">
-        <h2 className="register-title">Create and Account</h2>
+        <h2 className="register-title">Create an Account</h2>
         <form className="registerform-container" onSubmit={onSubmit}>
           <div className="input-field">
             <MdOutlineDriveFileRenameOutline />

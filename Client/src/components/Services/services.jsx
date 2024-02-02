@@ -57,6 +57,11 @@ const Services = () => {
         </Slider>
       );
     }
+    // var element = document.getElementById("colorChangingElement");
+    // setInterval(function() {
+    //   element.style.backgroundColor = colors[index];
+    //   index = (index + 1) % colors.length;
+    // }, 1000); 
   return (
     <>
       <div className="section3  prevent-select" id="servicesSection">

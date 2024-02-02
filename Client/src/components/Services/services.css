@@ -117,6 +117,23 @@
   font-size: 16px;
   border-radius: 5px;
   cursor: pointer;
+  animation: blinking 1s infinite;
+}
+@keyframes blinking {
+  0% {
+    
+    border: 0.7px solid rgb(242, 242, 242) ;
+  }
+  50% {
+    
+    border: 1.9px solid rgb(242, 242, 242) ;
+
+  }
+  100% {
+    
+    border: 0.7px solid rgb(242, 242, 242) ;
+
+  }
 }
 
 .section3-container .custom-card .custom-content .services-btn:hover {

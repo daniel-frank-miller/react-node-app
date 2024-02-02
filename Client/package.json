@@ -1,6 +1,7 @@
 {
   "name": "homaid",
   "private": true,
+  "homepage": "https://homaid.in",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
