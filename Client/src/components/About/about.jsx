@@ -22,7 +22,7 @@ const About = () => {
       <Slider {...settings}>
         <div>
           <img
-            src="./src/assets/car-1.webp"
+            src="/src/assets/car-1.webp"
             alt="Image 1"
             className="carousel-img"
           />

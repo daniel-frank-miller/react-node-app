@@ -1,55 +1,139 @@
-.Outcontainer{
-  background-image: url("https://imgs.search.brave.com/OnaYmIDj5qLxqzty8yLcC_iEDhLdUVYg02wFz6hztQA/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudW5zcGxhc2gu/Y29tL3Bob3RvLTE1/MzE2ODUyNTA3ODQt/NzU2OTk1MjU5M2Qy/P3E9ODAmdz0xMDAw/JmF1dG89Zm9ybWF0/JmZpdD1jcm9wJml4/bGliPXJiLTQuMC4z/Jml4aWQ9TTN3eE1q/QTNmREI4TUh4elpX/RnlZMmg4T0h4OGQy/VmljMmwwWlNVeU1H/SmhZMnRuY205MWJt/UjhaVzU4TUh4OE1I/eDhmREE9");
-  font-family: "Chakra Petch", sans-serif;
-  width: 100vw;
-  text-align: center;
+.AboutSection-Container{
+  min-height: 100vh;
 }
-.about-us-container {
-  max-width: 90%;
-  margin: 0 auto;
-  padding: 20px;
-  text-align: justify;
-}
-.aboutHeading{
-  font-size: 36px;
-  color: rgb(10, 138, 27)
-}
-.aboutpara{
-  font-size: medium;
-  padding-top: 2em;
-}
-.images-container{
-  padding-top: 20px;
-  width: 100%;
+.aboutMain-Container{
+  background-image: url("/src/assets/AboutUs-bg.jpeg");
+  background-size: cover;
+  height: 90vh;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  font-size: 45px;
+  position: relative;
+  &::before{
+    content: '';
+    background-color: rgb(0,0,0,0.35);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.75;
+  }
+}
+.about-content{
+  padding-right: 25px;
+}
+.about-title{
+  font-family: "Bree Serif";
+  font-weight: bold;
+  color: #fff;
+  position: relative;
+}
+
+.about-subtitle{
+  position: relative;
+  color: #fff;
+  font-size: 45px;
+  font-family: "Bree Serif";
+  font-weight: bold;
+}
+
+@media screen and (max-width:768px){
+  .aboutMain-Container{
+    align-items: center;
+    background-image: url("/src/assets/AboutUs-sm-bg.jpeg");
+    font-size: 32px;
+    text-align: center;
+  }
+  .about-content{
+    padding-right: 0px;
+  }
+  .about-subtitle{
+    font-size: 32px;
+  }
+}
+
+.TeamDetails{
+  text-align: center;
+  padding: 10px 0;
+}
+.TeamDetails-heading{
+  font-size: 35px;
+  font-family: 'Roboto';
+  margin-bottom: 10px;
+}
+.members{
+  display: flex;
+  justify-content: space-evenly;
   flex-wrap: wrap;
 }
-.image-box{
-  height: 500px;
-  width: 300px;
-  text-align: center;
+.team-img{
+  width: 250px;
+  height: 250px;
+  /* border: 1px solid blue; */
+  margin: 5px;
+  background-color: transparent;
 }
-.image{
-  width: 100%;
-  height: 300px;
-  border: 2px solid lightcoral;
+.team-name{
+  font-family: "Roboto";
+  color: #4a4a4a;
+  font-size: 24px;
 }
-.personname{
-  font-weight: bold;
+.teamMember-position{
+  font-family: "Roboto";
+  color: #4a4a4a;
   font-size: 20px;
 }
-.personposition{
-  font-size: 15px;
+
+/*FAQ Styling*/
+
+.FAQs{
+  padding: 10px 0;
+  background-color: antiquewhite;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.miniheading{
-  padding-top: 10px;
-  color: rgb(96, 46, 221);
+.faq-title{
+  font-size: 40px;
+  font-family: "Bree Serif";
+  color: #4a4a4a;
+  margin: 10px 0;
 }
-.note{
-  background-color: chocolate;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  margin-top: 20px;
-  padding: 3px;
+.questions{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 0 15px;
+}
+.question-Container{
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+@media (min-width:768px){
+  .question-Container{
+    width: 50%;
+  }
+}
+@media (max-width:768px){
+  .question-Container{
+    width: 100%;
+  }
+}
+.target-icon{
+  color: red;
+  margin-right: 10px;
+  width: 50%;
+}
+.question{
+  font-size: 24px;
+  color: #000;
+  font-weight: bold;
+}
+.answer{
+  font-size: 20px;
+  text-align: justify;
 }

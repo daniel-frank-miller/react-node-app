@@ -1,8 +1,67 @@
 import { Link } from "react-router-dom";
-
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import "/src/components/Services/services.css";
 
+const settings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplay: true, // Enable autoplay
+  autoplaySpeed: 2000,
+};
+
 const Services = () => {
+    const cleaningBlogSlider = () => {
+      return (
+        <Slider {...settings}>
+          <img
+            src="/src/assets/cleaning-blog-3.webp"
+            alt="Images"
+            className="blog-img"
+          />
+          <img
+            src="/src/assets/cleaning-blog-2.webp"
+            alt="Images"
+            className="blog-img"
+          />
+          <img
+            src="/src/assets/cleaning-blog-1.webp"
+            alt="Images"
+            className="blog-img"
+          />
+        </Slider>
+      );
+    };
+    const cookingBlogSlider = () => {
+      return (
+        <Slider {...settings}>
+          <img
+            src="/src/assets/cooking-blog-3.webp"
+            alt="Images"
+            className="rightsection4-img1"
+          />
+          <img
+            src="/src/assets/cooking-blog-2.webp"
+            alt="Images"
+            className="rightsection4-img2"
+          />
+          <img
+            src="/src/assets/cooking-blog-1.webp"
+            alt="Images"
+            className="rightsection4-img3"
+          />
+        </Slider>
+      );
+    }
+    // var element = document.getElementById("colorChangingElement");
+    // setInterval(function() {
+    //   element.style.backgroundColor = colors[index];
+    //   index = (index + 1) % colors.length;
+    // }, 1000); 
   return (
     <>
       <div className="section3  prevent-select" id="servicesSection">
@@ -46,10 +105,10 @@ const Services = () => {
         </div>
       </div>
 
-      <div className="section4" id="blogsSection">
-        <div className="section4left">
-          <h1 className="section4-heading">Cleaning Blogs</h1>
-          <p className="section4-subtitle">
+      <div className="blog-section prevent-select">
+        <div className="blog-Container1">
+          <h1 className="blog-title">Cleaning Blogs</h1>
+          <p className="blog-subtitle">
             At HOMAID, we bring together the best of both worlds impeccable
             cleaning services tailored to your space and unique cooking
             experiences crafted to your taste. Experience the joy of a spotless
@@ -57,46 +116,32 @@ const Services = () => {
             lifestyle.
           </p>
         </div>
-        <div className="section4right">
+        <div className="blog-Container2">
           <img
             src="/src/assets/cleaning-blog-3.webp"
             alt="Images"
-            className="section4-img1"
+            className="blog-img1"
           />
           <img
             src="/src/assets/cleaning-blog-2.webp"
             alt="Images"
-            className="section4-img2"
+            className="blog-img2"
           />
           <img
             src="/src/assets/cleaning-blog-1.webp"
             alt="Images"
-            className="section4-img3"
+            className="blog-img3"
           />
         </div>
+        <div className="mobileview-blog-carousel">{cleaningBlogSlider()}</div>
       </div>
+
       <hr />
-      <div className="section-cleaning">
-        <div className="sectioncleaningright">
-          <img
-            src="/src/assets/cooking-blog-3.webp"
-            alt="Images"
-            className="rightsection4-img1"
-          />
-          <img
-            src="/src/assets/cooking-blog-2.webp"
-            alt="Images"
-            className="rightsection4-img2"
-          />
-          <img
-            src="/src/assets/cooking-blog-1.webp"
-            alt="Images"
-            className="rightsection4-img3"
-          />
-        </div>
-        <div className="sectioncleaningleft">
-          <h1 className="section4-cleaning-heading">Cooking Blogs</h1>
-          <p className="section4-cleaning-subtitle">
+
+      <div className="blog-section prevent-select">
+        <div className="blog-Container1 cookingblog1">
+          <h1 className="blog-title">Cooking Blogs</h1>
+          <p className="blog-subtitle">
             At HOMAID, we bring together the best of both worlds impeccable
             cleaning services tailored to your space and unique cooking
             experiences crafted to your taste. Experience the joy of a spotless
@@ -104,6 +149,24 @@ const Services = () => {
             lifestyle.
           </p>
         </div>
+        <div className="blog-Container2 cookingblog2">
+          <img
+            src="/src/assets/cooking-blog-3.webp"
+            alt="Images"
+            className="blog-img3"
+          />
+          <img
+            src="/src/assets/cooking-blog-2.webp"
+            alt="Images"
+            className="blog-img2"
+          />
+          <img
+            src="/src/assets/cooking-blog-1.webp"
+            alt="Images"
+            className="blog-img1"
+          />
+        </div>
+        <div className="mobileview-blog-carousel">{cookingBlogSlider()}</div>
       </div>
     </>
   );
