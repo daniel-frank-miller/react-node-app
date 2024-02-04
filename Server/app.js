@@ -1,19 +1,19 @@
-// server.js
+const express = require('express');
+const cors = require('cors');
+const handlePayment = require('./payment');
+const handlePaymentStatus = require("./paymentStatus");
 
-const express = require("express");
 const app = express();
-const port = 3000;
-const cors = require("cors");
-require("dotenv").config();
+
+const port = process.env.PORT || 5000;
 
 app.use(express.json());
-app.use(cors({ origin: 'http://localhost:5173' }));
+app.use(cors());
 
-// Razorpay Route
-const phonepeRoute = require('./routes/phonepe/phonepeRoute');
-app.use("/api/payment/phonepe", phonepeRoute);
+app.post('/api/payment', handlePayment);
 
-// Starting Server
+app.get('/api/paymentstatus/:transactionId', handlePaymentStatus);
+
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+  console.log(`Server is running on port ${port}`);
 });
