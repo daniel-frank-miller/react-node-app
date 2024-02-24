@@ -41,7 +41,7 @@ const AboutSection = () => {
           <div>
             <img
               src="/src/assets/draft-team-img.webp"
-              alt="name"
+              alt="name1"
               className="team-img"
             />
             <p className="team-name">Name</p>
@@ -50,7 +50,7 @@ const AboutSection = () => {
           <div>
             <img
               src="/src/assets/draft-team-img.webp"
-              alt="name"
+              alt="name2"
               className="team-img"
             />
             <p className="team-name">Name</p>
@@ -59,7 +59,7 @@ const AboutSection = () => {
           <div>
             <img
               src="/src/assets/draft-team-img.webp"
-              alt="name"
+              alt="name3"
               className="team-img"
             />
             <p className="team-name">Name</p>
@@ -68,7 +68,7 @@ const AboutSection = () => {
           <div>
             <img
               src="/src/assets/draft-team-img.webp"
-              alt="name"
+              alt="name4"
               className="team-img"
             />
             <p className="team-name">Name</p>
