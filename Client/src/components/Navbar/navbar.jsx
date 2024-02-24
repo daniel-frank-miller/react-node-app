@@ -2,14 +2,12 @@ import { useState, useEffect } from "react";
 import { Events } from "react-scroll";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { RxHamburgerMenu } from "react-icons/rx";
-import "/src/components/Navbar/navbar.css";
 import Cookies from "js-cookie";
+import "/src/components/Navbar/navbar.css";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolling, setScrolling] = useState(false);
-  //const [status,setStatus]=useState(false);
-
   const location=useLocation()
   useEffect(()=>{
     window.scrollTo(0, 0);
@@ -17,8 +15,6 @@ const Navbar = () => {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
-
-  
 
   const handleScroll = () => {
     if (window.scrollY > 0) {
@@ -58,31 +54,46 @@ const Navbar = () => {
     }
     else{
      return(
-      <li>
-      <NavLink to="/login" onClick={toggleMenu}>
-        Login
-      </NavLink>
-    </li>
+        <li>
+          <NavLink to="/login" onClick={toggleMenu}>
+            Login
+          </NavLink>
+        </li>
      )
     }
   }
 
+
   return (
     <div className={`${navbarClassName} prevent-select`}>
-      <Link to="/">
+      <Link to="/" className="link-text">
+        <div className="nav-logo-header">
         <img src="/src/assets/logo_nobg.webp" alt="logo" className="title" />
+        <h1 className="nav-logo-heading">Homaid</h1>
+        </div>
       </Link>
       <div className="menu" onClick={toggleMenu}>
         <RxHamburgerMenu style={{ fontSize: "32px" }} />
       </div>
       <div
-        className={`overlay ${menuOpen ? "show" : ""}`}
+        className={`overlays ${menuOpen ? "show" : ""}`}
         onClick={toggleMenu}
-      ></div>
+        >
+      </div>
       <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
-        <li>
+      <li>
           <NavLink to="/" onClick={toggleMenu}>
             Home
+          </NavLink>
+        </li>
+      <li>
+          <NavLink to="/Gallery" onClick={toggleMenu}>
+            Gallery
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/Reviews" onClick={toggleMenu}>
+            Reviews
           </NavLink>
         </li>
         <li>
@@ -100,7 +111,7 @@ const Navbar = () => {
             Contact
           </NavLink>
         </li>
-       {loginBtnStatus()}
+        {loginBtnStatus()}
       </ul>
     </div>
   );

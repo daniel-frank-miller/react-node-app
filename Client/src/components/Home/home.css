@@ -44,13 +44,15 @@
 }
 .section1-mainLogo {
   width: 100%;
+  margin: 10px;
 }
 .section1-heading {
   font-size: 100px;
-  font-family: "Cormorant Infant";
-  font-weight: bold;
+  /* font-family: "Cormorant Infant"; */
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
   text-align: left;
-  background: linear-gradient(0deg, #000000 0%, #088f8f 100%);
+  background: linear-gradient(0deg, #1d1d1d 0%, #15d4d4 100%);
   background-clip: text;
   color: transparent;
 }
@@ -63,9 +65,14 @@
 .section1-title {
   font-size: 30px;
   padding: 1%;
-  text-align: left;
+  text-align: center;
   font-family: "Kdam Thmor Pro", sans-serif;
-  color: #313030;
+  color: #a2a2a2;
+  min-width: 450px;
+  width: 100%;
+  max-width: 550px;
+  font-weight: 600;
+  word-spacing: 3.9px;
 }
 @media screen and (max-width: 768px) {
   .section1-title {
@@ -76,9 +83,9 @@
 .section1-subtitle {
   padding: 1%;
   font-size: 26px;
-  text-align: left;
+  text-align: center;
   font-family: "Kdam Thmor Pro", sans-serif;
-  color: #767373;
+  color: #c1c1c1;
 }
 @media screen and (max-width: 768px) {
   .section1-subtitle {
@@ -87,14 +94,15 @@
   }
 }
 .section1-button-link{
-  background-color: #000;
+  background-color: rgb(0, 0, 0);
   color: #fff;
   height: 45px;
   width: 180px;
   border: none;
-  border-radius: 20px;
+  border-radius: 6px;
   cursor: pointer;
   margin-top: 15px;
+  margin-bottom: 15px;
 }
 .section1-button {
   background-color: transparent;
@@ -103,12 +111,19 @@
   height: 45px;
   width: 180px;
   border: none;
-  border-radius: 20px;
+  border-radius: 6px;
   cursor: pointer;
+  padding: 10px;
 }
 .section1-button:hover {
-  background-color: #fff;
+  background-color: transparent;
   color: #38b49d;
-  border: 0.5px solid #000;
+  border: 0px solid #000;
   font-weight: 600;
+  border-radius: 6px;
 }
+
+
+
+
+  

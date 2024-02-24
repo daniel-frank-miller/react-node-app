@@ -1,0 +1,115 @@
+/* Sticky header styles */
+.sticky-header {
+   margin: 0px;
+    width: 100%;
+    background-color: #345E7D;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* height: 55px; */
+    height: 20%;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0px;
+  }
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Contact info styles */
+
+  .contact-info {
+    text-align: center;
+    display: flex;
+  }
+
+  .contact-info span{
+    color: white;
+    margin-right: 10px;
+  }
+  
+  .contact-info a {
+    font-family: "Barlow Condensed", sans-serif;
+    color: white;
+    text-decoration: none;
+    margin-right: 10px;
+    font-size: 15px;
+    display: flex;
+  }
+  .contact-info a div{
+    padding: 2px 4px 2px 3px;
+    font-size: 15px;
+  }
+
+  /* .contact-info a i{
+    margin-right: 10px;
+  } */
+  
+  .contact-info a:last-child {
+    margin-right: 0;
+  }
+  
+  /* Social icons styles */
+  .social-icons {
+    /* transition: 1s transform; */
+    align-content: center;
+    display: flex;
+  
+  }
+ 
+  .social-icons .container-icons{
+    width: 15px;
+    height: 15px;
+    margin: 10px;
+  }
+  .social-icons .container-icons a {
+    /* font-family: "Barlow Condensed", sans-serif; */
+    /* text-decoration: none; */
+    color: aliceblue;
+    margin-left: 10px;
+    font-size: 25px;
+  }
+  .social-icons .container-icons a svg{
+    transition: 0.5s transform;
+
+  }
+  
+  /* Animation */
+   svg:hover{
+    transform: scale(1.5); /*Increase size on hover*/
+  }
+  
+  
+  /* Responsive styles */
+  @media (max-width: 780px) {
+    .row {
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    
+    .social-icons{
+        margin-top: 15%;
+    }
+
+    .social-icons{
+      text-align: center;
+    }
+
+  }
+  
+  @media (max-width: 440px) {
+    .contact-info{
+        display: flex;
+        flex-direction: column;
+    }
+    .contact-info span{
+        display: none;
+    }
+    
+  }

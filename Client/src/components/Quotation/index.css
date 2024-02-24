@@ -1,0 +1,44 @@
+.quotation-container{
+    background: linear-gradient(to left, #7e7e7e 0%, #088f8f 100%);
+    width: 100%;
+    margin: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.quotation-heading{
+    padding: 12px;
+    margin: 5px;
+    color: white;
+    font-family: 'Roboto';
+}
+
+.quotation-description{
+    padding: 12px;
+    margin: 5px;
+    color: black;
+    font-family: 'Roboto';
+    font-weight: 600;
+}
+
+.contact-us-button{
+    background-color: black;
+    border-radius: 20px;
+    padding: 8px;
+    color: white;
+    cursor: pointer;
+    outline: none;
+    border: 0px solid;
+    width: 130px;
+    margin: 10px;
+    height: 40px;
+}
+
+@media screen and (max-width:768px){
+    .quotation-container{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}

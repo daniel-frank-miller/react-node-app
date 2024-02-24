@@ -10,10 +10,16 @@ import CleaningProfile from "/src/components/CleaningProfile/CleaningProfile.jsx
 import ServicesSection from "/src/components/ServicesSection/ServicesSection.jsx";
 import AboutSection from "/src/components/AboutSection/AboutSection.jsx";
 import Signup from '/src/components/Signup/signup.jsx';
+import Reviews from '/src/components/Reviews/reviews';
+import Gallery from "./components/Gallery/gallery.jsx";
+import ForgotPassword from "./components/ForgotPassword/forgot.jsx";
+import ResetPassword from "./components/ResetPassword/reset.jsx";
+import OTPVerification from "./components/OTPVerification/otp.jsx";
+import AdminLogin from "./components/AdminLogin/admin.jsx";
 class App extends Component {
   render() {
     return (
-      <Router>
+        <Router>
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/about" element={<AboutSection />} />
@@ -24,8 +30,15 @@ class App extends Component {
           <Route exact path="/cleaningprofile" element={<CleaningProfile />} />
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/signup" element={<Signup />} />
+          <Route exact path="/forgot_password" element={<ForgotPassword/>}/>
+          <Route exact path="/reset_password" element={<ResetPassword/>}/>
+          <Route exact path="/verify-otp" element={<OTPVerification/>}/>
+          <Route exact path="/admin_login" element={<AdminLogin/>}/>
+          <Route exact path="/gallery" element={<Gallery/>}/>
+          <Route exact path="/reviews" element={<Reviews/>}/>
         </Routes>
       </Router>
+      
     );
   }
 }

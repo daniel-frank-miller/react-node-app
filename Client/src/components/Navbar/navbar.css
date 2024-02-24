@@ -7,7 +7,7 @@
   background-color: #f9f7f7;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   position: sticky;
-  top: 0;
+  top: 0px;
   z-index: 999;
   width: 100%;
   transition: background-color 0.3s ease;
@@ -107,12 +107,12 @@
   }
 
   .nav-links {
-    position: absolute;
-    top: 75px; /* Adjust as needed based on your header height */
+    position: relative;
+    top: 70px; /* Adjust as needed based on your header height */
     left: 0;
     width: 100%;
     background-color: #fff;
-    padding: 10px;
+    padding: 0px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 2;
     display: none;
@@ -135,4 +135,18 @@
   .nav-links a:hover {
     color: #007bff;
   }
+}
+
+.link-text{
+  text-decoration: none;
+}
+
+.nav-logo-header{
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo-heading{
+  font-family: 'Roboto';
+  color: #216c5de6;
 }

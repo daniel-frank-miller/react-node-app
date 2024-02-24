@@ -292,3 +292,37 @@
     order: 1;
   }
 }
+
+.cleaning-blogs-book-now-button{
+  background-color: transparent;
+  color: black;
+  border: 2px solid #0e1a18;
+  border-radius: 6px;
+  padding: 13px;
+  width: 120px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.cleaning-blogs-book-now-button:hover{
+  border: 0px solid;
+  background-color: #0e1a18;
+  color: white;
+}
+
+.cooking-blogs-book-now-button{
+  background-color: transparent;
+  color: black;
+  border: 2px solid #0e1a18;
+  border-radius: 6px;
+  padding: 13px;
+  width: 120px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.cooking-blogs-book-now-button:hover{
+  border: 0px solid;
+  background-color: #0e1a18;
+  color: white;
+}

@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "/src/components/Services/services.css";
 
 const settings = {
-  dots: true,
+  dots: false,
   infinite: true,
   speed: 500,
   slidesToShow: 1,
@@ -115,6 +115,9 @@ const Services = () => {
             home and gourmet meals, all seamlessly delivered to elevate your
             lifestyle.
           </p>
+          <Link to="/cleaningservices">
+            <button type="button" className="cleaning-blogs-book-now-button">Book Now</button>
+          </Link>
         </div>
         <div className="blog-Container2">
           <img
@@ -148,6 +151,9 @@ const Services = () => {
             home and gourmet meals, all seamlessly delivered to elevate your
             lifestyle.
           </p>
+          <Link to="/cookingprofile">
+            <button type="button"  className="cooking-blogs-book-now-button">Book Now</button>
+          </Link>
         </div>
         <div className="blog-Container2 cookingblog2">
           <img

@@ -52,10 +52,11 @@ input[type="number"]::-webkit-outer-spin-button {
   }
 }
 .contactus-form {
-  background-image: radial-gradient(rgb(195, 210, 216), rgb(22, 169, 159));
+  background-image: radial-gradient(rgb(221, 232, 232), #a2dbdb);
   border: 1px solid #000;
   border-radius: 10px;
   width: 40%;
+  max-width: 500px;
   padding: 20px 0;
   display: flex;
   flex-direction: column;
