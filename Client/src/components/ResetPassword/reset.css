@@ -88,6 +88,11 @@
         align-items: center;
     }
 
+    .reset-in-mail-image{
+        height: 220px;
+        width: 220px;
+    }
+
     .change-password-image{
         margin: 10px;
         height: 250px;

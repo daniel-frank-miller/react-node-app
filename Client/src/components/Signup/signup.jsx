@@ -7,10 +7,10 @@ import { Link } from "react-router-dom";
 import { Component } from "react";
 import { Navigate } from "react-router-dom";
 import { FaPhoneAlt } from "react-icons/fa";
-import Cookies from "js-cookie";
+import OtpInput from 'react18-input-otp';
 
 class Register extends Component {
-  state={name:'',email:'',password:'',confirmPassword:'',message:'',phone:'+91-',messageStatus:false}
+  state={name:'',email:'',password:'',confirmPassword:'',message:'',phone:'',messageStatus:false, showModal: false,otp: '',otpMessage: ''}
 
   handleName=e=>{
     this.setState({name:e.target.value})
@@ -25,40 +25,66 @@ class Register extends Component {
   }
 
   handlePhone=e=>{
-    this.setState({phone:e.target.value})
+    if (String(e.target.value).length <= 10) {
+      this.setState({ phone: e.target.value });
+    }
   }
 
   handleConfirmPassword=e=>{
     this.setState({confirmPassword:e.target.value})
   }
 
-  onSubmitSuccess=()=>{
-    const {email}=this.state
-    Cookies.set("auth-email",email,{expires:1})
+  handleChangeOtp = (otp) => {
+    this.setState({ otp });
+  };
+
+  handleModalClose=()=>{
+    this.setState({showModal:false});
   }
+
 
   onSubmit = async(e) => {
     e.preventDefault();
-    console.log("Submitted");
-    const {name,email,phone,password}=this.state 
+    const {email} =this.state 
     const response=await fetch("http://localhost:3000/register",{
       method:'POST',
       headers:{
         'Content-type':"application/json"
       },
-      body:JSON.stringify({name,email,phone,password})
+      body:JSON.stringify({email})
     })
     if(response.ok){
-      this.onSubmitSuccess()
+      this.setState({showModal:true})
     }
     const data=await response.json()
     console.log(data)
-    this.setState({name:'',email:'',password:'',confirmPassword:'',phone:'+91-',messageStatus:true,message:data.display_msg})
+    this.setState({messageStatus:true,message:data.display_msg})
   };
+
+  handleVerify = async (event) => {
+    event.preventDefault();
+    const { email, otp, name, phone, password} = this.state;
+    console.log(email);
+      const response = await fetch('http://localhost:3000/verify_otp', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email, otp, name, phone, password })
+      });
+      const data = await response.json();
+      if (response.ok) {
+        this.setState({ otpMessage: data.message,showModal:false, otp:'' });
+      } else {
+        this.setState({ otpMessage: data.error });
+      }
+    
+  };
+
   render(){
-    const {name,email,password,confirmPassword,messageStatus,phone,message}=this.state 
-    if(message=="Register successful, please login."){
-      return <Navigate to="/verify-otp"/>
+    const {name,email,password,confirmPassword,messageStatus,phone,message,showModal,otpMessage,otp}=this.state 
+    if(otpMessage=="Registration successful."){
+      return <Navigate to="/login"/>
     }
   return (
     <div className="RegisterContainer prevent-select" id="RegisterContainer">
@@ -84,7 +110,17 @@ class Register extends Component {
           </div>
           <div className="input-field">
             <FaPhoneAlt/>
-            <input type="number" placeholder="Mobile No" className="register-input" value={phone} onChange={this.handlePhone} min="1000000000" max="9999999999" required/>
+            <input
+              type="number"
+              id="subject"
+              placeholder="Enter your phone number"
+              className="user-input"
+              min="1000000000"
+              max="9999999999"
+              value={phone}
+              onChange={this.handlePhone}
+              required
+            />
           </div>
           <div className="input-field">
             <MdLock />
@@ -128,9 +164,31 @@ class Register extends Component {
           Already have an account? <Link to="/login">login</Link>
         </p>
       </div>
+      {showModal && (
+          <div className="modal">
+            <div className="modal-content">
+                <form className='verify-container' onSubmit={this.handleVerify}>
+                  <h2>OTP Authentication</h2>
+                  <p>if not received the OTP please check your <mark>SPAM</mark></p>
+                  <label>
+                    Enter OTP:
+                  </label>
+                  <div>
+                    <OtpInput value={otp} onChange={this.handleChangeOtp} numInputs={6} separator={<span>--</span>} inputStyle={{width:"28px",height:"30px",border:"1px solid black",borderRadius:"2px",textAlign:"center"}} />
+                  </div>
+                  <div>
+                    <button type="button" onClick={this.handleModalClose} className="close-btn">Close</button>
+                    <button type="submit" className='verify-container-button'>Verify OTP</button>
+                  </div>
+                </form>
+              {otpMessage.length!=0 && <p>{otpMessage}</p>}
+            </div>
+          </div>
+      )}
     </div>
   );
   }
 }
 
 export default Register;
+

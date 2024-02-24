@@ -56,7 +56,7 @@ class ResetPassword extends Component {
     const { newPassword, message,messageStatus } = this.state;
     return (
       <div className='change-password-container'>
-         <img src="src/assets/change-password.jpg" alt="change-password" className='change-password-image'/>
+         <img src="src/assets/change-password.webp" alt="change-password" className='change-password-image'/>
         <form onSubmit={this.handleSubmit} className='change-password-form-container'>
             <h1 className='change-password-heading'>Reset Password</h1>
             <p className='change-password-description'>Enter your new Password!</p>
