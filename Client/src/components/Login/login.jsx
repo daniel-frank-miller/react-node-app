@@ -25,7 +25,7 @@ class Login extends Component{
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({email,password})
-      });      
+      });
       const data = await response.json();
       console.log(data);
       if(response.ok){

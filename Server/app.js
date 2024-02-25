@@ -31,12 +31,12 @@ connection.connect((err) => {
   console.log('Connected to MySQL database');
 });
 
-const backendUrl = 'http://178.16.139.165:3000'; 
-app.use('/', createProxyMiddleware({ 
-    target: backendUrl,
-    changeOrigin: true,
-    secure: false
-}));
+// const backendUrl = 'http://178.16.139.165:3000'; 
+// app.use('/', createProxyMiddleware({ 
+//     target: backendUrl,
+//     changeOrigin: true,
+//     secure: false
+// }));
 
 const authenticateToken = (request, response, next) => {
   let jwtToken;
