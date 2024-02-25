@@ -162,3 +162,27 @@
   background-color: gray;  
   border: none; 
 }
+
+/* CSS for the details container */
+.details-container {
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+/* CSS for the summary inside the details container */
+.question {
+  outline: none; /* Remove default focus outline */
+}
+
+/* CSS for the content inside the details container */
+.details-container[open] .answer {
+  animation: fadein 0.3s ease-in-out; /* Apply fade-in animation when details are open */
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0; /* Start with 0 opacity */
+  }
+  to {
+    opacity: 1; /* End with full opacity */
+  }
+}
