@@ -3,7 +3,7 @@ import paymentGateway from "/src/razorpay";
 import "/src/components/CookingProfile/cp.css";
 import Cookies from 'js-cookie';
 import {Component} from 'react'
-
+import { Navigate } from "react-router-dom";
 class CookingProfile extends Component{
   state = {
     name: '',
@@ -47,7 +47,7 @@ class CookingProfile extends Component{
     this.setState({familyMemberCount:e.target.value})
   }
 
-  render(){
+  renderSuccessView=()=>{
     const { name, location, recurring, dateTime, familyMemberCount } = this.state;
   return(
     <div className="singlePage">
@@ -118,11 +118,15 @@ class CookingProfile extends Component{
     </div>
   </div>
   )
+  }
+
+  render(){
+    if(Cookies.get("jwt_token")!==undefined){
+      return this.renderSuccessView()
+    }
+    return <Navigate to="/login"/>
 }
  
 }
-
-
-
 
 export default CookingProfile;

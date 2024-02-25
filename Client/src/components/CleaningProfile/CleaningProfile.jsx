@@ -3,9 +3,7 @@ import axios from "axios";
 import "/src/components/CleaningProfile/CleaningProfile.css";
 import { Component } from "react";
 import Cookies from "js-cookie";
-import paymentGateway from "/src/razorpay";
-
-
+import { Navigate } from "react-router-dom";
 class CleaningProfile extends Component{
   state={name:"",
   location:"",
@@ -22,18 +20,19 @@ class CleaningProfile extends Component{
       MUID: 'MUID' + Date.now(),
       transactionId: 'T' + Date.now(),
     };
+    const response = await axios.post('http://localhost:5000/api/payment', {
+      amount: data.amount,
+      number:data.number,
+    });
 
-    try {
-      const response = await axios.post('http://localhost:3000/api/payment/phonepe', { ...data });
-      console.log('Success:', response.data);
-    } catch (error) {
-      console.error('Error:', error);
+
+    if (response.data.redirectUrl) {
+      window.location.href = response.data.redirectUrl;
     }
   };
 
   handleSubmit = async(e) => {
     e.preventDefault();
-
     const {name,location,recurring,houseType,cleaningServiceType,dateTime}=this.state 
     const cleaningServicesDetails = {name,location,recurring,houseType,cleaningServiceType,dateTime};
     const response = await fetch("http://localhost:3000/cleaning_services", {
@@ -46,7 +45,7 @@ class CleaningProfile extends Component{
       })
       const data = await response;
       console.log(data);
-      paymentGateway(100);
+      this.handlePayment();
   };
 
   handleChange = (e) => {
@@ -69,9 +68,9 @@ class CleaningProfile extends Component{
     this.setState({dateTime:e.target.value})
   }
 
-  render(){
+  renderSuccessView=()=>{
     const {name,location,recurring,houseType,cleaningServiceType,dateTime}=this.state 
-    return (
+    return(
       <>
         <Navbar />
         <div className="cleaningProfile-container">
@@ -147,7 +146,14 @@ class CleaningProfile extends Component{
           </div>
         </div>
       </>
-    );
+    )
+  }
+
+  render(){
+      if(Cookies.get("jwt_token")!==undefined){
+        return this.renderSuccessView()
+      }
+      return <Navigate to="/login"/>
   }  
 }
 
