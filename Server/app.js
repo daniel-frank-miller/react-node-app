@@ -8,6 +8,7 @@ const { v4: uuidv4 } = require('uuid');
 const nodemailer = require('nodemailer');
 const handlePayment = require('./payment');
 const handlePaymentStatus = require("./paymentStatus");
+const { createProxyMiddleware } = require('http-proxy-middleware');
 
 const app = express();
 app.use(express.json());
@@ -20,20 +21,6 @@ const connection = mysql.createConnection({
   database: process.env.DB_NAME
 });
 
-
-
-const { createProxyMiddleware } = require('http-proxy-middleware');
-
-const backendUrl = 'http://178.16.139.165:3000'; 
-
-app.use('/', createProxyMiddleware({ 
-    target: backendUrl,
-    changeOrigin: true,
-    secure: false
-}));
-
-
-
 const PORT = process.env.PORT || 3000;
 
 connection.connect((err) => {
@@ -44,6 +31,12 @@ connection.connect((err) => {
   console.log('Connected to MySQL database');
 });
 
+const backendUrl = 'http://178.16.139.165:3000'; 
+app.use('/', createProxyMiddleware({ 
+    target: backendUrl,
+    changeOrigin: true,
+    secure: false
+}));
 
 const authenticateToken = (request, response, next) => {
   let jwtToken;
