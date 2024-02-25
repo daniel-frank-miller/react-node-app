@@ -20,6 +20,20 @@ const connection = mysql.createConnection({
   database: process.env.DB_NAME
 });
 
+
+
+const { createProxyMiddleware } = require('http-proxy-middleware');
+
+const backendUrl = 'http://178.16.139.165:3000'; 
+
+app.use('/', createProxyMiddleware({ 
+    target: backendUrl,
+    changeOrigin: true,
+    secure: false
+}));
+
+
+
 const PORT = process.env.PORT || 3000;
 
 connection.connect((err) => {
