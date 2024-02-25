@@ -20,7 +20,7 @@ class ContactUs extends Component {
   onSubmit = async(e) => {
     e.preventDefault();
     const {name,email,phone,message}=this.state
-    const response = await fetch("http://localhost:3000/contactus", {
+    const response = await fetch("http://178.16.139.165:3000/contactus", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

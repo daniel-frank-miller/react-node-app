@@ -12,7 +12,7 @@ class ForgotPassword extends Component{
     forgotBtn=async e=>{
         e.preventDefault()
         let {email}=this.state 
-        const response = await fetch("http://localhost:3000/forgot_password", {
+        const response = await fetch("http://178.16.139.165:3000/forgot_password", {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json'
