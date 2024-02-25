@@ -14,7 +14,6 @@ import Reviews from '/src/components/Reviews/reviews';
 import Gallery from "./components/Gallery/gallery.jsx";
 import ForgotPassword from "./components/ForgotPassword/forgot.jsx";
 import ResetPassword from "./components/ResetPassword/reset.jsx";
-import OTPVerification from "./components/OTPVerification/otp.jsx";
 import AdminLogin from "./components/AdminLogin/admin.jsx";
 class App extends Component {
   render() {
@@ -32,7 +31,6 @@ class App extends Component {
           <Route exact path="/signup" element={<Signup />} />
           <Route exact path="/forgot_password" element={<ForgotPassword/>}/>
           <Route exact path="/reset_password" element={<ResetPassword/>}/>
-          <Route exact path="/verify-otp" element={<OTPVerification/>}/>
           <Route exact path="/admin_login" element={<AdminLogin/>}/>
           <Route exact path="/gallery" element={<Gallery/>}/>
           <Route exact path="/reviews" element={<Reviews/>}/>
