@@ -31,7 +31,7 @@ const Header = () => {
                             <div className="contact-info">
                                 <a href="#"> <div ><LuPhoneCall /></div>+91 81255 22213</a>
                                 <span>|</span>
-                                <a href="mailto:example@example.com"> <div><MdEmail /></div>homaidserviceshyd@gmail.com</a>
+                                <a href="mailto:homaidserviceshyd@gmail.com"> <div><MdEmail /></div>homaidserviceshyd@gmail.com</a>
                             </div>
                         </div>
                         <div className="col-lg-6 col-md-6 col-sm-12">
