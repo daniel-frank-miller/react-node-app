@@ -374,7 +374,21 @@ app.post('/verify_otp', async (req, res) => {
   });
 });
 
-
+app.post("/contactus",async(req,res)=>{
+  const { name, email, phone, message} = req.body;
+  const addCookingUserQuery = `
+    INSERT INTO contactus (name, email, phone, message)
+    VALUES (?, ?, ?, ?)
+  `;
+  connection.query(addCookingUserQuery, [name, email, phone, message], (error, results) => {
+    if (error) {
+      console.error('Error adding contact us:', error);
+      res.status(500).send({display_msg:'Error adding contact us'});
+      return;
+    }
+    res.send({display_msg:"Contacted successfully, our agent will connect with you!"});
+  });
+})
 
 app.post('/api/payment', handlePayment);
 
