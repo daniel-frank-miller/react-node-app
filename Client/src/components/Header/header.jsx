@@ -29,9 +29,9 @@ const Header = () => {
                     <div className="row">
                         <div className="contact col-lg-6 col-md-6 col-sm-12">
                             <div className="contact-info">
-                                <a href="#"> <div ><LuPhoneCall /></div> 9391140452, 7306471212</a>
+                                <a href="#"> <div ><LuPhoneCall /></div>+91 81255 22213</a>
                                 <span>|</span>
-                                <a href="mailto:example@example.com"> <div><MdEmail /></div> example@example.com</a>
+                                <a href="mailto:example@example.com"> <div><MdEmail /></div>homaidserviceshyd@gmail.com</a>
                             </div>
                         </div>
                         <div className="col-lg-6 col-md-6 col-sm-12">
