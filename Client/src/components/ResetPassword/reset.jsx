@@ -47,8 +47,12 @@ class ResetPassword extends Component {
 
   renderInitialView=()=>(
       <div className='initial-container'>
-        <img src="/src/assets/reset-password-inmail-msg.webp" alt="reset-in-mail" className='reset-in-mail-image'/>
-        <h1 className='reset-initial-info-description'>Please, check your mail to reset your password. If not, <br/>please check your <mark>spam folder.</mark></h1>
+        <div className='initial-container-1'>
+          <img src="/src/assets/reset-password-inmail-msg.webp" alt="reset-in-mail" className='reset-in-mail-image'/>
+        </div>
+        <div className='initial-container-2'>
+          <h1 className='reset-initial-info-description'>Please, check your mail to reset your password. If not, please check your <mark>spam folder.</mark></h1>
+        </div>
       </div>
   )
 

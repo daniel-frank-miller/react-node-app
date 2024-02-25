@@ -1,15 +1,19 @@
 .initial-container{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
     height: 100vh;
+    width: 100vw;
     text-align: center;
 }
-
+.initial-container-1, .initial-container-2{
+    padding: 2%;
+    width: 50%;
+}
 .reset-in-mail-image{
-    height: 350px;
-    width: 350px;
+    width: 80%;
+    background-size: cover;
 }
 
 .reset-initial-info-description{
@@ -81,11 +85,58 @@
     border: 2px solid gray;
 }
 
-@media screen and (max-width:767px){
+@media screen and (max-width: 500px) {
+    .change-password-container{
+        width: 100vw;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .change-password-form-container{
+        width: 90%;
+        max-width: 350px;
+    }
+    .change-password-input{
+        width: 90%;
+    }
+    .change-password-btn{
+        min-width: 80px;
+        width: 25%;
+    }
+}
+
+@media screen and (max-width:700px){
+    .initial-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+        text-align: center;
+    }
+
+    .initial-container-1, .initial-container-2{
+        padding: 2%;
+        width: 100%;
+    }
+    
+    .reset-in-mail-image{
+        width: 290px;
+        height: 290px;
+        background-size: cover;
+    }
+
     .change-password-container{
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    .reset-initial-info-description{
+        font-size: 20px;
+        font-weight: 400;
     }
 
     .reset-in-mail-image{
@@ -96,6 +147,25 @@
     .change-password-image{
         margin: 10px;
         height: 250px;
-        width: 280px;
+        width: 240px;
+        background-size: cover;
+    }
+}
+
+@media screen and (min-width: 700px) and (max-width: 900px){
+    .change-password-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 100vh;
+        padding-top: 2%;
+        padding-bottom: 2%;
+    }
+
+    .change-password-image {
+        height: 300px;
+        width: 300px;
+        background-size: cover;
     }
 }
