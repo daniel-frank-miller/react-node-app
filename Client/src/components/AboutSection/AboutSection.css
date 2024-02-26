@@ -2,7 +2,8 @@
   min-height: 100vh;
 }
 .aboutMain-Container{
-  background-image: url("/src/assets/AboutUs-bg.jpeg");
+  /* background-image: url("/src/assets/AboutUs-bg.jpeg"); */
+  background-image: url("../../assets/about-bg.webp");
   background-size: cover;
   height: 90vh;
   display: flex;
