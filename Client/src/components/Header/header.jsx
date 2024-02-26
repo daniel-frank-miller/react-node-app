@@ -37,17 +37,20 @@ const Header = () => {
                         <div className="col-lg-6 col-md-6 col-sm-12">
                             <div className="social-icons">
                                 <div className="container-icons">
-                                    <a className="icon" href="#"><FaSquareInstagram /></a>
-                                    </div>
+                                    <a className="icon" href="https://www.instagram.com/homaid_service/"><FaSquareInstagram /></a>
+                                </div>
+                                {/* <div className="container-icons">
+                                    <a className="icon" href=""><FaSquareTwitter /></a>
+                                </div> */}
                                 <div className="container-icons">
-                                <a className="icon" href="#"><FaSquareTwitter /></a>
+                                    <a className="icon" href="https://www.facebook.com/profile.php?id=61552315005159"><FaFacebookSquare /></a>
                                 </div>
                                 <div className="container-icons">
-                                <a className="icon" href="#"><FaFacebookSquare /></a>
+                                    <a className="icon" href="https://www.youtube.com/@Homaid-hc9ik"><FaSquareYoutube/></a>
                                 </div>
-                                <div className="container-icons">
-                                <a className="icon" href="#"><FaWhatsappSquare /></a>
-                                </div>
+                                {/* <div className="container-icons">
+                                    <a className="icon" href="#"><FaWhatsappSquare /></a>
+                                </div> */}
                             </div>
                         </div>
                     </div>
