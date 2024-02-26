@@ -30,7 +30,7 @@ const Header = () => {
                         <div className="contact col-lg-6 col-md-6 col-sm-12">
                             <div className="contact-info">
                                 <a href="#"> <div ><LuPhoneCall /></div>+91 81255 22213</a>
-                                <span>|</span>
+                                <span className="header-division">|</span>
                                 <a href="mailto:homaidserviceshyd@gmail.com"> <div><MdEmail /></div>homaidserviceshyd@gmail.com</a>
                             </div>
                         </div>

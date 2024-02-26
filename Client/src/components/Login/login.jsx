@@ -19,7 +19,7 @@ class Login extends Component{
     e.preventDefault();
     console.log("Submitted");
     const {email,password}=this.state 
-    const response = await fetch("http://178.16.139.165:3000/login", {
+    const response = await fetch("https://178.16.139.165:3000/login", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
