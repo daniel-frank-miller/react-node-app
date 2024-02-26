@@ -49,24 +49,6 @@ const AboutSection = () => {
           <div>
             <img
               src="/src/assets/draft-team-img.webp"
-              alt="name2"
-              className="team-img"
-            />
-            <p className="team-name">Name</p>
-            <p className="teamMember-position">----Position----</p>
-          </div>
-          <div>
-            <img
-              src="/src/assets/draft-team-img.webp"
-              alt="name3"
-              className="team-img"
-            />
-            <p className="team-name">Name</p>
-            <p className="teamMember-position">----Position----</p>
-          </div>
-          <div>
-            <img
-              src="/src/assets/draft-team-img.webp"
               alt="name4"
               className="team-img"
             />

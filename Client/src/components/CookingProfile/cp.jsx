@@ -17,7 +17,7 @@ class CookingProfile extends Component{
     // Handle form submission logic here
     const { name, location, recurring, dateTime, familyMemberCount } = this.state;
     const cookingServicesDetails = { name, location, recurring, familyMemberCount, dateTime };
-    const response = await fetch("http://localhost:3000/cooking_services", {
+    const response = await fetch("http://178.16.139.165:3000/cooking_services", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

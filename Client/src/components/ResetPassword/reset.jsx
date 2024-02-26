@@ -33,7 +33,7 @@ class ResetPassword extends Component {
     e.preventDefault();
     const { email, token, newPassword } = this.state;
     
-      const response = await fetch('http://localhost:3000/reset_password', {
+      const response = await fetch('http://178.16.139.165:3000/reset_password', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
