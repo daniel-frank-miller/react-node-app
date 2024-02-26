@@ -162,3 +162,7 @@
     height: 100%;
   }
 }
+
+.list-item:hover{
+  color: white;
+}

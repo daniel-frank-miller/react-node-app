@@ -45,7 +45,7 @@ const Home = () => {
       <Hero/>
       <About />
       <Services />
-      <Testimonals />
+      <Testimonals/>
       <Rating />
       <Quotation/>
       <Footer />
