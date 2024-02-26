@@ -7,6 +7,8 @@ import { FaSquareInstagram } from "react-icons/fa6";
 import { FaSquareTwitter } from "react-icons/fa6";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaWhatsappSquare } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa";
+
 const Header = () => {
     
         const [isSticky, setIsSticky] = useState(false);
@@ -39,18 +41,18 @@ const Header = () => {
                                 <div className="container-icons">
                                     <a className="icon" href="https://www.instagram.com/homaid_service/"><FaSquareInstagram /></a>
                                 </div>
-                                {/* <div className="container-icons">
+                                <div className="container-icons">
                                     <a className="icon" href=""><FaSquareTwitter /></a>
-                                </div> */}
+                                </div> 
                                 <div className="container-icons">
                                     <a className="icon" href="https://www.facebook.com/profile.php?id=61552315005159"><FaFacebookSquare /></a>
                                 </div>
                                 <div className="container-icons">
-                                    <a className="icon" href="https://www.youtube.com/@Homaid-hc9ik"><FaSquareYoutube/></a>
+                                    <a className="icon" href="https://www.youtube.com/@Homaid-hc9ik"><FaYoutube/></a>
                                 </div>
-                                {/* <div className="container-icons">
+                                 <div className="container-icons">
                                     <a className="icon" href="#"><FaWhatsappSquare /></a>
-                                </div> */}
+                                </div> 
                             </div>
                         </div>
                     </div>
