@@ -14,10 +14,16 @@ const Hero = () => {
       setCurrentVideo(currentVideo === 1 ? 2 : 1);
     };
   return (
+    <>
     <div className="about-section">
         <div className="overlay"></div>
         <video src={currentVideo===1?video1:video2}  onEnded={handleVideoEnd} autoPlay  muted id="bg-video"/>
     </div>
+    <div className="about-section">
+        <div className="overlay"></div>
+        <video src={currentVideo===1?video2:video1}  onEnded={handleVideoEnd} autoPlay  muted id="bg-video"/>
+    </div>
+    </>
   )
 }
 

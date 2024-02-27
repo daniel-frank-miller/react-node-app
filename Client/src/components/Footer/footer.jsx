@@ -42,12 +42,12 @@ const Footer = () => {
           <ul className="social-container">
             <div className="social-handles">
               <a
-                href="http://linkedin.com/in/sadha-daryna-606b73245"
+                href="https://www.linkedin.com/company/homaid-services/about/"
                 className="social-media"
               >
                 <li className="list-item">LinkedIn</li>
               </a>
-              <a href="http://linkedin.com/in/sadha-daryna-606b73245">
+              <a href="https://www.linkedin.com/company/homaid-services/about/">
                 <FaLinkedin/>
               </a>
             </div>

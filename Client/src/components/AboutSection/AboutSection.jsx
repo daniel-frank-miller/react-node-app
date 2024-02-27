@@ -21,7 +21,6 @@ const AboutSection = () => {
         </h2>
         <div style={{width: "100%", textAlign: "center", paddingTop: "20px", paddingBottom: "20px"}}>
         <div style={{width: "90%", paddingLeft: "5%"}}>
-          <h2 className="homaidHeadingAbout">Welcome to HOMAID</h2>
           <p className="homaidParaAbout">At HOMAID, we are committed to enhancing the quality of your life by providing exceptional home services. 
           Our journey began with a simple yet profound idea to make your home a haven of comfort and convenience. HOMAID offers a range of services tailored to meet your unique needs. 
           From skilled cooks who can whip up culinary delights to reliable maids dedicated to maintaining a pristine living space, we are your trusted partners in home management.
