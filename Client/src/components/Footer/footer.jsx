@@ -1,3 +1,9 @@
+import { FaSquareInstagram } from "react-icons/fa6";
+import { FaSquareTwitter } from "react-icons/fa6";
+import { FaFacebookSquare } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+
 import "/src/components/Footer/footer.css";
 
 const Footer = () => {
@@ -42,9 +48,7 @@ const Footer = () => {
                 <li className="list-item">LinkedIn</li>
               </a>
               <a href="http://linkedin.com/in/sadha-daryna-606b73245">
-                <i
-                  className="fa-brands fa-linkedin-in"
-                ></i>
+                <FaLinkedin/>
               </a>
             </div>
             <div className="social-handles">
@@ -55,7 +59,7 @@ const Footer = () => {
                 <li className="list-item">Twitter</li>
               </a>
               <a href="https://twitter.com/Homaid471011">
-                <i className="fa-brands fa-twitter"></i>
+                <FaSquareTwitter />
               </a>
             </div>
             <div className="social-handles">
@@ -66,9 +70,7 @@ const Footer = () => {
                 <li className="list-item">Instagram</li>
               </a>
               <a href="https://www.instagram.com/homaid_service/">
-                <i
-                  className="fa-brands fa-instagram"
-                ></i>
+                <FaSquareInstagram/>
               </a>
             </div>
             <div className="social-handles">
@@ -79,7 +81,18 @@ const Footer = () => {
                 <li className="list-item">Facebook</li>
               </a>
               <a href="https://www.facebook.com/profile.php?id=61552265330728">
-                <i className="fa-brands fa-facebook"></i>
+                <FaFacebookSquare />
+              </a>
+            </div>
+            <div className="social-handles">
+              <a
+                href="https://www.youtube.com/@Homaid-hc9ik"
+                className="social-media"
+              >
+                <li className="list-item">Youtube</li>
+              </a>
+              <a href="https://www.youtube.com/@Homaid-hc9ik">
+                <FaYoutube/>
               </a>
             </div>
           </ul>
