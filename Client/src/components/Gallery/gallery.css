@@ -1,15 +1,20 @@
 .gallery-title {
   text-align: center;
   margin-bottom: 10px;
-  font-family: Roboto;
+  font-family: "Montserrat";
   padding: 20px;
-  color: black;
+  color: #00144f;
+  font-weight: bold;
   letter-spacing: 0.9px;
-  font-size: 20px;
+  font-size: 42px;
 }
 
 .gallery-section{
+  background-image: url("/src/assets/gallery-bg.webp");
   scroll-behavior: smooth;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
 }
 
 .foot-gap {
@@ -52,7 +57,8 @@
 }
 
 .album .img-big {
-  height: 50%;
+  height: 100%;
+  max-height: 510px;
   margin: 0 0 16px 0;
 }
 
@@ -68,8 +74,8 @@
   }
 
   .album .img {
-      max-width: 32.5%;
-      margin: 0;
+      max-width: 22.5%;
+      margin: 2px;
   }
 
   .album .responsive-container-block.bg {
@@ -79,12 +85,12 @@
   .album .responsive-container-block.img-cont {
       max-width: 100%;
       flex-direction: row;
-      justify-content: space-between;
+      justify-content: center;
   }
 
   .album .img.img-big {
-      max-width: 49%;
-      margin: 0;
+      max-width: 39%;
+      margin: 10px;
   }
 }
 
@@ -336,5 +342,20 @@ body {
 
   .wk-mobile-12 {
       width: 100%;
+  }
+}
+
+.img-sec{
+  max-height: 220px;
+  height: 100%;
+}
+
+.img-last{
+  height: 270px;
+}
+
+@media screen and (max-width:768px){
+  .img-sec{
+    min-height: 280px;
   }
 }

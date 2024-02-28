@@ -9,9 +9,11 @@ const Reviews = () => {
             <h2 className="customReviewHeading">Customer Reviews</h2>
             <div className="review-container">
                 <div className="review">
-                    <div className="avatar"></div>
+                    <div className="avatar">
+                        <img src="/src/assets/girl-1-icon.webp" alt="icon" className="icon"/>
+                    </div>
                         <div className="content-reviews">
-                            <h3 className="reviewerName">John Doe</h3>
+                            <h3 className="reviewerName">Dhanya</h3>
                             <div className="rating">
                                 <span className="star">&#9733;</span>
                                 <span className="star">&#9733;</span>
@@ -23,9 +25,11 @@ const Reviews = () => {
                         </div>
                     </div>
                     <div className="review">
-                        <div className="avatar"></div>
+                    <div className="avatar">
+                        <img src="/src/assets/girl-2-icon.webp" alt="icon" className="icon"/>
+                    </div>
                         <div className="content-reviews">
-                            <h3 className="reviewerName">John Doe</h3>
+                            <h3 className="reviewerName">Sadha</h3>
                             <div className="rating">
                                 <span className="star">&#9733;</span>
                                 <span className="star">&#9733;</span>
@@ -37,9 +41,11 @@ const Reviews = () => {
                         </div>
                     </div>
                     <div className="review">
-                        <div className="avatar"></div>
+                    <div className="avatar">
+                        <img src="/src/assets/men-1-icon.webp" alt="icon" className="icon"/>
+                    </div>
                         <div className="content-reviews">
-                            <h3 className="reviewerName">Jane Smith</h3>
+                            <h3 className="reviewerName">Daryna</h3>
                             <div className="rating">
                                 <span className="star">&#9733;</span>
                                 <span className="star">&#9733;</span>
@@ -51,7 +57,9 @@ const Reviews = () => {
                         </div>
                     </div>
                     <div className="review">
-                        <div className="avatar"></div>
+                    <div className="avatar">
+                        <img src="/src/assets/girl-1-icon.webp" alt="icon" className="icon"/>
+                    </div>
                         <div className="content-reviews">
                             <h3 className="reviewerName">Sriya</h3>
                             <div className="rating">
@@ -65,7 +73,9 @@ const Reviews = () => {
                         </div>
                     </div>
                     <div className="review">
-                        <div className="avatar"></div>
+                    <div className="avatar">
+                        <img src="/src/assets/men-2-icon.webp" alt="icon" className="icon"/>
+                    </div>
                         <div className="content-reviews">
                             <h3 className="reviewerName">Sandeep</h3>
                             <div className="rating">
@@ -81,7 +91,9 @@ const Reviews = () => {
                         </div>
                     </div>
                     <div className="review">
-                        <div className="avatar"></div>
+                    <div className="avatar">
+                        <img src="/src/assets/men-1-icon.webp" alt="icon" className="icon"/>
+                    </div>
                         <div className="content-reviews">
                             <h3 className="reviewerName">Dhruva</h3>
                             <div className="rating">
@@ -97,7 +109,9 @@ const Reviews = () => {
                         </div>
                     </div>
                     <div className="review">
-                        <div className="avatar"></div>
+                    <div className="avatar">
+                        <img src="/src/assets/girl-2-icon.webp" alt="icon" className="icon"/>
+                    </div>
                         <div className="content-reviews">
                             <h3 className="reviewerName">Ananya</h3>
                             <div className="rating">
@@ -114,9 +128,11 @@ const Reviews = () => {
                         </div>
                     </div>
                     <div className="review">
-                        <div className="avatar"></div>
+                    <div className="avatar">
+                        <img src="/src/assets/men-1-icon.webp" alt="icon" className="icon"/>
+                    </div>
                         <div className="content-reviews">
-                            <h3 className="reviewerName">Ananya</h3>
+                            <h3 className="reviewerName">Sudhan</h3>
                             <div className="rating">
                                 <span className="star">&#9733;</span>
                                 <span className="star">&#9733;</span>
@@ -132,7 +148,9 @@ const Reviews = () => {
                         </div>
                     </div>
                     <div className="review">
-                        <div className="avatar"></div>
+                    <div className="avatar">
+                        <img src="/src/assets/girl-1-icon.webp" alt="icon" className="icon"/>
+                    </div>
                         <div className="content-reviews">
                             <h3 className="reviewerName">Nishita</h3>
                             <div className="rating">

@@ -368,12 +368,12 @@ app.post('/verify_otp', async (req, res) => {
 });
 
 app.post("/contactus",async(req,res)=>{
-  const { name, email, phone, message} = req.body;
+  const { firstName,lastName,email,phone,message} = req.body;
   const addCookingUserQuery = `
-    INSERT INTO contactus (name, email, phone, message)
-    VALUES (?, ?, ?, ?)
+    INSERT INTO contactus (first_name, last_name, email, phone, message)
+    VALUES (?, ?, ?, ?, ?)
   `;
-  connection.query(addCookingUserQuery, [name, email, phone, message], (error, results) => {
+  connection.query(addCookingUserQuery, [firstName,lastName,email,phone,message], (error, results) => {
     if (error) {
       console.error('Error adding contact us:', error);
       res.status(500).send({display_msg:'Error adding contact us'});

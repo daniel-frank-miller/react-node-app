@@ -43,7 +43,7 @@ const About = () => {
         </div>
         <div>
           <img
-            src="/src/assets/car-4.webp"
+            src="/src/assets/gallery-image13.webp"
             alt="Image 4"
             className="carousel-img"
           />
@@ -67,7 +67,6 @@ const About = () => {
   };
   return (
     <div className="section2 prevent-select" id="aboutUs">
-      <div className="carousel">{simpleSlider()}</div>
       <div className="section2-content">
         <h1 className="section2-heading ">About Homaid</h1>
         <p className="section2-subtitle">
@@ -83,6 +82,7 @@ const About = () => {
           </button>
         </Link>
       </div>
+      <div className="carousel">{simpleSlider()}</div>
     </div>
   );
 };

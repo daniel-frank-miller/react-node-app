@@ -1,9 +1,11 @@
 .section2 {
-  height: 95vh;
+  height: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #000;
+  background: #2BC0E4;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #EAECC6, #2BC0E4);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #EAECC6, #2BC0E4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   padding-top: 10px;
 }
 @media screen and (max-width: 768px) {
@@ -15,15 +17,20 @@
 }
 .carousel {
   width: 40%;
+  background-color: transparent;
+  padding-left: 0px;
 }
 
 @media screen and (max-width: 786px) {
   .carousel {
-    width: 80%;
+    width: 70%;
+    padding: 10px;
   }
 }
+
 .carousel-img {
   width: 100%;
+  border-top-right-radius: 80px;
 }
 .section2-content {
   width: 40%;
@@ -37,16 +44,16 @@
 .section2-heading {
   font-family: "Roboto";
   font-size: 38px;
-  color: #ffffff;
+  color: black;
   padding: 10px;
   text-align: left;
 }
 .section2-subtitle {
   text-align: left;
   padding: 10px;
-  font-size: 22px;
+  font-size: 20px;
   font-family: "Noto Sans Glagolitic", sans-serif;
-  color: #969292;
+  color: black;
 }
 @media screen and (max-width:768px) {
   .section2-subtitle{
@@ -64,16 +71,43 @@
   border: none;
   border-radius: 20px;
   cursor: pointer;
-  margin-top: 50px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  margin-left: 10px;
 }
 
 .section-2-btn:hover {
   background: transparent;
-  color: #fff;
-  border: 0.5px solid #fff;
-  font-weight: 700;
+  border: 0.5px solid black;
 }
 .slick-next,
 .slick-prev {
   display: none !important;
+}
+
+.carousel-img{
+  height: 450px;
+  border-radius: 0px;
+  border-top-right-radius: 95px;
+  background-color: transparent;
+}
+
+@media screen and (max-width:768px){
+  .carousel-img{
+    height: 250px;
+  }
+  .section2-heading{
+    font-size: 28px;
+  }
+  .section2-subtitle{
+    font-size: 12px;
+  }
+  .section-2-btn{
+    margin: 0px;
+    padding: 5px;
+    margin-bottom: 10px;
+    width: 120px;
+    margin-left: 5px;
+    height: 30px;
+  }
 }

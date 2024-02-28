@@ -1,3 +1,4 @@
+
 .section3 {
   background-image: url("/src/assets/30.webp");
   padding: 50px 0px;
@@ -113,7 +114,7 @@
   text-decoration: none;
   background: #181818;
   color: #fff;
-  font-weight: 600;
+  font-weight: 800;
   font-size: 16px;
   border-radius: 5px;
   cursor: pointer;
@@ -175,8 +176,12 @@
   align-items: center;
   width: 100%;
   text-align: center;
-  margin: 10px 0;
-}
+  margin-top: 0px;
+  background: #FFEFBA;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #FFFFFF, #FFEFBA);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #FFFFFF, #FFEFBA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+} 
 
 .blog-img {
   margin: 5px 0;
@@ -220,6 +225,37 @@
   align-self: flex-start;
 }
 
+.cleaning-blogs-book-now-button{
+  background-color: rgb(58, 58, 58);
+  color: white;
+  border: 2px solid rgb(58, 58, 58);
+  border-radius: 6px;
+  padding: 13px;
+  width: 120px;
+  margin: 10px;
+  cursor: pointer;
+  outline: none;
+}
+
+.cleaning-blogs-book-now-button:hover{
+  box-shadow: 1px 3px 10px gray;
+}
+
+.cooking-blogs-book-now-button{
+  background-color: rgb(58, 58, 58);
+  color: white;
+  border: 2px solid rgb(58, 58, 58);
+  border-radius: 6px;
+  padding: 13px;
+  width: 120px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.cooking-blogs-book-now-button:hover{
+  box-shadow: 1px 3px 10px gray;
+}
+
 /*Extra Small Devices - <576px*/
 @media screen and (max-width: 576px) {
   .blog-title {
@@ -227,10 +263,15 @@
     font-size: 32px;
   }
   .blog-subtitle {
-    font-size: 20px;
+    font-size: 16px;
   }
   .blog-Container2 {
     display: none;
+  }
+  .cleaning-blogs-book-now-button , .cooking-blogs-book-now-button{
+    height: 35px;
+    padding: 5px;
+    text-align: center;
   }
 }
 
@@ -270,9 +311,10 @@
   }
   .blog-title {
     font-size: 45px;
+    padding: 10px;
   }
   .blog-subtitle {
-    font-size: 24px;
+    font-size: 20px;
   }
   .mobileview-blog-carousel {
     display: none;
@@ -291,38 +333,4 @@
   .cookingblog1{
     order: 1;
   }
-}
-
-.cleaning-blogs-book-now-button{
-  background-color: transparent;
-  color: black;
-  border: 2px solid #0e1a18;
-  border-radius: 6px;
-  padding: 13px;
-  width: 120px;
-  margin: 10px;
-  cursor: pointer;
-}
-
-.cleaning-blogs-book-now-button:hover{
-  border: 0px solid;
-  background-color: #0e1a18;
-  color: white;
-}
-
-.cooking-blogs-book-now-button{
-  background-color: transparent;
-  color: black;
-  border: 2px solid #0e1a18;
-  border-radius: 6px;
-  padding: 13px;
-  width: 120px;
-  margin: 10px;
-  cursor: pointer;
-}
-
-.cooking-blogs-book-now-button:hover{
-  border: 0px solid;
-  background-color: #0e1a18;
-  color: white;
 }

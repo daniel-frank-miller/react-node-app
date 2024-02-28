@@ -11,11 +11,10 @@ const ServicesSection = () => {
         <h1 className="ServicesSection-heading">Services</h1>
         <div className="ServicesSection-cards-container">
           <div className="ServicesSection-card-element">
-            <img
-              src="/src/assets/cooking-card-bg.webp"
-              alt="cooking image"
-              className="ServicesSection-card-image"
-            />
+          <div className="about-section">
+              <div className="overlay"></div>
+              <video src="/src/assets/cooking-vid.webm" autoPlay loop  muted id="bg-video"/>
+          </div>
             <div className="ServicesSection-content">
               <h1 className="ServicesSection-card-heading">Cooking</h1>
               <p className="ServicesSection-card-subtitle ">
@@ -30,11 +29,10 @@ const ServicesSection = () => {
             </div>
           </div>
           <div className="ServicesSection-card-element">
-            <img
-              src="/src/assets/cleaning-card-bg.webp"
-              alt="cleaning image"
-              className="ServicesSection-card-image"
-            />
+          <div className="about-section">
+              <div className="overlay"></div>
+              <video src="/src/assets/cleaning-vid.webm" autoPlay loop  muted id="bg-video"/>
+          </div>
             <div className="ServicesSection-content">
               <h1 className="ServicesSection-card-heading">Cleaning</h1>
               <p className="ServicesSection-card-subtitle ">

@@ -1,9 +1,20 @@
+*{
+  margin: 0px;
+  box-sizing: border-box;
+}
+
 .AboutSection-Container{
   min-height: 100vh;
 }
+
+.banner-image{
+  max-height:850px;
+  width: 100%;
+  margin: 0px;
+}
+
 .aboutMain-Container{
   /* background-image: url("/src/assets/AboutUs-bg.jpeg"); */
-  background-image: url("../../assets/about-bg.webp");
   background-size: cover;
   height: 90vh;
   display: flex;
@@ -59,21 +70,29 @@
   font-size: 30px;
   font-family: Arial, Helvetica, sans-serif;
   text-align: left;
+  
 }
 .homaidParaAbout{
   font-size: 18px;
   color: #000;
-  padding-top: 15px;
-  text-align: left;
+  padding-top: 10px;
+  text-align: justify;
+  text-justify: inter-word;
+  font-family: 'Gideon Roman';
+  font-weight: 400;
 }
+
 .TeamDetails{
+  margin: 0px;
   text-align: center;
-  padding: 10px 0;
+  background-image: url('/src/assets/about-us-bg.webp');
 }
 .TeamDetails-heading{
-  font-size: 35px;
-  font-family: 'Roboto';
+  font-size: 55px;
+  font-family: 'Merriweather';
   margin-bottom: 10px;
+  font-weight: 600;
+  color: rgb(0, 0, 99);
 }
 .members{
   display: flex;
@@ -147,7 +166,7 @@
   width: 50%;
 }
 .question{
-  font-size: 26px;
+  font-size: 24px;
   color: #000;
   font-weight: bold;
   width: 100%;

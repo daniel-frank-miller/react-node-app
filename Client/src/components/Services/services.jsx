@@ -138,9 +138,7 @@ const Services = () => {
         </div>
         <div className="mobileview-blog-carousel">{cleaningBlogSlider()}</div>
       </div>
-
-      <hr />
-
+      <hr/>
       <div className="blog-section prevent-select">
         <div className="blog-Container1 cookingblog1">
           <h1 className="blog-title">Cooking Blogs</h1>

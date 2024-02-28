@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import video1 from '../../assets/video1.webm'
-import video2 from '../../assets/video2.webm'
+import video1 from '../../assets/cooking-vid.webm'
+import video2 from '../../assets/cleaning-vid.webm'
 
 import './hero.css'
 
@@ -14,16 +14,16 @@ const Hero = () => {
       setCurrentVideo(currentVideo === 1 ? 2 : 1);
     };
   return (
-    <>
+    <div className='video-section'>
     <div className="about-section">
         <div className="overlay"></div>
-        <video src={currentVideo===1?video1:video2}  onEnded={handleVideoEnd} autoPlay  muted id="bg-video"/>
+        <video src={video1}  onEnded={handleVideoEnd} autoPlay loop  muted id="bg-video"/>
     </div>
     <div className="about-section">
         <div className="overlay"></div>
-        <video src={currentVideo===1?video2:video1}  onEnded={handleVideoEnd} autoPlay  muted id="bg-video"/>
+        <video src={video2}  onEnded={handleVideoEnd} autoPlay loop  muted id="bg-video"/>
     </div>
-    </>
+    </div>
   )
 }
 

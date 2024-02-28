@@ -9,15 +9,10 @@ const AboutSection = () => {
   return (
     <div className="AboutSection-Container prevent-select">
       <Navbar style={customNavbar} />
-      <div className="aboutMain-Container">
-        <div className="about-content">
-          <h1 className="about-title">About Us</h1>
-          <p className="about-subtitle">Here is little bit about us</p>
-        </div>
-      </div>
+      <img src="/src/assets/about-us-banner.webp" alt="about-banner" className="banner-image"/>
       <div className="TeamDetails">
         <h2 className="TeamDetails-heading">
-          Welcome to Homaid, where your home is our priority.
+          Welcome to HOMAID
         </h2>
         <div style={{width: "100%", textAlign: "center", paddingTop: "20px", paddingBottom: "20px"}}>
         <div style={{width: "90%", paddingLeft: "5%"}}>

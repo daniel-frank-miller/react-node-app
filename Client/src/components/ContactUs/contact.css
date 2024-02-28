@@ -1,5 +1,6 @@
 .singlePage {
   height: 100vh;
+  scroll-behavior: smooth;
 }
 .contactus-container {
   display: flex;
@@ -7,21 +8,18 @@
   align-items: center;
   padding: 20px;
   min-height: 91.3%;
-  background: url("/src/assets/profilebg.webp");
+  background-image: url('/src/assets/contact-us-bg.webp');
   background-size: cover;
+  width: 100%;
+  opacity: 0.8;
 }
 .contactus-title {
-  font-size: 32px;
-  font-family: "Bree Serif";
-  color: #000;
+  font-size: 48px;
+  font-family: "Montserrat";
+  color: #00144f;
+  font-weight: 800;
 }
-.contactus-subtitle {
-  color: #000;
-  font-size: 20px;
-  margin-top: 15px;
-  width: 70%;
-  text-align: center;
-}
+
 input[type="number"] {
   -moz-appearance: textfield;
 }
@@ -37,7 +35,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 .contactus-content {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   height: 100%;
   width: 100%;
@@ -51,33 +49,46 @@ input[type="number"]::-webkit-outer-spin-button {
     display: none;
   }
 }
+
+.submit-btn-container{
+  text-align: center;
+}
+
 .contactus-form {
-  background-image: radial-gradient(rgb(221, 232, 232), #a2dbdb);
-  border: 1px solid #000;
-  border-radius: 10px;
-  width: 40%;
-  max-width: 500px;
+  background-color: rgba(255, 255, 255, 0.2);/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border: 0px solid #000;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  min-width: 700px;
+  width: 80%;
   padding: 20px 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
   margin-top: 45px;
 }
 
 @media screen and (max-width:768px){
   .contactus-form{
-    width: 80%;
+    flex-direction: column;
+    width: 100%;
+    min-width: 300px;
   }
 }
 .user-input {
-  border: 0;
-  outline: 0;
+  border: 0px solid;
   margin-left: 10px;
   font-size: 16px;
-  color: #0e564c;
+  color: black;
   background-color: transparent;
-  font-family: "Bree Serif";
+  font-family: "Montserrat";
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 18px;
+  font-weight: 400;
 }
 
 .submit-form {
@@ -91,8 +102,57 @@ input[type="number"]::-webkit-outer-spin-button {
   font-family: "Bree Serif";
   cursor: pointer;
   margin-top: 10px;
+  text-align: center;
 }
 .submit-form:hover {
   background-color: #205962;
   font-weight: bold;
+}
+.contact-us-input-field{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width:50%;
+}
+
+.contact-us-input-field-message{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 100%;
+}
+
+.user-input:hover{
+  border: 0px;
+}
+
+.input-label{
+  color: black;
+  font-family: 'Montserrat';
+  font-weight: 600;
+  padding: 10px;
+}
+
+.message-user-input{
+  border: 1px solid black;
+  font-family: 'Montserrat';
+  padding: 10px;
+  background-color: transparent;
+}
+
+
+.user-input:focus{
+  outline: none;
+  border: none;
+}
+
+.submit-btn-container{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width:768px){
+  .contact-us-input-field{
+    width: 100%;
+  }
 }
