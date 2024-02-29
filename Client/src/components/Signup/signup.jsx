@@ -8,6 +8,8 @@ import { Component } from "react";
 import { Navigate } from "react-router-dom";
 import { FaPhoneAlt } from "react-icons/fa";
 import OtpInput from 'react18-input-otp';
+import Navbar from '../Navbar/navbar'
+
 
 class Register extends Component {
   state={name:'',email:'',password:'',confirmPassword:'',message:'',phone:'',messageStatus:false, showModal: false,otp: '',otpMessage: ''}
@@ -87,6 +89,8 @@ class Register extends Component {
       return <Navigate to="/login"/>
     }
   return (
+    <>
+    <Navbar/>
     <div className="RegisterContainer prevent-select" id="RegisterContainer">
       <div className="RegisterContainer-leftContent">
         <h1 className="RegisterContainer-heading">Welcome to Homaid</h1>
@@ -186,6 +190,7 @@ class Register extends Component {
           </div>
       )}
     </div>
+    </>
   );
   }
 }

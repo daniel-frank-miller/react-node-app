@@ -35,7 +35,7 @@ const Navbar = () => {
     };
   }, []);
 
-  const navbarClassName = scrolling ? "navbar scrolled" : "navbar";
+  const navbarClassName = scrolling ? "navbar scrolled" : "navbar scrolled";
 
   const toggleLogout=()=>{
     setMenuOpen(!menuOpen);

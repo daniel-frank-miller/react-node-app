@@ -176,11 +176,8 @@
   align-items: center;
   width: 100%;
   text-align: center;
-  margin-top: 0px;
-  background: #FFEFBA;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #FFFFFF, #FFEFBA);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #FFFFFF, #FFEFBA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  
+ background-image: url("/src/assets/blogs-bg.webp");
 } 
 
 .blog-img {
@@ -191,6 +188,7 @@
 .blog-subtitle {
   text-align: justify;
   padding: 10px;
+  color: black;
 }
 .mobileview-blog-carousel {
   width: 95%;
@@ -231,10 +229,12 @@
   border: 2px solid rgb(58, 58, 58);
   border-radius: 6px;
   padding: 13px;
-  width: 120px;
+  width: 150px;
   margin: 10px;
   cursor: pointer;
   outline: none;
+  height: 55px;
+  margin-bottom: 20px;
 }
 
 .cleaning-blogs-book-now-button:hover{
@@ -247,9 +247,11 @@
   border: 2px solid rgb(58, 58, 58);
   border-radius: 6px;
   padding: 13px;
-  width: 120px;
+  width: 150px;
   margin: 10px;
   cursor: pointer;
+  height: 55px;
+  margin-bottom: 20px;
 }
 
 .cooking-blogs-book-now-button:hover{

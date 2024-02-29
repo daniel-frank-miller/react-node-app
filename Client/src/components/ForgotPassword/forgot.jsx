@@ -35,9 +35,9 @@ class ForgotPassword extends Component{
                 <form onSubmit={this.forgotBtn} className="forgot-form-container">
                     <h1 className="forgot-head">Forgot Password</h1>
                     <p className="forgot-description">You can reset your password here!</p>
-                    <input type="email" placeholder="Enter Email" value={email} onChange={this.handleEmail} className="forgot-input-email" required/>
+                    <input type="email" placeholder="Enter Email ID" value={email} onChange={this.handleEmail} className="forgot-input-email" required/>
                     {messageStatus&&<p className="error-msg">* {message}</p>}
-                    <button type="submit" className="forgot-btn">Send Confirmation Mail</button>
+                    <button type="submit" className="forgot-btn">Submit</button>
                 </form>
             </div>
         )   

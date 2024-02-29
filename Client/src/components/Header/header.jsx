@@ -31,9 +31,9 @@ const Header = () => {
                     <div className="row">
                         <div className="contact col-lg-6 col-md-6 col-sm-12">
                             <div className="contact-info">
-                                <a href="#"> <div ><LuPhoneCall /></div>+91 81255 22213</a>
+                                <a href="#"> <div><LuPhoneCall /></div><p className="contact-info-mobile-number">+91 81255 22213</p></a>
                                 <span className="header-division">|</span>
-                                <a href="mailto:homaidserviceshyd@gmail.com"> <div><MdEmail /></div>homaidserviceshyd@gmail.com</a>
+                                <a href="mailto:homaidserviceshyd@gmail.com"> <div><MdEmail /></div><p className="contact-info-email">homaidserviceshyd@gmail.com</p></a>
                             </div>
                         </div>
                         <div className="col-lg-6 col-md-6 col-sm-12">

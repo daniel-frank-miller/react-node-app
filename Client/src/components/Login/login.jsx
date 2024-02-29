@@ -1,12 +1,11 @@
 import "/src/components/Login/login.css";
-import { MdOutlineMailLock } from "react-icons/md";
-import { MdLock } from "react-icons/md";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import Cookies from "js-cookie";
 import {Component} from 'react';
 import { Navigate } from "react-router-dom";
+import Navbar from '../Navbar/navbar'
 
 class Login extends Component{
   state={email:'',password:'',loginSuccessStatus:false,messageStatus:false,message:''}
@@ -58,29 +57,23 @@ class Login extends Component{
       return <Navigate to="/"/>
     }
     return (
+      <>
+      <Navbar/>
       <div className="LoginContainer prevent-select" id="LoginContainer">
-        <div className="loginContainer-leftContent">
-          <h1 className="loginContainer-heading">Welcome to Homaid</h1>
-          <p className="loginContainer-subtitle">
-            Cleanliness meets convenience and flavors come to life! Let us
-            transform your space into a heaven of freshness and deliver delectable
-            delights right to your door. Experience the magic of Homaid Where Home
-            Feels Heavenly.
-          </p>
-        </div>
+        <h2 className="login-tagline">Experience the joy of a clean, fresh home and tasty meals delivered to your door with Homaid! Let us make your space feel like heaven with our cleanliness and convenience.</h2>
         <div className="loginContainer-rightContent">
           <h2 className="login-title">LOGIN</h2>
           <form className="loginform-container" onSubmit={this.onSubmit}>
-            <div className="input-field">
-              <MdOutlineMailLock />
-              <input type="email" placeholder="Email" className="login-input" onChange={this.handleEmail} value={email}/>
+            <div className="login-input-field">
+              <label htmlFor="email" className="login-label">Email ID</label>
+              <input type="email" placeholder="Enter your Email" id="email" className="login-input" onChange={this.handleEmail} value={email}/>
             </div>
-            <div className="input-field">
-              <MdLock />
+            <div className="login-input-field">
+              <label htmlFor="password" className="login-label">Password</label>
               <input
                 type="password"
                 id="password"
-                placeholder="Password"
+                placeholder="Enter your Password"
                 className="login-input"
                 onChange={this.handlePassword}
                 value={password}
@@ -124,6 +117,7 @@ class Login extends Component{
           </p>
         </div>
       </div>
+      </>
     );
   } 
 }

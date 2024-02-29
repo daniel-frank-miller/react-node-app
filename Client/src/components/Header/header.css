@@ -2,7 +2,7 @@
 .sticky-header {
    margin: 0px;
     width: 100%;
-    background-color: #345E7D;
+    background-image:linear-gradient(to right, #6d9ab9, rgb(172, 172, 172));
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     /* height: 55px; */
     height: 20%;
@@ -120,4 +120,14 @@
         display: none;
     }
     
+  }
+
+  .contact-info-mobile-number{
+    font-family: "Montserrat";
+    color: white;
+  }
+
+  .contact-info-email{
+    font-family: "Montserrat";
+    color: white;
   }

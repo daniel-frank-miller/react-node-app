@@ -8,7 +8,7 @@ const ServicesSection = () => {
     <div className="singlePage">
       <Navbar />
       <div className="ServicesSection prevent-select">
-        <h1 className="ServicesSection-heading">Services</h1>
+        <h1 className="ServicesSection-heading">Our Services</h1>
         <div className="ServicesSection-cards-container">
           <div className="ServicesSection-card-element">
           <div className="about-section">
@@ -31,7 +31,7 @@ const ServicesSection = () => {
           <div className="ServicesSection-card-element">
           <div className="about-section">
               <div className="overlay"></div>
-              <video src="/src/assets/cleaning-vid.webm" autoPlay loop  muted id="bg-video"/>
+              <video src="/src/assets/cleaning-service-banner.webm" autoPlay loop  muted id="bg-video"/>
           </div>
             <div className="ServicesSection-content">
               <h1 className="ServicesSection-card-heading">Cleaning</h1>
