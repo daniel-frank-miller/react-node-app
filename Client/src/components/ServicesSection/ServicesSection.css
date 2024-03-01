@@ -1,15 +1,18 @@
 .ServicesSection {
-  background-image: url("/src/assets/30.webp");
+  background-image: url('/src/assets/reviews-bg.webp');
   background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   min-height: 89%;
+  width: 100vw;
 }
 
+
 .ServicesSection-heading {
-  margin: 25px 0px;
+  text-align: center;
+  margin-bottom: 10px;
   font-family: "Montserrat";
   padding: 20px;
   color: #00144f;
@@ -29,7 +32,7 @@
 .ServicesSection-card-element {
   margin-bottom: 50px;
   min-width: 300px;
-  width: 35%;
+  width: 40%;
   background-color: #fff;
   border-radius: 5px;
   display: flex;
@@ -55,9 +58,11 @@
 }
 
 .ServicesSection-card-heading {
-  font-size: 30px;
-  font-family: "Noto Sans Glagolitic", sans-serif;
+  font-size: 34px;
+  font-family: "Montserrat";
   margin-top: 15px;
+  color: #00144f;
+
 }
 
 .ServicesSection-card-subtitle {
@@ -69,7 +74,7 @@
 
 .ServicesSection-btn {
   margin-bottom: 25px;
-  background-color: #000;
+  background-color: rgb(31, 100, 156);
   color: #fff;
   font-size: 22px;
   height: 45px;
@@ -78,25 +83,35 @@
   border: none;
   border-radius: 20px;
   cursor: pointer;
-  margin-top: 25px;
+  margin-top: 22px;
+  box-shadow: 5px 5px 5px rgb(81, 81, 81);
+  font-family: 'Montserrat';
+  font-weight: 600;
+  text-align: center;
 }
 
 .ServicesSection-btn:hover {
-  background: transparent;
+  background-color: #a7ddfa;
   color: #000;
-  border: 0.5px solid black;
-  font-weight: 600;
+  border: none;
 }
 
 @media screen and (max-width: 768px) {
   .ServicesSection-cards-container {
     display: flex;
     flex-direction: column;
-    
+    max-width: 80%;
   }
 
   .ServicesSection-card-element {
     min-width: 500px;
     margin-top: 0;
+
   }
+}
+
+@media screen and (max-width:500px) {
+    .ServicesSection-card-element{
+      min-width: 300px;
+    }
 }

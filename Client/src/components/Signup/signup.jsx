@@ -1,21 +1,22 @@
 import "/src/components/Signup/signup.css";
-import { MdOutlineMailLock } from "react-icons/md";
-import { MdLock, MdOutlineDriveFileRenameOutline } from "react-icons/md";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { Component } from "react";
 import { Navigate } from "react-router-dom";
-import { FaPhoneAlt } from "react-icons/fa";
 import OtpInput from 'react18-input-otp';
 import Navbar from '../Navbar/navbar'
 
 
 class Register extends Component {
-  state={name:'',email:'',password:'',confirmPassword:'',message:'',phone:'',messageStatus:false, showModal: false,otp: '',otpMessage: ''}
+  state={firstName:'',lastName:'',email:'',password:'',confirmPassword:'',message:'',phone:'',messageStatus:false, showModal: false,otp: '',otpMessage: ''}
 
-  handleName=e=>{
-    this.setState({name:e.target.value})
+  handleFirstName=e=>{
+    this.setState({firstName:e.target.value})
+  }
+
+  handleLastName=e=>{
+    this.setState({lastName:e.target.value})
   }
 
   handleEmail=e=>{
@@ -65,14 +66,14 @@ class Register extends Component {
 
   handleVerify = async (event) => {
     event.preventDefault();
-    const { email, otp, name, phone, password} = this.state;
+    const { email, otp, firstName, phone, password} = this.state;
     console.log(email);
       const response = await fetch('http://178.16.139.165:3000/verify_otp', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ email, otp, name, phone, password })
+        body: JSON.stringify({ email, otp, firstName, phone, password })
       });
       const data = await response.json();
       if (response.ok) {
@@ -84,7 +85,7 @@ class Register extends Component {
   };
 
   render(){
-    const {name,email,password,confirmPassword,messageStatus,phone,message,showModal,otpMessage,otp}=this.state 
+    const {firstName,lastName,email,password,confirmPassword,messageStatus,phone,message,showModal,otpMessage,otp}=this.state 
     if(otpMessage=="Registration successful."){
       return <Navigate to="/login"/>
     }
@@ -92,33 +93,29 @@ class Register extends Component {
     <>
     <Navbar/>
     <div className="RegisterContainer prevent-select" id="RegisterContainer">
-      <div className="RegisterContainer-leftContent">
-        <h1 className="RegisterContainer-heading">Welcome to Homaid</h1>
-        <p className="RegisterContainer-subtitle">
-          Cleanliness meets convenience and flavors come to life! Let us
-          transform your space into a heaven of freshness and deliver delectable
-          delights right to your door. Experience the magic of Homaid Where Home
-          Feels Heavenly.
-        </p>
-      </div>
+    <h2 className="register-tagline">Experience the joy of a clean, fresh home and tasty meals delivered to your door with Homaid! Let us make your space feel like heaven with our cleanliness and convenience.</h2>
       <div className="RegisterContainer-rightContent">
         <h2 className="register-title">Create an Account</h2>
         <form className="registerform-container" onSubmit={this.onSubmit}>
-          <div className="input-field">
-            <MdOutlineDriveFileRenameOutline />
-            <input type="text" placeholder="Name" className="register-input" value={name} onChange={this.handleName} required/>
+          <div className="register-input-field">
+           <label htmlFor="first-name" className="register-label">First Name*</label>
+            <input type="text" placeholder="Enter your First Name" id="first-name" className="register-input" value={firstName} onChange={this.handleFirstName} required/>
           </div>
-          <div className="input-field">
-            <MdOutlineMailLock />
-            <input type="email" placeholder="Email" className="register-input" value={email} onChange={this.handleEmail} required/>
+          <div className="register-input-field">
+           <label htmlFor="last-name" className="register-label">Last Name*</label>
+            <input type="text" placeholder="Enter your Last Name" id="last-name" className="register-input" value={lastName} onChange={this.handleLastName} required/>
           </div>
-          <div className="input-field">
-            <FaPhoneAlt/>
+          <div className="register-input-field">
+            <label htmlFor="email" className="register-label">Email ID*</label>
+            <input type="email" placeholder="Enter your Email" id="email" className="register-input" value={email} onChange={this.handleEmail} required/>
+          </div>
+          <div className="register-input-field">
+            <label htmlFor="subject" className="register-label">Mobile Number*</label>
             <input
               type="number"
               id="subject"
-              placeholder="Enter your phone number"
-              className="user-input"
+              placeholder="Enter your Mobile Number"
+              className="register-input"
               min="1000000000"
               max="9999999999"
               value={phone}
@@ -126,12 +123,12 @@ class Register extends Component {
               required
             />
           </div>
-          <div className="input-field">
-            <MdLock />
+          <div className="register-input-field">
+            <label htmlFor="password" className="register-label">Password*</label>
             <input
               type="password"
               id="password"
-              placeholder="Password"
+              placeholder="Enter your Password"
               className="register-input"
               value={password}
               onChange={this.handlePassword}
@@ -139,11 +136,12 @@ class Register extends Component {
             />
           </div>
 
-          <div className="input-field">
-            <MdLock />
+          <div className="register-input-field">
+            <label htmlFor="confirm-password" className="register-label">Confirm Password*</label>
             <input
               type="password"
-              placeholder="Confirm Password"
+              id="confirm-password"
+              placeholder="Enter your Confirm Password"
               className="register-input"
               value={confirmPassword}
               onChange={this.handleConfirmPassword}

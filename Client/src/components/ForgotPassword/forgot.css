@@ -1,5 +1,5 @@
 .forgot-password-container{
-    background-image: url('/src/assets/forgot-password-bg.webp');
+    background-image: url('/src/assets/contact-us-bg.webp');
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -13,7 +13,7 @@
     max-width: 450px;
     background-color: transparent;
     border-radius: 40px;
-    box-shadow: 10px 20px 15px gray, -5px 0px 20px rgb(228, 228, 228);
+    box-shadow: 10px 20px 15px gray, -5px 0px 20px rgb(154, 154, 154);
     border-bottom-left-radius: 0px;
     border-top-left-radius: 0px;
     width: 40%;
@@ -29,7 +29,7 @@
     border: 2px solid transparent;
     background-color: transparent;
     border-radius: 40px;
-    box-shadow: 15px 20px 15px gray, -5px 0px 20px rgb(220, 220, 220);
+    box-shadow: 15px 20px 15px gray, -5px 0px 20px rgb(154, 154, 154);
     height: 70%;
     margin: 20px;
     margin-right: 80px;

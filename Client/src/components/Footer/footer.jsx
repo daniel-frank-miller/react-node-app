@@ -1,6 +1,5 @@
-import { FaSquareInstagram } from "react-icons/fa6";
-import { FaSquareTwitter } from "react-icons/fa6";
-import { FaFacebookSquare } from "react-icons/fa";
+import { FaInstagram, FaFacebook } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import { FaYoutube } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 
@@ -38,62 +37,67 @@ const Footer = () => {
       </div>
       <div className="second-section">
         <div className="second-inner-section">
-          <h1 className="social-text-footer">SOCIAL</h1>
+          <h1 className="social-text-footer">Connect With Us</h1>
           <ul className="social-container">
             <div className="social-handles">
+            <a href="https://www.linkedin.com/company/homaid-services/about/">
+                <FaLinkedin className="linkedin-icon"/>
+              </a>
               <a
                 href="https://www.linkedin.com/company/homaid-services/about/"
                 className="social-media"
               >
                 <li className="list-item">LinkedIn</li>
               </a>
-              <a href="https://www.linkedin.com/company/homaid-services/about/">
-                <FaLinkedin/>
-              </a>
+              
             </div>
             <div className="social-handles">
+            <a href="https://twitter.com/Homaid471011">
+              <FaXTwitter className="twitter-icon" />
+              </a>
               <a
                 href="https://twitter.com/Homaid471011"
                 className="social-media"
               >
                 <li className="list-item">Twitter</li>
               </a>
-              <a href="https://twitter.com/Homaid471011">
-                <FaSquareTwitter />
-              </a>
+              
             </div>
             <div className="social-handles">
+            <a href="https://www.instagram.com/homaid_service/">
+              <FaInstagram className="instagram-icon"/>
+              </a>
               <a
                 href="https://www.instagram.com/homaid_service/"
                 className="social-media"
               >
                 <li className="list-item">Instagram</li>
               </a>
-              <a href="https://www.instagram.com/homaid_service/">
-                <FaSquareInstagram/>
-              </a>
+              
             </div>
             <div className="social-handles">
+            <a href="https://www.facebook.com/profile.php?id=61552265330728">
+              <FaFacebook className="facebook-icon"/>
+              </a>
               <a
                 href="https://www.facebook.com/profile.php?id=61552265330728"
                 className="social-media"
               >
                 <li className="list-item">Facebook</li>
               </a>
-              <a href="https://www.facebook.com/profile.php?id=61552265330728">
-                <FaFacebookSquare />
-              </a>
+              
             </div>
             <div className="social-handles">
+            <a href="https://www.youtube.com/@Homaid-hc9ik">
+              <FaYoutube className="youtube-icon"/>
+              </a>
               <a
                 href="https://www.youtube.com/@Homaid-hc9ik"
                 className="social-media"
               >
                 <li className="list-item">Youtube</li>
               </a>
-              <a href="https://www.youtube.com/@Homaid-hc9ik">
-                <FaYoutube/>
-              </a>
+              
             </div>
           </ul>
         </div>

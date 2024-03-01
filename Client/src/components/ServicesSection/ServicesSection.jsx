@@ -13,7 +13,7 @@ const ServicesSection = () => {
           <div className="ServicesSection-card-element">
           <div className="about-section">
               <div className="overlay"></div>
-              <video src="/src/assets/cooking-vid.webm" autoPlay loop  muted id="bg-video"/>
+              <video src="/src/assets/cooking-video-banner.webm" autoPlay loop  muted id="bg-video"/>
           </div>
             <div className="ServicesSection-content">
               <h1 className="ServicesSection-card-heading">Cooking</h1>
@@ -31,7 +31,7 @@ const ServicesSection = () => {
           <div className="ServicesSection-card-element">
           <div className="about-section">
               <div className="overlay"></div>
-              <video src="/src/assets/cleaning-service-banner.webm" autoPlay loop  muted id="bg-video"/>
+              <video src="/src/assets/cleaning-video-banner.webm" autoPlay loop  muted id="bg-video"/>
           </div>
             <div className="ServicesSection-content">
               <h1 className="ServicesSection-card-heading">Cleaning</h1>

@@ -387,7 +387,8 @@ app.post('/api/payment', handlePayment);
 
 app.get('/api/paymentstatus/:transactionId', handlePaymentStatus);
 
-app.listen(PORT, () => {
+
+app.listen(PORT,() => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
 

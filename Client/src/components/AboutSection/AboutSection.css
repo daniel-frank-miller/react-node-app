@@ -121,7 +121,7 @@
 
 .FAQs{
   padding: 10px 0;
-  background-color: antiquewhite;
+  background-image: url('/src/assets/about-us-bg.webp');
   display: flex;
   flex-direction: column;
   align-items: center;

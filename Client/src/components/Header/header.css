@@ -2,7 +2,7 @@
 .sticky-header {
    margin: 0px;
     width: 100%;
-    background-image:linear-gradient(to right, #6d9ab9, rgb(172, 172, 172));
+    background-image:linear-gradient(to right, #6d9ab9,white);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     /* height: 55px; */
     height: 20%;
@@ -26,6 +26,7 @@
   .contact-info {
     text-align: center;
     display: flex;
+    align-items: center;
   }
 
   .contact-info span{
@@ -55,35 +56,36 @@
   }
   
   /* Social icons styles */
-  .social-icons {
+  .header-social-icons {
     /* transition: 1s transform; */
     align-content: center;
     display: flex;
+    margin-bottom: 10px;
   
   }
  
-  .social-icons .container-icons{
+  .header-social-icons .container-icons{
     width: 15px;
     height: 15px;
     margin: 10px;
   }
-  .social-icons .container-icons a {
+  .header-social-icons .container-icons a {
     /* font-family: "Barlow Condensed", sans-serif; */
     /* text-decoration: none; */
     color: aliceblue;
     margin-left: 10px;
     font-size: 25px;
   }
-  .social-icons .container-icons a svg{
+  .header-social-icons .container-icons a svg{
     transition: 0.5s transform;
-
   }
   
   /* Animation */
-   svg:hover{
+  svg:hover{
     transform: scale(1.5); /*Increase size on hover*/
   }
   
+ 
   
   /* Responsive styles */
   @media (max-width: 780px) {
@@ -98,11 +100,11 @@
       /*margin-bottom: 20px;*/
     }
     
-    .social-icons{
+    .header-social-icons{
       margin-top: 15%;
     }
 
-    .social-icons{
+    .header-social-icons{
       text-align: center;
     }
 
@@ -124,10 +126,55 @@
 
   .contact-info-mobile-number{
     font-family: "Montserrat";
-    color: white;
+    color: black;
   }
 
   .contact-info-email{
     font-family: "Montserrat";
+    color: black;
+  }
+
+
+  .instagram-icon {
+    background-image: linear-gradient(135deg, #405DE6, #5B51D8, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040,#777737,#FCAF45, #FFDC80);
+    background-size: 600% 600%;
+    animation: gradientBG 10s ease infinite;
+    border-radius: 5px;
     color: white;
   }
+  
+  @keyframes gradientBG {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0%  50%;
+      }
+}
+
+.facebook-icon{
+  color: #316FF6;
+}
+
+.youtube-icon{
+  color: #FF0000;
+}
+
+.whatsapp-icon{
+  color: #25D366;
+}
+
+.twitter-icon{
+  color: black;
+}
+
+.phone-email-icon{
+  margin-top: 2px;
+  color: black;
+  font-size: 18px;
+
+}
+

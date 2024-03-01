@@ -60,12 +60,12 @@ class ResetPassword extends Component {
     const { newPassword, message,messageStatus } = this.state;
     return (
       <div className='change-password-container'>
-         <img src="src/assets/change-password.webp" alt="change-password" className='change-password-image'/>
+         <img src="src/assets/reset-password-mailed.webp" alt="change-password" className='change-password-image'/>
         <form onSubmit={this.handleSubmit} className='change-password-form-container'>
             <h1 className='change-password-heading'>Reset Password</h1>
             <p className='change-password-description'>Enter your new Password!</p>
             <label htmlFor='new-password' className='change-password-input-label'>New Password</label>
-            <input type="password" name="newPassword" id="new-password" value={newPassword} onChange={this.handleChange} className='change-password-input' required /> 
+            <input type="password" name="newPassword" id="new-password" value={newPassword} onChange={this.handleChange} className='change-password-input' placeholder='Enter your new Password' required /> 
           <button type="submit" className='change-password-btn'>Submit</button>
         </form>
         {messageStatus&&<p>{message}</p>}

@@ -10,7 +10,7 @@ const Reviews = () => {
             <div className="review-container">
                 <div className="review">
                     <div className="avatar">
-                        <img src="/src/assets/girl-1-icon.webp" alt="icon" className="icon"/>
+                        <img src="/src/assets/girl-3-icon.webp" alt="icon" className="icon"/>
                     </div>
                         <div className="content-reviews">
                             <h3 className="reviewerName">Dhanya</h3>
@@ -19,7 +19,7 @@ const Reviews = () => {
                                 <span className="star">&#9733;</span>
                                 <span className="star">&#9733;</span>
                                 <span className="star">&#9733;</span>
-                                <span className="star">&#9734;</span>
+                                <span className="star">&#9733;</span>
                             </div>
                             <p className="reviewersReview">"Great service! They exceeded my expectations and I'll definitely be using them again."</p>
                         </div>
@@ -35,14 +35,14 @@ const Reviews = () => {
                                 <span className="star">&#9733;</span>
                                 <span className="star">&#9733;</span>
                                 <span className="star">&#9733;</span>
-                                <span className="star">&#9734;</span>
+                                <span className="star">&#9733;</span>
                             </div>
                             <p className="reviewersReview">"Great service! They exceeded my expectations and I'll definitely be using them again."</p>
                         </div>
                     </div>
                     <div className="review">
                     <div className="avatar">
-                        <img src="/src/assets/men-1-icon.webp" alt="icon" className="icon"/>
+                        <img src="/src/assets/men-2-icon.webp" alt="icon" className="icon"/>
                     </div>
                         <div className="content-reviews">
                             <h3 className="reviewerName">Daryna</h3>
@@ -74,7 +74,7 @@ const Reviews = () => {
                     </div>
                     <div className="review">
                     <div className="avatar">
-                        <img src="/src/assets/men-2-icon.webp" alt="icon" className="icon"/>
+                        <img src="/src/assets/men-1-icon.webp" alt="icon" className="icon"/>
                     </div>
                         <div className="content-reviews">
                             <h3 className="reviewerName">Sandeep</h3>
@@ -92,7 +92,7 @@ const Reviews = () => {
                     </div>
                     <div className="review">
                     <div className="avatar">
-                        <img src="/src/assets/men-1-icon.webp" alt="icon" className="icon"/>
+                        <img src="/src/assets/men-3-icon.webp" alt="icon" className="icon"/>
                     </div>
                         <div className="content-reviews">
                             <h3 className="reviewerName">Dhruva</h3>
@@ -110,7 +110,7 @@ const Reviews = () => {
                     </div>
                     <div className="review">
                     <div className="avatar">
-                        <img src="/src/assets/girl-2-icon.webp" alt="icon" className="icon"/>
+                        <img src="/src/assets/girl-4-icon.webp" alt="icon" className="icon"/>
                     </div>
                         <div className="content-reviews">
                             <h3 className="reviewerName">Ananya</h3>
@@ -129,7 +129,7 @@ const Reviews = () => {
                     </div>
                     <div className="review">
                     <div className="avatar">
-                        <img src="/src/assets/men-1-icon.webp" alt="icon" className="icon"/>
+                        <img src="/src/assets/men-4-icon.webp" alt="icon" className="icon"/>
                     </div>
                         <div className="content-reviews">
                             <h3 className="reviewerName">Sudhan</h3>
@@ -138,7 +138,8 @@ const Reviews = () => {
                                 <span className="star">&#9733;</span>
                                 <span className="star">&#9733;</span>
                                 <span className="star">&#9733;</span>
-                                <span className="star">&#9733;</span>
+                                <span className="star">&#9734;</span>
+
                             </div>
                             <p className="reviewersReview">
                                 "Trust is paramount when it comes to home services, and Homaid excels in delivering it. Their 
@@ -149,7 +150,7 @@ const Reviews = () => {
                     </div>
                     <div className="review">
                     <div className="avatar">
-                        <img src="/src/assets/girl-1-icon.webp" alt="icon" className="icon"/>
+                        <img src="/src/assets/girl-5-icon.webp" alt="icon" className="icon"/>
                     </div>
                         <div className="content-reviews">
                             <h3 className="reviewerName">Nishita</h3>
@@ -158,7 +159,7 @@ const Reviews = () => {
                                 <span className="star">&#9733;</span>
                                 <span className="star">&#9733;</span>
                                 <span className="star">&#9733;</span>
-                                <span className="star">&#9733;</span>
+                                <span className="star">&#9734;</span>
                             </div>
                             <p className="reviewersReview">
                                 "When it comes to cooking, Homaid Services is in a league of its own. Their chefs have a magic touch that transforms 

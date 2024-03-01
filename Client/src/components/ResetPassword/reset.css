@@ -1,4 +1,5 @@
 .initial-container{
+    background-image: url("/src/assets/gallery-bg.webp");
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -22,6 +23,7 @@
 }
 
 .change-password-container{
+    background-image: url("/src/assets/gallery-bg.webp");
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -32,9 +34,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 10px 15px 10px gray;
+    justify-content: center;
+    box-shadow: 10px 15px 10px gray, -5px 0px 20px rgb(128, 128, 128);
     border: 1px solid gray;
-    border-radius: 5px;
+    border-radius: 55px;
+    height: 60%;
+    width: 40%;
 }
 
 .change-password-image{
@@ -43,46 +48,60 @@
 }
 
 .change-password-heading{
-    padding: 12px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 10px;
+    font-family: "Montserrat";
+    padding: 20px;
+    color: #00144f;
+    font-weight: bold;
+    letter-spacing: 0.9px;
+    font-size: 42px;
+    text-align: center;
 }
 
 .change-password-description{
-    padding: 12px;
-    color: gray;
+    padding: 4px;
+    margin-bottom: 10px;
+    color: rgb(77, 77, 77);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .change-password-input-label{
+    align-self: flex-start;
     color: rgb(46, 46, 46);
+    margin-left: 60px;
+    font-family: "Montserrat";
 }
 
 .change-password-input{
     padding: 12px;
-    border: 2px solid rgb(198, 198, 198);
+    border: 2px solid rgb(55, 55, 55);
     border-radius: 6px;
     width: 350px;
     margin: 10px;
     cursor: text;
     color: black;
+    background-color: transparent;
+    width: 80%;
 }
 
 .change-password-btn{
-    background-color: rgb(74, 74, 255);
+    background-color: rgb(63, 82, 177);
     border: 0px solid;
     padding: 12px;
     width: 250px;
     cursor: pointer;
     outline: none;
-    color: white;
+    color: #fff;
     margin: 10px;
     border-radius: 6px;
+    width: 40%;
+    font-weight: 400;
 }
 
 .change-password-btn:hover{
-    background-color: white;
-    color: black;
-    border: 2px solid gray;
+    background-color: #1e497b;
+    color: white;
+    box-shadow: 5px 5px 5px gray;
 }
 
 @media screen and (max-width: 500px) {
@@ -152,20 +171,25 @@
     }
 }
 
-@media screen and (min-width: 700px) and (max-width: 900px){
-    .change-password-container {
+@media screen and (max-width:768px){
+    .change-password-image {
+        height: 420px;
+        width: 360px;
+        background-size: cover;
+    }
+
+    .change-password-container{
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-        height: 100vh;
-        padding-top: 2%;
-        padding-bottom: 2%;
     }
+    .change-password-form-container{
+        width: 80%;
+        height: 60%;
+    }
+}
 
-    .change-password-image {
-        height: 300px;
-        width: 300px;
-        background-size: cover;
-    }
+.change-password-input:focus{
+    outline: none;
 }

@@ -30,26 +30,7 @@ const AboutSection = () => {
           </p>
         </div>
         </div>
-        <div className="members">
-          <div>
-            <img
-              src="/src/assets/draft-team-img.webp"
-              alt="name1"
-              className="team-img"
-            />
-            <p className="team-name">Name</p>
-            <p className="teamMember-position">----Position----</p>
-          </div>
-          <div>
-            <img
-              src="/src/assets/draft-team-img.webp"
-              alt="name4"
-              className="team-img"
-            />
-            <p className="team-name">Name</p>
-            <p className="teamMember-position">----Position----</p>
-          </div>
-        </div>
+        
       </div>
       <div className="FAQs">
         <h1 className="faq-title">
