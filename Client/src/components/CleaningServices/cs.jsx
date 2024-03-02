@@ -27,7 +27,7 @@ const CleaningServices = () => {
               </p>
               <div className="actions-card">
                 <Link to="/cleaningprofile">
-                  <button className="btn" id="regularCleanBtn">
+                  <button className="cleaning-service-btn" id="regularCleanBtn">
                     Book Now
                   </button>
                 </Link>
@@ -53,7 +53,7 @@ const CleaningServices = () => {
               </p>
               <div className="actions-card">
                 <Link to="/cleaningprofile">
-                  <button className="btn" id="washroomCleanBtn">
+                  <button className="cleaning-service-btn" id="washroomCleanBtn">
                     Book Now
                   </button>
                 </Link>
@@ -78,7 +78,7 @@ const CleaningServices = () => {
               </p>
               <div className="actions-card">
                 <Link to="/cleaningprofile">
-                  <button className="btn" id="dustingCleanBtn">
+                  <button className="cleaning-service-btn" id="dustingCleanBtn">
                     Book Now
                   </button>
                 </Link>

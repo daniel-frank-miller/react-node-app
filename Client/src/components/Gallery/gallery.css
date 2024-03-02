@@ -359,3 +359,9 @@ body {
     min-height: 280px;
   }
 }
+
+@media screen and (min-width:1300px){
+  .album .img-big{
+    max-height: 650px;
+  }
+}

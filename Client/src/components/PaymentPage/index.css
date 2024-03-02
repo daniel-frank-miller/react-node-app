@@ -1,0 +1,111 @@
+.payment-page-container {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(86, 62, 164);
+    justify-content: center;
+    align-items: center;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+  }
+  
+  .payment-page-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px;
+    background-image: radial-gradient(#7f98a2, rgb(60, 49, 110));
+    align-items: center;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    transform-origin: center; /* Set the transform origin to the center for zoom effect */
+  }
+  
+  @keyframes zoomInOut {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  /* Apply the zoomInOut animation only when the container has the 'animating' class */
+  .payment-page-container.animating .payment-page-content {
+    animation-name: zoomInOut;
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .payment-page-animating {
+    animation-name: slideIn;
+  }
+  
+  .payment-page-input {
+    padding: 10px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    animation-duration: 1s;
+    outline-width: 0px;
+    border-radius: 10px;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .payment-page-button {
+    padding: 10px 20px;
+    width: 100px;
+    background-color: #3d409a;
+    border-radius: 10px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+  }
+  
+  .payment-page-button:hover {
+    background-color: rgb(147, 60, 60);
+  }
+  
+  .payment-page-animating {
+    animation-name: fadeIn;
+  }
+  
+  .payment-page-payment-heading {
+    font-size: 1.5em;
+    padding: 0px;
+    margin: 0px;
+    color: #fff;
+    text-align: center;
+    opacity: 0; /* Initial opacity for the animation */
+    animation: fadeIn 1.5s ease-out forwards; /* Animation for fade-in effect */
+  }
+  
+  @media (max-width: 768px) {
+    .payment-page-payment-heading {
+      font-size: 1.5em;
+    }
+  }

@@ -13,9 +13,9 @@ const handlePayment = async (req, res) => {
     merchantTransactionId: transactionid,
     merchantUserId: 'MUID-' + uuidv4().toString(36).slice(-6),
     amount: amount,
-    redirectUrl: `http://localhost:5173/api/status/${transactionid}`,
+    redirectUrl: `http://localhost:3000/api/status/${transactionid}`,
     redirectMode: 'POST',
-    callbackUrl: `http://localhost:5173/api/status/${transactionid}`,
+    callbackUrl: `http://localhost:3000/api/status/${transactionid}`,
     mobileNumber: '9999999999',
     paymentInstrument: {
       type: 'PAY_PAGE',

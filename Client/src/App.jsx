@@ -15,6 +15,9 @@ import Gallery from "./components/Gallery/gallery.jsx";
 import ForgotPassword from "./components/ForgotPassword/forgot.jsx";
 import ResetPassword from "./components/ResetPassword/reset.jsx";
 import AdminLogin from "./components/AdminLogin/admin.jsx";
+import PaymentPage from "./components/PaymentPage/index.jsx"
+import PaymentStatus from "./components/PaymentStatus"
+import Bookings from "./components/Bookings/index.jsx";
 class App extends Component {
   render() {
     return (
@@ -34,6 +37,9 @@ class App extends Component {
           <Route exact path="/admin_login" element={<AdminLogin/>}/>
           <Route exact path="/gallery" element={<Gallery/>}/>
           <Route exact path="/reviews" element={<Reviews/>}/>
+          <Route exact path = "/payments" element = {<PaymentPage/>}/>
+          <Route exact path = "api/status/:trid" element = {<PaymentStatus/>}/>
+          <Route exact path="/bookings" element={<Bookings/>}/>
         </Routes>
       </Router>
       
