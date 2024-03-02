@@ -74,12 +74,9 @@ class CleaningProfile extends Component{
       <>
         <Navbar />
         <div className="cleaningProfile-container">
-          <div className="img-container">
-            <img src="/src/assets/cleaningpic.webp" alt="Cleaning Profile" className="img-container-cleaning" />
-          </div>
           <div className="form-container">
             <h1 className="form-container-h1">Cleaning Profile</h1>
-            <form id="profileForm" onSubmit={this.handleSubmit}>
+            <form id="profileForm" onSubmit={this.handleSubmit} className="cleaning-form-container">
               <label className="form-container-label" htmlFor="name">Name:</label>
               <input
                 type="text"
@@ -88,6 +85,7 @@ class CleaningProfile extends Component{
                 placeholder="Enter your Full Name"
                 value={name}
                 onChange={this.handleChange}
+                className="cleaning-profile-input"
                 required
               />
   
@@ -99,18 +97,19 @@ class CleaningProfile extends Component{
                 placeholder="Enter Present Address"
                 value={location}
                 onChange={this.handleChange}
+                className="cleaning-profile-input"
                 required
               />
   
               <label className="form-container-label" htmlFor="service-type">Service Type :</label>
-              <select id="service-type" name="serviceType" value={cleaningServiceType} onChange={this.handleServiceType}>
+              <select id="service-type" name="serviceType" value={cleaningServiceType} onChange={this.handleServiceType} className="cleaning-profile-input">
                 <option value="Regular Cleaning">Regular Cleaning</option>
                 <option value="Washroom Cleaning">Washroom Cleaning</option>
                 <option value="Dusting and Setting">Dusting & Setting</option>
               </select>
   
               <label className="form-container-label" htmlFor="sp">Recurring :</label>
-              <select id="sp" name="schedulingPreference" value={recurring} onChange={this.handleRecurring}>
+              <select id="sp" name="schedulingPreference" value={recurring} onChange={this.handleRecurring} className="cleaning-profile-input">
                 <option value="Select">Select</option>
                 <option value="Once">Once</option>
                 <option value="Daily">Daily</option>
@@ -126,10 +125,11 @@ class CleaningProfile extends Component{
                 placeholder="Enter Date and Time"
                 value={dateTime}
                 onChange={this.handleDateTime}
+                className="cleaning-profile-input"
               />
   
               <label className="form-container-label" htmlFor="house-type">House Type:</label>
-              <select id="house-type" name="house-type" value={houseType} onChange={this.handleHouseType}>
+              <select id="house-type" name="house-type" value={houseType} onChange={this.handleHouseType} className="cleaning-profile-input">
                 <option value="1BHK">1BHK</option>
                 <option value="2BHK">2BHK</option>
                 <option value="3BHK">3BHK</option>
@@ -138,7 +138,7 @@ class CleaningProfile extends Component{
               </select>
   
               <div id="con" style={{ width: "100%", textAlign: "center" }}>
-                <button type="submit" className="btn">
+                <button type="submit" className="cleaning-profile-btn">
                   Submit
                 </button>
               </div>
