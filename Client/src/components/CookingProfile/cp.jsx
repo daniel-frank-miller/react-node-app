@@ -10,13 +10,14 @@ class CookingProfile extends Component{
     location: '',
     recurring: '',
     dateTime: '',
-    familyMemberCount: 0
+    familyMemberCount: 0,
+    phone:''
   };
    handleSubmit = async(e) => {
     e.preventDefault();
     // Handle form submission logic here
-    const { name, location, recurring, dateTime, familyMemberCount } = this.state;
-    const cookingServicesDetails = { name, location, recurring, familyMemberCount, dateTime };
+    const { name, location, recurring, dateTime, familyMemberCount, phone } = this.state;
+    const cookingServicesDetails = { name, location, recurring, familyMemberCount, dateTime , phone};
     const response = await fetch("http://178.16.139.165:3000/cooking_services", {
       method: 'POST',
       headers: {
@@ -27,7 +28,7 @@ class CookingProfile extends Component{
     });
     const data = await response;
     console.log(data);
-    this.setState({name:'',location:'',recurring: '',dateTime: '',familyMemberCount: 0})
+    this.setState({name:'',location:'',recurring: '',dateTime: '',familyMemberCount: 0, phone:''})
     paymentGateway(100);
   };
 
@@ -47,15 +48,22 @@ class CookingProfile extends Component{
     this.setState({familyMemberCount:e.target.value})
   }
 
+  handlePhone=e=>{
+    if (String(e.target.value).length <= 10) {
+      this.setState({ phone: e.target.value });
+    }
+  }
+
   renderSuccessView=()=>{
-    const { name, location, recurring, dateTime, familyMemberCount } = this.state;
+    const { name, location, recurring, dateTime, familyMemberCount,phone } = this.state;
   return(
     <>
     <Navbar />
     <div className="CleaningContainer">
+    <h1 className="form-container-h1">Cooking Profile</h1>
       <div className="form-container">
-        <h1 className="form-container-h1">Cooking Profile</h1>
         <form id="profileForm" onSubmit={this.handleSubmit} className="cooking-form-container">
+          <div className="register-input-field">
           <label htmlFor="name" className="form-container-label">Name:</label>
           <input
             type="text" 
@@ -66,9 +74,11 @@ class CookingProfile extends Component{
             className="cleaning-profile-input"
             required
           />
+          </div>
 
-          <label htmlFor="location" className="form-container-label">Location:</label>
-          <input
+            <div className="register-input-field">
+            <label htmlFor="location" className="form-container-label">Location:</label>
+            <input
             type="text"
             id="location"
             name="location"
@@ -78,6 +88,23 @@ class CookingProfile extends Component{
             required
           />
 
+            </div>
+           <div className="register-input-field">
+           <label htmlFor="subject" className="form-container-label">Mobile Number:</label>
+            <input
+              type="number"
+              id="subject"
+              placeholder="Enter your Mobile Number"
+              className="cleaning-profile-input"
+              min="1000000000"
+              max="9999999999"
+              value={phone}
+              onChange={this.handlePhone}
+              required
+            />
+           </div>
+
+          <div className="register-input-field">
           <label htmlFor="sp" className="form-container-label">Recurring :</label>
           <select id="sp" name="schedulingPreference" value={recurring} onChange={this.handleRecurring} className="cleaning-profile-input">
             <option value="Select">Select</option>
@@ -86,7 +113,9 @@ class CookingProfile extends Component{
             <option value="Weekly">Weekly</option>
             <option value="Monthly">Monthly</option>
           </select>
+          </div>
 
+          <div className="register-input-field">
           <label htmlFor="time" className="form-container-label">Date & Time:</label>
           <input
             type="datetime-local"
@@ -96,6 +125,8 @@ class CookingProfile extends Component{
             className="cleaning-profile-input"
             value={dateTime} onChange={this.handleDateTime}
           />
+          </div>
+          <div className="register-input-field">
           <label htmlFor="family-member-count" className="form-container-label">Family Member Count:</label>
           <input
             type="number"
@@ -107,8 +138,9 @@ class CookingProfile extends Component{
             value={familyMemberCount} onChange={this.handleFamilyMemberCount}
             required
           />
+          </div>
 
-          <div style={{ alignSelf: "center" }}>
+          <div style={{ alignSelf: "center", textAlign:"center", width:"30%", marginLeft:"auto", marginRight:"auto" }}>
             <button type="submit" className="cooking-profile-btn">
               Submit
             </button>

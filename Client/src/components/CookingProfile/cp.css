@@ -20,7 +20,6 @@
   display: flex;
   flex-direction: column;
   max-width: 100vw;
-  align-items: center;
   justify-content: center;
   border-radius: 10px;
   border: 0px solid #fff;
@@ -33,16 +32,17 @@
 .cooking-form-container{
   width: 70%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   max-width: 100vw;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   border-radius: 10px;
   border: 0px solid #fff;
   height: 100%;
   background-color:transparent;
   background-size: cover;
   margin-top: 40px;
+  flex-wrap: wrap;
 }
 
 .form-container-h1 {
@@ -87,6 +87,7 @@
   background-color: rgb(107, 197, 197);
   font-weight: 500;
   text-align: center;
+  
 }
 
 .cooking-profile-btn:hover {

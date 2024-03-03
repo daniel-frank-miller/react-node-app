@@ -74,9 +74,11 @@ class CleaningProfile extends Component{
       <>
         <Navbar />
         <div className="cleaningProfile-container">
+        <h1 className="form-container-h1">Cleaning Profile</h1>
           <div className="form-container">
-            <h1 className="form-container-h1">Cleaning Profile</h1>
+            
             <form id="profileForm" onSubmit={this.handleSubmit} className="cleaning-form-container">
+              <div className="register-input-field">
               <label className="form-container-label" htmlFor="name">Name:</label>
               <input
                 type="text"
@@ -88,7 +90,9 @@ class CleaningProfile extends Component{
                 className="cleaning-profile-input"
                 required
               />
+              </div>
   
+              <div className="register-input-field">
               <label className="form-container-label" htmlFor="location">Location:</label>
               <input
                 type="text"
@@ -100,14 +104,18 @@ class CleaningProfile extends Component{
                 className="cleaning-profile-input"
                 required
               />
+              </div>
   
+              <div className="register-input-field">
               <label className="form-container-label" htmlFor="service-type">Service Type :</label>
               <select id="service-type" name="serviceType" value={cleaningServiceType} onChange={this.handleServiceType} className="cleaning-profile-input">
                 <option value="Regular Cleaning">Regular Cleaning</option>
                 <option value="Washroom Cleaning">Washroom Cleaning</option>
                 <option value="Dusting and Setting">Dusting & Setting</option>
               </select>
+              </div>
   
+              <div className="register-input-field">
               <label className="form-container-label" htmlFor="sp">Recurring :</label>
               <select id="sp" name="schedulingPreference" value={recurring} onChange={this.handleRecurring} className="cleaning-profile-input">
                 <option value="Select">Select</option>
@@ -116,7 +124,9 @@ class CleaningProfile extends Component{
                 <option value="Weekly">Weekly</option>
                 <option value="Monthly">Monthly</option>
               </select>
+              </div>
   
+              <div className="register-input-field">
               <label className="form-container-label" htmlFor="time">Date & Time:</label>
               <input
                 type="datetime-local"
@@ -127,7 +137,9 @@ class CleaningProfile extends Component{
                 onChange={this.handleDateTime}
                 className="cleaning-profile-input"
               />
+              </div>
   
+              <div className="register-input-field">
               <label className="form-container-label" htmlFor="house-type">House Type:</label>
               <select id="house-type" name="house-type" value={houseType} onChange={this.handleHouseType} className="cleaning-profile-input">
                 <option value="1BHK">1BHK</option>
@@ -136,6 +148,7 @@ class CleaningProfile extends Component{
                 <option value="4BHK">4BHK</option>
                 <option value="VILLA">Villa</option>
               </select>
+              </div>
   
               <div id="con" style={{ width: "100%", textAlign: "center" }}>
                 <button type="submit" className="cleaning-profile-btn">
