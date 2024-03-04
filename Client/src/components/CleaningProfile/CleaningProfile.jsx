@@ -152,7 +152,7 @@ class CleaningProfile extends Component{
   
               <div id="con" style={{ width: "100%", textAlign: "center" }}>
                 <button type="submit" className="cleaning-profile-btn">
-                  Submit
+                  Submit 
                 </button>
               </div>
             </form>
