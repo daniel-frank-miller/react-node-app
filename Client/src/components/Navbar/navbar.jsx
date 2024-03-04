@@ -107,11 +107,6 @@ const Navbar = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/bookings" onClick={toggleMenu}>
-            Bookings
-          </NavLink>
-        </li>
-        <li>
           <NavLink to="/contactus" onClick={toggleMenu}>
             Contact
           </NavLink>
