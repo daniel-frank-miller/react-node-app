@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-image:linear-gradient(#2bc0e4,white) ;
+  background-image: url("/src/assets/about-us-background.webp");
   padding-top: 10px;
   transition: opacity 0.5s ease; /* Add opacity transition */
   opacity: 0; /* Initially hide the section */
@@ -39,10 +39,13 @@
   border-radius: 20px;
   transition: transform 0.5s ease; /* Add transform transition */
   border-top-right-radius: 80px;
+  height: 350px;
 }
 
 .section2-content {
+  margin-top: auto;
   width: 40%;
+  margin-bottom: auto;
 }
 
 @media screen and (max-width: 786px) {
@@ -62,8 +65,10 @@
 .section2-subtitle {
   text-align: left;
   padding: 10px;
-  font-size: 20px;
-  font-family: "Noto Sans Glagolitic", sans-serif;
+  font-size: 16px;
+  font-family: "Roboto";
+  text-align: justify;
+  text-justify: inter-word;
   color: black;
 }
 
@@ -74,8 +79,8 @@
 }
 
 .section-2-btn {
-  background-color: #fff;
-  color: #000;
+  background-color: #3b3b3b;
+  color: #fff;
   font-size: 18px;
   height: 45px;
   width: 180px;
@@ -90,7 +95,9 @@
 
 .section-2-btn:hover {
   background: transparent;
-  border: 0.5px solid black;
+  border: 1px solid black;
+  color: black;
+  box-shadow: 6px 6px 6px gray;
 }
 .carousel {
   width: 40%;
@@ -148,4 +155,48 @@
   to {
     transform: scale(1);
   }
+}
+
+@media screen and (min-width:320px) and (max-width:768px){
+  .carousel{
+    max-width: 500px;
+    min-width: 320px;
+    width: 100%;
+    margin-left: 10px;
+  }
+  .section2-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .section2-subtitle{
+    font-size: 14px;
+    text-align: justify;
+    text-justify: inter-word;
+  }
+  .carousel-img{
+    height: 350px;
+  }
+}
+
+@media screen and (max-width:320px){
+  .carousel{
+    min-width: 220px;
+  }
+  .section2-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .section2-heading{
+    font-size: 24px;
+  }
+
+  .carousel-img{
+    height: 240px;
+  }
+  .section2-subtitle{
+    font-size: 12px;
+  }
+  
 }

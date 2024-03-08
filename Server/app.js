@@ -82,13 +82,13 @@ app.get("/cooking_services", async (req, res) => {
 
 app.post("/cooking_services", authenticateToken, async (req, res) => {
   const cookingServicesDetails = req.body;
-  const { name, location, recurring, familyMemberCount, dateTime } = cookingServicesDetails;
+  const { name, location, recurring, familyMemberCount, dateTime, phone } = cookingServicesDetails;
   const email = req.email;
   const addCookingUserQuery = `
-    INSERT INTO cooking_services (name, location, recurring, family_member_count, date_and_time, email)
-    VALUES (?, ?, ?, ?, ?, ?)
+    INSERT INTO cooking_services (name, location, recurring, family_member_count, date_and_time, email, phone)
+    VALUES (?, ?, ?, ?, ?, ?, ?)
   `;
-  connection.query(addCookingUserQuery, [name, location, recurring, familyMemberCount, dateTime, email], (error, results) => {
+  connection.query(addCookingUserQuery, [name, location, recurring, familyMemberCount, dateTime, email, phone], (error, results) => {
     if (error) {
       console.error('Error adding cooking service:', error);
       res.status(500).send('Error adding cooking service');
