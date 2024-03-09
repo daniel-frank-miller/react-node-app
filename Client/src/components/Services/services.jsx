@@ -1,93 +1,67 @@
 import { Link } from "react-router-dom";
-import Slider from "react-slick";
+import { useEffect, useRef, useState } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "/src/components/Services/services.css";
 
-const settings = {
-  dots: false,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  autoplay: true, // Enable autoplay
-  autoplaySpeed: 2000,
-};
-
 const Services = () => {
-    const cleaningBlogSlider = () => {
-      return (
-        <Slider {...settings}>
-          <img
-            src="/src/assets/cleaning-blog-3.webp"
-            alt="Images"
-            className="blog-img"
-          />
-          <img
-            src="/src/assets/cleaning-blog-2.webp"
-            alt="Images"
-            className="blog-img"
-          />
-          <img
-            src="/src/assets/cleaning-blog-1.webp"
-            alt="Images"
-            className="blog-img"
-          />
-        </Slider>
-      );
+  const [isVisible, setIsVisible] = useState(false);
+  const servicesRef = useRef(null);
+
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.1, // Adjust this threshold as per your need
     };
-    const cookingBlogSlider = () => {
-      return (
-        <Slider {...settings}>
-          <img
-            src="/src/assets/cooking-blog-3.webp"
-            alt="Images"
-            className="rightsection4-img1"
-          />
-          <img
-            src="/src/assets/cooking-blog-2.webp"
-            alt="Images"
-            className="rightsection4-img2"
-          />
-          <img
-            src="/src/assets/cooking-blog-1.webp"
-            alt="Images"
-            className="rightsection4-img3"
-          />
-        </Slider>
-      );
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        } else {
+          setIsVisible(false);
+        }
+      });
+    }, options);
+
+    if (servicesRef.current) {
+      observer.observe(servicesRef.current);
     }
-    // var element = document.getElementById("colorChangingElement");
-    // setInterval(function() {
-    //   element.style.backgroundColor = colors[index];
-    //   index = (index + 1) % colors.length;
-    // }, 1000); 
+
+    return () => {
+      if (servicesRef.current) {
+        observer.unobserve(servicesRef.current);
+      }
+    };
+  }, []);
+
   return (
     <>
-      <div className="section3  prevent-select" id="servicesSection">
-        <h1 className="section3-heading">What we offer?</h1>
+      <div className={`section3 prevent-select ${isVisible ? "visible" : ""}`} id="servicesSection" ref={servicesRef}>
+        <h1 className={`section3-heading animate__zoomIn ${isVisible ? "animate__fadeInUp" : ""}`}>What we offer?</h1>
 
         <div className="section3-container">
-          <div className="custom-card">
+          <div className={`custom-card ${isVisible ? "animate__fadeInLeft" : ""}`}>
             <div className="img-box">
-              <img src="/src/assets/cooking-card-bg.webp" />
+              <img src="/src/assets/cooking-card-bg.webp" alt="Cooking" />
             </div>
             <div className="custom-content">
               <h2 className="section3-title">Cooking</h2>
               <p className="section3-subtitle">
                 Welcome to the world of flavour, innovation and endless
-                possibilties in kitchen.
+                possibilities in kitchen.
               </p>
               <Link to="/cookingprofile">
-                <button className="services-btn" id="cleaningBtn">
+                <button className="services-btn" id="cookingBtn">
                   Book Now
                 </button>
               </Link>
             </div>
           </div>
-          <div className="custom-card">
+          <div className={`custom-card ${isVisible ? "animate__fadeInRight" : ""}`}>
             <div className="img-box">
-              <img src="/src/assets/cleaning-card-bg.webp" />
+              <img src="/src/assets/cleaning-card-bg.webp" alt="Cleaning" />
             </div>
             <div className="custom-content">
               <h2 className="section3-title">Cleaning</h2>
@@ -103,74 +77,6 @@ const Services = () => {
             </div>
           </div>
         </div>
-      </div>
-
-      <div className="blog-section prevent-select">
-        <div className="blog-Container1">
-          <h1 className="blog-title">Cleaning Blogs</h1>
-          <p className="blog-subtitle">
-            At HOMAID, we bring together the best of both worlds impeccable
-            cleaning services tailored to your space and unique cooking
-            experiences crafted to your taste. Experience the joy of a spotless
-            home and gourmet meals, all seamlessly delivered to elevate your
-            lifestyle.
-          </p>
-          <Link to="/cleaningservices">
-            <button type="button" className="cleaning-blogs-book-now-button">Book Now</button>
-          </Link>
-        </div>
-        <div className="blog-Container2">
-          <img
-            src="/src/assets/cleaning-blog-3.webp"
-            alt="Images"
-            className="blog-img1"
-          />
-          <img
-            src="/src/assets/cleaning-blog-2.webp"
-            alt="Images"
-            className="blog-img2"
-          />
-          <img
-            src="/src/assets/cleaning-blog-1.webp"
-            alt="Images"
-            className="blog-img3"
-          />
-        </div>
-        <div className="mobileview-blog-carousel">{cleaningBlogSlider()}</div>
-      </div>
-      <hr/>
-      <div className="blog-section prevent-select">
-        <div className="blog-Container1 cookingblog1">
-          <h1 className="blog-title">Cooking Blogs</h1>
-          <p className="blog-subtitle">
-            At HOMAID, we bring together the best of both worlds impeccable
-            cleaning services tailored to your space and unique cooking
-            experiences crafted to your taste. Experience the joy of a spotless
-            home and gourmet meals, all seamlessly delivered to elevate your
-            lifestyle.
-          </p>
-          <Link to="/cookingprofile">
-            <button type="button"  className="cooking-blogs-book-now-button">Book Now</button>
-          </Link>
-        </div>
-        <div className="blog-Container2 cookingblog2">
-          <img
-            src="/src/assets/cooking-blog-3.webp"
-            alt="Images"
-            className="blog-img3"
-          />
-          <img
-            src="/src/assets/cooking-blog-2.webp"
-            alt="Images"
-            className="blog-img2"
-          />
-          <img
-            src="/src/assets/cooking-blog-1.webp"
-            alt="Images"
-            className="blog-img1"
-          />
-        </div>
-        <div className="mobileview-blog-carousel">{cookingBlogSlider()}</div>
       </div>
     </>
   );

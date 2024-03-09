@@ -35,7 +35,7 @@ class CleaningProfile extends Component{
     e.preventDefault();
     const {name,location,recurring,houseType,cleaningServiceType,dateTime}=this.state 
     const cleaningServicesDetails = {name,location,recurring,houseType,cleaningServiceType,dateTime};
-    const response = await fetch("http://178.16.139.165:3000/cleaning_services", {
+    const response = await fetch("https://api.homaid.in/cleaning_services", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

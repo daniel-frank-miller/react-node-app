@@ -1,13 +1,23 @@
-
 .section3 {
-  background-image: url("/src/assets/30.webp");
-  padding: 50px 0px;
+  background-image:linear-gradient(rgb(140, 135, 135), #d1d6db,white);
+  padding: 10px 0px;
   text-align: center;
+  opacity: 0; /* Initially hide the section */
+  transition: opacity 0.5s ease; /* Add opacity transition */
 }
+
+.section3.visible {
+  opacity: 1; /* Show the section when visible */
+}
+
 .section3-heading {
   font-size: 40px;
   font-family: "Noto Sans Glagolitic", sans-serif;
   margin-top: 3%;
+}
+
+.section3-heading.animate__fadeInUp {
+  animation: fadeInUp 1s forwards;
 }
 
 @media screen and (max-width: 786px) {
@@ -25,13 +35,14 @@
   gap: 100px 50px;
   padding: 100px 50px;
 }
+
 @media screen and (max-width: 768px) {
   .section3-container {
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 50px 50px;
-    padding: 50px 50px;
+    padding: 100px 50px;
   }
 }
 
@@ -88,11 +99,24 @@
   text-align: center;
   overflow: hidden;
   transition: 0.5s;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .section3-container .custom-card:hover .custom-content {
   top: 130px;
   height: 270px;
+  opacity: 1;
+  pointer-events: auto;
+  transition-delay: 0.2s;
+}
+
+.section3-container .custom-card.animate__fadeInLeft {
+  animation: fadeInLeft 1s forwards;
+}
+
+.section3-container .custom-card.animate__fadeInRight {
+  animation: fadeInRight 1s forwards;
 }
 
 .section3-container .custom-card .custom-content .section3-title {
@@ -120,20 +144,16 @@
   cursor: pointer;
   animation: blinking 1s infinite;
 }
+
 @keyframes blinking {
   0% {
-    
-    border: 0.7px solid rgb(242, 242, 242) ;
+    border: 0.7px solid rgb(242, 242, 242);
   }
   50% {
-    
-    border: 1.9px solid rgb(242, 242, 242) ;
-
+    border: 1.9px solid rgb(53, 49, 49);
   }
   100% {
-    
-    border: 0.7px solid rgb(242, 242, 242) ;
-
+    border: 0.7px solid rgb(170, 166, 166);
   }
 }
 
@@ -164,175 +184,42 @@
     font-size: 14px;
     font-weight: 600;
   }
+
   .custom-card {
     margin-top: 32px;
   }
 }
 
-/* Cleaning and Cooking Blog styling */
-.blog-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  text-align: center;
-  
- background-image: url("/src/assets/blogs-bg.webp");
-} 
-
-.blog-img {
-  margin: 5px 0;
-  width: 95%;
-}
-
-.blog-subtitle {
-  text-align: justify;
-  padding: 10px;
-  color: black;
-}
-.mobileview-blog-carousel {
-  width: 95%;
-}
-
-.blog-Container2 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-}
-
-.blog-img1:hover,
-.blog-img2:hover,
-.blog-img3:hover {
-  box-shadow: 1px 8px 20px black;
-  transition: box-shadow 0.3s ease-in;
-}
-.blog-img1,
-.blog-img2,
-.blog-img3 {
-  height: 30%;
-  margin: 5px;
-  transition: box-shadow 0.6s ease-out;
-  box-shadow: 0.8px 0.9px 3px grey;
-  justify-content: center;
-}
-.blog-img1 {
-  align-self: flex-end;
-}
-.blog-img3 {
-  align-self: flex-start;
-}
-
-.cleaning-blogs-book-now-button{
-  background-color: rgb(58, 58, 58);
-  color: white;
-  border: 2px solid rgb(58, 58, 58);
-  border-radius: 6px;
-  padding: 13px;
-  width: 150px;
-  margin: 10px;
-  cursor: pointer;
-  outline: none;
-  height: 55px;
-  margin-bottom: 20px;
-}
-
-.cleaning-blogs-book-now-button:hover{
-  box-shadow: 1px 3px 10px gray;
-}
-
-.cooking-blogs-book-now-button{
-  background-color: rgb(58, 58, 58);
-  color: white;
-  border: 2px solid rgb(58, 58, 58);
-  border-radius: 6px;
-  padding: 13px;
-  width: 150px;
-  margin: 10px;
-  cursor: pointer;
-  height: 55px;
-  margin-bottom: 20px;
-}
-
-.cooking-blogs-book-now-button:hover{
-  box-shadow: 1px 3px 10px gray;
-}
-
-/*Extra Small Devices - <576px*/
-@media screen and (max-width: 576px) {
-  .blog-title {
-    font-family: "Roboto";
-    font-size: 32px;
+/* CSS Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
   }
-  .blog-subtitle {
-    font-size: 16px;
-  }
-  .blog-Container2 {
-    display: none;
-  }
-  .cleaning-blogs-book-now-button , .cooking-blogs-book-now-button{
-    height: 35px;
-    padding: 5px;
-    text-align: center;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-/*Small Devices*/
-@media screen and (min-width: 576px) and (max-width: 768px) {
-  .blog-title {
-    font-size: 45px;
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
   }
-  .blog-subtitle {
-    font-size: 24px;
-  }
-  .blog-Container2 {
-    display: none;
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
-/*Medium Devices*/
-@media screen and (min-width: 769px) and (max-width: 1000px) {
- 
-  .blog-title {
-    font-size: 35px;
-  }
-  .blog-subtitle {
-    font-size: 22px;
-  }
 
-  .blog-Container2 {
-    display: none;
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
   }
-}
-/*Large and Extra Large Devices*/
-@media screen and (min-width: 1001px) {
-  .blog-section {
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 60vh;
-  }
-  .blog-title {
-    font-size: 45px;
-    padding: 10px;
-  }
-  .blog-subtitle {
-    font-size: 20px;
-  }
-  .mobileview-blog-carousel {
-    display: none;
-  }
-  .blog-Container1 {
-    width: 40%;
-  }
-  .blog-Container2 {
-    width: 50%;
-  }
-
-  
-  .cookingblog1{
-    order: 0;
-  }
-  .cookingblog1{
-    order: 1;
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }

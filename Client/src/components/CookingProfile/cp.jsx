@@ -18,7 +18,7 @@ class CookingProfile extends Component{
     // Handle form submission logic here
     const { name, location, recurring, dateTime, familyMemberCount, phone } = this.state;
     const cookingServicesDetails = { name, location, recurring, familyMemberCount, dateTime , phone};
-    const response = await fetch("http://178.16.139.165:3000/cooking_services", {
+    const response = await fetch("https://api.homaid.in/cooking_services", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

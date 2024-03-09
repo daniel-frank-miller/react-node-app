@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -26,7 +26,7 @@ const About = () => {
     const options = {
       root: null,
       rootMargin: "0px",
-      threshold: 0.5, // Adjust this threshold as per your need
+      threshold: 0.1, // Adjust this threshold as per your need
     };
 
     const observer = new IntersectionObserver((entries) => {

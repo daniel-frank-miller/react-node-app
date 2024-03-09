@@ -32,8 +32,7 @@ class ResetPassword extends Component {
   handleSubmit = async (e) => {
     e.preventDefault();
     const { email, token, newPassword } = this.state;
-    
-      const response = await fetch('http://178.16.139.165:3000/reset_password', {
+      const response = await fetch('https://api.homaid.in/reset_password', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -42,7 +41,7 @@ class ResetPassword extends Component {
       });
       const data = await response.json();
       console.log(data)
-      this.setState({ message: data.display_msg,messageStatus:true }); 
+      this.setState({ message: data.display_msg, messageStatus:true }); 
   }
 
   renderInitialView=()=>(

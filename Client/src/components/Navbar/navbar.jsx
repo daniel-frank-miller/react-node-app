@@ -68,7 +68,7 @@ const Navbar = () => {
     <div className={`${navbarClassName} prevent-select`}>
       <Link to="/" className="link-text">
         <div className="nav-logo-header">
-        <img src="/src/assets/logo_nobg.webp" alt="logo" className="title" />
+        <img src="/src/assets/logo_nobg.webp" alt="logo" className="nav-title" />
         <h1 className="nav-logo-heading">Homaid</h1>
         </div>
       </Link>

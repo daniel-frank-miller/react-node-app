@@ -1,147 +1,240 @@
-
-.section5 {
-  max-width:100%;
-  min-height: 100vh;
-  background-size: cover;
-  padding: 20px;
-  background-color: #000;
-}
-.section5-left-section {
-  width: 50%;
+.Tfeedback-container {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.section5-right-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.imagecontainer {
-  width: 100%;
-  height: 100%;
-  display: flex;
+  width: 100vw;
   flex-direction: row;
+  align-items: center;
+  padding: 5%;
+  justify-content: space-between;
+  background-image: radial-gradient(#e3e9f2, white);
+}
+
+.Tsub-feedback-1 {
+  position: relative;
+  width: 45%;
+  height: 50vh;
+  min-height: 300px;
+  max-height: 350px;
+  background-color: aqua;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 10px;
+  animation: TfadeInLeft 1s forwards; /* Apply animation here */
+}
+.Tsub-feedback-1.Tanimate__fadeInLeft {
+  animation: TfadeInLeft 1s forwards;
+}
+.Tsub-feedback-2 {
+  width: 45%;
+  height: 50vh;
+  min-height: 300px;
+  max-height: 350px;
+  background-color: aqua;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 10px;
+  animation: TfadeInRight 1s forwards; /* Apply animation here */
+}
+.Tsub-feedback-2.Tanimate__fadeInRight {
+  animation: TfadeInRight 1s forwards;
+}
+.Tfeedback-heading {
+  font-size: 40px;
+  text-align: center;
+  color: #333;
+}
+
+.Tfeedback-item {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.Trating-icon {
+  color: #f39c12;
+  width: 25px;
+  height: 30px;
+}
+
+.Tcontainer {
+  position: relative;
+  display: inline-block;
+}
+
+.Tbutton {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  height: 100px;
+  width: 100px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.Tbutton:hover {
+  background-color: #0056b3;
+}
+
+.Tdiv {
+  display: flex;
   justify-content: center;
   align-items: center;
+  margin: 20px;
 }
-.section5-img {
-  align-self: center;
-  height: 55%;
-  width: 60%;
-  border-radius: 15px;
-}
-.subcontainer {
+
+.Tform1 {
+  width: 100%; /* Make the form occupy 100% of the container */
+  background-color: transparent;
+  border: 1px solid #ddd;
+  border-radius: 5px;
   padding: 20px;
-  height: 55%;
-  overflow: auto;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
-.section5-right-section::-webkit-scrollbar {
-  display: none;
+
+.Titem-card:hover .Tform1 {
+  opacity: 1;
 }
-.section5-heading {
-  font-size: 40px;
-  font-family: "Noto Sans Glagolitic", sans-serif;
+
+.Tform1 input,
+.Tform1 textarea,
+.Tform1 button {
+  display: block;
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.Tform1 button {
+  background-color: #007bff;
   color: #fff;
-}
-.feedback {
-  padding: 5px;
-  margin: 30px;
-}
-.feedback-desc {
-  font-size: 18px;
-  font-family: "Arial";
-  margin-top: 5px;
-  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-@media screen and (min-width:769px) and (max-width:1680px){
-  .section5-img{
-    height: 100%;
-    max-height: 450px;    
-    width: 100%;
-    max-width: 550px;
-  }
+.Tform1 button:hover {
+  background-color: #0056b3;
 }
 
-@media screen and (max-width: 786px) {
-  .section5 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: 50px;
-  }
-  .section5-left-section {
-    width: 90%;
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .Tsub-feedback-2,
+  .Tsub-feedback-1 {
+      width: 100%;
   }
 
-  .section5-right-section {
-    padding-top: 50px;
-    width: 105%;
+  .Tfeedback-heading {
+      font-size: 20px;
   }
-  .section5-heading {
-    font-size: 26px;
-    display: none;
+
+  .Tfeedback-item {
+      padding: 15px;
   }
-  .section5-img {
-    width: 70%;
-    height: 80%;
-    padding: 3%;
-    padding-top: 20px;
-    border-radius: 25px;
-  }
-  .subcontainer {
-    padding: 20px;
-    height: 350px;
-    overflow-y: auto;
-  }
-  .feeback-user-name {
-    color: #797be4;
-    font-family: "Arial";
-    margin-top: 5px;
-    font-size: 16px;
-    text-align: right;
+
+  .Tfeedback-container {
+      flex-direction: column;
   }
 }
 
-@media screen and (min-width: 787px) {
-  .section5 {
-    display: flex;
-    flex-direction: row;
-    height: 80vh;
+@media screen and (max-width: 480px) {
+  .Tform1 {
+      width: 100%;
+      left: 0;
+      transform: none;
   }
-  .section5-left-section {
-    width: 50%;
-  }
-  .section5-right-section {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .feeback-user-name {
-    text-align: right;
-    color: #797be4;
-    font-family: "Arial";
-    margin-top: 5px;
-    font-size: 18px;
-  }
-}
-/* scroll bar */
-.subcontainer::-webkit-scrollbar {
-  width: 12px;
 }
 
-.subcontainer::-webkit-scrollbar-thumb {
-  background-color: #808080;
-  border-radius: 6px;
+.Titem-card-container {
+  margin: 3%;
 }
 
-body.dark-mode .subcontainer::-webkit-scrollbar-thumb {
-  background-color: #808080;
+.Titem-card {
+  position: relative;
+  width: 100%; /* Reduced card width */
+  height: 300px; /* Reduced card height */
+  perspective: 1000px;
 }
 
-body.dark-mode .subcontainer {
-  scrollbar-width: thin;
-  scrollbar-color: #808080 transparent;
+.Titem-card-front,
+.Titem-card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  transition: transform 0.6s;
+}
+
+.Titem-card-front {
+  transform: rotateY(0deg);
+}
+
+.Titem-card-back {
+  transform: rotateY(180deg);
+}
+
+.Titem-card:hover .Titem-card-front {
+  transform: rotateY(-180deg);
+}
+
+.Titem-card:hover .Titem-card-back {
+  transform: rotateY(0deg);
+}
+
+.Titem-food-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.Tfood-items {
+  display: flex;
+  width: 90vw;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Adjust as needed */
+  margin-top: 20px; /* Margin for the entire list */
+}
+
+.Titem-card-back {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  padding: 20px;
+  border-radius: 20px;
+  margin: 10px;
+  height: 240px;
+  text-align: center;
+  border-width: 0px;
+}
+
+/* Animation Keyframes with "T" prefix */
+@keyframes TfadeInLeft {
+  from {
+      opacity: 0;
+      transform: translateX(-100px);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+@keyframes TfadeInRight {
+  from {
+      opacity: 0;
+      transform: translateX(100px);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
 }

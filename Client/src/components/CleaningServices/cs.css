@@ -1,7 +1,7 @@
 .CleaningServices-Container {
   width: 100%;
   min-height: 89vh;
-  background-image: url("/src/assets/contact-us-bg.webp");
+  background-image: url("/src/assets/login-bg2.webp");
   background-size: cover;
   padding-bottom: 20px;
 }
@@ -64,9 +64,14 @@
 }
 
 .title {
-  color: #2b3d59;
+  text-align: center;
+ 
+  font-family: "Montserrat";
+  padding: 20px;
+  color: #00144f;
+  font-weight: bold;
+  letter-spacing: 0.9px;
   font-size: 28px;
-  margin-top: 15px;
 }
 
 .second-text {
@@ -75,9 +80,9 @@
 
 .bottom-text {
   color: #445b73;
-  font-family: "EB Garamond", serif;
+  font-family:  "Montserrat";
   margin: 0;
-  font-size: 16px;
+  font-size: 14px;
   padding: 13px;
 }
 

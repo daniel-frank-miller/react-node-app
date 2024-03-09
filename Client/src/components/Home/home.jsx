@@ -2,12 +2,13 @@ import Navbar from "/src/components/Navbar/navbar.jsx";
 import About from "/src/components/About/about.jsx";
 import Services from "/src/components/Services/services.jsx";
 import Testimonals from "/src/components/Testimonals/testimonals.jsx";
-import Header from "../Header/header";
-import Rating from "/src/components/Rating/rating.jsx";
+// import Header from "../Header/header";
+// import Rating from "/src/components/Rating/rating.jsx";
 import Footer from "/src/components/Footer/footer.jsx";
 import Quotation from "/src/components/Quotation/index.jsx";
 import Hero from "/src/components/Hero/hero.jsx";
 import WhyChooseUs from "../WhyChooseUs/why.jsx";
+import ServiceBlog from "../ServiceBlog/index.jsx"
 import { Fade } from "react-awesome-reveal";
 import "/src/components/Home/home.css";
 
@@ -40,14 +41,15 @@ const Home = () => {
   return (
     <Fade cascade damping={0.9}>
     <div className="mainContainer">
-      <Header/>
+      {/* <Header/> */}
       <Navbar />
       <Hero/>
       <About />
-      <WhyChooseUs/>
       <Services />
+      <WhyChooseUs/>
+      <ServiceBlog/>
       <Testimonals/>
-      <Rating />
+      {/* <Rating /> */}
       <Quotation/>
       <Footer />
     </div>
