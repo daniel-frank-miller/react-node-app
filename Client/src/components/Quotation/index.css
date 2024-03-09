@@ -73,7 +73,7 @@
   
   .form-div {
     width: 60%;
-    background-color: #632646;
+    background-color: #4e9d9d;
     padding: 8px;
   }
   
@@ -184,18 +184,20 @@
   }
   
   .appointment-button {
-    background-color: #008080;
+    background-color: #ffffff;
     height: 30px;
     padding: 5px;
     margin-top: 10px;
     border-width: 0px;
     border-radius: 5px;
-    color: white;
+    color: black;
     transition: background-color;
+    cursor: pointer;
   }
   
   .appointment-button:hover {
     background-color: #0f060a;
+    color: white;
   }
   
   .input-new-two {
