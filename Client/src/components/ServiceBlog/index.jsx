@@ -8,6 +8,7 @@ const ServiceBlog = () => {
   
   const items = [
     {
+      id:1,
       title: "Cooking for Busy Schedules",
       cardTitle: "Cooking for Busy Schedules",
       cardSubtitle: "Delicious, healthful, and simple-to-prepare meals are part of our personalised programmes, so you can enjoy them without worrying about grocery shopping or preparation time.",
@@ -19,6 +20,7 @@ const ServiceBlog = () => {
       },
     },
     {
+      id:2,
       title: "Cooking for Special Occasions",
       cardTitle: "Cooking for Special Occasions",
       cardSubtitle: "We enjoy crafting gastronomic adventures that you and your visitors won't soon forget. We provide tailored meals according to your tastes for everything from small dinners to larger parties.",
@@ -30,6 +32,7 @@ const ServiceBlog = () => {
       },
     },
     {
+      id:3,
       title: "Interactive Cooking Sessions",
       cardTitle: "Interactive Cooking Sessions",
       cardSubtitle: "Optional cooking classes for family members to learn how to prepare healthy and delicious meals together, fostering a love for cooking and making informed food choices.",
@@ -42,6 +45,7 @@ const ServiceBlog = () => {
     },
 
     {
+      id:4,
       title: "Thorough Cleaning",
       cardTitle: "Thorough Cleaning",
       cardSubtitle: "Top-notch equipment is used by our cleaning specialists to create a clean and organised house. We promise that you will be happy.",
@@ -53,6 +57,7 @@ const ServiceBlog = () => {
       },
     },
     {
+      id:5,
       title: "Professional Expertise",
       cardTitle: "Professional Expertise",
       cardSubtitle: "Our staff is qualified and equipped to provide high-quality service. You can rely on us to consistently surpass your expectations.",
@@ -64,6 +69,7 @@ const ServiceBlog = () => {
       },
     },
     {
+      id:6,
       title: "Customized Plans",
       cardTitle: "Customized Plans",
       cardSubtitle: "We are aware that every family is distinct and every house is unique. For this reason, we provide specialised cleaning programmes to meet your unique needs.",

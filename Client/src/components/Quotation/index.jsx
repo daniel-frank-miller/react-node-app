@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import  { useState, useEffect, useRef } from 'react';
 import { IoIosContact } from 'react-icons/io';
 import { FiPhoneCall } from 'react-icons/fi';
 import { GoLocation } from 'react-icons/go';
@@ -57,7 +57,8 @@ const Quotation = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch('https://api.example.com/submit', {
+    console.log(formData)
+    fetch('https://api.homaid.in/book-appointment', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -66,11 +67,14 @@ const Quotation = () => {
     })
     .then(response => {
       // Handle response as needed
+      console.log(response)
     })
     .catch(error => {
       console.error('Error:', error);
     });
   };
+
+  
 
   return (
     <div className={`quotation-container ${isVisible ? animationClass : ""}`} ref={quotationRef}>
@@ -124,6 +128,7 @@ const Quotation = () => {
                   
                   <div className='input-field-text'>
                     <select placeholder='Choose' type='text' className='input-new-two' name='service' value={formData.service} onChange={handleInputChange}>
+                      <option>Select</option>
                       <option>Cooking</option>
                       <option>Cleaning</option>
                     </select>

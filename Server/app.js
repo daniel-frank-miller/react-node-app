@@ -383,6 +383,21 @@ app.post("/contactus",async(req,res)=>{
   });
 })
 
+app.post("/book-appointment",async(req,res)=>{
+  const {formData}=req.body;
+  const {name,email,phoneNumber,location,date,time,service,message}=formData;
+  const addBookAppointmentQuery=`INSERT INTO appointment (name,email,phone_number,location,date,time,service,message) 
+    VALUES (?,?,?,?,?,?,?,?)`
+  connection.query(addBookAppointmentQuery,[name,email,phoneNumber,location,date,time,service,message],(error,results)=>{
+    if (error) {
+      console.error('Error Booking Appointment:', error);
+      res.status(500).send({display_msg:'Error Booking Appointment'});
+      return;
+    }
+    res.send({display_msg:"Booking Appointment was Successful"});
+  })
+})
+
 app.post('/api/payment', handlePayment);
 
 app.get('/api/paymentstatus/:transactionId', handlePaymentStatus);
