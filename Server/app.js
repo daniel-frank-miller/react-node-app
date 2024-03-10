@@ -259,7 +259,7 @@ app.post("/register", async (request, response) => {
   connection.query(selectUserQuery, [email], async (error, result) => {
     if (error) {
       console.error('Error checking user:', error);
-      response.status(500).send('Error checking user');
+      response.status(500).send({ display_msg: "Error checking user." });
       return;
     }
 
