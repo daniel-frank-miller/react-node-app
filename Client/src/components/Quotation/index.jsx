@@ -58,7 +58,7 @@ const Quotation = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData)
-    fetch('https://api.homaid.in/book-appointment', {
+    fetch('http://localhost:3000/book-appointment', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

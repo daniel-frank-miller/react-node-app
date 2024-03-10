@@ -49,7 +49,7 @@ class Register extends Component {
   onSubmit = async(e) => {
     e.preventDefault();
     const {email} =this.state 
-    const response=await fetch("http://178.16.139.165:3000/register",{
+    const response=await fetch("https://api.homaid.in/register",{
       method:'POST',
       headers:{
         'Content-type':"application/json"
@@ -68,7 +68,7 @@ class Register extends Component {
     event.preventDefault();
     const { email, otp, firstName, phone, password} = this.state;
     console.log(email);
-      const response = await fetch('http://178.16.139.165:3000/verify_otp', {
+      const response = await fetch('https://api.homaid.in/verify_otp', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
