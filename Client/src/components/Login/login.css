@@ -200,4 +200,10 @@
   .LoginContainer{
     height: 100vh;
   }
+  .loginContainer-rightContent{
+    height: 50%;
+  }
+  .login-tagline{
+    margin-bottom: 30px;
+  }
 }
