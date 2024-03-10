@@ -195,3 +195,9 @@
 .forgot-password{
   margin-left: 5px;
 }
+
+@media screen and (min-width:768px) and (max-width:1100px){
+  .LoginContainer{
+    height: 100vh;
+  }
+}
