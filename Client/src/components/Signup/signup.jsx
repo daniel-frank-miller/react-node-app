@@ -86,7 +86,7 @@ class Register extends Component {
 
   render(){
     const {firstName,lastName,email,password,confirmPassword,messageStatus,phone,message,showModal,otpMessage,otp}=this.state 
-    if(otpMessage=="Registration successful."){
+    if(message=="Registration successful."){
       return <Navigate to="/login"/>
     }
   return (
@@ -148,7 +148,7 @@ class Register extends Component {
               required
             />
           </div>
-          {messageStatus&&<p>{message}</p>}
+          {messageStatus&&<p className="message-status">{message}</p>}
           <button type="submit" className="register-btn">
             Register
           </button>

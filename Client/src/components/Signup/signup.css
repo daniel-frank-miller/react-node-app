@@ -252,3 +252,8 @@
     margin-bottom: 30px;
   }
 }
+
+.message-status{
+  color: green;
+  width: 100%;
+}
