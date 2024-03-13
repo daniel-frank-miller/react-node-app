@@ -57,32 +57,32 @@ class Register extends Component {
       body:JSON.stringify({email})
     })
     if(response.ok){
-      this.setState({showModal:true})
+      this.setState({showModal:false})
     }
     const data=await response.json()
     console.log(data)
     this.setState({messageStatus:true,message:data.display_msg})
   };
 
-  handleVerify = async (event) => {
-    event.preventDefault();
-    const { email, otp, firstName, phone, password} = this.state;
-    console.log(email);
-      const response = await fetch('https://api.homaid.in/verify_otp', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ email, otp, firstName, phone, password })
-      });
-      const data = await response.json();
-      if (response.ok) {
-        this.setState({ otpMessage: data.message,showModal:false, otp:'' });
-      } else {
-        this.setState({ otpMessage: data.error });
-      }
+  // handleVerify = async (event) => {
+  //   event.preventDefault();
+  //   const { email, otp, firstName, phone, password} = this.state;
+  //   console.log(email);
+  //     const response = await fetch('https://api.homaid.in/verify_otp', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json'
+  //       },
+  //       body: JSON.stringify({ email, otp, firstName, phone, password })
+  //     });
+  //     const data = await response.json();
+  //     if (response.ok) {
+  //       this.setState({ otpMessage: data.message,showModal:false, otp:'' });
+  //     } else {
+  //       this.setState({ otpMessage: data.error });
+  //     }
     
-  };
+  // };
 
   render(){
     const {firstName,lastName,email,password,confirmPassword,messageStatus,phone,message,showModal,otpMessage,otp}=this.state 
@@ -166,7 +166,7 @@ class Register extends Component {
           Already have an account? <Link to="/login">login</Link>
         </p>
       </div>
-      {showModal && (
+      {/* {showModal && (
           <div className="modal">
             <div className="modal-content">
                 <form className='verify-container' onSubmit={this.handleVerify}>
@@ -186,7 +186,7 @@ class Register extends Component {
               {otpMessage.length!=0 && <p>{otpMessage}</p>}
             </div>
           </div>
-      )}
+      )} */}
     </div>
     </>
   );

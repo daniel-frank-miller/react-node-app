@@ -169,7 +169,7 @@ const sendResetPasswordEmail = async (email, token, name) => {
       subject: 'Password Reset Instructions',
       html: `<div>
         <h1>Hi ${name},</h1>
-        <p>Click <a href="http://localhost:5173/reset_password?email=${email}&token=${token}">here</a> to reset your password.</p>
+        <p>Click <a href="https://homaid.in/reset_password?email=${email}&token=${token}">here</a> to reset your password.</p>
         <p>Regards Homaid Services</p>
       </div>`
     };
@@ -266,7 +266,7 @@ app.post("/register", async (request, response) => {
     // If user does not exist, proceed with sending OTP
     if (result.length === 0) {
       const otp = Math.floor(100000 + Math.random() * 900000); // Generate a 6-digit OTP
-
+      console.log(typeof(otp))
       // Store the OTP in the database
       const insertOtpQuery = `INSERT INTO otp (email, otp) VALUES (?, ?)`;
       connection.query(insertOtpQuery, [email, otp], async (error, results) => {
@@ -349,7 +349,7 @@ app.post('/verify_otp', async (req, res) => {
             from: process.env.EMAIL_USER, // Sender address
             to: email, // Recipient address
             subject: 'Registration Successful', // Subject line
-            html: `<p>Dear ${name},</p>
+            html: `<p>Dear ${firstName},</p>
                    <p>Thank you for registering with us!</p>
                    <p>We're excited to have you on board. Happy Homaid!</p>
                    <a href="homaid.in/login" target="_blank">Click here to Login</a>` // Email body (HTML content)
