@@ -251,8 +251,8 @@ app.get("/login",async (req, res) => {
   });
 });
 
-app.post("/register", async (request, response) => {
-  const {email, otp, firstName, phone, password } = req.body;
+app.post("/register", async (req, res) => {
+  const {email, firstName, phone, password } = req.body;
   const hashedPassword = await bcrypt.hash(password, 10);
 
   // Insert user details into the database
