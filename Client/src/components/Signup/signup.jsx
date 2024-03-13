@@ -48,13 +48,13 @@ class Register extends Component {
 
   onSubmit = async(e) => {
     e.preventDefault();
-    const {email} =this.state 
+    const { email, otp, firstName, phone, password} = this.state;
     const response=await fetch("https://api.homaid.in/register",{
       method:'POST',
       headers:{
         'Content-type':"application/json"
       },
-      body:JSON.stringify({email})
+      body:JSON.stringify({email, otp, firstName, phone, password})
     })
     if(response.ok){
       this.setState({showModal:false})
