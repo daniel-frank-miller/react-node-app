@@ -252,120 +252,144 @@ app.get("/login",async (req, res) => {
 });
 
 app.post("/register", async (request, response) => {
-  const {email} = request.body;
+  const {email, otp, firstName, phone, password } = req.body;
+  const hashedPassword = await bcrypt.hash(password, 10);
 
-  // Check if the user already exists
-  const selectUserQuery = `SELECT * FROM login WHERE email = ?`;
-  connection.query(selectUserQuery, [email], async (error, result) => {
+  // Insert user details into the database
+  const createUserQuery = `INSERT INTO login (name, email, phone, password) VALUES (?, ?, ?, ?)`;
+  connection.query(createUserQuery, [firstName, email, phone, hashedPassword], async (error, results) => {
     if (error) {
-      console.error('Error checking user:', error);
-      response.status(500).send({ display_msg: "Error checking user." });
+      console.error('Error adding user:', error);
+      res.status(500).send('Error adding user');
       return;
     }
 
-    // If user does not exist, proceed with sending OTP
-    if (result.length === 0) {
-      const otp = Math.floor(100000 + Math.random() * 900000); // Generate a 6-digit OTP
-      console.log(typeof(otp))
-      // Store the OTP in the database
-      const insertOtpQuery = `INSERT INTO otp (email, otp) VALUES (?, ?)`;
-      connection.query(insertOtpQuery, [email, otp], async (error, results) => {
-        if (error) {
-          console.error('Error storing OTP:', error);
-          response.status(500).send('Error storing OTP');
-          return;
-        }
+    const registrationMailOptions = {
+    from: process.env.EMAIL_USER, // Sender address
+    to: email, // Recipient address
+    subject: 'Registration Successful', // Subject line
+    html: `<p>Dear ${firstName},</p>
+           <p>Thank you for registering with us!</p>
+           <p>We're excited to have you on board. Happy Homaid!</p>
+           <a href="homaid.in/login" target="_blank">Click here to Login</a>` // Email body (HTML content)
+    };
 
-        // Send the OTP via email
-        const mailOptions = {
-          from: process.env.EMAIL_USER,
-          to: email,
-          subject: 'OTP Verification',
-          text: `Your OTP for verification is: ${otp}`
-        };
+    await transporter.sendMail(registrationMailOptions);
+          
+     res.send({ message: 'Registration successful.' });
+    });
+  // Check if the user already exists
+  // const selectUserQuery = `SELECT * FROM login WHERE email = ?`;
+  // connection.query(selectUserQuery, [email], async (error, result) => {
+  //   if (error) {
+  //     console.error('Error checking user:', error);
+  //     response.status(500).send({ display_msg: "Error checking user." });
+  //     return;
+  //   }
 
-        await transporter.sendMail(mailOptions, (error) => {
-          if (error) {
-            console.error('Error sending OTP:', error);
-            response.status(500).json({ error: 'Error sending OTP. Please try again later.' });
-          } else {
-            console.log('OTP sent successfully');
-            response.json({ message: 'OTP sent successfully.' });
-          }
-        });
-      });
-    } else {
-      // User already exists
-      response.status(400).send({ display_msg: "User already exists" });
-    }
-  });
+  //   // If user does not exist, proceed with sending OTP
+  //   if (result.length === 0) {
+  //     const otp = Math.floor(100000 + Math.random() * 900000); // Generate a 6-digit OTP
+  //     console.log(typeof(otp))
+  //     // Store the OTP in the database
+  //     const insertOtpQuery = `INSERT INTO otp (email, otp) VALUES (?, ?)`;
+  //     connection.query(insertOtpQuery, [email, otp], async (error, results) => {
+  //       if (error) {
+  //         console.error('Error storing OTP:', error);
+  //         response.status(500).send('Error storing OTP');
+  //         return;
+  //       }
+
+  //       // Send the OTP via email
+  //       const mailOptions = {
+  //         from: process.env.EMAIL_USER,
+  //         to: email,
+  //         subject: 'OTP Verification',
+  //         text: `Your OTP for verification is: ${otp}`
+  //       };
+
+  //       await transporter.sendMail(mailOptions, (error) => {
+  //         if (error) {
+  //           console.error('Error sending OTP:', error);
+  //           response.status(500).json({ error: 'Error sending OTP. Please try again later.' });
+  //         } else {
+  //           console.log('OTP sent successfully');
+  //           response.json({ message: 'OTP sent successfully.' });
+  //         }
+  //       });
+  //     });
+  //   } else {
+  //     // User already exists
+  //     response.status(400).send({ display_msg: "User already exists" });
+  //   }
+  // });
 });
 
 // Verify OTP endpoint
-app.post('/verify_otp', async (req, res) => {
-  const {email, otp, firstName, phone, password } = req.body;
-  // Retrieve the OTP from the database
-  const selectOtpQuery = `SELECT otp FROM otp WHERE email = ?`;
-  connection.query(selectOtpQuery, [email], async (error, result) => {
-    if (error) {
-      console.error('Error retrieving OTP:', error);
-      res.status(500).send('Error retrieving OTP');
-      return;
-    }
+// app.post('/verify_otp', async (req, res) => {
+//   const {email, otp, firstName, phone, password } = req.body;
+//   // Retrieve the OTP from the database
+//   const selectOtpQuery = `SELECT otp FROM otp WHERE email = ?`;
+//   connection.query(selectOtpQuery, [email], async (error, result) => {
+//     if (error) {
+//       console.error('Error retrieving OTP:', error);
+//       res.status(500).send('Error retrieving OTP');
+//       return;
+//     }
 
-    if (result.length === 0) {
-      // Email not found
-      res.status(400).send({ error: 'Email not found' });
-      return;
-    }
+//     if (result.length === 0) {
+//       // Email not found
+//       res.status(400).send({ error: 'Email not found' });
+//       return;
+//     }
 
-    const storedOTP = result[0].otp;
+//     const storedOTP = result[0].otp;
 
-    if (storedOTP.toString() === otp) {
-      // OTP is valid
-      // Remove the OTP from the database
-      const deleteOtpQuery = `DELETE FROM otp WHERE email = ?`;
-      connection.query(deleteOtpQuery, [email], async (error, result) => {
-        if (error) {
-          console.error('Error deleting OTP:', error);
-          res.status(500).send('Error deleting OTP');
-          return;
-        }
+//     if (storedOTP.toString() === otp) {
+//       // OTP is valid
+//       // Remove the OTP from the database
+//       const deleteOtpQuery = `DELETE FROM otp WHERE email = ?`;
+//       connection.query(deleteOtpQuery, [email], async (error, result) => {
+//         if (error) {
+//           console.error('Error deleting OTP:', error);
+//           res.status(500).send('Error deleting OTP');
+//           return;
+//         }
         
-        // Hash the password
-        const hashedPassword = await bcrypt.hash(password, 10);
+//         // Hash the password
+//         const hashedPassword = await bcrypt.hash(password, 10);
 
-        // Insert user details into the database
-        const createUserQuery = `INSERT INTO login (name, email, phone, password) VALUES (?, ?, ?, ?)`;
-        connection.query(createUserQuery, [firstName, email, phone, hashedPassword], async (error, results) => {
-          if (error) {
-            console.error('Error adding user:', error);
-            res.status(500).send('Error adding user');
-            return;
-          }
+//         // Insert user details into the database
+//         const createUserQuery = `INSERT INTO login (name, email, phone, password) VALUES (?, ?, ?, ?)`;
+//         connection.query(createUserQuery, [firstName, email, phone, hashedPassword], async (error, results) => {
+//           if (error) {
+//             console.error('Error adding user:', error);
+//             res.status(500).send('Error adding user');
+//             return;
+//           }
 
-          // Send registration confirmation email
-          const registrationMailOptions = {
-            from: process.env.EMAIL_USER, // Sender address
-            to: email, // Recipient address
-            subject: 'Registration Successful', // Subject line
-            html: `<p>Dear ${firstName},</p>
-                   <p>Thank you for registering with us!</p>
-                   <p>We're excited to have you on board. Happy Homaid!</p>
-                   <a href="homaid.in/login" target="_blank">Click here to Login</a>` // Email body (HTML content)
-          };
+//           // Send registration confirmation email
+//           const registrationMailOptions = {
+//             from: process.env.EMAIL_USER, // Sender address
+//             to: email, // Recipient address
+//             subject: 'Registration Successful', // Subject line
+//             html: `<p>Dear ${firstName},</p>
+//                    <p>Thank you for registering with us!</p>
+//                    <p>We're excited to have you on board. Happy Homaid!</p>
+//                    <a href="homaid.in/login" target="_blank">Click here to Login</a>` // Email body (HTML content)
+//           };
 
-          await transporter.sendMail(registrationMailOptions);
+//           await transporter.sendMail(registrationMailOptions);
           
-          res.send({ message: 'Registration successful.' });
-        });
-      });
-    } else {
-      // OTP is invalid
-      res.status(400).send({ error: 'Invalid OTP.' });
-    }
-  });
-});
+//           res.send({ message: 'Registration successful.' });
+//         });
+//       });
+//     } else {
+//       // OTP is invalid
+//       res.status(400).send({ error: 'Invalid OTP.' });
+//     }
+//   });
+// });
 
 app.post("/contactus",async(req,res)=>{
   const { firstName,lastName,email,phone,message} = req.body;
