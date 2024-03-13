@@ -93,7 +93,7 @@ const ServiceBlog = () => {
         disableNavButtons={true}
         enableAutoPlay={false}
         enableControls={false}
-        slideShow={true}
+        slideShow
       />    
     </div>
   );

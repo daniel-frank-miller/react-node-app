@@ -39,7 +39,7 @@ const Home = () => {
   //};
 
   return (
-    <Fade cascade damping={0.9}>
+    <Fade cascade damping={0.1}>
     <div className="mainContainer">
       {/* <Header/> */}
       <Navbar />

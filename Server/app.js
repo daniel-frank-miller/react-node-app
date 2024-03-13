@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(cors());
 
 const connection = mysql.createConnection({
-  host: "localhost",
+  host: "127.0.0.1",
   user: "root",
   password: "Homaid@2024",
   database: "HomaidDataBase"
@@ -303,7 +303,7 @@ app.post("/register", async (request, response) => {
 
 // Verify OTP endpoint
 app.post('/verify_otp', async (req, res) => {
-  const {email, otp, name, phone, password } = req.body;
+  const {email, otp, firstName, phone, password } = req.body;
   // Retrieve the OTP from the database
   const selectOtpQuery = `SELECT otp FROM otp WHERE email = ?`;
   connection.query(selectOtpQuery, [email], async (error, result) => {
@@ -337,7 +337,7 @@ app.post('/verify_otp', async (req, res) => {
 
         // Insert user details into the database
         const createUserQuery = `INSERT INTO login (name, email, phone, password) VALUES (?, ?, ?, ?)`;
-        connection.query(createUserQuery, [name, email, phone, hashedPassword], async (error, results) => {
+        connection.query(createUserQuery, [firstName, email, phone, hashedPassword], async (error, results) => {
           if (error) {
             console.error('Error adding user:', error);
             res.status(500).send('Error adding user');
