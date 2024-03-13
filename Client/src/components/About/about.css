@@ -42,7 +42,7 @@
   border-radius: 20px;
   transition: transform 0.5s ease; /* Add transform transition */
   border-top-right-radius: 60px;
-  height: 450px;
+  /* height: 450px; */
 }
 
 .section2-content {
