@@ -263,7 +263,7 @@ app.post("/register", async (req, res) => {
       res.status(500).send('Error adding user');
       return;
     }
-
+    res.send({ message: 'Registration successful.' });
     const registrationMailOptions = {
     from: process.env.EMAIL_USER, // Sender address
     to: email, // Recipient address
@@ -276,7 +276,7 @@ app.post("/register", async (req, res) => {
 
     await transporter.sendMail(registrationMailOptions);
           
-    res.send({ message: 'Registration successful.' });
+   
   });
   
 });

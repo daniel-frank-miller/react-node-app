@@ -61,7 +61,7 @@ class Register extends Component {
     }
     const data=await response.json()
     console.log(data)
-    this.setState({messageStatus:true,message:data.display_msg})
+    this.setState({messageStatus:true,message:data.message})
   };
 
   // handleVerify = async (event) => {
