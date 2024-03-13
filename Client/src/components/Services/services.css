@@ -1,5 +1,5 @@
 .section3 {
-  background-image:linear-gradient(rgb(140, 135, 135), #d1d6db,white);
+  /* background-image:linear-gradient(rgb(140, 135, 135), #d1d6db,white); */
   padding: 10px 0px;
   text-align: center;
   opacity: 0; /* Initially hide the section */

@@ -4,7 +4,7 @@
   align-items: center;
   padding: 0 20px;
   height: 80px;
-  background-color: #f9f7f7;
+  background-color: transparent;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0px;
@@ -13,7 +13,7 @@
   transition: background-color 0.3s ease;
 }
 .scrolled {
-  background-image: linear-gradient(to right, #f2f3e4, #6ecbdd);
+  background-image: linear-gradient(to right, #f2f3e4, #6ecbdd); */
   backdrop-filter: blur(10px);
   transition-duration: 3s;
 }

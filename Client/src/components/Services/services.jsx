@@ -44,7 +44,7 @@ const Services = () => {
         <div className="section3-container">
           <div className={`custom-card ${isVisible ? "animate__fadeInLeft" : ""}`}>
             <div className="img-box">
-              <img src="/src/assets/cooking-card-bg.webp" alt="Cooking" />
+              <img src="/src/assets/gallery-image20.webp " alt="Cooking" />
             </div>
             <div className="custom-content">
               <h2 className="section3-title">Cooking</h2>
