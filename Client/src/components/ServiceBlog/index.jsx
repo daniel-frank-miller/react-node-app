@@ -89,7 +89,7 @@ const ServiceBlog = () => {
         items={items}
         mode="VERTICAL_ALTERNATING"
         theme={{ primary: '#4A666B', secondary: '#50ff45', cardBgColor: '#d1d6db' }}
-        disableToolbar = {true}
+        disableToolbar = {false}
         slideShow
       />    
     </div>
