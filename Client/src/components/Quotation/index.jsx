@@ -21,7 +21,7 @@ class Quotation extends Component {
         service: '',
         message: ''
       },
-      appointmentStatus:''
+      appointmentStatus: ''
     };
     this.quotationRef = React.createRef();
   }
@@ -69,12 +69,8 @@ class Quotation extends Component {
 
   handleSubmit = async (e) => {
     e.preventDefault();
-    // console.log("Submitted");
-    // console.log(this.state.formData);
-    // console.log(typeof(this.state.formData.date));
-    // console.log(typeof(this.state.formData.time));
     const { name, email, phoneNumber, location, date, time, service, message } = this.state.formData;
-  
+
     try {
       const response = await fetch("https://api.homaid.in/book-appointment", {
         method: 'POST',
@@ -92,12 +88,15 @@ class Quotation extends Component {
           message
         })
       });
-  
+
       const data = await response.json();
       console.log(data);
       if (response.ok) {
-        // Handle success, if needed
-        this.setState({appointmentStatus:data.display_msg })
+        this.setState({ appointmentStatus: data.display_msg });
+
+        setTimeout(() => {
+          this.setState({ appointmentStatus: '' });
+        }, 5000); // Clear the response message after 5 seconds
       } else {
         // Handle error, if needed
       }
@@ -105,9 +104,21 @@ class Quotation extends Component {
       console.error('Error submitting form:', error);
       // Handle error, if needed
     }
-    
+
+    // Reset form inputs
+    this.setState({
+      formData: {
+        name: '',
+        email: '',
+        phoneNumber: '',
+        location: '',
+        date: '',
+        time: '',
+        service: '',
+        message: ''
+      }
+    });
   };
-  
 
   render() {
     const { isVisible, formData, appointmentStatus } = this.state;
@@ -171,7 +182,7 @@ class Quotation extends Component {
                     <div className='input-field-text'>
                       <textarea placeholder='Your Message' className='input-new-twoo' name='message' value={formData.message} onChange={this.handleInputChange} rows='3' cols='50'></textarea>
                     </div>
-                    {appointmentStatus.length!==0&&<p className='appointment-msg'>{appointmentStatus}</p>}
+                    {appointmentStatus && <p className='appointment-msg'>{appointmentStatus}</p>}
                     <button className='appointment-button' type='submit'>
                       SUBMIT NOW
                     </button>
