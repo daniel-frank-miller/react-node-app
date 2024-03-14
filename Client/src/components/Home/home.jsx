@@ -8,7 +8,7 @@ import Footer from "/src/components/Footer/footer.jsx";
 import Quotation from "/src/components/Quotation/index.jsx";
 import Hero from "/src/components/Hero/hero.jsx";
 import WhyChooseUs from "../WhyChooseUs/why.jsx";
-import ServiceBlog from "../ServiceBlog/index.jsx"
+// import ServiceBlog from "../ServiceBlog/index.jsx"
 import { Fade } from "react-awesome-reveal";
 import "/src/components/Home/home.css";
 
@@ -47,7 +47,7 @@ const Home = () => {
       <About />
       <Services />
       <WhyChooseUs/>
-      <ServiceBlog/>
+      {/* <ServiceBlog/> */}
       <Testimonals/>
       {/* <Rating /> */}
       <Quotation/>
