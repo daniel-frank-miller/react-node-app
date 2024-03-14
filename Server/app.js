@@ -258,9 +258,10 @@ app.post("/register", async (request, response) => {
 
     // If user does not exist, proceed with sending OTP
     if (result.length === 0) {
-      const otp = Math.floor(100000 + Math.random() * 900000); // Generate a 6-digit OTP
+      let otp = Math.floor(100000 + Math.random() * 900000); // Generate a 6-digit OTP
       console.log(typeof(otp))
       // Store the OTP in the database
+      otp=otp.toString();
       const insertOtpQuery = `INSERT INTO otp (email, otp) VALUES (?, ?)`;
       connection.query(insertOtpQuery, [email, otp], async (error, results) => {
         if (error) {
