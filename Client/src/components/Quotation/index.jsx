@@ -71,7 +71,7 @@ class Quotation extends Component {
     console.log("Submitted");
     const { name, email, phoneNumber, location, date, time, service, message } = this.state.formData;
   
-    const response = await fetch("https://apis.homaid.in/book-appointment", {
+    const response = await fetch("https://api.homaid.in/book-appointment", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
