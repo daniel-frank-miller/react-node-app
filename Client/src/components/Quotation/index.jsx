@@ -20,7 +20,8 @@ class Quotation extends Component {
         time: '',
         service: '',
         message: ''
-      }
+      },
+      appointmentStatus:''
     };
     this.quotationRef = React.createRef();
   }
@@ -68,10 +69,10 @@ class Quotation extends Component {
 
   handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Submitted");
-    console.log(this.state.formData);
-    console.log(typeof(this.state.formData.date));
-    console.log(typeof(this.state.formData.time));
+    // console.log("Submitted");
+    // console.log(this.state.formData);
+    // console.log(typeof(this.state.formData.date));
+    // console.log(typeof(this.state.formData.time));
     const { name, email, phoneNumber, location, date, time, service, message } = this.state.formData;
   
     try {
@@ -96,6 +97,7 @@ class Quotation extends Component {
       console.log(data);
       if (response.ok) {
         // Handle success, if needed
+        this.setState({appointmentStatus:data.display_msg })
       } else {
         // Handle error, if needed
       }
@@ -108,7 +110,7 @@ class Quotation extends Component {
   
 
   render() {
-    const { isVisible, formData } = this.state;
+    const { isVisible, formData, appointmentStatus } = this.state;
 
     return (
       <div className={`quotation-container ${isVisible ? this.state.animationClass : ""}`} ref={this.quotationRef}>
@@ -169,7 +171,7 @@ class Quotation extends Component {
                     <div className='input-field-text'>
                       <textarea placeholder='Your Message' className='input-new-twoo' name='message' value={formData.message} onChange={this.handleInputChange} rows='3' cols='50'></textarea>
                     </div>
-
+                    {appointmentStatus.length!==0&&<p className='appointment-msg'>{appointmentStatus}</p>}
                     <button className='appointment-button' type='submit'>
                       SUBMIT NOW
                     </button>
