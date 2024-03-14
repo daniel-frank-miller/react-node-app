@@ -20,7 +20,7 @@ class CleaningProfile extends Component{
       MUID: 'MUID' + Date.now(),
       transactionId: 'T' + Date.now(),
     };
-    const response = await axios.post('http://localhost:5000/api/payment', {
+    const response = await axios.post('https://api.homaid.in/api/payment', {
       amount: data.amount,
       number:data.number,
     });
