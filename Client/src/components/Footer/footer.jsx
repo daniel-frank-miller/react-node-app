@@ -2,21 +2,19 @@ import { FaInstagram, FaFacebook } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaYoutube } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
+import { useEffect, useState } from "react";
+import Cookies from "js-cookie";
+import { NavLink} from "react-router-dom";
 
 import "/src/components/Footer/footer.css";
 
-const Footer = () => {
+const Footer =()=>{
   return (
     <div className="footer-section">
       <div className="first-section">
         <h1 className="heading-footer">Start using Homaid Today.</h1>
         <div className="email-container">
-          <input
-            type="email"
-            name="Email"
-            className="email-input-element"
-            placeholder="Enter Email"
-          />
+          {Cookies.get("jwt_token") == undefined ? <NavLink to = "/login" className="footer-button"> Join With Us</NavLink>:<NavLink to = "/" className="footer-button">Thanks For Joinng US</NavLink>}
           <i
             className="fa-solid fa-paper-plane"
             aria-hidden="true"

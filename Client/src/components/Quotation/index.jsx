@@ -146,41 +146,41 @@ class Quotation extends Component {
                   <div className='input-div'>
                     <div className='sub-form-container'>
                       <div className='input-field'>
-                        <input placeholder='Name' className='input' name='name' value={formData.name} onChange={this.handleInputChange} />
+                        <input required placeholder='Name' className='input' name='name' value={formData.name} onChange={this.handleInputChange} />
                         <IoIosContact className='icon-size' />
                       </div>
                       <div className='input-field'>
-                        <input placeholder='Email Address' className='input' name='email' value={formData.email} onChange={this.handleInputChange} />
+                        <input required placeholder='Email Address' className='input' name='email' value={formData.email} onChange={this.handleInputChange} />
                         <CiMail className='icon-size' />
                       </div>
                     </div>
                     <div className='sub-form-container'>
                       <div className='input-field'>
-                        <input placeholder='Phone Number' className='input' name='phoneNumber' value={formData.phoneNumber} onChange={this.handleInputChange} />
+                        <input required placeholder='Phone Number' className='input' name='phoneNumber' value={formData.phoneNumber} onChange={this.handleInputChange} />
                         <FiPhoneCall className='icon-size' />
                       </div>
                       <div className='input-field'>
-                        <input placeholder='Your Location' className='input' name='location' value={formData.location} onChange={this.handleInputChange} />
+                        <input required placeholder='Your Location' className='input' name='location' value={formData.location} onChange={this.handleInputChange} />
                         <GoLocation className='icon-size' />
                       </div>
                     </div>
                     <div className='sub-form-container'>
                       <div className='input-field'>
-                        <input type="date" placeholder='Select Date' className='input1' name='date' value={formData.date} onChange={this.handleInputChange} />
+                        <input required type="date" placeholder='Select Date' className='input1' name='date' value={formData.date} onChange={this.handleInputChange} />
                       </div>
                       <div className='input-field'>
-                        <input type="time" placeholder='Choose Time' className='input1' name='time' value={formData.time} onChange={this.handleInputChange} />
+                        <input required type="time" placeholder='Choose Time' className='input1' name='time' value={formData.time} onChange={this.handleInputChange} />
                       </div>
                     </div>
                     <div className='input-field-text'>
-                      <select placeholder='Choose' type='text' className='input-new-two' name='service' value={formData.service} onChange={this.handleInputChange}>
+                      <select required placeholder='Choose' type='text' className='input-new-two' name='service' value={formData.service} onChange={this.handleInputChange}>
                         <option>Select</option>
                         <option>Cooking</option>
                         <option>Cleaning</option>
                       </select>
                     </div>
                     <div className='input-field-text'>
-                      <textarea placeholder='Your Message' className='input-new-twoo' name='message' value={formData.message} onChange={this.handleInputChange} rows='3' cols='50'></textarea>
+                      <textarea required placeholder='Your Message' className='input-new-twoo' name='message' value={formData.message} onChange={this.handleInputChange} rows='3' cols='50'></textarea>
                     </div>
                     {appointmentStatus && <p className='appointment-msg'>{appointmentStatus}</p>}
                     <button className='appointment-button' type='submit'>
