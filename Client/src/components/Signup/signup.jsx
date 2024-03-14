@@ -48,45 +48,45 @@ class Register extends Component {
 
   onSubmit = async(e) => {
     e.preventDefault();
-    const { email, firstName, phone, password} = this.state;
+    const { email } = this.state;
     const response=await fetch("https://api.homaid.in/register",{
       method:'POST',
       headers:{
         'Content-type':"application/json"
       },
-      body:JSON.stringify({email, firstName, phone, password})
+      body:JSON.stringify({email})
     })
     if(response.ok){
-      this.setState({showModal:false})
+      this.setState({showModal:true})
     }
     const data=await response.json()
     console.log(data)
     this.setState({messageStatus:true,message:data.message})
   };
 
-  // handleVerify = async (event) => {
-  //   event.preventDefault();
-  //   const { email, otp, firstName, phone, password} = this.state;
-  //   console.log(email);
-  //     const response = await fetch('https://api.homaid.in/verify_otp', {
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json'
-  //       },
-  //       body: JSON.stringify({ email, otp, firstName, phone, password })
-  //     });
-  //     const data = await response.json();
-  //     if (response.ok) {
-  //       this.setState({ otpMessage: data.message,showModal:false, otp:'' });
-  //     } else {
-  //       this.setState({ otpMessage: data.error });
-  //     }
+  handleVerify = async (event) => {
+    event.preventDefault();
+    const { email, otp, firstName, phone, password} = this.state;
+    console.log(email);
+      const response = await fetch('https://api.homaid.in/verify_otp', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email, otp, firstName, phone, password })
+      });
+      const data = await response.json();
+      if (response.ok) {
+        this.setState({ otpMessage: data.message,showModal:false, otp:'' });
+      } else {
+        this.setState({ otpMessage: data.error });
+      }
     
-  // };
+  };
 
   render(){
     const {firstName,lastName,email,password,confirmPassword,messageStatus,phone,message,showModal,otpMessage,otp}=this.state 
-    if(message=="Registration successful."){
+    if(otpMessage=="Registration successful."){
       return <Navigate to="/login"/>
     }
   return (
@@ -166,7 +166,7 @@ class Register extends Component {
           Already have an account? <Link to="/login">login</Link>
         </p>
       </div>
-      {/* {showModal && (
+      {showModal && (
           <div className="modal">
             <div className="modal-content">
                 <form className='verify-container' onSubmit={this.handleVerify}>
@@ -186,7 +186,7 @@ class Register extends Component {
               {otpMessage.length!=0 && <p>{otpMessage}</p>}
             </div>
           </div>
-      )} */}
+      )}
     </div>
     </>
   );
