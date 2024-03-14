@@ -26,8 +26,8 @@ class ContactUs extends Component {
         body: JSON.stringify({firstName,lastName,email,phone,message})
       })
       const data = await response.json();
-      console.log(data);
-      this.setState({response:data.display_msg, name:'', email:'', phone: '', message:''});
+      console.log(data); 
+      this.setState({response:data.display_msg, firstName:'',lastName:'', email:'', phone: '', message:''});
   };
 
   handlePhone = (e) => {
@@ -128,7 +128,7 @@ class ContactUs extends Component {
                   required
                 ></textarea>
               </div>
-              {response.length!==0&&<p>{response}</p>}
+              {response.length!==0&&<p className='response-msg'>{response}</p>}
               <div className='submit-btn-container'>
                 <button type="submit" className="submit-form">
                   Submit

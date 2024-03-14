@@ -309,7 +309,7 @@ app.post("/book-appointment", (req, res) => {
       res.status(500).send({ display_msg: 'Error Booking Appointment' });
       return;
     }
-    res.send({ display_msg: "Booking Appointment was Successful" });
+    res.send({ display_msg: "Thankyou for Booking Appointment" });
   });
 });
 
