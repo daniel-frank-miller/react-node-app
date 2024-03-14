@@ -71,28 +71,33 @@ class Quotation extends Component {
     console.log("Submitted");
     const { name, email, phoneNumber, location, date, time, service, message } = this.state.formData;
   
-    const response = await fetch("https://api.homaid.in/book-appointment", {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        name,
-        email,
-        phoneNumber,
-        location,
-        date,
-        time,
-        service,
-        message
-      })
-    });
+    try {
+      const response = await fetch("https://api.homaid.in/book-appointment", {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          phoneNumber,
+          location,
+          date,
+          time,
+          service,
+          message
+        })
+      });
   
-    const data = await response.json();
-    console.log(data);
-    if (response.ok) {
-      // Handle success, if needed
-    } else {
+      const data = await response.json();
+      console.log(data);
+      if (response.ok) {
+        // Handle success, if needed
+      } else {
+        // Handle error, if needed
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
       // Handle error, if needed
     }
   };
