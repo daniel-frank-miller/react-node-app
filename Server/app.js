@@ -13,8 +13,6 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.use(bodyParser.json());
-
 const connection = mysql.createConnection({
   host: "127.0.0.1",
   user: "root",
