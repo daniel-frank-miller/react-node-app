@@ -69,6 +69,9 @@ class Quotation extends Component {
   handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Submitted");
+    console.log(this.state.formData);
+    console.log(typeof(this.state.formData.date));
+    console.log(typeof(this.state.formData.time));
     const { name, email, phoneNumber, location, date, time, service, message } = this.state.formData;
   
     try {
@@ -100,6 +103,7 @@ class Quotation extends Component {
       console.error('Error submitting form:', error);
       // Handle error, if needed
     }
+    
   };
   
 
