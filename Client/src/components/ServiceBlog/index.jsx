@@ -92,7 +92,8 @@ const ServiceBlog = () => {
         disableNavOnWheel={false}
         disableNavButtons={true}
         enableAutoPlay={false}
-        enableControls={false}
+        disableToolbar = {true}
+        enableControls={false} // This line hides the controls
         slideShow
       />    
     </div>

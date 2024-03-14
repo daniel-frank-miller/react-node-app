@@ -76,7 +76,6 @@ class CleaningProfile extends Component{
         <div className="cleaningProfile-container">
         <h1 className="form-container-h1">Cleaning Profile</h1>
           <div className="form-container">
-            
             <form id="profileForm" onSubmit={this.handleSubmit} className="cleaning-form-container">
               <div className="register-input-field">
               <label className="form-container-label" htmlFor="name">Name:</label>
