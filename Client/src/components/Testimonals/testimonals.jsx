@@ -34,14 +34,14 @@ export default function Feedback() {
   }, []);
 
   const [feedbackData, setFeedbackData] = useState([
-    { name: "John Doe", comment: "Great service!", rating: 5 },
-    { name: "Jane Smith", comment: "Excellent experience!", rating: 4.5 },
-    { name: "John Doe", comment: "Great service!", rating: 5 },
-    { name: "Jane Smith", comment: "Excellent experience!", rating: 4.5 },
-    { name: "John Doe", comment: "Great service!", rating: 5 },
-    { name: "Jane Smith", comment: "Excellent experience!", rating: 4.5 },
-    { name: "John Doe", comment: "Great service!", rating: 5 },
-    { name: "Jane Smith", comment: "Excellent experience!", rating: 4.5 }
+    { name: "Sudhan", comment: "The cooking service exceeded my expectations! Delicious meals every time.", rating: 5 },
+    { name: "Dhana", comment: "The cleaning service left my home sparkling clean and organized. Couldn't be happier!", rating: 4.5 },
+    { name: "Aravind", comment: "Cooking with this service has made mealtime a delight! Every dish is a masterpiece.", rating: 5 },
+    { name: "Dhruva", comment: "The cleaning service was incredibly thorough and efficient. I'm impressed!", rating: 4.5 },
+    { name: "Anitha", comment: "I've never experienced such delicious meals at home before! Thank you for the wonderful cooking service.", rating: 5 },
+    { name: "Adhya", comment: "The cleaning service transformed my home into a haven of cleanliness and order. Highly recommended!", rating: 4.5 },
+    { name: "Sadha", comment: "Cooking with this service has saved me so much time and effort. Truly a lifesaver!", rating: 5 },
+    { name: "Ananya", comment: "The cleaning service provided exceptional attention to detail. My home has never looked better!", rating: 4.5 }
   ]);
 
   const [formData, setFormData] = useState({

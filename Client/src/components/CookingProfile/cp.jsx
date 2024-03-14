@@ -1,8 +1,9 @@
 import Navbar from "/src/components/Navbar/navbar.jsx";
-import paymentGateway from "/src/razorpay";
+// import paymentGateway from "/src/razorpay";
 import "/src/components/CookingProfile/cp.css";
 import Cookies from 'js-cookie';
 import {Component} from 'react'
+import axios from "axios";
 import { Navigate } from "react-router-dom";
 class CookingProfile extends Component{
   state = {
@@ -13,11 +14,30 @@ class CookingProfile extends Component{
     familyMemberCount: 0,
     phone:''
   };
+  handlePayment = async () => {
+    const data = {
+      name: 'Waleed',
+      amount: 100,
+      number: '7498608775',
+      MUID: 'MUID' + Date.now(),
+      transactionId: 'T' + Date.now(),
+    };
+    const response = await axios.post('https://api.homaid.in/api/payment', {
+      amount: data.amount,
+      number:data.number,
+    });
+
+
+    if (response.data.redirectUrl) {
+      window.location.href = response.data.redirectUrl;
+    }
+  };
    handleSubmit = async(e) => {
     e.preventDefault();
     // Handle form submission logic here
     const { name, location, recurring, dateTime, familyMemberCount, phone } = this.state;
     const cookingServicesDetails = { name, location, recurring, familyMemberCount, dateTime , phone};
+
     const response = await fetch("https://api.homaid.in/cooking_services", {
       method: 'POST',
       headers: {
@@ -26,10 +46,12 @@ class CookingProfile extends Component{
       },
       body: JSON.stringify(cookingServicesDetails)
     });
+
     const data = await response;
     console.log(data);
     this.setState({name:'',location:'',recurring: '',dateTime: '',familyMemberCount: 0, phone:''})
-    paymentGateway(100);
+    // paymentGateway(100);
+    this.handlePayment();
   };
 
   handleChange = (e) => {

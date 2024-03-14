@@ -149,7 +149,6 @@ class CleaningProfile extends Component{
                 <option value="VILLA">Villa</option>
               </select>
               </div>
-  
               <div id="con" style={{ width: "100%", textAlign: "center" }}>
                 <button type="submit" className="cleaning-profile-btn">
                   Submit 
