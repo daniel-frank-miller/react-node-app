@@ -89,12 +89,7 @@ const ServiceBlog = () => {
         items={items}
         mode="VERTICAL_ALTERNATING"
         theme={{ primary: '#4A666B', secondary: '#50ff45', cardBgColor: '#d1d6db' }}
-        disableNavOnWheel={false}
-        disableNavButtons={true}
-        disableNavKey = {true}
-        enableAutoPlay={false}
         disableToolbar = {true}
-        enableControls={false} // This line hides the controls
         slideShow
       />    
     </div>
