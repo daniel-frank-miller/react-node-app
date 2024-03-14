@@ -14,7 +14,7 @@ const Footer =()=>{
       <div className="first-section">
         <h1 className="heading-footer">Start using Homaid Today.</h1>
         <div className="email-container">
-          {Cookies.get("jwt_token") == undefined ? <NavLink to = "/login" className="footer-button"> Join With Us</NavLink>:<NavLink to = "/" className="footer-button">Thanks For Joinng US</NavLink>}
+          {Cookies.get("jwt_token") == undefined ? <NavLink to = "/login" className="footer-button"> Join With Us</NavLink>:<NavLink to = "/" className="footer-button">Thanks For Joining US</NavLink>}
           <i
             className="fa-solid fa-paper-plane"
             aria-hidden="true"
