@@ -303,7 +303,8 @@
       align-items: center;
     }
     .form{
-      height: 320px;
+      min-height: 320px;
+      max-height: 100%;
     }
     .form-div {
       width: 100%;
