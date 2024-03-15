@@ -22,7 +22,8 @@ class Quotation extends Component {
         service: '',
         message: ''
       },
-      appointmentStatus: ''
+      appointmentStatus: '',
+      formStatus:''
     };
     this.quotationRef = React.createRef();
   }
@@ -92,7 +93,7 @@ class Quotation extends Component {
       const data = await response.json();
       console.log(data);
       if (response.ok) {
-        this.setState({ appointmentStatus: data.display_msg });
+        this.setState({ appointmentStatus: data.display_msg,formStatus:data.display_msg });
         const dateString = date;
         const expirationDate = new Date(dateString);
 
@@ -125,7 +126,7 @@ class Quotation extends Component {
   };
 
   render() {
-    const { isVisible, formData, appointmentStatus } = this.state;
+    const { isVisible, formData,formStatus, appointmentStatus } = this.state;
 
     return (
       <div className={`quotation-container ${isVisible ? this.state.animationClass : ""}`} ref={this.quotationRef}>
@@ -197,7 +198,7 @@ class Quotation extends Component {
                     : 
                   <div className='appointment-status'>
                     <h1 className='thank-heading'>Thank You!</h1>
-                    <p className='thank-para-1'>{appointmentStatus}</p>
+                    <p className='thank-para-1'>{formStatus}</p>
                     <p className='thank-para-2'>Check your mail</p>
                   </div>}                
                 </form> 
