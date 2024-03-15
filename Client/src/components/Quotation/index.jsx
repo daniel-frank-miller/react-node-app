@@ -94,10 +94,18 @@ class Quotation extends Component {
       console.log(data);
       if (response.ok) {
         this.setState({ appointmentStatus: data.display_msg,formStatus:data.display_msg });
-        const dateString = date;
-        const expirationDate = new Date(dateString);
+        // Parse the selected date string from the input
+        const selectedDate = new Date(date);
+        // Get the current date and time
+        const currentDate = new Date();
 
-        Cookies.set("appointment_status",true,{expires: expirationDate});
+        // Calculate the time difference between selected date and current date in milliseconds
+        const timeDifference = selectedDate.getTime() - currentDate.getTime();
+        // Convert the time difference to days
+        const expirationDays = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+
+        // Set the cookie with expiration in days
+        Cookies.set("appointment_status", true, { expires: expirationDays });
 
         setTimeout(() => {
           this.setState({ appointmentStatus: '' });
