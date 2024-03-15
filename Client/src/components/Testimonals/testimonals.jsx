@@ -53,13 +53,16 @@ export default function Feedback() {
 
   const settings = {
     dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 2,
+    slidesToShow: 3, // Show one item at a time
     slidesToScroll: 1,
-    vertical: true,
+    infinite: true,
+    speed: 5000, // Set the speed for smooth scrolling
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 0, // Set to zero to customize the autoplay speed
+    cssEase: "linear", // Use linear easing for a consistent speed
+    pauseOnHover: true, // Pause on hover to allow interaction
+    pauseOnFocus: true, // Pause on focus for accessibility
+    vertical: true, // Scroll vertically
     verticalSwiping: true,
     prevArrow: <></>,
     nextArrow: <></>,
@@ -102,6 +105,7 @@ export default function Feedback() {
             <div className="Titem-card-back">
               <form className="Tform1" onSubmit={handleSubmit}>
                 <input 
+                  required
                   type="text" 
                   placeholder="Name" 
                   name="name" 
@@ -109,6 +113,7 @@ export default function Feedback() {
                   onChange={handleInputChange} 
                 />
                 <input 
+                  required
                   type="text" 
                   placeholder="Email" 
                   name="email" 
@@ -116,12 +121,14 @@ export default function Feedback() {
                   onChange={handleInputChange} 
                 />
                 <textarea 
+                  required
                   placeholder="Message" 
                   name="message" 
                   value={formData.message} 
                   onChange={handleInputChange} 
                 ></textarea>
                 <Rating
+                  required
                   emptySymbol={<span className="Trating-icon">&#9734;</span>}
                   fullSymbol={<span className="Trating-icon">&#9733;</span>}
                   onChange={(value) => setFormData({ ...formData, rating: value })}
@@ -137,7 +144,7 @@ export default function Feedback() {
         <Slider {...settings}>
           {feedbackData.map((feedback, index) => (
             <div key={index} className="Tfeedback-item">
-              <p>{feedback.comment}</p>
+              <p className="feedback-para">{feedback.comment}</p>
               <p>by {feedback.name}</p>
               <Rating
                 initialRating={feedback.rating}

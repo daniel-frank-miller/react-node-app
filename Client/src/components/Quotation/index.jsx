@@ -198,7 +198,7 @@ class Quotation extends Component {
                     : 
                   <div className='appointment-status'>
                     <h1 className='thank-heading'>Thank You!</h1>
-                    <p className='thank-para-1'>{formStatus}</p>
+                    <p className='thank-para-1'>{formStatus=="" ?"Your Appointment is Scheduled":formStatus}</p>
                     <p className='thank-para-2'>Check your mail</p>
                   </div>}                
                 </form> 

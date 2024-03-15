@@ -5,7 +5,7 @@
   align-items: center;
   background-image:linear-gradient( #d1d6db,white,rgb(140, 135, 135)) ;
   padding-top: 10px;
-  transition: opacity 0.5s ease; /* Add opacity transition */
+  transition: opacity 0.2s ease; /* Add opacity transition */
   opacity: 0; /* Initially hide the section */
 }
 
@@ -102,7 +102,7 @@
   width: 40%;
   background-color: transparent;
   padding-left: 0px;
-  transition: opacity 0.5s ease, transform 0.5s ease; /* Add transform transition */
+  transition: opacity 0.1s ease, transform 0.5s ease; /* Add transform transition */
   opacity: 0; /* Initially hide the section */
   transform: scale(0.5); /* Initially scale down */
 }
