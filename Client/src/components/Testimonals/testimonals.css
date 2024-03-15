@@ -20,14 +20,16 @@
   margin-bottom: 10px;
   animation: TfadeInLeft 1s forwards; /* Apply animation here */
 }
+
 .Tsub-feedback-1.Tanimate__fadeInLeft {
   animation: TfadeInLeft 1s forwards;
 }
+
 .Tsub-feedback-2 {
   width: 45%;
   height: 50vh;
   min-height: 300px;
-  max-height: 350px;
+  max-height: 500px;
   background-image: linear-gradient(to right, #f2f3e4, #6ecbdd);
   border-radius: 10px;
   padding: 20px;
@@ -128,7 +130,10 @@
   .Tsub-feedback-1 {
       width: 100%;
   }
-
+  .Tsub-feedback-2 {
+    min-height: 400px;
+    max-height: 410px;
+  }
   .Tfeedback-heading {
       font-size: 20px;
   }

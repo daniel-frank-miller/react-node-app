@@ -3,6 +3,7 @@ import { IoIosContact } from 'react-icons/io';
 import { FiPhoneCall } from 'react-icons/fi';
 import { GoLocation } from 'react-icons/go';
 import { CiMail } from 'react-icons/ci';
+import Cookies from "js-cookie";
 import './index.css';
 
 class Quotation extends Component {
@@ -70,7 +71,6 @@ class Quotation extends Component {
   handleSubmit = async (e) => {
     e.preventDefault();
     const { name, email, phoneNumber, location, date, time, service, message } = this.state.formData;
-
     try {
       const response = await fetch("https://api.homaid.in/book-appointment", {
         method: 'POST',
@@ -93,6 +93,10 @@ class Quotation extends Component {
       console.log(data);
       if (response.ok) {
         this.setState({ appointmentStatus: data.display_msg });
+        const dateString = date;
+        const expirationDate = new Date(dateString);
+
+        Cookies.set("appointment_status",true,{expires: expirationDate});
 
         setTimeout(() => {
           this.setState({ appointmentStatus: '' });
@@ -141,53 +145,62 @@ class Quotation extends Component {
                 />
               </div>
               <div className={`form-div ${isVisible ? 'animate__slideInFromLeft' : ''}`}>
-                <form className='borderr form' onSubmit={this.handleSubmit}>
-                  <p className='book-heading-5'>BOOK FOR HOMAID SERVICES NOW !</p>
-                  <div className='input-div'>
-                    <div className='sub-form-container'>
-                      <div className='input-field'>
-                        <input required placeholder='Name' className='input' name='name' value={formData.name} onChange={this.handleInputChange} />
-                        <IoIosContact className='icon-size' />
+              <form className='borderr form' onSubmit={this.handleSubmit}>
+                {!Cookies.get("appointment_status") ? 
+                 <>
+                    <p className='book-heading-5'>BOOK FOR HOMAID SERVICES NOW !</p>
+                    <div className='input-div'>
+                      <div className='sub-form-container'>
+                        <div className='input-field'>
+                          <input required placeholder='Name' className='input' name='name' value={formData.name} onChange={this.handleInputChange} />
+                          <IoIosContact className='icon-size' />
+                        </div>
+                        <div className='input-field'>
+                          <input required placeholder='Email Address' className='input' name='email' value={formData.email} onChange={this.handleInputChange} />
+                          <CiMail className='icon-size' />
+                        </div>
                       </div>
-                      <div className='input-field'>
-                        <input required placeholder='Email Address' className='input' name='email' value={formData.email} onChange={this.handleInputChange} />
-                        <CiMail className='icon-size' />
+                      <div className='sub-form-container'>
+                        <div className='input-field'>
+                          <input required placeholder='Phone Number' className='input' name='phoneNumber' value={formData.phoneNumber} onChange={this.handleInputChange} />
+                          <FiPhoneCall className='icon-size' />
+                        </div>
+                        <div className='input-field'>
+                          <input required placeholder='Your Location' className='input' name='location' value={formData.location} onChange={this.handleInputChange} />
+                          <GoLocation className='icon-size' />
+                        </div>
                       </div>
+                      <div className='sub-form-container'>
+                        <div className='input-field'>
+                          <input required type="date" placeholder='Select Date' className='input1' name='date' value={formData.date} onChange={this.handleInputChange} />
+                        </div>
+                        <div className='input-field'>
+                          <input required type="time" placeholder='Choose Time' className='input1' name='time' value={formData.time} onChange={this.handleInputChange} />
+                        </div>
+                      </div>
+                      <div className='input-field-text'>
+                        <select required placeholder='Choose' type='text' className='input-new-two' name='service' value={formData.service} onChange={this.handleInputChange}>
+                          <option>Select</option>
+                          <option default>Cooking</option>
+                          <option>Cleaning</option>
+                        </select>
+                      </div>
+                      <div className='input-field-text'>
+                        <textarea required placeholder='Your Message' className='input-new-twoo' name='message' value={formData.message} onChange={this.handleInputChange} rows='3' cols='50'></textarea>
+                      </div>
+                      {appointmentStatus && <p className='appointment-msg'>{appointmentStatus}</p>}
+                      <button className='appointment-button' type='submit'>
+                        SUBMIT NOW
+                      </button>
                     </div>
-                    <div className='sub-form-container'>
-                      <div className='input-field'>
-                        <input required placeholder='Phone Number' className='input' name='phoneNumber' value={formData.phoneNumber} onChange={this.handleInputChange} />
-                        <FiPhoneCall className='icon-size' />
-                      </div>
-                      <div className='input-field'>
-                        <input required placeholder='Your Location' className='input' name='location' value={formData.location} onChange={this.handleInputChange} />
-                        <GoLocation className='icon-size' />
-                      </div>
-                    </div>
-                    <div className='sub-form-container'>
-                      <div className='input-field'>
-                        <input required type="date" placeholder='Select Date' className='input1' name='date' value={formData.date} onChange={this.handleInputChange} />
-                      </div>
-                      <div className='input-field'>
-                        <input required type="time" placeholder='Choose Time' className='input1' name='time' value={formData.time} onChange={this.handleInputChange} />
-                      </div>
-                    </div>
-                    <div className='input-field-text'>
-                      <select required placeholder='Choose' type='text' className='input-new-two' name='service' value={formData.service} onChange={this.handleInputChange}>
-                        <option>Select</option>
-                        <option>Cooking</option>
-                        <option>Cleaning</option>
-                      </select>
-                    </div>
-                    <div className='input-field-text'>
-                      <textarea required placeholder='Your Message' className='input-new-twoo' name='message' value={formData.message} onChange={this.handleInputChange} rows='3' cols='50'></textarea>
-                    </div>
-                    {appointmentStatus && <p className='appointment-msg'>{appointmentStatus}</p>}
-                    <button className='appointment-button' type='submit'>
-                      SUBMIT NOW
-                    </button>
-                  </div>
-                </form>
+                    </>
+                    : 
+                  <div className='appointment-status'>
+                    <h1 className='thank-heading'>Thank You!</h1>
+                    <p className='thank-para-1'>{appointmentStatus}</p>
+                    <p className='thank-para-2'>Check your mail</p>
+                  </div>}                
+                </form> 
               </div>
             </div>
           </div>

@@ -378,20 +378,48 @@ app.post("/contactus",async(req,res)=>{
   });
 })
 
-app.post("/book-appointment", (req, res) => {
+app.post("/book-appointment", async (req, res) => {
   const { name, email, phoneNumber, location, date, time, service, message } = req.body;
 
-  // SQL query to insert appointment data into the database
-  const addBookAppointmentQuery = `INSERT INTO appointment (name, email, phone_number, location, date, time, service, message) 
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?)`;
+  // SQL query to check if appointment already exists for the given email
+  const checkingQuery = `SELECT * FROM appointment WHERE email = ?`;
   
-  connection.query(addBookAppointmentQuery, [name, email, phoneNumber, location, date, time, service, message], (error, results) => {
+  connection.query(checkingQuery, [email], async (error, results) => {
     if (error) {
-      console.error('Error Booking Appointment:', error);
-      res.status(500).send({ display_msg: 'Error Booking Appointment' });
-      return;
+      console.error('Error checking appointment:', error);
+      return res.status(500).send({ display_msg: 'Error checking appointment' });
     }
-    res.send({ display_msg: "Thankyou for Booking Appointment" });
+
+    if (results.length > 0) {
+      return res.send({ display_msg: `Booking Appointment is already Scheduled on ${checkingQuery.date} and time ${checkingQuery.time}`});
+    }
+
+    // SQL query to insert appointment data into the database
+    const addBookAppointmentQuery = `INSERT INTO appointment (name, email, phone_number, location, date, time, service, message) 
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?)`;
+    connection.query(addBookAppointmentQuery, [name, email, phoneNumber, location, date, time, service, message], async (error, results) => {
+      if (error) {
+        console.error('Error Booking Appointment:', error);
+        return res.status(500).send({ display_msg: 'Error Booking Appointment' });
+      }
+      try {
+        // Send registration confirmation email
+        const registrationMailOptions = {
+          from: process.env.EMAIL_USER, // Sender address
+          to: email, // Recipient address
+          subject: 'Registration Successful', // Subject line
+          html: `<p>Dear ${name},</p>
+                 <p>Thank you for booking an appointment with us! on ${date} at ${time}</p>
+                 <p>We're excited to serve you. Happy Homaid!</p>
+                 <a href="homaid.in/login" target="_blank">Click here to Login</a>` // Email body (HTML content)
+        };
+        await transporter.sendMail(registrationMailOptions);
+        res.send({ display_msg: "Your appointment is scheduled" });
+      } catch (error) {
+        console.error('Error sending confirmation email:', error);
+        res.status(500).send({ display_msg: 'Error sending confirmation email' });
+      }
+    });
   });
 });
 
