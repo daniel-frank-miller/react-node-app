@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import Navbar from "/src/components/Navbar/navbar.jsx";
 import "/src/components/ServicesSection/ServicesSection.css";
-
+import Footer from "../Footer/footer.jsx"
 const ServicesSection = () => {
   return (
     <div className="singlePage">
@@ -48,6 +48,7 @@ const ServicesSection = () => {
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

@@ -10,6 +10,7 @@ import "/src/components/Footer/footer.css";
 
 const Footer =()=>{
   return (
+    <div className="footer-part">
     <div className="footer-section">
       <div className="first-section">
         <h1 className="heading-footer">Start using Homaid Today.</h1>
@@ -107,6 +108,44 @@ const Footer =()=>{
           loading="lazy"
         ></iframe>
       </div>
+    </div>
+    <hr/>
+    <div className="footer-details-container">
+      <p className="footer-para">Kondapur, Hyderabad, 500001</p>
+      <p className="footer-para">+91 81255 22213</p>
+      <a href="mailto:homaidserviceshyd@gmail.com"  className="contact-info-email"> <div></div><p className="footer-para">homaidserviceshyd@gmail.com</p></a>
+      <ul className="social-container-footer">
+            <div className="social-handles-footer">
+            <a href="https://www.linkedin.com/company/homaid-services/about/">
+                <FaLinkedin className="linkedin-icon"/>
+              </a>
+             
+            </div>
+            <div className="social-handles-footer">
+            <a href="https://twitter.com/Homaid471011">
+              <FaXTwitter className="twitter-icon" />
+              </a>
+              
+            </div>
+            <div className="social-handles-footer">
+            <a href="https://www.instagram.com/homaid_service/">
+              <FaInstagram className="instagram-icon"/>
+              </a>
+             
+            </div>
+            <div className="social-handles-footer">
+            <a href="https://www.facebook.com/profile.php?id=61552265330728">
+              <FaFacebook className="facebook-icon"/>
+              </a>
+            </div>
+            <div className="social-handles-footer">
+            <a href="https://www.youtube.com/@Homaid-hc9ik">
+              <FaYoutube className="youtube-icon"/>
+              </a>
+            </div>
+          </ul>
+    </div>
+    <p className="copyright-content">Copyright © 2024 Homaid - All Rights Reserved</p>
     </div>
   );
 };

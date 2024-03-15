@@ -1,0 +1,43 @@
+.recognition-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    /* background-color: rgb(214, 215, 255); */
+}
+
+.certificates-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.certificate-image{
+    height: 200px;
+    width: 250px;
+    margin: 20px;
+}
+
+.skills-india{
+    height: 170px;
+    width: 190px;
+    margin: 20px;
+}
+
+.recognised-heading{
+    font-size: 24px;
+    font-family: "Montserrat";
+    font-weight: 600;
+    margin-top: 30px;
+}
+
+@media screen and (max-width:768px){
+    .certificates-container{
+        flex-direction: column;
+    }
+    .certificate-image{
+        margin: 0px;
+        margin-bottom: 10px;
+    }
+}

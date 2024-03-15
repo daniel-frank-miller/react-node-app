@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import Navbar from "/src/components/Navbar/navbar.jsx";
 import "/src/components/ContactUs/contact.css";
-
+import Footer from "../Footer/footer.jsx"
 class ContactUs extends Component {
   constructor(props) {
     super(props);
@@ -137,6 +137,7 @@ class ContactUs extends Component {
             </form>
           </div>
         </div>
+        <Footer/>
       </div>
     );
   }

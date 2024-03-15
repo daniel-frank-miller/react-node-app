@@ -9,7 +9,9 @@ import Quotation from "/src/components/Quotation/index.jsx";
 import Hero from "/src/components/Hero/hero.jsx";
 import WhyChooseUs from "../WhyChooseUs/why.jsx";
 import ServiceBlog from "../ServiceBlog/index.jsx"
-import { Fade } from "react-awesome-reveal";
+// import { Fade } from "react-awesome-reveal";
+import HappyCustomers from "../HappyCustomers/index.jsx"
+import Recognition from "../Recognition/index.jsx"
 import "/src/components/Home/home.css";
 
 const Home = () => {
@@ -39,7 +41,6 @@ const Home = () => {
   //};
 
   return (
-    <Fade cascade damping={0.1}>
     <div className="mainContainer">
       {/* <Header/> */}
       <Navbar />
@@ -47,13 +48,14 @@ const Home = () => {
       <About />
       <Services />
       <WhyChooseUs/>
+      <HappyCustomers/>
       <ServiceBlog/>
       <Testimonals/>
       {/* <Rating /> */}
       <Quotation/>
+      <Recognition/>
       <Footer />
     </div>
-    </Fade>
   );
 };
 

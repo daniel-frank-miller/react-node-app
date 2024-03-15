@@ -1,6 +1,6 @@
 import "/src/components/Gallery/gallery.css";
 import Navbar from "/src/components/Navbar/navbar.jsx";
-
+import Footer from "../Footer/footer.jsx"
 const Gallery = () => {
   return (
     <>
@@ -32,6 +32,7 @@ const Gallery = () => {
         </div>
       </div>
     </div>
+    <Footer/>
     </>
     
   );

@@ -241,3 +241,44 @@ color: black;
 font-size: 18px;
 
 }
+
+.footer-part{
+  background-image: url("/src/assets/login-bg2.webp");
+}
+
+.contact-info-email{
+  text-decoration: none;
+}
+
+.footer-details-container{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  /* margin-bottom: 30px; */
+}
+
+.social-container-footer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.social-handles-footer{
+  margin-right: 10px;
+}
+
+.footer-para{
+  color: black;
+  font-family: 'Montserrat';
+}
+
+.copyright-content{
+  text-align: center;
+  color: black;
+  font-family: 'Montserrat';
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}

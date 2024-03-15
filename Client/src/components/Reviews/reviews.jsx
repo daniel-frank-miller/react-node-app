@@ -1,6 +1,6 @@
 import "/src/components/Reviews/reviews.css";
 import Navbar from "/src/components/Navbar/navbar.jsx"
-
+import Footer from "../Footer/footer.jsx"
 const Reviews = () => {
     return (
         <div className="review-section">
@@ -171,6 +171,7 @@ const Reviews = () => {
                     {/* Add more reviews here */}
                 </div>
             </div>
+            <Footer/>
         </div>
     );
 }
