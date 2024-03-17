@@ -52,6 +52,32 @@
   margin: 0;
 }
 
+/* .whatsapp_float {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background-color: #25d366;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 42px;
+  margin: 1px -2px -6px 0px;
+  cursor: pointer;
+}
+
+.whatsapp_float:hover::before {
+  content: "Chat with us";
+  position: absolute;
+  top: -30px;
+  left: -15px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  white-space: nowrap;
+} */
+
 .whatsapp_float {
   position: relative;
   width: 50px;
@@ -63,6 +89,11 @@
   font-size: 42px;
   margin: 1px -2px -6px 0px;
   cursor: pointer;
+  transition: transform 0.2s ease-in-out; /* Add transition property */
+}
+
+.whatsapp_float:hover {
+  transform: scale(1.1); /* Scale the icon up a little on hover */
 }
 
 .whatsapp_float:hover::before {
