@@ -13,6 +13,7 @@ import ServiceBlog from "../ServiceBlog/index.jsx"
 import HappyCustomers from "../HappyCustomers/index.jsx"
 import Recognition from "../Recognition/index.jsx"
 import "/src/components/Home/home.css";
+import Whatsapp from "../Whatsapp/whatsapp.jsx";
 
 const Home = () => {
   //const SectionOne = () => {
@@ -45,6 +46,7 @@ const Home = () => {
       {/* <Header/> */}
       <Navbar />
       <Hero/>
+      <Whatsapp/>
       <About />
       <Services />
       <WhyChooseUs/>
