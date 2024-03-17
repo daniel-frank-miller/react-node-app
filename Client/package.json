@@ -34,6 +34,7 @@
     "react-scroll": "^1.9.0",
     "react-slick": "^0.29.0",
     "react18-input-otp": "^1.1.4",
+    "reactjs-popup": "^2.0.6",
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
