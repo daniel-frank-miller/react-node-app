@@ -27,3 +27,36 @@
 .faded-container{
   text-align: center;
 }
+
+.scroll-down-button-container {
+  position: relative;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  text-align: center;
+  /* width: 62px;
+  height: 62px; */
+}
+
+.scroll-down-button {
+  background-color: black;
+  color: #6ecbdd;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 50%;
+}
+
+.scroll-down-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: black;
+}
+
+@media  screen and (max-width:768px) {
+  .scroll-down-button-container{
+    display: none;
+  }
+}

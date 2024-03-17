@@ -64,3 +64,9 @@
 .rating-head{
     font-size: 40px;
 }
+
+@media screen and (max-width:768px){
+    .happy-customers-container{
+        height: 200px;
+    }
+}
