@@ -233,37 +233,37 @@ app.post("/login", async (request, response) => {
   });
 });
 
-// app.post('/auth/google', (req, res) => {
-//   // Assuming email, email_verified, and name are sent in the request body
-//   let { email, texted_email, name } = req.body;
-//   // Insert the user data into MySQL database
-//   const sql = 'INSERT INTO google_data (email, email_verified, name) VALUES (?, ?, ?)';
-//   connection.query(sql, [email, texted_email, name], (err, result) => {
-//     if (err) {
-//       console.error('Error inserting user data:', err);
-//       res.status(500).json({ error: 'Internal server error' });
-//     } else {
-//       console.log('User data inserted successfully');
-//       // Assuming you generate a JWT token here
-//       const payload = { email: email };
-//       const jwtToken = jwt.sign(payload, "MY_SECRET_TOKEN");
-//       response.send({ jwtToken });// Return the token to the client
-//     }
-//   });
-// });
+app.post('/auth/google', async(req, res) => {
+  // Assuming email, email_verified, and name are sent in the request body
+  let { email, texted_email, name } = req.body;
+  // Insert the user data into MySQL database
+  const sql = 'INSERT INTO google_data (email, email_verified, name) VALUES (?, ?, ?)';
+  connection.query(sql, [email, texted_email, name], (err, result) => {
+    if (err) {
+      console.error('Error inserting user data:', err);
+      res.status(500).json({ error: 'Internal server error' });
+    } else {
+      console.log('User data inserted successfully');
+      // Assuming you generate a JWT token here
+      const payload = { email: email };
+      const jwtToken = jwt.sign(payload, "MY_SECRET_TOKEN");
+      res.send({ jwtToken });// Return the token to the client
+    }
+  });
+});
 
-// app.get("/auth/google",async(req,res)=>{
-//   const apiQuery=`SELECT * FROM google_data;`
-//   connection.query(apiQuery,(error,results)=>{
-//     if(error){
-//       console.error('Error fetching login:', error);
-//       res.status(500).send('Error fetching login');
-//       return;
-//     }
-//     res.send(results);
-//   })
+app.get("/auth/google",async(req,res)=>{
+  const apiQuery=`SELECT * FROM google_data;`
+  connection.query(apiQuery,(error,results)=>{
+    if(error){
+      console.error('Error fetching login:', error);
+      res.status(500).send('Error fetching login');
+      return;
+    }
+    res.send(results);
+  })
 
-// })
+})
 
 app.get("/login",async (req, res) => {
   const apiQuery = `SELECT * FROM login;`;

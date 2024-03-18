@@ -16,7 +16,7 @@ class GoogleSignIn extends Component {
         const { email, email_verified, name } = this.state;
         let texted_email=email_verified.toString()
         try {
-            const response = await fetch('https://apis.homaid.in/auth/google', {
+            const response = await fetch('http://localhost:3000/auth/google', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
