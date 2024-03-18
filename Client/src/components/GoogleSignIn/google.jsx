@@ -31,7 +31,7 @@ class GoogleSignIn extends Component {
         },
         body: JSON.stringify({
           email: decodedResponse.email,
-          email_verified: decodedResponse.email_verified.toString(),
+          texted_email: decodedResponse.email_verified.toString(),
           name: decodedResponse.name,
         }),
       });
