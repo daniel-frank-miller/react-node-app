@@ -6,10 +6,10 @@ import { Component } from "react";
 import { Navigate } from "react-router-dom";
 import OtpInput from 'react18-input-otp';
 import Navbar from '../Navbar/navbar'
-
+import GoogleSignIn from '../GoogleSignIn/google.jsx'
 
 class Register extends Component {
-  state={firstName:'',lastName:'',email:'',password:'',confirmPassword:'',message:'',phone:'',messageStatus:false, showModal: false,otp: '',otpMessage: ''}
+  state={firstName:'',lastName:'',email:'',password:'',confirmPassword:'',message:'',phone:'',messageStatus:false, showModal: false,otp: '',otpMessage: '',loading: false,}
 
   handleFirstName=e=>{
     this.setState({firstName:e.target.value})
@@ -49,6 +49,7 @@ class Register extends Component {
   onSubmit = async(e) => {
     e.preventDefault();
     const { email } = this.state;
+    this.setState({ loading: true });
     const response=await fetch("https://api.homaid.in/register",{
       method:'POST',
       headers:{
@@ -61,7 +62,7 @@ class Register extends Component {
     }
     const data=await response.json()
     console.log(data)
-    this.setState({messageStatus:true,message:data.message})
+    this.setState({messageStatus:true,message:data.message,loading:false})
   };
 
   handleVerify = async (event) => {
@@ -85,7 +86,7 @@ class Register extends Component {
   };
 
   render(){
-    const {firstName,lastName,email,password,confirmPassword,messageStatus,phone,message,showModal,otpMessage,otp}=this.state 
+    const {firstName,lastName,email,password,confirmPassword,messageStatus,phone,message,showModal,otpMessage,otp,loading}=this.state 
     if(otpMessage=="Registration successful."){
       return <Navigate to="/login"/>
     }
@@ -149,14 +150,21 @@ class Register extends Component {
             />
           </div>
           {messageStatus&&<p className="message-status">{message}</p>}
-          <button type="submit" className="register-btn">
-            Register
-          </button>
+          {loading ? (
+                <button type="submit" className="register-btn">
+                    <div className="loader"></div>
+
+              </button> 
+            ) : (
+              <button type="submit" className="register-btn">
+                Register
+              </button>
+            )}
         </form>
         <p>------- or -------</p>
         <div className="social-login">
           <button className="social-icons">
-            <FcGoogle />
+            <GoogleSignIn />
           </button>
           <button className="social-icons">
             <FaFacebook />
