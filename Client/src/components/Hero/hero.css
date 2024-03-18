@@ -34,6 +34,8 @@
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000; /* Ensure the scroll icon appears above other content */
+  cursor: pointer;
+  outline: none;
 }
 
 .mouse {

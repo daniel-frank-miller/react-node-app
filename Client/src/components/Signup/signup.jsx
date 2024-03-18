@@ -1,5 +1,5 @@
 import "/src/components/Signup/signup.css";
-import { FcGoogle } from "react-icons/fc";
+// import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { Component } from "react";

@@ -2,13 +2,14 @@ import { Component } from 'react';
 import { GoogleLogin } from '@react-oauth/google';
 import { jwtDecode } from "jwt-decode";
 import Cookies from 'js-cookie';
+import { Navigate } from "react-router-dom";
 
 class GoogleSignIn extends Component {
     state = { googleData: [], email: '', email_verified: false, name: '' }
 
     // Function to store JWT token in a cookie
-    storeTokenInCookie = (token) => {
-        Cookies.set('jwt_token', token, { expires: 7 }); // Set cookie with a 7-day expiration
+    onSubmitSuccess=(jwt_token)=>{
+        Cookies.set("jwt_token",jwt_token,{expires:30})
     }
 
     // Function to post user details to the backend
@@ -16,7 +17,7 @@ class GoogleSignIn extends Component {
         const { email, email_verified, name } = this.state;
         let texted_email=email_verified.toString()
         try {
-            const response = await fetch('http://localhost:3000/auth/google', {
+            const response = await fetch('https://api.homaid.in/auth/google', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -30,10 +31,7 @@ class GoogleSignIn extends Component {
 
             if (response.ok) {
                 const data = await response.json();
-                // Assuming the JWT token is returned in the response data
-                const jwtToken = data.jwtToken;
-                // Store JWT token in cookie
-                this.storeTokenInCookie(jwtToken);
+                this.onSubmitSuccess(data.jwtToken)
                 console.log('User details posted successfully');
             } else {
                 throw new Error('Failed to post user details');
@@ -46,17 +44,25 @@ class GoogleSignIn extends Component {
     componentDidMount() {
         const jwtToken = Cookies.get('jwt_token');
         if (jwtToken) {
-            // Redirect to home page if JWT token exists
-            window.location.href = '/'; // Replace '/home' with your home page URL
+            // If JWT token exists, but the user is not already on the home page,
+            // then navigate to the home page.
+            if (window.location.pathname !== '/') {
+                window.location.href = '/'; // Replace '/home' with your home page URL
+            }
+        }
+        if(Cookies.get("jwt_token")){
+            return <Navigate to="/"/>
         }
     }
+    
 
     render() {
-        let { email, email_verified, name } = this.state;
-        console.log(email, name, email_verified);
-        console.log(typeof(email_verified))
-        let texted_email=email_verified.toString()
-        console.log(typeof(texted_email), texted_email)
+        // let { email, email_verified, name } = this.state;
+        // console.log(email, name, email_verified);
+        // console.log(typeof(email_verified))
+        // let texted_email=email_verified.toString()
+        // console.log(typeof(texted_email), texted_email)
+        
         return (
             <GoogleLogin
                 onSuccess={credentialResponse => {
