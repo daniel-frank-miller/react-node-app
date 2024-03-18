@@ -8,6 +8,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./index.css"; // Import CSS file
 import Cookies from 'js-cookie';
+import CookingPayment from '../CookingPayment';
+import axios from 'axios'; // Import Axios for making HTTP requests
 
 export default function CookingFormPopup({ cFormStatus, setCFormStatus }) {
     // State variables for form inputs
@@ -18,6 +20,8 @@ export default function CookingFormPopup({ cFormStatus, setCFormStatus }) {
     const [dateTime, setDateTime] = useState('');
     const [cFormControl, setCFormControl] = useState(cFormStatus);
     const [count, setCount] = useState(0);
+    const [paymentStatus, setPaymentStatus] = useState(false);
+    const [formData, setFormData] = useState(null);
 
     const professionals = [
         // Professional data
@@ -58,7 +62,7 @@ export default function CookingFormPopup({ cFormStatus, setCFormStatus }) {
             description: "Rising star exploring new flavors in Indian cuisine."
         }
     ];
-
+    
     const sliderSettings = {
         dots: false,
         infinite: true,
@@ -84,18 +88,19 @@ export default function CookingFormPopup({ cFormStatus, setCFormStatus }) {
             };
 
             try {
-                const response = await fetch("https://api.homaid.in/cooking_services", {
-                    method: 'POST',
+                const response = await axios.post("https://api.homaid.in/cooking_services", formData, {
                     headers: {
                         'Content-Type': 'application/json',
                         'Authorization': `Bearer ${Cookies.get("jwt_token")}`
-                    },
-                    body: JSON.stringify(formData)
+                    }
                 });
 
-                if (response.ok) {
+                if (response.status === 200) {
                     // Handle successful submission, e.g., show success message
                     console.log("Form submitted successfully");
+                    // Trigger payment popup
+                    setFormData(formData);
+                    setPaymentStatus(true);
                     // Clear form fields
                     setName('');
                     setNumber('');
@@ -120,6 +125,20 @@ export default function CookingFormPopup({ cFormStatus, setCFormStatus }) {
         }
     };
 
+    function getCurrentDateTime() {
+        const now = new Date();
+        const year = now.getFullYear();
+        let month = now.getMonth() + 1;
+        month = month < 10 ? '0' + month : month;
+        let day = now.getDate();
+        day = day < 10 ? '0' + day : day;
+        let hours = now.getHours();
+        hours = hours < 10 ? '0' + hours : hours;
+        let minutes = now.getMinutes();
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+        return `${year}-${month}-${day}T${hours}:${minutes}`;
+    }
+
     // Function to handle button click and update state
     const handleButtonLocation = (value) => {
         setLocation(value)
@@ -131,22 +150,23 @@ export default function CookingFormPopup({ cFormStatus, setCFormStatus }) {
 
     useEffect(() => {
         setCFormControl(cFormStatus);
-    }, [cFormStatus]);
+    }, [cFormStatus, paymentStatus]);
 
     useEffect(() => {
-        if (!cFormControl) {
-            setCFormStatus(false); // Reset the state to false when the popup is closed
+        if (!cFormControl && paymentStatus) {
+            setPaymentStatus(false); // Reset the payment status
         }
-    }, [cFormControl]);
+    }, [cFormControl, paymentStatus]);
 
     return (
         <Popup
             open={cFormControl}
-            closeOnDocumentClick={true}
+            closeOnDocumentClick={false} // Prevents closing on outside click
             position="center center"
         >
             <div className="s-overlay">
-                <button onClick={() => setCFormControl(false)} className='cross-button'><GiCrossMark className='ig' /></button>
+                <CookingPayment formData={formData} paymentStatus={paymentStatus} setPaymentStatus={setPaymentStatus}/>
+                <button onClick={() => setCFormControl(false)} className='cross-button'><GiCrossMark className='ig'/></button>
                 <div className='sub-overlay'>
                     <div className="card-one">
                         <div className="sub-card-one">
@@ -205,9 +225,17 @@ export default function CookingFormPopup({ cFormStatus, setCFormStatus }) {
                                     type="tel"
                                     className='cf-input'
                                     required
-                                    placeholder="Enter Name"
+                                    placeholder="Enter Mobile Number"
+                                    maxLength={10} // limit input to 10 characters
                                     value={number}
-                                    onChange={(e) => setNumber(e.target.value)}
+                                    onChange={(e) => {
+                                        const input = e.target.value;
+                                        const regex = /^[0-9]*$/; // only digits allowed
+                                        if (regex.test(input)) {
+                                            // Update state only if input is digits
+                                            setNumber(input);
+                                        }
+                                    }}
                                 />
                             </div>
                             <div>
@@ -239,8 +267,14 @@ export default function CookingFormPopup({ cFormStatus, setCFormStatus }) {
                                     placeholder="Date & Time"
                                     name="dateTime"
                                     required
+                                    min={getCurrentDateTime()} // set minimum value to current date and time
                                     value={dateTime}
-                                    onChange={(e) => setDateTime(e.target.value)}
+                                    onChange={(e) => {
+                                        const selectedDateTime = e.target.value;
+                                        if (selectedDateTime >= getCurrentDateTime()) {
+                                            setDateTime(selectedDateTime);
+                                        }
+                                    }}
                                 />
                             </div>
                             <div>
@@ -250,12 +284,13 @@ export default function CookingFormPopup({ cFormStatus, setCFormStatus }) {
                                 <input
                                     type="number"
                                     className='cf-input'
-                                    placeholder="Enter Name"
+                                    placeholder="Enter Family Members Count"
                                     required
                                     value={count}
                                     onChange={(e) => setCount(e.target.value)}
                                 />
                             </div>
+
                             <button className='cff-button ' type="submit">Submit</button>
                         </form>
                     </div>

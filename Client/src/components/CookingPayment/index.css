@@ -1,0 +1,90 @@
+.payment-overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh; /* Adjusted for full viewport height */
+    padding: 1rem;
+    width: 100vw; /* Adjusted for full viewport width */
+    color: white;
+    font-family: "Roboto";
+    border-radius: 15px;
+    background-image: radial-gradient(rgb(0, 5, 0), rgba(10, 10, 29, 0.874), rgb(1, 0, 0));
+}
+
+.c-payment-service {
+    font-size: 20px; /* Slightly reduced font size for mobile */
+    color: rgb(170, 181, 49);
+    font-weight: bold;
+    text-align: center;
+}
+
+.c-payment-service-p {
+    font-size: 18px; /* Slightly reduced font size for mobile */
+    color: white;
+    padding: 0.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.c-payment-service-p-q {
+    font-size: 16px; /* Slightly reduced font size for mobile */
+    color: rgb(170, 181, 49);
+    font-weight: bold;
+    text-align: center;
+}
+..no-times-button{
+    display: block;
+    margin: 7px;
+}
+.no-times-button,
+.pay-button {
+    width: 100px;
+    margin: 0.5rem;
+    border-radius: 6px;
+    
+    border: solid 2px rgb(125, 112, 115);
+    background-color: rgba(46, 38, 38, 0.637);
+    color: rgb(173, 187, 22);
+    padding: 0.5rem;
+    display: block; /* Changed to block for center alignment */
+    margin: 0 auto; /* Center alignment */
+}
+
+.pay-button:hover {
+    background-color: rgba(41, 37, 114, 0.612);
+    color: white;
+    border: solid 2px black;
+}
+
+.no-times-button:hover {
+    background-color: rgba(41, 37, 114, 0.612);
+    color: white;
+    border: solid 2px black;
+}
+
+.button-container-c-p{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+@media screen and (max-width: 768px) {
+    .c-payment-service {
+        font-size: 15px; /* Further reduced font size for smaller screens */
+    }
+
+    .button-container-c-p{
+        flex-direction: column;
+    }
+
+    .c-payment-service-p,
+    .c-payment-service-p-q {
+        font-size: 14px; /* Further reduced font size for smaller screens */
+    }
+
+    .no-times-button,
+    .pay-button {
+        width: 80px; /* Reduced button width for smaller screens */
+        font-size: 14px; /* Reduced font size for smaller screens */
+    }
+}

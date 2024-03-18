@@ -4,6 +4,7 @@ import Navbar from "/src/components/Navbar/navbar.jsx";
 import "/src/components/ServicesSection/ServicesSection.css";
 import Footer from "../Footer/footer.jsx"
 import CookingFormPopup from "../CookingFormPopup/index.jsx";
+import Cookies from "js-cookie";
 
 const ServicesSection = () => {
     const [cookingFormStatus, setCFormStatus] = useState(false);
@@ -25,9 +26,16 @@ const ServicesSection = () => {
                                 Welcome to the world of flavour, innovation and endless
                                 possibilities in the kitchen.
                             </p>
-                            <button onClick={() => setCFormStatus(!cookingFormStatus)} className="ServicesSection-btn" id="cookingBtn">
+                            {Cookies.get("jwt_token") && <button onClick={() => setCFormStatus(!cookingFormStatus)} className="ServicesSection-btn" id="cookingBtn">
                                 Book Now
-                            </button>
+                            </button>}
+                            {!Cookies.get("jwt_token") && 
+                                <Link to="/login" className="ServicesSection-btn-link">
+                                <button className="ServicesSection-btn" id="cleaningBtn">
+                                    Book Now
+                                </button>
+                            </Link>
+                            }
                         </div>
                     </div>
                     <div className="ServicesSection-card-element">

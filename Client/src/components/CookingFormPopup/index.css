@@ -78,6 +78,7 @@
     width: 60%;
     padding: 1.5rem;
     border-radius: 15px;
+    overflow:auto;
     /* background-color: rgba(255, 255, 255, 0.4); */
     background-image: radial-gradient( rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0.4));
 }
@@ -225,7 +226,7 @@ body {
         width: 100%; /* Set both cards to full width */
     }
     .card-two {
-        min-height: 500px; 
+        min-height: 200px; 
     }
     .card-one{
         display: none;
