@@ -1,5 +1,7 @@
 import "/src/components/Whatsapp/whatsapp.css";
 import { SiWhatsapp } from "react-icons/si";
+import '@fortawesome/fontawesome-free/css/all.css';
+
 
 const Whatsapp = () => {
   const handleWhatsappClick = (event) => {
@@ -10,10 +12,10 @@ const Whatsapp = () => {
 
   return (
     <div className="whatsapp_container">
-      {/* <span className="chat-text">Chat with us</span> */}
-      <a href="https://wa.me/8125522213?text=Hello%20Homaid!%20i%20need%20help" className="whatsapp_float" target="_blank" rel="noopener noreferrer" onClick={handleWhatsappClick}>
-        <SiWhatsapp />
-      </a>
+      	<a href="https://wa.me/8125522213" className="btn-whatsapp-pulse" target="_blank">
+       {/* <SiWhatsapp /> */}
+       <i className="fab fa-whatsapp"></i>
+    </a>
     </div>
   );
 };

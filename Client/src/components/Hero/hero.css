@@ -28,35 +28,69 @@
   text-align: center;
 }
 
-.scroll-down-button-container {
-  position: relative;
-  bottom: 20px;
+.scroll-container {
+  /* position: fixed; */
+  bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 10;
-  text-align: center;
-  /* width: 62px;
-  height: 62px; */
-}
-
-.scroll-down-button {
-  background-color: black;
-  color: #6ecbdd;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
+  z-index: 1000; /* Ensure the scroll icon appears above other content */
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  outline: none;
+}
+
+.mouse {
+  width: 50px;
+  height: 90px;
+  border: 3px solid #333;
+  border-radius: 60px;
+  position: absolute;
+  bottom: -43px;
+  left: 100%;
+  transform: translateX(-50%);
+  z-index: 10; /* Ensure the scroll icon appears above other content */
+}
+
+.mouse::before {
+  content: '';
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
   border-radius: 50%;
+  opacity: 1;
+  animation: wheel 2s infinite;
 }
 
-.scroll-down-button:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: black;
-}
-
-/* @media  screen and (max-width:768px) {
-  .scroll-down-button-container{
-    display: none;
+@keyframes wheel {
+  to {
+    opacity: 0;
+    top: 60px;
   }
-} */
+}
+
+@keyframes down {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translateY(15px);
+  }
+  40% {
+    transform: translate(0);
+  }
+}
+
+@keyframes scroll {
+  0% {
+    height: 40px;
+  }
+  30% {
+    height: 70px;
+  }
+  60% {
+    height: 40px;
+  }
+}

@@ -31,10 +31,12 @@ const Hero = () => {
         <div className="overlay"></div>
         <video src={video2}  onEnded={handleVideoEnd} autoPlay loop  muted id="bg-video"/>
     </div>
-    <div className="scroll-down-button-container">
-      <button className="scroll-down-button" onClick={scrollToNextSection}>
-        <FaChevronDown/>
-      </button>
+    <div className="scroll-container" onClick={scrollToNextSection}>
+      <div className="field">
+        <div className="mouse">
+          {/* Add content inside the mouse div if needed */}
+        </div>
+      </div>
     </div>
     </div>
   )

@@ -9,7 +9,7 @@
     padding-left: 3rem;
     padding-right: 3rem;
     padding-bottom: 3rem;
-    overflow: scroll; /* Enable scrolling */
+    overflow: auto; /* Enable scrolling */
 }
 
 .cross-button {
@@ -74,6 +74,7 @@
 }
 
 .card-two {
+    min-height: 300px;
     height: 100%;
     width: 60%;
     padding: 1.5rem;
@@ -81,6 +82,7 @@
     overflow:auto;
     /* background-color: rgba(255, 255, 255, 0.4); */
     background-image: radial-gradient( rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0.4));
+    overflow: scroll;
 }
 
 .sub3 {

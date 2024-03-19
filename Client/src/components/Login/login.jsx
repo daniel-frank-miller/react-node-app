@@ -6,6 +6,7 @@ import Cookies from "js-cookie";
 import {Component} from 'react';
 import { Navigate } from "react-router-dom";
 import Navbar from '../Navbar/navbar'
+import GoogleSignIn from '../GoogleSignIn/google.jsx'
 
 class Login extends Component{
   state={email:'',password:'',loginSuccessStatus:false,messageStatus:false,message:''}
@@ -106,7 +107,7 @@ class Login extends Component{
           <p>------- or -------</p>
           <div className="social-login">
             <button className="social-icons">
-              <FcGoogle />
+              <GoogleSignIn/>
             </button>
             <button className="social-icons">
               <FaFacebook />
