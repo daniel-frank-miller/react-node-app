@@ -10,7 +10,7 @@ const ServicesSection = () => {
     const [cookingFormStatus, setCFormStatus] = useState(false);
     return (
         <div className="singlePage">
-            <Navbar />
+            <Navbar/>
             <CookingFormPopup cFormStatus={cookingFormStatus} setCFormStatus={setCFormStatus} />
             <div className="ServicesSection prevent-select">
                 <h1 className="ServicesSection-heading">Our Services</h1>

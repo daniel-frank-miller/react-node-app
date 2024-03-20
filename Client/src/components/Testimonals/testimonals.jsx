@@ -149,8 +149,8 @@ export default function Feedback() {
               <Rating
                 initialRating={feedback.rating}
                 readonly
-                emptySymbol={<span className="rating-icon">&#9734;</span>}
-                fullSymbol={<span className="rating-icon">&#9733;</span>}
+                emptySymbol={<span className="Trating-icon">&#9734;</span>}
+                fullSymbol={<span className="Trating-icon">&#9733;</span>}
               />
             </div>
           ))}

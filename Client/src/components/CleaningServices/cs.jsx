@@ -1,12 +1,17 @@
 import { Link } from "react-router-dom";
 import Navbar from "/src/components/Navbar/navbar.jsx";
-
+import { useState } from "react";
 import "/src/components/CleaningServices/cs.css";
+import RegularCleaningFormPopup from "../RegularCleaningFormPopup";
+import Cookies from "js-cookie";
+
 
 const CleaningServices = () => {
+  const [regularCleaning, setRegularCleaning] = useState(false);
   return (
     <div className="singlePage">
       <Navbar />
+      <RegularCleaningFormPopup regularCleaning = {regularCleaning} setRegularCleaning = {setRegularCleaning}/>
       <div className="CleaningServices-Container">
         <h1 className="heading">Cleaning Services</h1>
         <div className="content">
@@ -26,11 +31,18 @@ const CleaningServices = () => {
                 mopping, both dry and wet, to make sure everything shines.
               </p>
               <div className="actions-card">
-                <Link to="/cleaningprofile">
-                  <button className="cleaning-service-btn" id="regularCleanBtn">
+                {Cookies.get("jwt_token") && 
+                  <button onClick={()=>setRegularCleaning(!regularCleaning)} className="cleaning-service-btn" id="regularCleanBtn">
                     Book Now
                   </button>
-                </Link>
+                }
+                {!Cookies.get("jwt_token") && 
+                  <Link to="/login">
+                    <button className="cleaning-service-btn" id="regularCleanBtn">
+                      Book Now
+                    </button>
+                  </Link>
+                }
               </div>
             </div>
           </div>
