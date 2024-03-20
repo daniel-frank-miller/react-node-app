@@ -85,7 +85,7 @@ export default function CookingFormPopup({ cFormStatus, setCFormStatus }) {
                 familyMemberCount: count,
                 dateTime: dateTime,
                 phone: number,
-            };
+            }; 
 
             try {
                 const response = await axios.post("https://api.homaid.in/cooking_services", formData, {

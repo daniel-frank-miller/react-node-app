@@ -17,8 +17,6 @@ class GoogleSignIn extends Component {
 
   handleGoogleLoginSuccess = async (credentialResponse) => {
     const decodedResponse = jwtDecode(credentialResponse.credential);
-    // Assuming you're storing the JWT token in cookies
-    Cookies.set('jwt_token', credentialResponse.credential, { expires: 30 });
     // Update state to reflect user logged in
     this.setState({ isLoggedIn: true });
 
@@ -38,6 +36,8 @@ class GoogleSignIn extends Component {
 
       if (response.ok) {
         console.log('User details posted successfully');
+        const data=await response.json()
+        Cookies.set('jwt_token', data.jwtToken, { expires: 30 });
       } else {
         throw new Error('Failed to post user details');
       }
