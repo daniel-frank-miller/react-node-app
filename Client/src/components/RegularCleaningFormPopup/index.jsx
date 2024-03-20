@@ -173,7 +173,7 @@ export default function RegularCleaningFormPopup({ regularCleaning, setRegularCl
                 <div className='sub-overlay'>
                     <div className="card-one">
                         <div className="sub-card-one">
-                            <video className="sub-card-one-video" src="/src/assets/cooking-video-banner.webm" autoPlay loop muted id="bg-video" />
+                            <video className="sub-card-one-video" src="/src/assets/cleaning-video-banner.webm" autoPlay loop muted id="bg-video" />
                         </div>
                         <div className="sub-card-one sub2">
                             <Slider {...sliderSettings} >
