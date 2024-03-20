@@ -33,7 +33,7 @@
     font-weight: bold;
     text-align: center;
 }
-..no-times-button{
+.no-times-button{
     display: block;
     margin: 7px;
 }
@@ -65,6 +65,9 @@
 
 .button-container-c-p{
     display: flex;
+    width: 50%;
+    min-width: 200px;
+    max-width: 350px;
     flex-direction: row;
     justify-content: center;
 }
@@ -75,6 +78,8 @@
 
     .button-container-c-p{
         flex-direction: column;
+        height: 150px;
+        justify-content: space-around;
     }
 
     .c-payment-service-p,
