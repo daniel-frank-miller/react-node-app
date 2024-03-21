@@ -11,7 +11,7 @@ import Cookies from "js-cookie";
 const CleaningServices = () => {
   const [regularCleaning, setRegularCleaning] = useState(false);
   const [washroomCleaning,setWashroomCleaning] = useState(false);
-  // const [dustingCleaning, setDustingCleaning] = useState(false);
+  const [dustingCleaning, setDustingCleaning] = useState(false);
   return (
     <div className="singlePage">
       <Navbar />
