@@ -3,15 +3,21 @@ import Navbar from "/src/components/Navbar/navbar.jsx";
 import { useState } from "react";
 import "/src/components/CleaningServices/cs.css";
 import RegularCleaningFormPopup from "../RegularCleaningFormPopup";
+import WashroomCleaningPopup from "../WashroomCleaningPopup";
+import DustingCleaningPopup from "../Dusting&CleaningPopup";
 import Cookies from "js-cookie";
 
 
 const CleaningServices = () => {
   const [regularCleaning, setRegularCleaning] = useState(false);
+  const [washroomCleaning,setWashroomCleaning] = useState(false);
+  const [dustingCleaning, setDustingCleaning] = useState(false);
   return (
     <div className="singlePage">
       <Navbar />
       <RegularCleaningFormPopup regularCleaning = {regularCleaning} setRegularCleaning = {setRegularCleaning}/>
+      <WashroomCleaningPopup washroomCleaning={washroomCleaning} setWashroomCleaning={setWashroomCleaning}/>
+      <DustingCleaningPopup dustingCleaning={dustingCleaning} setDustingCleaning={setDustingCleaning}/>
       <div className="CleaningServices-Container">
         <h1 className="heading">Cleaning Services</h1>
         <div className="content">
@@ -64,11 +70,18 @@ const CleaningServices = () => {
                 comfort!
               </p>
               <div className="actions-card">
-                <Link to="/cleaningprofile">
-                  <button className="cleaning-service-btn" id="washroomCleanBtn">
+                {Cookies.get("jwt_token") && 
+                  <button onClick={()=>setWashroomCleaning(!washroomCleaning)} className="cleaning-service-btn" id="regularCleanBtn">
                     Book Now
                   </button>
-                </Link>
+                }
+                {!Cookies.get("jwt_token") && 
+                  <Link to="/login">
+                    <button className="cleaning-service-btn" id="regularCleanBtn">
+                      Book Now
+                    </button>
+                  </Link>
+                }
               </div>
             </div>
           </div>
@@ -89,11 +102,18 @@ const CleaningServices = () => {
                 team restores freshness to your beautiful home.
               </p>
               <div className="actions-card">
-                <Link to="/cleaningprofile">
-                  <button className="cleaning-service-btn" id="dustingCleanBtn">
+                {Cookies.get("jwt_token") && 
+                  <button onClick={()=>setDustingCleaning(!dustingCleaning)} className="cleaning-service-btn" id="regularCleanBtn">
                     Book Now
                   </button>
-                </Link>
+                }
+                {!Cookies.get("jwt_token") && 
+                  <Link to="/login">
+                    <button className="cleaning-service-btn" id="regularCleanBtn">
+                      Book Now
+                    </button>
+                  </Link>
+                }
               </div>
             </div>
           </div>

@@ -4,22 +4,21 @@ import { GiCrossMark } from "react-icons/gi";
 import axios from 'axios'; // Import Axios for making HTTP requests
 import "./index.css"
 
-export default function CookingPayment({ paymentStatus, formData, setPaymentStatus }) {
-    console.log(formData)
-    const [house, setHouse] = useState(10); // Default to 1BHK
-    const [recurringTimes, setRecurringTimes] = useState(1);
+export default function DustingCleaningPaymentPopup({ paymentStatus, formData, setPaymentStatus }) {
+    const [house, setHouse] = useState(10);
+    const [recurringTimes, setRecurringTimes] = useState(1)
     const [noOfTimesPerDay, setNoOfTimesPerDay] = useState(1);
 
     useEffect(() => {
         if (formData && formData.recurring) {
-            if (formData.recurring === "Once") {
+            if (formData.recurring === "Once"){
                 setRecurringTimes(1);
             } else if (formData.recurring === "Daily") {
-                setRecurringTimes(120);
+                setRecurringTimes(30);
             } else if (formData.recurring === "Weekly") {
                 setRecurringTimes(4);
             } else if (formData.recurring === "Monthly") {
-                setRecurringTimes(30);
+                setRecurringTimes(12);
             }
         }
         if (formData && formData.houseType) {
@@ -39,7 +38,7 @@ export default function CookingPayment({ paymentStatus, formData, setPaymentStat
     }, [formData])
 
     function totalCost() {
-        const cost = recurringTimes * house * 50 * noOfTimesPerDay;
+        const cost = recurringTimes * house * noOfTimesPerDay;
         return cost;
     }
 
@@ -75,11 +74,11 @@ export default function CookingPayment({ paymentStatus, formData, setPaymentStat
         >
             <div className="payment-overlay">
                 <button onClick={() => setPaymentStatus(false)} className='cross-button'><GiCrossMark className='ig' /></button>
-                <h1 className="c-payment-service">Regular Cleaning Service Bill</h1>
-                <h2 className="c-payment-service-p">Cleaning Cost for {formData && formData.houseType} is {house}</h2>
-                <h2 className="c-payment-service-p">Service For: {formData && formData.recurring} (means {recurringTimes} {recurringTimes > 1 ? "days" :"day"})</h2>
+                <h1 className="c-payment-service">Dusting and Setting Service Bill</h1>
+                <h2 className="c-payment-service-p">Dusting and Setting Cost for {formData && formData.houseType} is {house}₹</h2>
+                <h2 className="c-payment-service-p">Service For: {formData && formData.recurring} (means {recurringTimes} {recurringTimes >  1 ? "days" : "day"})</h2>
                 <h2 className="c-payment-service-p">Number of cleanings per day: {noOfTimesPerDay}</h2>
-                <p className="c-payment-service-p-q">Select Number Of Cleanings Per Day?</p>
+                <p className="c-payment-service-p-q">Select Number Of dusting and setting Per Day?</p>
                 <div className="button-container-c-p">
                     <button className="no-times-button" onClick={() => setNoOfTimesPerDay(1)}>One</button>
                     <button className="no-times-button" onClick={() => setNoOfTimesPerDay(2)}>Two</button>

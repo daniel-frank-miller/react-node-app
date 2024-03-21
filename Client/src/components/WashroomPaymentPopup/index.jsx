@@ -4,11 +4,10 @@ import { GiCrossMark } from "react-icons/gi";
 import axios from 'axios'; // Import Axios for making HTTP requests
 import "./index.css"
 
-export default function CookingPayment({ paymentStatus, formData, setPaymentStatus }) {
+export default function WashroomPaymentPopup({ paymentStatus, formData, setPaymentStatus }) {
     console.log(formData)
-    const [house, setHouse] = useState(10); // Default to 1BHK
     const [recurringTimes, setRecurringTimes] = useState(1);
-    const [noOfTimesPerDay, setNoOfTimesPerDay] = useState(1);
+    const [noOfWashrooms, setNoOfWashrooms] = useState(1);
 
     useEffect(() => {
         if (formData && formData.recurring) {
@@ -23,23 +22,29 @@ export default function CookingPayment({ paymentStatus, formData, setPaymentStat
             }
         }
         if (formData && formData.houseType) {
-            if (formData.houseType === "1BHK") {
-                setHouse(10);
-            } else if (formData.houseType === "2BHK") {
-                setHouse(20);
-            } else if (formData.houseType === "3BHK") {
-                setHouse(30);
-            } else if (formData.houseType === "4BHK") {
-                setHouse(40);
-            } else if (formData.houseType === "Villa") {
-                setHouse(50);
+            if (formData.numberofWashrooms === "one") {
+                setNoOfWashrooms(1);
+            } else if (formData.numberofWashrooms === "two") {
+                setNoOfWashrooms(2);
+            } else if (formData.numberofWashrooms === "three") {
+                setNoOfWashrooms(3);
+            } else if (formData.numberofWashrooms === "four") {
+                setNoOfWashrooms(4);
+            } else if (formData.numberofWashrooms === "five") {
+                setNoOfWashrooms(5);
+            }
+            else if (formData.numberofWashrooms === "six") {
+                setNoOfWashrooms(6);
+            }
+            else if (formData.numberofWashrooms === "seven") {
+                setNoOfWashrooms(7);
             }
         }
         
     }, [formData])
 
     function totalCost() {
-        const cost = recurringTimes * house * 50 * noOfTimesPerDay;
+        const cost = recurringTimes * 50 * noOfWashrooms;
         return cost;
     }
 
@@ -75,15 +80,15 @@ export default function CookingPayment({ paymentStatus, formData, setPaymentStat
         >
             <div className="payment-overlay">
                 <button onClick={() => setPaymentStatus(false)} className='cross-button'><GiCrossMark className='ig' /></button>
-                <h1 className="c-payment-service">Regular Cleaning Service Bill</h1>
-                <h2 className="c-payment-service-p">Cleaning Cost for {formData && formData.houseType} is {house}</h2>
+                <h1 className="c-payment-service">Washroom Cleaning Service Bill</h1>
+                <h2 className="c-payment-service-p">Cleaning Cost is 50₹/Washroom</h2>
                 <h2 className="c-payment-service-p">Service For: {formData && formData.recurring} (means {recurringTimes} {recurringTimes > 1 ? "days" :"day"})</h2>
-                <h2 className="c-payment-service-p">Number of cleanings per day: {noOfTimesPerDay}</h2>
-                <p className="c-payment-service-p-q">Select Number Of Cleanings Per Day?</p>
+                <h2 className="c-payment-service-p">Number of washrooms: {noOfWashrooms}</h2>
+                {/* <p className="c-payment-service-p-q">Select Number Of Cleanings Per Day?</p>
                 <div className="button-container-c-p">
                     <button className="no-times-button" onClick={() => setNoOfTimesPerDay(1)}>One</button>
                     <button className="no-times-button" onClick={() => setNoOfTimesPerDay(2)}>Two</button>
-                </div>
+                </div> */}
                 <p className="c-payment-service-p-q">Total Cost: ₹{totalCost()}</p>
                 <button onClick={() => handlePayment(totalCost())} className="pay-button" >Pay</button>
             </div>
