@@ -152,15 +152,15 @@ export default function DustingCleaningPopup({ dustingCleaning, setDustingCleani
         setRecurringType(value)
     }
 
-    useEffect(() => {
-        setCFormControl(dustingCleaning);
-    }, [dustingCleaning, paymentStatus]);
+    // useEffect(() => {
+    //     setCFormControl(dustingCleaning);
+    // }, [dustingCleaning, paymentStatus]);
 
-    useEffect(() => {
-        if (!cFormControl && paymentStatus) {
-            setPaymentStatus(false); // Reset the payment status
-        }
-    }, [cFormControl, paymentStatus]);
+    // useEffect(() => {
+    //     if (!cFormControl && paymentStatus) {
+    //         setPaymentStatus(false); // Reset the payment status
+    //     }
+    // }, [cFormControl, paymentStatus]);
 
     return (
         <Popup
