@@ -23,7 +23,7 @@ class App extends Component {
     return (
         <Router>
         <Routes>
-          <Route exact path="/" element={<Home />} />
+          <Route exact path="/p" element={<Home />} />
           <Route exact path="/about" element={<AboutSection />} />
           <Route exact path="/services" element={<ServicesSection />} />
           <Route exact path="/contactus" element={<ContactUs />} />

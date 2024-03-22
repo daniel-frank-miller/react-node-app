@@ -152,15 +152,15 @@ export default function DustingCleaningPopup({ dustingCleaning, setDustingCleani
         setRecurringType(value)
     }
 
-    // useEffect(() => {
-    //     setCFormControl(dustingCleaning);
-    // }, [dustingCleaning, paymentStatus]);
+    useEffect(() => {
+        setCFormControl(dustingCleaning);
+    }, [dustingCleaning, paymentStatus]);
 
-    // useEffect(() => {
-    //     if (!cFormControl && paymentStatus) {
-    //         setPaymentStatus(false); // Reset the payment status
-    //     }
-    // }, [cFormControl, paymentStatus]);
+    useEffect(() => {
+        if (!cFormControl && paymentStatus) {
+            setPaymentStatus(false); // Reset the payment status
+        }
+    }, [cFormControl, paymentStatus]);
 
     return (
         <Popup
@@ -247,7 +247,7 @@ export default function DustingCleaningPopup({ dustingCleaning, setDustingCleani
                                     Service Type
                                 </label><br />
                                 <select
-                                    className='cf-input'
+                                    className='cf-input-select'
                                     required
                                     value={serviceType} // Change the value to serviceType
                                     onChange={(e) => setServiceType(e.target.value)}
@@ -295,23 +295,23 @@ export default function DustingCleaningPopup({ dustingCleaning, setDustingCleani
                                 />
                             </div>
                             <div>
-                                <label className="cf-label">
-                                    House Type
-                                </label><br />
-                                <select
-                                    type="number"
-                                    className='cf-input'
-                                    placeholder="Enter Family Members Count"
-                                    required
-                                    value={houseType}
-                                    onChange={(e) => setHouseType(e.target.value)}
-                                > 
-                                    <option value="1BHK">1BHK</option>
-                                    <option value="2BHK">2BHK</option>
-                                    <option value="3BHK">3BHK</option>
-                                    <option value="4BHK">4BHK</option>
-                                    <option value="Villa">Villa</option>
-                                </select>
+                            <label className="cf-label">
+                                House Type
+                            </label><br />
+                            <select
+                                type="number"
+                                className='cf-input-select'
+                                required
+                                value={houseType}
+                                onChange={(e) => setHouseType(e.target.value)}
+                            > 
+                                <option value="">Select House Type</option>
+                                <option value="1BHK">1BHK</option>
+                                <option value="2BHK">2BHK</option>
+                                <option value="3BHK">3BHK</option>
+                                <option value="4BHK">4BHK</option>
+                                <option value="Villa">Villa</option>
+                            </select>
                             </div>
                             <button className='cff-button ' type="submit">Submit</button>
                         </form>

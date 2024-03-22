@@ -1,3 +1,22 @@
+/* @keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 .s-overlay {
     width: 100vw;
     height: 100vh;
@@ -10,6 +29,7 @@
     padding-right: 3rem;
     padding-bottom: 3rem;
     overflow: auto; /* Enable scrolling */
+    animation: fadeIn 0.5s ease forwards; /* Apply animation */
 }
 
 .cross-button {
@@ -118,6 +138,18 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+.cf-input-select{
+    width: 50%;
+    min-width: 170px;
+    max-width: 350px;
+    height: 34px;
+    border-radius: 7px;
+    outline: none;
+    border: solid 2px black;
+    margin: 0.5rem;
+    padding: 3px;
 }
 
 .cf-input {
@@ -243,6 +275,7 @@ body {
         /* margin-top: 1rem; */
         height: 100%;
         order: -1;
+        background-image: radial-gradient( rgba(80, 99, 125, 0.871), rgba(127, 113, 113, 0.677));
     }
 
     /* Responsive form styling */

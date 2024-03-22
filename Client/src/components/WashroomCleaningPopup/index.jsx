@@ -247,7 +247,7 @@ export default function WashroomCleaningPopup({ washroomCleaning, setWashroomCle
                                     Service Type
                                 </label><br />
                                 <select
-                                    className='cf-input'
+                                    className='cf-input-select'
                                     required
                                     value={serviceType} // Change the value to serviceType
                                     onChange={(e) => setServiceType(e.target.value)}
@@ -300,7 +300,7 @@ export default function WashroomCleaningPopup({ washroomCleaning, setWashroomCle
                                 </label><br />
                                 <select
                                     type="text"
-                                    className='cf-input'
+                                    className='cf-input-select'
                                     placeholder="Enter Family Members Count"
                                     required
                                     value={numberofWashrooms}
