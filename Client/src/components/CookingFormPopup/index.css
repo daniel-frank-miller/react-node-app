@@ -101,7 +101,7 @@
     border-radius: 15px;
     overflow:auto;
     /* background-color: rgba(255, 255, 255, 0.4); */
-    background-image: radial-gradient( rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0.4));
+    background-image: radial-gradient( rgba(37, 40, 121, 0.654), rgb(67, 31, 93));
     overflow: scroll;
 }
 
@@ -167,7 +167,7 @@ body {
 .cff-button {
     margin: 5px;
     width: 200px;
-    background-color: black;
+    background-color: rgb(58, 76, 177);
     padding: 10px 20px;
     font-size: 16px;
     color: white;
@@ -178,7 +178,7 @@ body {
 }
 
 .cff-button:hover {
-    background-color: white;
+    background-color: rgb(148, 173, 73);
     color: black;
 }
 
@@ -238,11 +238,13 @@ body {
 .cf-label {
     font-size: 20px;
     font-weight: bold;
+    color: rgb(166, 214, 89);
 }
 
 .cf-heading {
     font-size: 20px;
     font-weight: bold;
+    color: rgb(166, 214, 89);
 }
 
 @media screen and (max-width: 768px) {

@@ -22,6 +22,7 @@ export default function CookingFormPopup({ cFormStatus, setCFormStatus }) {
     const [count, setCount] = useState(0);
     const [paymentStatus, setPaymentStatus] = useState(false);
     const [formData, setFormData] = useState(null);
+    const [email, setEmail] = useState("");
 
     const professionals = [
         // Professional data
@@ -85,6 +86,7 @@ export default function CookingFormPopup({ cFormStatus, setCFormStatus }) {
                 familyMemberCount: count,
                 dateTime: dateTime,
                 phone: number,
+                email
             }; 
 
             try {
@@ -216,7 +218,20 @@ export default function CookingFormPopup({ cFormStatus, setCFormStatus }) {
                                     onChange={(e) => setName(e.target.value)}
                                 />
                             </div>
-
+                            <div>
+                                <label className="cf-label">
+                                    Email:
+                                </label><br />
+                                <input
+                                    type="email"
+                                    className='cf-input'
+                                    placeholder="Enter Email"
+                                    required
+                                    name="email"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                />
+                            </div>
                             <div>
                                 <label className="cf-label">
                                     Mobile Number:
@@ -280,17 +295,17 @@ export default function CookingFormPopup({ cFormStatus, setCFormStatus }) {
                             <div>
                                 <label className="cf-label">
                                     Family Members Count:
-                                </label><br />
+                                </label><br/>
                                 <input
                                     type="number"
                                     className='cf-input'
                                     placeholder="Enter Family Members Count"
                                     required
+                                    min= "0"
                                     value={count}
                                     onChange={(e) => setCount(e.target.value)}
                                 />
                             </div>
-
                             <button className='cff-button ' type="submit">Submit</button>
                         </form>
                     </div>

@@ -23,6 +23,7 @@ export default function WashroomCleaningPopup({ washroomCleaning, setWashroomCle
     const [serviceType, setServiceType] = useState("Washroom Cleaning");
     const [paymentStatus, setPaymentStatus] = useState(false);
     const [formData, setFormData] = useState(null);
+    const [email,setEmail] = useState("");
 
     const professionals = [
         // Professional data
@@ -78,13 +79,14 @@ export default function WashroomCleaningPopup({ washroomCleaning, setWashroomCle
     const handleSubmit = async (event) => {
         event.preventDefault();
 
-        if (name && number && recurringType && location && dateTime && numberofWashrooms && serviceType) {
+        if (name && number && recurringType && email && location && dateTime && numberofWashrooms && serviceType) {
             const formData = {
                 name: name,
                 location: location,
                 recurring: recurringType,
                 cleaningServiceType:serviceType,
                 houseType:"",
+                email,
                 numberofWashrooms,
                 dateTime: dateTime,
                 phone: number,
@@ -111,6 +113,7 @@ export default function WashroomCleaningPopup({ washroomCleaning, setWashroomCle
                     setRecurringType('');
                     setLocation('');
                     setDateTime('');
+                    setEmail('');
                     setNumberOfWashrooms(0);
                 } else {
                     // Handle server errors or other response errors
@@ -218,6 +221,21 @@ export default function WashroomCleaningPopup({ washroomCleaning, setWashroomCle
                                     name="name"
                                     value={name}
                                     onChange={(e) => setName(e.target.value)}
+                                />
+                            </div>
+
+                            <div>
+                                <label className="cf-label">
+                                    Email:
+                                </label><br />
+                                <input
+                                    type="email"
+                                    className='cf-input'
+                                    placeholder="Enter Email"
+                                    required
+                                    name="email"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
                                 />
                             </div>
 

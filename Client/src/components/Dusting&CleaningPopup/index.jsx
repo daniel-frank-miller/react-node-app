@@ -24,6 +24,7 @@ export default function DustingCleaningPopup({ dustingCleaning, setDustingCleani
     const [serviceType, setServiceType] = useState("Regular Cleaning");
     const [paymentStatus, setPaymentStatus] = useState(false);
     const [formData, setFormData] = useState(null);
+    const [email,setEmail] = useState("");
 
     const professionals = [
         // Professional data
@@ -86,6 +87,7 @@ export default function DustingCleaningPopup({ dustingCleaning, setDustingCleani
                 recurring: recurringType,
                 cleaningServiceType:serviceType,
                 houseType,
+                email,
                 dateTime: dateTime,
                 phone: number,
             };
@@ -112,6 +114,7 @@ export default function DustingCleaningPopup({ dustingCleaning, setDustingCleani
                     setLocation('');
                     setDateTime('');
                     setHouseType();
+                    setEmail('');
                 } else {
                     // Handle server errors or other response errors
                     console.error("Error submitting form:", response.statusText);
@@ -220,7 +223,20 @@ export default function DustingCleaningPopup({ dustingCleaning, setDustingCleani
                                     onChange={(e) => setName(e.target.value)}
                                 />
                             </div>
-
+                            <div>
+                                <label className="cf-label">
+                                    Email:
+                                </label><br />
+                                <input
+                                    type="email"
+                                    className='cf-input'
+                                    placeholder="Enter Email"
+                                    required
+                                    name="email"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                />
+                            </div>
                             <div>
                                 <label className="cf-label">
                                     Mobile Number:

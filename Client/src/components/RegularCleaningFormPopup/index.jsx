@@ -19,10 +19,13 @@ export default function RegularCleaningFormPopup({ regularCleaning, setRegularCl
     const [location, setLocation] = useState('');
     const [dateTime, setDateTime] = useState('');
     const [cFormControl, setCFormControl] = useState(regularCleaning);
-    const [houseType, setHouseType] = useState(0);
-    const [serviceType, setServiceType] = useState("Regular Cleaning");
+    const [houseType, setHouseType] = useState("1BHK");
+    const [serviceType, setServiceType] = useState("mopping");
     const [paymentStatus, setPaymentStatus] = useState(false);
     const [formData, setFormData] = useState(null);
+    const [email,setEmail] = useState("");
+    const [noOfFloors,setNoOfFloors] = useState(1);
+    const [count,setCount] = useState(1);
 
     const professionals = [
         // Professional data
@@ -78,13 +81,16 @@ export default function RegularCleaningFormPopup({ regularCleaning, setRegularCl
     const handleSubmit = async (event) => {
         event.preventDefault();
 
-        if (name && number && recurringType && location && dateTime && houseType && serviceType) {
+        if (name && number && recurringType && location && dateTime && houseType && serviceType && count) {
             const formData = {
                 name: name,
                 location: location,
                 recurring: recurringType,
                 cleaningServiceType:serviceType,
                 houseType,
+                noOfFloors,
+                count,
+                email,
                 dateTime: dateTime,
                 phone: number,
             };
@@ -110,7 +116,11 @@ export default function RegularCleaningFormPopup({ regularCleaning, setRegularCl
                     setRecurringType('');
                     setLocation('');
                     setDateTime('');
-                    setHouseType();
+                    setHouseType('1BHK'); // Set default house type
+                    setServiceType('mopping'); // Set default service type
+                    setCount(1); // Set default count
+                    setEmail('');
+                    setNoOfFloors(1); // Set default number of floors
                 } else {
                     // Handle server errors or other response errors
                     console.error("Error submitting form:", response.statusText);
@@ -219,7 +229,21 @@ export default function RegularCleaningFormPopup({ regularCleaning, setRegularCl
                                     onChange={(e) => setName(e.target.value)}
                                 />
                             </div>
-
+                            <div>
+                                <label className="cf-label">
+                                    Email:
+                                </label><br />
+                                <input
+                                    type="email"
+                                    className='cf-input'
+                                    placeholder="Enter Email"
+                                    required
+                                    name="email"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                />
+                            </div>
+                            
                             <div>
                                 <label className="cf-label">
                                     Mobile Number:
@@ -246,12 +270,13 @@ export default function RegularCleaningFormPopup({ regularCleaning, setRegularCl
                                     Service Type
                                 </label><br />
                                 <select
-                                    className='cf-input'
+                                    className='cf-input-select'
                                     required
                                     value={serviceType} // Change the value to serviceType
                                     onChange={(e) => setServiceType(e.target.value)}
                                 > 
-                                    <option value="Regular Cleaning">Regular Cleaning</option> {/* Set value attribute */}
+                                    <option value="mopping">Mopping</option> {/* Set value attribute */}
+                                    <option value="dishwashing">Dishwashing</option>
                                 </select>
                             </div>
                             <div>
@@ -293,23 +318,58 @@ export default function RegularCleaningFormPopup({ regularCleaning, setRegularCl
                                     }}
                                 />
                             </div>
-                            <div>
+                            <div style={{display:serviceType != "dishwashing" && 'none'}}>
                                 <label className="cf-label">
-                                    House Type
+                                    Family Members Count:
+                                </label><br />
+                                <input
+                                    type="number"
+                                    className='cf-input'
+                                    placeholder="Enter Family Members Count"
+                                    required
+                                    min= "0"
+                                    value={count}
+                                    onChange={(e) => setCount(parseInt(e.target.value))}
+                                />
+                            </div>
+                            <div style={{display:serviceType =="dishwashing" && 'none'}}>
+                                <label className="cf-label">
+                                    House Type:
                                 </label><br />
                                 <select
                                     type="number"
-                                    className='cf-input'
+                                    className='cf-input-select'
                                     placeholder="Enter Family Members Count"
                                     required
                                     value={houseType}
                                     onChange={(e) => setHouseType(e.target.value)}
                                 > 
-                                    <option value="1BHK">1BHK</option>
+                                    <option selected value="1BHK">1BHK</option>
                                     <option value="2BHK">2BHK</option>
-                                    <option value="3BHK">3BHK</option>
-                                    <option value="4BHK">4BHK</option>
+                                    <option value="3BHKl">3BHK(less than 2000sqft)</option>
+                                    <option value="3BHKm">3BHK(more than 2000sqft)</option>
+                                    <option value="4BHKl">4BHK(less than 3000sqft)</option>
+                                    <option value="4BHKm">4BHK(more than 3000sqft)</option>
+                                    <option value="5BHK">5BHK</option>
+                                    <option value="6BHK">6BHK</option>
                                     <option value="Villa">Villa</option>
+                                </select>
+                            </div>
+                            <div style={{display:serviceType =="dishwashing" && 'none'}}>
+                                <label className="cf-label">
+                                    Number of Floors
+                                </label><br />
+                                <select
+                                    className='cf-input-select'
+                                    required
+                                    value={noOfFloors} // Change the value to serviceType
+                                    onChange={(e) =>setNoOfFloors(parseInt(e.target.value))}
+                                > 
+                                    <option selected value= "1" >1</option>
+                                    <option value= "2" >2</option>
+                                    <option value= "3" >3</option>
+                                    <option value= "4" >4</option>
+                                    <option value= "5" >5</option>
                                 </select>
                             </div>
                             <button className='cff-button ' type="submit">Submit</button>

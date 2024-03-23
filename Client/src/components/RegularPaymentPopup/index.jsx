@@ -9,6 +9,9 @@ export default function CookingPayment({ paymentStatus, formData, setPaymentStat
     const [house, setHouse] = useState(10); // Default to 1BHK
     const [recurringTimes, setRecurringTimes] = useState(1);
     const [noOfTimesPerDay, setNoOfTimesPerDay] = useState(1);
+    const [floorsCount,setFloorsCount] = useState(1);
+    const [serviceT,setServiceT] = useState('');
+    const [fCount,setFCount] = useState(1);   
 
     useEffect(() => {
         if (formData && formData.recurring) {
@@ -27,20 +30,38 @@ export default function CookingPayment({ paymentStatus, formData, setPaymentStat
                 setHouse(10);
             } else if (formData.houseType === "2BHK") {
                 setHouse(20);
-            } else if (formData.houseType === "3BHK") {
+            } else if (formData.houseType === "3BHKh") {
+                setHouse(35);
+            } else if (formData.houseType === "3BHKl") {
                 setHouse(30);
-            } else if (formData.houseType === "4BHK") {
+            } else if (formData.houseType === "4BHKl") {
                 setHouse(40);
+            } else if (formData.houseType === "4BHKh") {
+                setHouse(45);
             } else if (formData.houseType === "Villa") {
                 setHouse(50);
             }
         }
-        
+        if (formData && formData.noOfFloors) {
+            setFloorsCount(formData.noOfFloors)
+
+        }
+        if(formData && formData.cleaningServiceType){
+            setServiceT(formData.cleaningServiceType);
+        }
+        if(formData && formData.count){
+            setFCount(formData.count);
+        }
     }, [formData])
 
     function totalCost() {
-        const cost = recurringTimes * house * 50 * noOfTimesPerDay;
-        return cost;
+        if(serviceT=== "mopping"){
+            const cost = recurringTimes *house* noOfTimesPerDay*floorsCount;
+            return cost;
+        }else{
+            const cost = 20*parseInt(fCount);
+            return cost;
+        }
     }
 
     const handlePayment = async (cost) => {
@@ -73,20 +94,37 @@ export default function CookingPayment({ paymentStatus, formData, setPaymentStat
             closeOnDocumentClick={false} // Prevents closing on outside click
             position="center center"
         >
-            <div className="payment-overlay">
-                <button onClick={() => setPaymentStatus(false)} className='cross-button'><GiCrossMark className='ig' /></button>
-                <h1 className="c-payment-service">Regular Cleaning Service Bill</h1>
-                <h2 className="c-payment-service-p">Cleaning Cost for {formData && formData.houseType} is {house}</h2>
-                <h2 className="c-payment-service-p">Service For: {formData && formData.recurring} (means {recurringTimes} {recurringTimes > 1 ? "days" :"day"})</h2>
-                <h2 className="c-payment-service-p">Number of cleanings per day: {noOfTimesPerDay}</h2>
-                <p className="c-payment-service-p-q">Select Number Of Cleanings Per Day?</p>
-                <div className="button-container-c-p">
-                    <button className="no-times-button" onClick={() => setNoOfTimesPerDay(1)}>One</button>
-                    <button className="no-times-button" onClick={() => setNoOfTimesPerDay(2)}>Two</button>
-                </div>
-                <p className="c-payment-service-p-q">Total Cost: ₹{totalCost()}</p>
-                <button onClick={() => handlePayment(totalCost())} className="pay-button" >Pay</button>
-            </div>
+            {serviceT=="mopping" ? 
+                (<div className="payment-overlay">
+                    <button onClick={() => setPaymentStatus(false)} className='cross-button'><GiCrossMark className='ig' /></button>
+                    <h1 className="c-payment-service">Mopping Service Bill</h1>
+                    <h2 className="c-payment-service-p">Cleaning Cost for {formData && formData.houseType} is {house}</h2>
+                    <h2 className="c-payment-service-p">Service For: {formData && formData.recurring} (means {recurringTimes} {recurringTimes > 1 ? "days" :"day"})</h2>
+                    <h2 className="c-payment-service-p">Number of cleanings per day: {noOfTimesPerDay}</h2>
+                    <p className="c-payment-service-p-q">Select Number Of Cleanings Per Day?</p>
+                    <div className="button-container-c-p">
+                        <button className="no-times-button" onClick={() => setNoOfTimesPerDay(1)}>One</button>
+                        <button className="no-times-button" onClick={() => setNoOfTimesPerDay(2)}>Two</button>
+                    </div>
+                    <p className="c-payment-service-p-q">Total Cost: ₹{totalCost()}</p>
+                    <button onClick={() => handlePayment(totalCost())} className="pay-button" >Pay</button>
+                </div>) : 
+                (
+                    <div className="payment-overlay">
+                        <button onClick={() => setPaymentStatus(false)} className='cross-button'><GiCrossMark className='ig' /></button>
+                        <h1 className="c-payment-service">Diswashing Service Bill</h1>
+                        <h2 className="c-payment-service-p">Service For: {formData && formData.recurring} (means {recurringTimes} {recurringTimes > 1 ? "days" :"day"})</h2>
+                        <h2 className="c-payment-service-p">Number of times per day: {noOfTimesPerDay}</h2>
+                        <p className="c-payment-service-p-q">Select Number Of times Per Day?</p>
+                        <div className="button-container-c-p">
+                            <button className="no-times-button" onClick={() => setNoOfTimesPerDay(1)}>One</button>
+                            <button className="no-times-button" onClick={() => setNoOfTimesPerDay(2)}>Two</button>
+                        </div>
+                        <p className="c-payment-service-p-q">Total Cost: ₹{totalCost()}</p>
+                        <button onClick={() => handlePayment(totalCost())} className="pay-button" >Pay</button>
+                    </div>
+                )
+            }
         </Popup>
     );
 }
