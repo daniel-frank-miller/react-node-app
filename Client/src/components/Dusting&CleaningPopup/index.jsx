@@ -25,6 +25,7 @@ export default function DustingCleaningPopup({ dustingCleaning, setDustingCleani
     const [paymentStatus, setPaymentStatus] = useState(false);
     const [formData, setFormData] = useState(null);
     const [email,setEmail] = useState("");
+    const [workingHours, setWorkingHours] = useState(1);
 
     const professionals = [
         // Professional data
@@ -87,6 +88,7 @@ export default function DustingCleaningPopup({ dustingCleaning, setDustingCleani
                 recurring: recurringType,
                 cleaningServiceType:serviceType,
                 houseType,
+                workingHours,
                 email,
                 dateTime: dateTime,
                 phone: number,
@@ -268,7 +270,13 @@ export default function DustingCleaningPopup({ dustingCleaning, setDustingCleani
                                     value={serviceType} // Change the value to serviceType
                                     onChange={(e) => setServiceType(e.target.value)}
                                 > 
-                                    <option value="Regular Cleaning">Regular Cleaning</option> {/* Set value attribute */}
+                                    <option value="Regular Cleaning">Regular Cleaning</option>
+                                    <option value="TV Unit Cleaning">TV Unit Cleaning</option> 
+                                    <option value="Wooden Cleaning">Wooden Cleaning</option>
+                                    <option value="Glass Cleaning">Glass Cleaning</option>
+                                    <option value="Iron Cleaning">Iron Cleaning</option>
+                                    <option value="Steel Cleaning">Steel Cleaning</option>
+                                    <option value="Plastic Cleaning">Plastic Cleaning</option> 
                                 </select>
                             </div>
                             <div>
@@ -328,6 +336,27 @@ export default function DustingCleaningPopup({ dustingCleaning, setDustingCleani
                                 <option value="4BHK">4BHK</option>
                                 <option value="Villa">Villa</option>
                             </select>
+                            </div>
+                            <div>
+                                <label className="cf-label">
+                                    Number of Working Hours
+                                </label><br />
+                                <select
+                                    className='cf-input-select'
+                                    required
+                                    value={workingHours} // Change the value to workingHours
+                                    onChange={(e) => setWorkingHours(e.target.value)}
+                                > 
+                                    <option value="1 Hour">1 Hour</option> 
+                                    <option value="2 Hours">2 Hours</option>
+                                    <option value="3 Hours">3 Hours</option>
+                                    <option value="4 Hours">4 Hours</option>
+                                    <option value="5 Hours">5 Hours</option>
+                                    <option value="6 Hours">6 Hours</option>
+                                    <option value="7 Hours">7 Hours</option>
+                                    <option value="8 Hours">8 Hours</option>
+                                    {/* Add more options as needed */}
+                                </select>
                             </div>
                             <button className='cff-button ' type="submit">Submit</button>
                         </form>

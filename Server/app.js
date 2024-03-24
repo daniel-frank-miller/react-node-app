@@ -442,10 +442,18 @@ app.post("/book-appointment", async (req, res) => {
         const registrationMailOptions = {
           from: process.env.EMAIL_USER, // Sender address
           to: email, // Recipient address
-          subject: 'Appointment Booked Successfully', // Subject line
-          html: `<p>Dear ${name},</p>
-                 <p>Thank you for booking an appointment with us! on ${date} at ${time}</p>
-                 <p>We're excited to serve you. Happy Homaid!</p>
+          subject: 'Your Homaid Appointment Confirmation and Service Overview', // Subject line
+          html: `<p>Hi ${name},</p>
+                 <p>We're thrilled to confirm your appointment with Homaid on ${date} at ${time}. Get ready for top-notch cleaning, cooking, and organizing services just for you.</p>
+                 <p>Our maid services cover:</p>
+                 <ul>
+                   <li>Cleaning: We use eco-friendly products for spotless results.</li>
+                   <li>Organizing: Regain control of your space with our expert touch.</li>
+                   <li>Cooking: Stress-free meal preparation tailored to your preferences.</li>
+                   <li>Customized packages: Flexible scheduling to fit your lifestyle.</li>
+                   <li>Trained staff: Your safety and peace of mind are our priority.</li>
+                 </ul>
+                 <p>Happy Homaid!</p>
                  <a href="homaid.in/login" target="_blank">Click here to Login</a>` // Email body (HTML content)
         };
         
@@ -458,9 +466,6 @@ app.post("/book-appointment", async (req, res) => {
     });
   });
 });
-
-
-
 
 app.post('/api/payment', handlePayment);
 

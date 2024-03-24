@@ -6,6 +6,7 @@ import RegularCleaningFormPopup from "../RegularCleaningFormPopup";
 import WashroomCleaningPopup from "../WashroomCleaningPopup";
 import DustingCleaningPopup from "../Dusting&CleaningPopup";
 import Cookies from "js-cookie";
+import Footer from "/src/components/Footer/footer.jsx";
 
 
 const CleaningServices = () => {
@@ -119,6 +120,7 @@ const CleaningServices = () => {
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

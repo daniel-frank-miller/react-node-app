@@ -11,7 +11,17 @@
     border-radius: 15px;
     background-image: radial-gradient(rgb(0, 5, 0), rgba(10, 10, 29, 0.874), rgb(1, 0, 0));
 }
-
+.c-p-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid 2px white;
+    border-radius: 15px;
+    background-color: rgb(16, 14, 14);
+    padding: 15px;
+    box-shadow: 0 0 30px rgba(231, 219, 219, 0.3); /* Adding a subtle shadow effect */
+}
 .c-payment-service {
     font-size: 20px; /* Slightly reduced font size for mobile */
     color: rgb(170, 181, 49);
@@ -26,16 +36,25 @@
     font-weight: bold;
     text-align: center;
 }
+label {
+    color: white;
+}
 
+/* Styling the checkbox */
+input[type="checkbox"] {
+    /* Your custom styles here */
+    margin-right: 5px; /* Add some space between the checkbox and the label text */
+}
 .c-payment-service-p-q {
     font-size: 16px; /* Slightly reduced font size for mobile */
     color: rgb(170, 181, 49);
     font-weight: bold;
     text-align: center;
 }
+
 .no-times-button{
     display: block;
-    margin: 7px;
+    margin: 10px;
 }
 .no-times-button,
 .pay-button {
@@ -48,7 +67,7 @@
     color: rgb(173, 187, 22);
     padding: 0.5rem;
     display: block; /* Changed to block for center alignment */
-    margin: 0 auto; /* Center alignment */
+    margin: 5px; /* Center alignment */
 }
 
 .pay-button:hover {
@@ -69,7 +88,7 @@
     min-width: 200px;
     max-width: 350px;
     flex-direction: row;
-    justify-content: center;
+    justify-content: spa;
 }
 @media screen and (max-width: 768px) {
     .c-payment-service {

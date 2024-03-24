@@ -109,6 +109,7 @@ export default function CookingFormPopup({ cFormStatus, setCFormStatus }) {
                     setRecurringType('');
                     setLocation('');
                     setDateTime('');
+                    setEmail("");
                     setCount(0);
                 } else {
                     // Handle server errors or other response errors
