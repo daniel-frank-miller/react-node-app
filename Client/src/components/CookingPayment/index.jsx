@@ -86,7 +86,7 @@ export default function CookingPayment({ paymentStatus, formData, setPaymentStat
                     <p className="c-payment-service-p-q">Total Cost: ₹{totalCost()}</p>
                     <div className="c-p-div">
                         {/* Your other content here */}
-                        <label htmlFor="terms-checkbox">
+                        <label className="label-12" htmlFor="terms-checkbox">
                             <input 
                             type="checkbox" 
                             id="terms-checkbox" 
