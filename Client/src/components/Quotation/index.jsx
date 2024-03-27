@@ -149,7 +149,7 @@ class Quotation extends Component {
                 </p>
                 <img
                   className='img-class'
-                  src='/src/assets/consultation-image.webp'
+                  src='/src/assets/booking-boy.webp'
                   alt='Consultation'
                 />
               </div>

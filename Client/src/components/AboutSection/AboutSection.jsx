@@ -1,7 +1,7 @@
 import Navbar from "/src/components/Navbar/navbar.jsx";
 import Footer from "/src/components/Footer/footer.jsx";
 import "/src/components/AboutSection/AboutSection.css";
-
+import AboutSlider from "/src/components/AboutSlider/slider.jsx"
 const AboutSection = () => {
   const customNavbar = {
     backgroundColor: "transparent",
@@ -32,6 +32,8 @@ const AboutSection = () => {
         </div>
         
       </div>
+      {/* <img src="/src/assets/about-us-homaid-cleaning.webp" alt="about-us" className="about-us-image"/> */}
+      <AboutSlider/>
       <div className="FAQs">
         <h1 className="faq-title">
           Here are some of the freqently asked questions

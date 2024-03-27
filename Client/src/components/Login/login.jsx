@@ -1,5 +1,5 @@
 import "/src/components/Login/login.css";
-import { FcGoogle } from "react-icons/fc";
+// import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import Cookies from "js-cookie";
@@ -7,7 +7,7 @@ import {Component} from 'react';
 import { Navigate } from "react-router-dom";
 import Navbar from '../Navbar/navbar'
 import GoogleSignIn from '../GoogleSignIn/google.jsx'
-
+import FacebookSignIn from '../FacebookSignIn/facebook.jsx'
 class Login extends Component{
   state={email:'',password:'',loginSuccessStatus:false,messageStatus:false,message:''}
 
@@ -110,7 +110,7 @@ class Login extends Component{
               <GoogleSignIn/>
             </button>
             <button className="social-icons">
-              <FaFacebook />
+              <FacebookSignIn/>
             </button>
           </div>
           <p className="login-signup">

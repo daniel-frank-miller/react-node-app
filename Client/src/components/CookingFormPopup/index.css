@@ -170,7 +170,8 @@ body {
 .cff-button {
     margin: 5px;
     width: 200px;
-    background-color: rgb(58, 76, 177);
+    /* background-color: rgb(58, 76, 177); */
+    background: rgb(31, 100, 156);
     padding: 10px 20px;
     font-size: 16px;
     color: white;
@@ -178,10 +179,12 @@ body {
     border-radius: 10px;
     margin: auto;
     transform: scale(1, 1);
+    border: none;
+    font-weight: 800;
 }
 
 .cff-button:hover {
-    background-color: rgb(148, 173, 73);
+    background-color: #fff;
     color: black;
 }
 

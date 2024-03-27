@@ -93,7 +93,7 @@ const ServiceBlog = () => {
           cardTitle: '1.2rem',
           title: '1rem',
         }}
-        fontFamily="Roboto sanserif"
+        fontFamily="Montserrat"
         fontWeight={{
           cardTitle: '400',
         }}

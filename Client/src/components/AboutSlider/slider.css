@@ -1,0 +1,17 @@
+/* Slider.css */
+
+.slider-container {
+    position: relative;
+    width: 100vw;
+    /* max-width: 600px; Adjust the max-width as needed */
+    margin: 0 auto; /* Center the slider horizontally */
+    overflow: hidden; /* Hide overflowing images */
+  }
+  
+  .slider-container img {
+    width: 100vw; /* Make images responsive */
+    height: auto; /* Ensure aspect ratio is maintained */
+    transition: opacity 0.5s ease; /* Add a fade effect when transitioning between images */
+  }
+  
+  

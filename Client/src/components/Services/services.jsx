@@ -39,12 +39,12 @@ const Services = () => {
   return (
     <>
       <div className={`section3 prevent-select ${isVisible ? "visible" : ""}`} id="servicesSection" ref={servicesRef}>
-        <h1 className={`section3-heading animate__zoomIn ${isVisible ? "animate__fadeInUp" : ""}`}>What we offer?</h1>
+        <h1 className={`section3-heading animate__zoomIn ${isVisible ? "animate__fadeInUp" : ""}`}>WHAT WE OFFER?</h1>
 
         <div className="section3-container">
           <div className={`custom-card ${isVisible ? "animate__fadeInLeft" : ""}`}>
             <div className="img-box">
-              <img src="/src/assets/gallery-image20.webp " alt="Cooking" />
+              <img src="/src/assets/alternative-service-cooking.webp" alt="Cooking" />
             </div>
             <div className="custom-content">
               <h2 className="section3-title">Cooking</h2>
@@ -61,7 +61,7 @@ const Services = () => {
           </div>
           <div className={`custom-card ${isVisible ? "animate__fadeInRight" : ""}`}>
             <div className="img-box">
-              <img src="/src/assets/cleaning-card-bg.webp" alt="Cleaning" />
+              <img src="/src/assets/alternative-service-cleaning.webp" alt="Cleaning" />
             </div>
             <div className="custom-content">
               <h2 className="section3-title">Cleaning</h2>

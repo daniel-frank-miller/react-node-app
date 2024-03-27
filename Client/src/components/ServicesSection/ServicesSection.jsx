@@ -58,6 +58,7 @@ const ServicesSection = () => {
                     </div>
                 </div>
             </div>
+            {/* <img src="/src/assets/about-us-homaid.webp" alt="about-us" className="about-us-image"/> */}
             <Footer />
         </div>
     );

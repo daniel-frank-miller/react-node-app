@@ -1,5 +1,7 @@
 .section3 {
   /* background-image:linear-gradient(rgb(140, 135, 135), #d1d6db,white); */
+  background-image: url("/src/assets/alternative-service-section.webp");
+  background-size: cover;
   padding: 10px 0px;
   text-align: center;
   opacity: 0; /* Initially hide the section */
@@ -54,13 +56,19 @@
   width: 450px;
   max-width: 100%;
   height: 300px;
-  background: #0e1a18;
+  background: rgba(183, 225, 161, 0.3);
   border-radius: 20px;
   transition: 0.5s;
   box-shadow: 0 35px 80px rgba(0, 0, 0, 0.15);
 }
 
-.section3-container .custom-card:hover {
+@media screen and (max-width:768px){
+  .custom-card{
+    margin-bottom: 70px;
+  }
+}
+
+.section3-container .custom-card {
   height: 300px;
 }
 
@@ -75,7 +83,7 @@
   transition: 0.5s;
 }
 
-.section3-container .custom-card:hover .img-box {
+.section3-container .custom-card .img-box {
   top: -100px;
   scale: 0.75;
   box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
@@ -103,7 +111,7 @@
   pointer-events: none;
 }
 
-.section3-container .custom-card:hover .custom-content {
+.section3-container .custom-card .custom-content {
   top: 130px;
   height: 270px;
   opacity: 1;
@@ -122,12 +130,15 @@
 .section3-container .custom-card .custom-content .section3-title {
   font-size: 24px;
   font-weight: 700;
-  color: #fff;
+  color: #000;
   margin-bottom: 10px;
+  font-family: 'Montserrat';
 }
 
 .section3-container .custom-card .custom-content .section3-subtitle {
-  color: #fff;
+  color: #000;
+  font-family: 'Montserrat';
+  font-weight: 400;
 }
 
 .section3-container .custom-card .custom-content .services-btn {
@@ -136,13 +147,16 @@
   display: inline-block;
   padding: 12px 25px;
   text-decoration: none;
-  background: #181818;
+  background: rgba(0, 0, 0);
   color: #fff;
-  font-weight: 800;
+  font-weight: 600;
   font-size: 16px;
   border-radius: 5px;
   cursor: pointer;
   animation: blinking 1s infinite;
+  border: 0px solid black;
+  font-family: 'Montserrat';
+  box-shadow:10px 10px 10px rgb(90, 90, 90);
 }
 
 @keyframes blinking {
@@ -150,7 +164,7 @@
     border: 0.7px solid rgb(242, 242, 242);
   }
   50% {
-    border: 1.9px solid rgb(53, 49, 49);
+    border: 3.9px solid rgb(53, 49, 49);
   }
   100% {
     border: 0.7px solid rgb(170, 166, 166);
@@ -158,10 +172,11 @@
 }
 
 .section3-container .custom-card .custom-content .services-btn:hover {
-  opacity: 0.8;
-  color: #000;
-  background-color: #fff;
-  font-weight: 800;
+  /* opacity: 0.8; */
+  color: #fff;
+  /* background-color: #cccccc; */
+  font-weight: 600;
+  box-shadow:2px 8px 10px rgb(146, 146, 146);
 }
 
 @media (max-width: 768px) {
