@@ -52,7 +52,7 @@ const Services = () => {
                 Welcome to the world of flavour, innovation and endless
                 possibilities in kitchen.
               </p>
-              <Link to="/cookingprofile">
+              <Link to="/services">
                 <button className="services-btn" id="cookingBtn">
                   Book Now
                 </button>

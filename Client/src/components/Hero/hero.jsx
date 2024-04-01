@@ -31,6 +31,9 @@ const Hero = () => {
         <div className="overlay"></div>
         <video src={video2}  onEnded={handleVideoEnd} autoPlay loop  muted id="bg-video"/>
     </div>
+    {/* <div className='bar-sec'>
+
+    </div> */}
     <div className="scroll-container" onClick={scrollToNextSection}>
       <div className="field">
         <div className="mouse">

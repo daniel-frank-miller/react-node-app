@@ -10,7 +10,7 @@ const Reviews = () => {
             <div className="review-container">
                 <div className="review">
                     <div className="avatar">
-                        <img src="/src/assets/girl-3-icon.webp" alt="icon" className="icon"/>
+                        <img src="/src/assets/review-girl1.webp" alt="icon" className="icon"/>
                     </div>
                         <div className="content-reviews">
                             <h3 className="reviewerName">Dhanya</h3>
@@ -26,7 +26,7 @@ const Reviews = () => {
                     </div>
                     <div className="review">
                     <div className="avatar">
-                        <img src="/src/assets/girl-2-icon.webp" alt="icon" className="icon"/>
+                        <img src="/src/assets/review-girl2.webp" alt="icon" className="icon"/>
                     </div>
                         <div className="content-reviews">
                             <h3 className="reviewerName">Sadha</h3>
@@ -42,7 +42,7 @@ const Reviews = () => {
                     </div>
                     <div className="review">
                     <div className="avatar">
-                        <img src="/src/assets/men-2-icon.webp" alt="icon" className="icon"/>
+                        <img src="/src/assets/review-boy1.webp" alt="icon" className="icon"/>
                     </div>
                         <div className="content-reviews">
                             <h3 className="reviewerName">Daryna</h3>
@@ -58,7 +58,7 @@ const Reviews = () => {
                     </div>
                     <div className="review">
                     <div className="avatar">
-                        <img src="/src/assets/girl-1-icon.webp" alt="icon" className="icon"/>
+                        <img src="/src/assets/review-girl3.webp" alt="icon" className="icon"/>
                     </div>
                         <div className="content-reviews">
                             <h3 className="reviewerName">Sriya</h3>
@@ -74,7 +74,7 @@ const Reviews = () => {
                     </div>
                     <div className="review">
                     <div className="avatar">
-                        <img src="/src/assets/men-1-icon.webp" alt="icon" className="icon"/>
+                        <img src="/src/assets/review-boy2.webp" alt="icon" className="icon"/>
                     </div>
                         <div className="content-reviews">
                             <h3 className="reviewerName">Sandeep</h3>
@@ -92,7 +92,7 @@ const Reviews = () => {
                     </div>
                     <div className="review">
                     <div className="avatar">
-                        <img src="/src/assets/men-3-icon.webp" alt="icon" className="icon"/>
+                        <img src="/src/assets/review-boy3.webp" alt="icon" className="icon"/>
                     </div>
                         <div className="content-reviews">
                             <h3 className="reviewerName">Dhruva</h3>
@@ -110,7 +110,7 @@ const Reviews = () => {
                     </div>
                     <div className="review">
                     <div className="avatar">
-                        <img src="/src/assets/girl-4-icon.webp" alt="icon" className="icon"/>
+                        <img src="/src/assets/review-girl4.webp" alt="icon" className="icon"/>
                     </div>
                         <div className="content-reviews">
                             <h3 className="reviewerName">Ananya</h3>
@@ -129,7 +129,7 @@ const Reviews = () => {
                     </div>
                     <div className="review">
                     <div className="avatar">
-                        <img src="/src/assets/men-4-icon.webp" alt="icon" className="icon"/>
+                        <img src="/src/assets/review-boy4.webp" alt="icon" className="icon"/>
                     </div>
                         <div className="content-reviews">
                             <h3 className="reviewerName">Sudhan</h3>
@@ -150,7 +150,7 @@ const Reviews = () => {
                     </div>
                     <div className="review">
                     <div className="avatar">
-                        <img src="/src/assets/girl-5-icon.webp" alt="icon" className="icon"/>
+                        <img src="/src/assets/review-girl5.webp" alt="icon" className="icon"/>
                     </div>
                         <div className="content-reviews">
                             <h3 className="reviewerName">Nishita</h3>

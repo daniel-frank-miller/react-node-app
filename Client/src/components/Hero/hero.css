@@ -94,3 +94,8 @@
     height: 40px;
   }
 }
+
+.bar-sec{
+  border: 3px solid aqua;
+  height: 20px;
+}

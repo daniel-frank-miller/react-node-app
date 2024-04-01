@@ -82,15 +82,27 @@ const ServiceBlog = () => {
     },
   ];
 
+ 
+
+  const customTheme = {
+    primary: '#000', // Change line color to black
+    secondary: '#fff', // Change line color to black
+    cardBgColor: '#fff',
+    cardForeColor: '#000', // Change text color to white when clicked
+    titleColor: '#000', // Change title color to black
+    subtitleColor: '#000',
+    fontFamily: 'Montserrat',
+    padding: '10px'
+  };
+
   return (
-    <div className='service-blogs-container'>
+    <div className='service-blogs-container' style={{ fontFamily: customTheme.fontFamily, boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)' }}>
       <Chrono
-        className="home-font"
         items={items}
         fontSizes={{
-          cardSubtitle: '1.1rem',
+          cardSubtitle: '1rem',
           cardText: '1rem',
-          cardTitle: '1.2rem',
+          cardTitle: '1rem',
           title: '1rem',
         }}
         fontFamily="Montserrat"
@@ -98,8 +110,9 @@ const ServiceBlog = () => {
           cardTitle: '400',
         }}
         mode="VERTICAL_ALTERNATING"
-        theme={{ primary: '#4A666B', secondary: '#50ff45', cardBgColor: '#d1d6db' }}
-        disableToolbar = {true}
+        theme={customTheme}
+        disableToolbar={true}
+        
       />    
     </div>
   );
