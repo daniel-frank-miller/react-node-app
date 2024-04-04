@@ -1,16 +1,16 @@
 .btn-whatsapp-pulse {
-	background: #25d366;
-	color: white;
+	background: transparent;
+	color: #25d366;
 	position: fixed;
-	bottom: 30px;
-	right: 30px;
-	font-size: 40px;
-	display: flex;
+	bottom: 20px;
+	right: 20px;
+	font-size: 30px;
+	display: flex; 
 	justify-content: center;
 	align-items: center;
 	width: 0;
 	height: 0;
-	padding: 35px;
+	padding: 20px;
 	text-decoration: none;
 	border-radius: 50%;
 	animation-name: pulse;
@@ -42,4 +42,9 @@
 	100% {
 		opacity: 0;
 	}
+}
+
+.btn-whatsapp-pulse:hover{
+	background-color: #25d366;
+	color: white;
 }
