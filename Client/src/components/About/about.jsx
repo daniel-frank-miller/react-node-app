@@ -79,10 +79,10 @@ const About = () => {
   };
 
   return (
-    <div className={`section2 prevent-select ${isVisible ? "visible" : ""}`} id="aboutUs" ref={aboutRef}>
+    <div className={`section2 prevent-select ${isVisible ? "visible" : "visible"}`} id="aboutUs" ref={aboutRef}>
       <div className="section2-content">
-        <h1 className={`section2-heading ${isVisible ? "animate__fadeInLeft" : ""}`}>About Homaid</h1>
-        <p className={`section2-subtitle ${isVisible ? "animate__fadeInRight" : ""}`}>
+        <h1 className={`section2-heading ${isVisible ? "" : ""}`}>About Homaid</h1>
+        <p className={`section2-subtitle ${isVisible ? "" : ""}`}>
           At Homaid, we are not just a cleaning service, we are your partners in
           creating a home that sparkles with brilliance. Yet, our passion
           extends to the heart of the home the kitchen, where we strive to
@@ -90,7 +90,7 @@ const About = () => {
           organization but a culinary journey filled with delights and flavors.
         </p>
         <Link to="/contactus">
-          <button className={`section-2-btn ${isVisible ? "animate__zoomIn" : ""}`} id="getInTouch">
+          <button className={`section-2-btn ${isVisible ? "" : ""}`} id="getInTouch">
             Get in Touch
           </button>
         </Link>

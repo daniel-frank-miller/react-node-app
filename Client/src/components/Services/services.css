@@ -6,6 +6,7 @@
   text-align: center;
   opacity: 0; /* Initially hide the section */
   transition: opacity 0.5s ease; /* Add opacity transition */
+  padding-top: 50px;
 }
 
 .section3.visible {
@@ -236,5 +237,11 @@
   to {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+@media screen and (max-width:768px){
+  .section3{
+    padding-top: 90px;
   }
 }

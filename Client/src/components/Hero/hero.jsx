@@ -34,13 +34,13 @@ const Hero = () => {
     {/* <div className='bar-sec'>
 
     </div> */}
-    <div className="scroll-container" onClick={scrollToNextSection}>
+    {/* <div className="scroll-container" onClick={scrollToNextSection}>
       <div className="field">
-        <div className="mouse">
+        <div className="mouse"> */}
           {/* Add content inside the mouse div if needed */}
-        </div>
+        {/* </div>
       </div>
-    </div>
+    </div> */}
     </div>
   )
 }
