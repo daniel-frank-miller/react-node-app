@@ -109,9 +109,9 @@ class Login extends Component{
             <button className="social-icons">
               <GoogleSignIn/>
             </button>
-            <button className="social-icons">
+            {/* <button className="social-icons">
               <FacebookSignIn/>
-            </button>
+            </button> */}
           </div>
           <p className="login-signup">
             Don&apos;t have an account? <Link to="/signup">Sign Up</Link>

@@ -3,10 +3,12 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-image:linear-gradient( #d1d6db,white,rgb(140, 135, 135)) ;
+  background-image:linear-gradient( #d1d6db,white,rgb(193, 219, 243)) ;
+  /* background-image: url("/src/assets/about-us-bg.webp"); */
   padding-top: 10px;
   transition: opacity 0.2s ease; /* Add opacity transition */
   opacity: 0; /* Initially hide the section */
+  background-size: cover;
 }
 
 .section2.visible {
@@ -92,6 +94,7 @@
   margin-top: 20px;
   margin-bottom: 50px;
   margin-left: 10px;
+  border: 1px solid black;
 }
 
 .section-2-btn:hover {

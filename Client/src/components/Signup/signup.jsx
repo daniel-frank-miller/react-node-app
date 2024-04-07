@@ -166,9 +166,9 @@ class Register extends Component {
           <button className="social-icons">
             <GoogleSignIn />
           </button>
-          <button className="social-icons">
+          {/* <button className="social-icons">
             <FaFacebook />
-          </button>
+          </button> */}
         </div>
         <p className="login-signup">
           Already have an account? <Link to="/login">login</Link>

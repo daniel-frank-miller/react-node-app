@@ -95,7 +95,7 @@ const About = () => {
           </button>
         </Link>
       </div>
-      <div className={`carousel ${isVisible ? "visible" : ""}`}>
+      <div className={`carousel ${isVisible ? "visible" : "visible"}`}>
         {simpleSlider()}
       </div>
     </div>
