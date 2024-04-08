@@ -153,7 +153,7 @@ class Quotation extends Component {
                   alt='Consultation'
                 />
               </div>
-              <div className={`form-div ${isVisible ? 'animate__slideInFromLeft' : ''}`}>
+              <div className={`form-div ${isVisible ? '' : ''}`}>
               <form className='borderr form' onSubmit={this.handleSubmit}>
                 {!Cookies.get("appointment_status") ? 
                  <>

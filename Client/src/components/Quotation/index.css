@@ -22,7 +22,7 @@
   .book-heading {
     font-family: "Roboto";
     font-size: 20px;
-    text-decoration: underline;
+    /* text-decoration: underline; */
     color: white;
     padding: 20px;
   }
