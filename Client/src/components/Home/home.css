@@ -188,3 +188,23 @@
 .arrow-icon{
   color: rgb(45, 45, 45);
 }
+
+.review-image-container{
+  text-align: center;
+}
+
+.review-rating-image{
+  min-height: 150px;
+  height: 100%;
+  max-height: 450px;
+  min-width: 300px;
+  width: 100%;
+  max-width: 600px;
+  padding: 10px;
+}
+
+@media screen and (min-width:1200px){
+  .review-rating-image{
+    max-width: 900px;
+  }
+}

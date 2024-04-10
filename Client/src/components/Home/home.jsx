@@ -54,6 +54,9 @@ const Home = () => {
       <HappyCustomers />
       <ServiceBlog />
       <Testimonals />
+      <div className='review-image-container'>
+      <img src={`/src/assets/reviews-rating.webp`} alt="review-rating" className='review-rating-image'/>
+      </div>
       <Quotation />
       <Recognition />
       <Footer />
