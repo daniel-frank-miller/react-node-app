@@ -55,7 +55,7 @@ const Home = () => {
       <ServiceBlog />
       <Testimonals />
       <div className='review-image-container'>
-      <img src={`/src/assets/reviews-rating.webp`} alt="review-rating" className='review-rating-image'/>
+      <img src={`/src/assets/updated-review-rating.webp`} alt="review-rating" className='review-rating-image'/>
       </div>
       <Quotation />
       <Recognition />
