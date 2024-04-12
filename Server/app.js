@@ -448,7 +448,8 @@ app.post("/book-appointment", async (req, res) => {
                  <p>Happy Homaid!</p>
                  <p>Best,</p>
                  <p>Sadha</p>
-                 <p>Homaid</p>` // Email body (HTML content)
+                 <p>Homaid</p>
+                 <img src="/Client/src/assets/mail-label.webp" alt="Your Image" style="display: block; width: 100%; max-width: 100%; height: auto;">` // Email body (HTML content)
         };
         
         await transporter.sendMail(registrationMailOptions);
