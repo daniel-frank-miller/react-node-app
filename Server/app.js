@@ -85,7 +85,7 @@ app.post("/cooking_services", authenticateToken, async (req, res) => {
   connection.query(addCookingUserQuery, [name, location, recurring, familyMemberCount, dateTime, email, phone], (error, results) => {
     if (error) {
       console.error('Error adding cooking service:', error);
-      res.status(500).send('Error adding cooking service');
+      res.status(500).send('Error adding cooking service'); 
       return;
     }
     res.send("Added Successfully");
@@ -442,19 +442,13 @@ app.post("/book-appointment", async (req, res) => {
         const registrationMailOptions = {
           from: process.env.EMAIL_USER, // Sender address
           to: email, // Recipient address
-          subject: 'Your Homaid Appointment Confirmation and Service Overview', // Subject line
+          subject: 'Homaid Appointment Confirmed!', // Subject line
           html: `<p>Hi ${name},</p>
-                 <p>We're thrilled to confirm your appointment with Homaid on ${date} at ${time}. Get ready for top-notch cleaning, cooking, and organizing services just for you.</p>
-                 <p>Our maid services cover:</p>
-                 <ul>
-                   <li>Cleaning: We use eco-friendly products for spotless results.</li>
-                   <li>Organizing: Regain control of your space with our expert touch.</li>
-                   <li>Cooking: Stress-free meal preparation tailored to your preferences.</li>
-                   <li>Customized packages: Flexible scheduling to fit your lifestyle.</li>
-                   <li>Trained staff: Your safety and peace of mind are our priority.</li>
-                 </ul>
+                 <p>Your Homaid appointment on ${date} at ${time} is confirmed! Expect top-notch cleaning, cooking, and organizing services just for you.</p>
                  <p>Happy Homaid!</p>
-                 <a href="homaid.in/login" target="_blank">Click here to Login</a>` // Email body (HTML content)
+                 <p>Best,</p>
+                 <p>Sadha</p>
+                 <p>Homaid</p>` // Email body (HTML content)
         };
         
         await transporter.sendMail(registrationMailOptions);
