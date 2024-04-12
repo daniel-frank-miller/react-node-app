@@ -449,7 +449,7 @@ app.post("/book-appointment", async (req, res) => {
                  <p>Best,</p>
                  <p>Sadha</p>
                  <p>Homaid</p>
-                 <img src="/Client/src/assets/mail-label.webp" alt="Your Image" style="display: block; width: 100%; max-width: 100%; height: auto;">` // Email body (HTML content)
+                 <img src="https://res.cloudinary.com/de2lwnsu7/image/upload/v1712920295/Green_Bordered_Church_Mailing_Label_cnis8s.png" alt="Your Image" style="display: block; width: 100%; max-width: 100%; height: auto;"/>` // Email body (HTML content)
         };
         
         await transporter.sendMail(registrationMailOptions);
