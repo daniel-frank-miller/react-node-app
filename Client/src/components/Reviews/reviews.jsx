@@ -23,7 +23,7 @@ const Reviews = () => {
                                 <span className="star">&#9733;</span>
                                 <span className="star">&#9733;</span>
                             </div>
-                            <p className="reviewersReview">"Great service! They exceeded my expectations and I'll definitely be using them again."</p>
+                            <p className="reviewersReview">"I've been using HOMAID for regular cleaning services for over a year now, and I couldn't be happier! Their team is always friendly, punctual, and efficient. They do a fantastic job of keeping my home spotless week after week. Plus, their attention to detail is impressive. I appreciate the peace of mind knowing that my home is in good hands with HOMAID"</p>
                             <p className="review-location">
                                 <MdOutlineLocationOn className="location-icon"/>Gachibowli
                             </p>
@@ -42,7 +42,7 @@ const Reviews = () => {
                                 <span className="star">&#9733;</span>
                                 <span className="star">&#9733;</span>
                             </div>
-                            <p className="reviewersReview">"Great service! They exceeded my expectations and I'll definitely be using them again."</p>
+                            <p className="reviewersReview">"I recently hired HOMAID for a deep cleaning of my apartment, The team arrived on time and was incredibly thorough in their work.I highly recommend their services to anyone looking for professional cleaning"</p>
                             <p className="review-location">
                                 <MdOutlineLocationOn className="location-icon"/>Kondapur
                             </p>
@@ -61,7 +61,7 @@ const Reviews = () => {
                                 <span className="star">&#9733;</span>
                                 <span className="star">&#9733;</span>
                             </div>
-                            <p className="reviewersReview">"Outstanding cooking service! The meals were delicious and the chef was very professional."</p>
+                            <p className="reviewersReview">"I'm extremely impressed with HOMAID's attention to detail. I hired them for a move-out cleaning, and they made the apartment look better than when I first moved in! Every surface was sparkling clean, and they even cleaned areas I hadn't thought of. Their professionalism and dedication to customer satisfaction are unmatched"</p>
                             <p className="review-location">
                                 <MdOutlineLocationOn className="location-icon"/>Hi-Tech City
                             </p>
@@ -80,7 +80,7 @@ const Reviews = () => {
                                 <span className="star">&#9733;</span>
                                 <span className="star">&#9733;</span>
                             </div>
-                            <p className="reviewersReview">"I have been using Homaid Services for years and I would not trust anyone else with my home!"</p>
+                            <p className="reviewersReview">"HOMAID's cleaning team is simply the best! I've tried other cleaning services in the past, but none have matched the level of quality and attention to detail that HOMAID provides. They consistently exceed my expectations, I highly recommend them to anyone in need of cleaning services."</p>
                             <p className="review-location">
                                 <MdOutlineLocationOn className="location-icon"/>Miyapur
                             </p>
@@ -88,7 +88,7 @@ const Reviews = () => {
                     </div>
                     <div className="review">
                     <div className="avatar">
-                        <img src="/src/assets/review-boy2.webp" alt="icon" className="icon"/>
+                        <img src="/src/assets/testimonial-man-1.webp" alt="icon" className="icon"/>
                     </div>
                         <div className="content-reviews">
                             <h3 className="reviewerName">Sandeep</h3>
@@ -100,7 +100,7 @@ const Reviews = () => {
                                 <span className="star">&#9733;</span>
                             </div>
                             <p className="reviewersReview">
-                                "The cooking services from Homaid are a game-changer! Delicious meals without the hassle of grocery shopping and cooking"
+                                "I was hesitant to hire a cleaning service at first, but HOMAID has completely changed my perspective. Their team is professional, trustworthy, and does an incredible job every time. I love coming home to a clean and organized space after they've been here. Plus, their prices are reasonable for the level of service they provide."
                             </p>
                             <p className="review-location">
                                 <MdOutlineLocationOn className="location-icon"/>Toli Chowki
