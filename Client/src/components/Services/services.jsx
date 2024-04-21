@@ -39,10 +39,10 @@ const Services = () => {
   return (
     <>
       <div className={`section3 prevent-select ${isVisible ? "visible" : "visible"}`} id="servicesSection" ref={servicesRef}>
-        <h1 className={`section3-heading animate__zoomIn ${isVisible ? "" : ""}`}>WHAT WE OFFER?</h1>
+        <h1 className={`section3-heading`}>WHAT WE OFFER?</h1>
 
         <div className="section3-container">
-          <div className={`custom-card ${isVisible ? "" : ""}`}>
+          <div className={`custom-card `}>
             <div className="img-box">
               <img src="/src/assets/alternative-service-cooking.webp" alt="Cooking" />
             </div>
@@ -59,7 +59,7 @@ const Services = () => {
               </Link>
             </div>
           </div>
-          <div className={`custom-card ${isVisible ? "" : ""}`}>
+          <div className={`custom-card`}>
             <div className="img-box">
               <img src="/src/assets/alternative-service-cleaning.webp" alt="Cleaning" />
             </div>
