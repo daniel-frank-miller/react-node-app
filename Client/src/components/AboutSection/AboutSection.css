@@ -169,7 +169,7 @@
 .question{
   font-size: 24px;
   color: #000;
-  font-weight: bold;
+  font-weight: normal;
   width: 100%;
   max-width: 800px;
 }
@@ -181,7 +181,8 @@
 .horizontal-line{
   height: 1px;  
   background-color: gray;  
-  border: none; 
+  border: none;
+  margin-left: 20px; 
 }
 
 /* CSS for the details container */
