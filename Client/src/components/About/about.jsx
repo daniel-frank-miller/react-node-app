@@ -79,7 +79,7 @@ const About = () => {
   };
 
   return (
-    <div className={`section2 prevent-select ${isVisible ? "visible" : "visible"}`} id="aboutUs" ref={aboutRef}>
+    <div className={`section2 prevent-select}`} id="aboutUs" ref={aboutRef}>
       <div className="section2-content">
         <h1 className={`section2-heading`}>About Homaid</h1>
         <p className={`section2-subtitle`}>
@@ -95,7 +95,7 @@ const About = () => {
           </button>
         </Link>
       </div>
-      <div className={`carousel ${isVisible ? "visible" : "visible"}`}>
+      <div className={`carousel`}>
         {simpleSlider()}
       </div>
     </div>

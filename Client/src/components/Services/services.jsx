@@ -38,7 +38,7 @@ const Services = () => {
 
   return (
     <>
-      <div className={`section3 prevent-select ${isVisible ? "visible" : "visible"}`} id="servicesSection" ref={servicesRef}>
+      <div className={`section3 prevent-select`} id="servicesSection" ref={servicesRef}>
         <h1 className={`section3-heading`}>WHAT WE OFFER?</h1>
 
         <div className="section3-container">

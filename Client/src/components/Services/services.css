@@ -4,8 +4,8 @@
   background-size: cover;
   padding: 10px 0px;
   text-align: center;
-  opacity: 0; /* Initially hide the section */
-  transition: opacity 0.5s ease; /* Add opacity transition */
+  /* opacity: 0; Initially hide the section */
+  /* transition: opacity 0.5s ease; Add opacity transition */
   padding-top: 50px;
 }
 
