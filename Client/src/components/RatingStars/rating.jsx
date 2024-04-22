@@ -8,7 +8,7 @@ const RatingStars = () => {
       <div className="d-flex-1 mb-rating rate-boxsize">
         <div className="rating-box-1">
           <div>
-            <h1 className="num-rate">4.6</h1>
+            <h1 className="num-rate">4.8</h1>
             <div className="rating">
               <div className="star">
                 <FaStar className="size checked" />
