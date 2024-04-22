@@ -67,11 +67,11 @@
   .custom-card{
     margin-bottom: 70px;
   }
+  .section3-container .custom-card {
+    height: 400px;
+  }
 }
 
-.section3-container .custom-card {
-  height: 300px;
-}
 
 .section3-container .custom-card .img-box {
   position: absolute;
