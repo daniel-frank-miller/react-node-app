@@ -1,0 +1,140 @@
+.rating-box-1 {
+    margin-right: 25px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .num-rate {
+    text-align: center;
+    margin: auto;
+  }
+  
+  .rate-boxsize {
+    margin: 5px;
+  }
+  
+  .checked {
+    color: orange;
+  }
+  
+  .avg-rate {
+    font-weight: bold;
+    text-align: center;
+    font-size: 25px;
+    margin: 5px;
+    font-family: garamond;
+  }
+  
+  .mb-rating {
+    width: 50%;
+    flex-wrap: wrap;
+  }
+  
+  .star {
+    font-size: 30px;
+    margin-left: 7px;
+  }
+  
+  .rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .d-flex-1 {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .w-100 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .rate-num {
+    margin-left: 5px;
+    /* margin: 0; */
+    padding: 0;
+  }
+  
+  .rating-box-2 {
+    width: 50%;
+  }
+  
+  .bar-container {
+    width: 100%;
+    height: 5px;
+    background-color: whitesmoke;
+    border-radius: 8px;
+    margin-left: 15px;
+  }
+  
+  .bar-5 {
+    width: 85%;
+    height: 5px;
+    border-radius: 8px;
+    background-color: orange;
+  }
+  
+  .bar-4 {
+    width: 12%;
+    height: 5px;
+    border-radius: 8px;
+    background-color: orange;
+  }
+  
+  .bar-3 {
+    width: 3%;
+    height: 5px;
+    border-radius: 8px;
+    background-color: orange;
+  }
+  
+  .bar-2 {
+    width: 0%;
+    height: 5px;
+    border-radius: 8px;
+    background-color: orange;
+  }
+  
+  .bar-1 {
+    width: 0%;
+    height: 5px;
+    border-radius: 8px;
+    background-color: orange;
+  }
+  
+  .d-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  
+  .percentage {
+    margin: 5px;
+    margin-left: 15px;
+    padding: 0;
+  }
+  
+  @media only screen and (max-width: 480px) {
+    .rating-box-1 {
+      width: 100%;
+    }
+    .rating-box-2 {
+      width: 100%;
+    }
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .rating-box-1 {
+      width: 100%;
+    }
+    .rating-box-2 {
+      width: 100%;
+    }
+  }
+  
