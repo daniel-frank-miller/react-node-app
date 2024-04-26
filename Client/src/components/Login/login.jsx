@@ -1,15 +1,43 @@
 import "/src/components/Login/login.css";
 // import { FcGoogle } from "react-icons/fc";
-import { FaFacebook } from "react-icons/fa6";
+// import { FaFacebook } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import Cookies from "js-cookie";
 import {Component} from 'react';
 import { Navigate } from "react-router-dom";
 import Navbar from '../Navbar/navbar'
 import GoogleSignIn from '../GoogleSignIn/google.jsx'
-import FacebookSignIn from '../FacebookSignIn/facebook.jsx'
+// import FacebookSignIn from '../FacebookSignIn/facebook.jsx'
 class Login extends Component{
-  state={email:'',password:'',loginSuccessStatus:false,messageStatus:false,message:''}
+  state={email:'',password:'',loginSuccessStatus:false,messageStatus:false,message:'',loading:false,emailError: '',
+  passwordError: '',}
+
+  validateEmail = () => {
+    const { email } = this.state;
+    if (!email) {
+      this.setState({ emailError: '*Required' });
+    } else {
+      this.setState({ emailError: '' });
+    }
+  };
+
+  validatePassword = () => {
+    const { password } = this.state;
+    if (!password) {
+      this.setState({ passwordError: '*Required' });
+    } else {
+      this.setState({ passwordError: '' });
+    }
+  };
+
+  handleEmailBlur = () => {
+    this.validateEmail();
+  };
+
+  handlePasswordBlur = () => {
+    this.validatePassword();
+  };
+
 
   onSubmitSuccess=(jwt_token)=>{
     Cookies.set("jwt_token",jwt_token,{expires:30})
@@ -17,7 +45,9 @@ class Login extends Component{
 
   onSubmit = async(e) => {
     e.preventDefault();
-    console.log("Submitted");
+    this.setState({loading:true})
+    this.validateEmail()
+    this.validatePassword()
     const {email,password}=this.state 
     const response = await fetch("https://api.homaid.in/login", {
         method: 'POST',
@@ -31,7 +61,7 @@ class Login extends Component{
       if(response.ok){
         this.onSubmitSuccess(data.jwtToken)
       }
-      this.setState({email:'',password:'',loginSuccessStatus:true,message:data.display_msg,messageStatus:true})
+      this.setState({email:'',password:'',loginSuccessStatus:true,message:data.display_msg,messageStatus:true,loading:false})
   };
 
   showPassword = () => {
@@ -53,7 +83,7 @@ class Login extends Component{
   }
 
   render(){
-    const {email,password,messageStatus,message}=this.state 
+    const {email,password,messageStatus,message,loading,emailError,passwordError}=this.state 
     if(Cookies.get("jwt_token")){
       return <Navigate to="/"/>
     }
@@ -67,7 +97,8 @@ class Login extends Component{
           <form className="loginform-container" onSubmit={this.onSubmit}>
             <div className="login-input-field">
               <label htmlFor="email" className="login-label">Email ID</label>
-              <input type="email" placeholder="Enter your Email" id="email" className="login-input" onChange={this.handleEmail} value={email}/>
+              <input type="email" placeholder="Enter your Email" id="email" className="login-input" onChange={this.handleEmail} onBlur={this.handleEmailBlur} value={email} required/>
+              {emailError && <span className="error-text">{emailError}</span>} 
             </div>
             <div className="login-input-field">
               <label htmlFor="password" className="login-label">Password</label>
@@ -77,8 +108,11 @@ class Login extends Component{
                 placeholder="Enter your Password"
                 className="login-input"
                 onChange={this.handlePassword}
+                onBlur={this.handlePasswordBlur}
                 value={password}
+                required
               />
+              {passwordError && <span className="error-text">{passwordError}</span>}
             </div>
             <div className="alternatives">
               <div className="show-me">
@@ -100,9 +134,19 @@ class Login extends Component{
               </div>
             </div>
             {messageStatus&&<p>{message}</p>}
-            <button type="submit" className="login-btn">
-              Login
-            </button>
+            {
+              loading?(
+                  <button type="submit" className="login-btn">
+                    <div className="loader"></div>
+                  </button>
+              ):
+              (
+                <button type="submit" className="login-btn">
+                Login
+              </button>
+              )
+            }
+           
           </form>
           <p>------- or -------</p>
           <div className="social-login">
