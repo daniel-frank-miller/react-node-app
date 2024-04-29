@@ -514,6 +514,20 @@ app.post("/admin_user", async (request, response) => {
   });
 });
 
+app.delete("/contactus/:email", (req, res) => {
+  const email = req.params.email;
+
+  const query = "DELETE FROM contactus WHERE email = ?";
+  connection.query(query, [email], (err, result) => {
+    if (err) {
+      console.error("Error deleting contact:", err);
+      res.status(500).json({ error: "Internal server error" });
+      return;
+    }
+    res.send({display_msg:"Contact deleted successfully"});
+  });
+});
+
 app.post('/api/payment', handlePayment);
 
 app.get('/api/paymentstatus/:transactionId', handlePaymentStatus);
