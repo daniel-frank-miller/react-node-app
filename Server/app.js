@@ -466,7 +466,7 @@ app.post("/book-appointment", async (req, res) => {
   });
 });
 
-app.get("/contactus", async(req,res)=>{
+app.get("/book-appointment", async(req,res)=>{
   const apiQuery = `SELECT * FROM appointment;`;
   connection.query(apiQuery, (error, results) => {
     if (error) {
@@ -478,7 +478,7 @@ app.get("/contactus", async(req,res)=>{
   });
 })
 
-app.get("/book-appointment", async(req,res)=>{
+app.get("/contactus", async(req,res)=>{
   const apiQuery = `SELECT * FROM contactus;`;
   connection.query(apiQuery, (error, results) => {
     if (error) {
