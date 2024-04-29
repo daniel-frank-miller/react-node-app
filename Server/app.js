@@ -62,6 +62,10 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+app.get("/", async(req,res)=>{
+  res.send("Welcome to the Homaid")
+})
+
 app.get("/cooking_services", async (req, res) => {
   const dbQuery = `SELECT * FROM cooking_services`;
   connection.query(dbQuery, (error, results) => {
@@ -463,6 +467,18 @@ app.post("/book-appointment", async (req, res) => {
 });
 
 app.get("/contactus", async(req,res)=>{
+  const apiQuery = `SELECT * FROM appointment;`;
+  connection.query(apiQuery, (error, results) => {
+    if (error) {
+      console.error('Error fetching appointment details:', error);
+      res.status(500).send('Error fetching appointment information');
+      return;
+    }
+    res.send(results);
+  });
+})
+
+app.get("/book-appointment", async(req,res)=>{
   const apiQuery = `SELECT * FROM contactus;`;
   connection.query(apiQuery, (error, results) => {
     if (error) {
