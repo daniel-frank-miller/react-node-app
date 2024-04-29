@@ -490,6 +490,30 @@ app.get("/contactus", async(req,res)=>{
   });
 })
 
+app.post("/admin_user", async (request, response) => {
+  const { username, password } = request.body;
+  const selectUserQuery = `SELECT * FROM admin_user WHERE username = ?`;
+  connection.query(selectUserQuery, [username], async (error, result) => {
+    if (error) {
+      console.error('Error fetching user:', error);
+      response.status(500).send({ display_msg: "Error fetching user." });
+      return;
+    }
+    if (result.length === 0) {
+      response.status(400).send({ display_msg: "Invalid User" });
+    } else {
+      const dbUser = result[0];
+      const isPasswordMatched = password === dbUser.password;
+      if (isPasswordMatched) {
+        const jwtToken = jwt.sign({ username: username, email: result[0].email }, "MY_SECRET_TOKEN");
+        response.send({ jwtToken });
+      } else {
+        response.status(400).send({ display_msg: "Invalid Password" });
+      }
+    }
+  });
+});
+
 app.post('/api/payment', handlePayment);
 
 app.get('/api/paymentstatus/:transactionId', handlePaymentStatus);
