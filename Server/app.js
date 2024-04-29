@@ -14,10 +14,10 @@ app.use(express.json());
 app.use(cors());
 
 const connection = mysql.createConnection({
-  host: "127.0.0.1",
-  user: "root",
-  password: "Homaid@2024",
-  database: "HomaidDataBase"
+  host: process.env.host,
+  user: process.env.user,
+  password: process.env.password,
+  database: process.env.database
 });
 
 const PORT = process.env.PORT || 3000;
@@ -461,6 +461,18 @@ app.post("/book-appointment", async (req, res) => {
     });
   });
 });
+
+app.get("/contactus", async(req,res)=>{
+  const apiQuery = `SELECT * FROM contactus;`;
+  connection.query(apiQuery, (error, results) => {
+    if (error) {
+      console.error('Error fetching contact us details:', error);
+      res.status(500).send('Error fetching contact us information');
+      return;
+    }
+    res.send(results);
+  });
+})
 
 app.post('/api/payment', handlePayment);
 
