@@ -52,6 +52,10 @@ const Services = () => {
                 Welcome to the world of flavour, innovation and endless
                 possibilities in kitchen.
               </p>
+              <div className="rating">
+              <span className="star1">&#9733;</span>
+              <span className="star2">4.8 (2.1k+)</span>
+              </div>
               <Link to="/services">
                 <button className="services-btn" id="cookingBtn">
                   Book Now
@@ -69,6 +73,10 @@ const Services = () => {
                 We believe in transforming the chore of cleaning into a
                 delightful and efficient experience.
               </p>
+              <div className="rating">
+              <span className="star1">&#9733;</span>
+              <span className="star2">4.9 (2.4k+)</span>
+              </div>
               <Link to="/cleaningservices">
                 <button className="services-btn" id="cleaningBtn">
                   Book Now

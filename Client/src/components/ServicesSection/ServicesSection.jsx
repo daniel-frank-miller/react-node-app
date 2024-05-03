@@ -26,6 +26,14 @@ const ServicesSection = () => {
                                 Welcome to the world of flavour, innovation and endless
                                 possibilities in the kitchen.
                             </p>
+                            <div className="rating">
+              <span className="star1">&#9733;</span>
+              <span className="star1">&#9733;</span>
+              <span className="star1">&#9733;</span>
+              <span className="star1">&#9733;</span>
+              <span className="star1">&#9734;</span>
+              <span className="star2">4.8 (2.1k+)</span>
+              </div>
                             {Cookies.get("jwt_token") && <button onClick={() => setCFormStatus(!cookingFormStatus)} className="ServicesSection-btn" id="cookingBtn">
                                 Book Now
                             </button>}
@@ -49,6 +57,14 @@ const ServicesSection = () => {
                                 We believe in transforming the chore of cleaning into a
                                 delightful and efficient experience.
                             </p>
+                            <div className="rating">
+              <span className="star1">&#9733;</span>
+              <span className="star1">&#9733;</span>
+              <span className="star1">&#9733;</span>
+              <span className="star1">&#9733;</span>
+              <span className="star1">&#9734;</span>
+              <span className="star2">4.9 (2.4k+)</span>
+              </div>
                             <Link to="/cleaningservices" className="ServicesSection-btn-link">
                                 <button className="ServicesSection-btn" id="cleaningBtn">
                                     Book Now

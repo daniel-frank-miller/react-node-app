@@ -37,11 +37,20 @@ const CleaningServices = () => {
                 services! We cover all the basics—sweeping for a tidy floor and
                 mopping, both dry and wet, to make sure everything shines.
               </p>
+              <div className="rating">
+              <span className="star1">&#9733;</span>
+              <span className="star1">&#9733;</span>
+              <span className="star1">&#9733;</span>
+              <span className="star1">&#9733;</span>
+              <span className="star1">&#9733;</span>
+              <span className="star2">4.8 (2.1k+)</span>
+              </div>
               <div className="actions-card">
                 {Cookies.get("jwt_token") && 
                   <button onClick={()=>setRegularCleaning(!regularCleaning)} className="cleaning-service-btn" id="regularCleanBtn">
                     Book Now
                   </button>
+                  
                 }
                 {!Cookies.get("jwt_token") && 
                   <Link to="/login">
@@ -70,6 +79,14 @@ const CleaningServices = () => {
                 cleaning now and step into a space that radiates cleanliness and
                 comfort!
               </p>
+              <div className="rating">
+              <span className="star1">&#9733;</span>
+              <span className="star1">&#9733;</span>
+              <span className="star1">&#9733;</span>
+              <span className="star1">&#9733;</span>
+              <span className="star1">&#9733;</span>
+              <span className="star2">4.9 (2.4k+)</span>
+              </div>
               <div className="actions-card">
                 {Cookies.get("jwt_token") && 
                   <button onClick={()=>setWashroomCleaning(!washroomCleaning)} className="cleaning-service-btn" id="regularCleanBtn">
@@ -102,6 +119,14 @@ const CleaningServices = () => {
                 services! Say goodbye to dust and wrinkles as our meticulous
                 team restores freshness to your beautiful home.
               </p>
+              <div className="rating">
+              <span className="star1">&#9733;</span>
+              <span className="star1">&#9733;</span>
+              <span className="star1">&#9733;</span>
+              <span className="star1">&#9733;</span>
+              <span className="star1">&#9734;</span>
+              <span className="star2">4.7 (1.2k+)</span>
+              </div>
               <div className="actions-card">
                 {Cookies.get("jwt_token") && 
                   <button onClick={()=>setDustingCleaning(!dustingCleaning)} className="cleaning-service-btn" id="regularCleanBtn">
