@@ -102,8 +102,8 @@ const Footer =()=>{
         </div>
       </div>
       <div className="third-section">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15223.725545863557!2d78.34613529555676!3d17.462997834991263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93c92849a36b%3A0xde0dc034905512fa!2sKondapur%2C%20Telangana!5e0!3m2!1sen!2sin!4v1700829555216!5m2!1sen!2sin"
+          <iframe
+          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3804.665031171588!2d78.34141327516807!3d17.523496483387078!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDMxJzI0LjYiTiA3OMKwMjAnMzguNCJF!5e0!3m2!1sen!2sin!4v1723806298367!5m2!1sen!2sin"
           allowfullscreen=""
           loading="lazy"
         ></iframe>
@@ -111,7 +111,7 @@ const Footer =()=>{
     </div>
     <hr/>
     <div className="footer-details-container">
-      <p className="footer-para">Kondapur, Hyderabad, 500001</p>
+      <p className="footer-para">Ganesh Nagar, Ameenpur, Hyderabad, Miyapur, Telangana 502032</p>
       <p className="footer-para">+91 81255 22213</p>
       <a href="mailto:homaidserviceshyd@gmail.com"  className="contact-info-email"> <div></div><p className="footer-para">homaidserviceshyd@gmail.com</p></a>
       <ul className="social-container-footer">
