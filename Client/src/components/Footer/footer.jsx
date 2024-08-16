@@ -111,7 +111,7 @@ const Footer =()=>{
     </div>
     <hr/>
     <div className="footer-details-container">
-      <p className="footer-para">Ameenpur, Hyderabad, 502032</p>
+      <p className="footer-para">Road No : 07,Office Backside Vijetha Warehouse,Near Coca Cola Road,Ameenpur, Miyapur - 502032</p>
       <p className="footer-para">+91 81255 22213</p>
       <a href="mailto:homaidserviceshyd@gmail.com"  className="contact-info-email"> <div></div><p className="footer-para">homaidserviceshyd@gmail.com</p></a>
       <ul className="social-container-footer">
