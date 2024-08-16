@@ -114,7 +114,7 @@ const Footer =()=>{
       <p className="footer-para">Road No : 07,Office Backside Vijetha Warehouse,
                                      Near Coca Cola Road,Ameenpur,Miyapur - 502032</p>
       <p className="footer-para">+91 9010114722</p>
-      <a href="mailto:contact@homaid.in"  className="contact-info-email"> <div></div><p className="footer-para">homaidserviceshyd@gmail.com</p></a>
+      <a href="mailto:contact@homaid.in"  className="contact-info-email"> <div></div><p className="footer-para">contact@homaid.in</p></a>
       <ul className="social-container-footer">
             <div className="social-handles-footer">
             <a href="https://www.linkedin.com/company/homaid-services/about/">
