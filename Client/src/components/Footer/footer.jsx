@@ -103,7 +103,7 @@ const Footer =()=>{
       </div>
       <div className="third-section">
           <iframe
-          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3804.665031171588!2d78.34141327516807!3d17.523496483387078!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDMxJzI0LjYiTiA3OMKwMjAnMzguNCJF!5e0!3m2!1sen!2sin!4v1723806298367!5m2!1sen!2sin"
+          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3804.665031171588!2d78.34141327516807!3d17.523496483387078!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDMxJzI0LjYiTiA3OMKwMjAnMzguNCJF!5e0!3m2!1sen!2sin!4v1723810808767!5m2!1sen!2sin" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>"
           allowfullscreen=""
           loading="lazy"
         ></iframe>
