@@ -1,8 +1,9 @@
-import { FaInstagram, FaFacebook, FaTwitter, FaYoutube, FaLinkedin } from "react-icons/fa";
-import { useEffect, useState } from "react";
-import Cookies from "js-cookie";
-import { NavLink } from "react-router-dom";
-import "/src/components/Footer/footer.css";
+/* eslint-disable no-unused-vars */
+import React from 'react';
+import { FaInstagram, FaFacebook, FaTwitter, FaYoutube, FaLinkedin } from 'react-icons/fa';
+import { NavLink, Link } from 'react-router-dom';
+import Cookies from 'js-cookie';
+import './footer.css'; // Assuming the correct path for CSS file
 
 const Footer = () => {
   return (
@@ -65,6 +66,20 @@ const Footer = () => {
               </li>
             </ul>
           </div>
+        </div>
+        <div>
+          <h5>Terms and conditions</h5>
+          <ul>
+            <li>
+              <Link to="/termsandconditions">Terms and conditions</Link>
+            </li>
+            <li>
+              <Link to="/">Where to Find Us</Link>
+            </li>
+            <li>
+              <Link to="/">Contact Us</Link>
+            </li>
+          </ul>
         </div>
         <div className="third-section">
           <iframe

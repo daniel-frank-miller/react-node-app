@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import Navbar from "/src/components/Navbar/navbar.jsx";
 import About from "/src/components/About/about.jsx";

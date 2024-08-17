@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import "./App.css";
 import { Component } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -18,6 +19,7 @@ import AdminLogin from "./components/AdminLogin/admin.jsx";
 import PaymentPage from "./components/PaymentPage/index.jsx"
 import PaymentStatus from "./components/PaymentStatus"
 import UpdatedReviews from "./components/UpdatedReviews/index.jsx";
+import TermsAndConditions from "./components/Termsandcondition/termsandcondition.jsx";
 //import Bookings from "./components/Bookings/index.jsx";
 class App extends Component {
   render() {
@@ -40,6 +42,7 @@ class App extends Component {
           <Route exact path="/reviews" element={<UpdatedReviews/>}/>
           <Route exact path = "/payments" element = {<PaymentPage/>}/>
           <Route exact path = "api/status/:trid" element = {<PaymentStatus/>}/>
+          <Route exact path="/termsandconditions" element={<TermsAndConditions/>}/>
         </Routes>
       </Router>
       

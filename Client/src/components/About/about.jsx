@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useRef, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -19,6 +20,7 @@ const settings = {
 };
 
 const About = () => {
+  // eslint-disable-next-line no-unused-vars
   const [isVisible, setIsVisible] = useState(false);
   const aboutRef = useRef(null);
 
