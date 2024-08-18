@@ -92,7 +92,7 @@
   font-size: 20px;
 }
 .social-text-footer {
-  text-align: center;
+  text-align: left;
   color: #000;
   font-size: 22px;
   font-family: "Roboto";
@@ -102,12 +102,20 @@
   list-style: none;
   color: grey;
 }
+
 .social-handles {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: start;
+  align-items: flex-start;
   padding-bottom: 5px;
+  cursor: pointer;
 }
+
+.second-inner-section{
+  padding: 0 0 0 50px;
+}
+
 .second-inner-section a {
   margin: 5px;
   text-decoration: none;
@@ -119,6 +127,18 @@
 .third-section iframe {
   width: 100%;
   height: 100%;
+}
+
+.policy-section {
+  width: 14%;
+}
+
+.policy-list li {
+  list-style: none;
+  text-align: left;
+  & a{
+    color: gray
+  }
 }
 
 /* Media Quries  */
@@ -139,11 +159,11 @@
     padding-top: 0;
   }
   .second-section {
-    width: 90%;
-    padding-bottom: 20px;
+    width: 50%;
+    padding: 0 0 20px 0;
   }
   .third-section {
-    width: 90%;
+    width: 25%;
     padding-bottom: 10px;
   }
   .email-container {
@@ -266,6 +286,7 @@ font-size: 18px;
 }
 
 .social-handles-footer{
+  list-style: none;
   margin-right: 10px;
 }
 
