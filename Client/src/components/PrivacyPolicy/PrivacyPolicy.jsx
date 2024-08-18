@@ -1,18 +1,17 @@
-/* eslint-disable no-unused-vars */
-import React from "react";
-import "./termsandcondition.css";
-import LoginNavbar from "../Navbar/loginNavbar";
+
 import Footer from "../Footer/footer";
 import Whatsapp from "../Whatsapp/whatsapp";
+import "./privacyPolicy.css";
+import LoginNavbar from "/src/components/Navbar/LoginNavbar.jsx"; 
 
-const TermsAndConditions = () => {
+const PrivacyPolicy = () => {
   return (
     <>
-      <LoginNavbar/>
-      <div className="terms-container">
-        <h1>Terms and Conditions</h1>
+      <LoginNavbar />
+      <div className="privacy-container" >
+        <h1>Privacy Policy</h1>
 
-        <h2>Terms and conditions of HOMAID Services</h2>
+        <h2>Privacy Policy of HOMAID Services</h2>
 
         <h3>Service Schedule:</h3>
         <p>
@@ -106,4 +105,4 @@ const TermsAndConditions = () => {
   );
 };
 
-export default TermsAndConditions;
+export default PrivacyPolicy;

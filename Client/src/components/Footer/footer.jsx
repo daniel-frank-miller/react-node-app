@@ -67,17 +67,17 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <div>
-          <h5>Terms and conditions</h5>
-          <ul>
+        <div className='policy-section'>
+          <h5 className='social-text-footer'>Policies</h5>
+          <ul className='policy-list'>
             <li>
-              <Link to="/termsandconditions">Terms and conditions</Link>
+              <Link to="/refundpolicy">Refund Policy</Link>
             </li>
             <li>
-              <Link to="/">Where to Find Us</Link>
+              <Link to="/privacypolicy">Privacy Policy</Link>
             </li>
             <li>
-              <Link to="/">Contact Us</Link>
+              <Link to="/termsandconditions">Terms & Conditions</Link>
             </li>
           </ul>
         </div>

@@ -1,18 +1,17 @@
-/* eslint-disable no-unused-vars */
-import React from "react";
-import "./termsandcondition.css";
-import LoginNavbar from "../Navbar/loginNavbar";
+
 import Footer from "../Footer/footer";
 import Whatsapp from "../Whatsapp/whatsapp";
+import "./refundPolicy.css";
+import LoginNavbar from "/src/components/Navbar/LoginNavbar.jsx"; 
 
-const TermsAndConditions = () => {
+const RefundPolicy = () => {
   return (
     <>
-      <LoginNavbar/>
-      <div className="terms-container">
-        <h1>Terms and Conditions</h1>
+      <LoginNavbar />
+      <div className="refund-container" style={{margin: 30}}>
+        <h1>Refund Policy</h1>
 
-        <h2>Terms and conditions of HOMAID Services</h2>
+        <h2>Refund Policy of HOMAID Services</h2>
 
         <h3>Service Schedule:</h3>
         <p>
@@ -100,10 +99,10 @@ const TermsAndConditions = () => {
           </p>
         </footer> */}
       </div>
-      <Whatsapp />
       <Footer />
+      <Whatsapp />
     </>
   );
 };
 
-export default TermsAndConditions;
+export default RefundPolicy;
