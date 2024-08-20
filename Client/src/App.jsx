@@ -11,7 +11,6 @@ import CleaningProfile from "/src/components/CleaningProfile/CleaningProfile.jsx
 import ServicesSection from "/src/components/ServicesSection/ServicesSection.jsx";
 import AboutSection from "/src/components/AboutSection/AboutSection.jsx";
 import Signup from '/src/components/Signup/signup.jsx';
-import Reviews from '/src/components/Reviews/reviews';
 import Gallery from "./components/Gallery/gallery.jsx";
 import ForgotPassword from "./components/ForgotPassword/forgot.jsx";
 import ResetPassword from "./components/ResetPassword/reset.jsx";
@@ -21,8 +20,7 @@ import PaymentStatus from "./components/PaymentStatus"
 import UpdatedReviews from "./components/UpdatedReviews/index.jsx";
 import TermsAndConditions from "./components/Termsandcondition/termsandcondition.jsx";
 import RefundPolicy from "./components/RefundPolicy/RefundPolicy.jsx";
-import PrivacyPolicy from "./components/privacyandpolicy.jsx";
-
+import PrivacyPolicy from "./components/PrivacyPolicy/privacyPolicy.jsx";
 
 //import Bookings from "./components/Bookings/index.jsx";
 class App extends Component {
