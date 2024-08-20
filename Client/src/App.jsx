@@ -21,7 +21,8 @@ import PaymentStatus from "./components/PaymentStatus"
 import UpdatedReviews from "./components/UpdatedReviews/index.jsx";
 import TermsAndConditions from "./components/Termsandcondition/termsandcondition.jsx";
 import RefundPolicy from "./components/RefundPolicy/RefundPolicy.jsx";
-import PrivacyPolicy from "./components/PrivacyPolicy/privacyPolicy.jsx";
+import PrivacyPolicy from "./components/privacyandpolicy.jsx";
+
 
 //import Bookings from "./components/Bookings/index.jsx";
 class App extends Component {
@@ -47,7 +48,7 @@ class App extends Component {
           <Route exact path = "api/status/:trid" element = {<PaymentStatus/>}/>
           <Route exact path="/termsandconditions" element={<TermsAndConditions/>}/>
           <Route exact path="/refundpolicy" element={<RefundPolicy/>}/>
-          <Route exact path="/privacypolicy" element={<PrivacyPolicy/>}/>
+          <Route exact path="/PrivacyPolicy" element={<PrivacyPolicy/>}/>
         </Routes>
       </Router>
       
