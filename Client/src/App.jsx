@@ -21,7 +21,7 @@ import PaymentStatus from "./components/PaymentStatus"
 import UpdatedReviews from "./components/UpdatedReviews/index.jsx";
 import TermsAndConditions from "./components/Termsandcondition/termsandcondition.jsx";
 import RefundPolicy from "./components/RefundPolicy/RefundPolicy.jsx";
-import PrivacyPolicy from "./components/PrivacyPolicy/privacyPolicy.jsx";
+import PrivacyPolicy from "./components/PrivacyPolicy/PrivacyPolicy.jsx";
 
 //import Bookings from "./components/Bookings/index.jsx";
 class App extends Component {
