@@ -130,7 +130,7 @@ const Footer = () => {
           </li>
         </ul>
       </div>
-      <p className="copyright-content">Copyright © 2024 Daryna Partners Pvt.Ltd. - All Rights Reserved</p>
+      <p className="copyright-content">Copyright © 2024 Daryna Partners Pvt Ltd. - All Rights Reserved</p>
     </div>
   );
 };
