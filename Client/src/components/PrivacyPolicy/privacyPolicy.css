@@ -67,3 +67,15 @@
   .footer a:hover {
     text-decoration: underline;
   }
+
+  .pricing{
+    margin-top: 0.5px;
+    padding: 0.5px;
+    font-weight: lighter;
+  }
+
+  .services{
+    margin-top: 0.5px;
+    padding: 0.5px;
+    font-weight: lighter;
+  }

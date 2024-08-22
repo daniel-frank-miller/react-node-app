@@ -95,7 +95,9 @@ const CleaningServices = () => {
                 }
                 {!Cookies.get("jwt_token") && 
                   <Link to="/login">
+                    
                     <button className="cleaning-service-btn" id="regularCleanBtn">
+                     
                       Book Now
                     </button>
                   </Link>

@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "/src/components/Services/services.css";
 
 const Services = () => {
+  // eslint-disable-next-line no-unused-vars
   const [isVisible, setIsVisible] = useState(false);
   const servicesRef = useRef(null);
 
@@ -61,8 +62,12 @@ const Services = () => {
                   Book Now
                 </button>
               </Link>
+              <br></br>
+              <div className="pricing">
+                
+                <h3>pricing Start At:4999/- </h3></div>
             </div>
-          </div>
+            </div>
           <div className={`custom-card`}>
             <div className="img-box">
               <img src="/src/assets/alternative-service-cleaning.webp" alt="Cleaning" />
@@ -76,12 +81,17 @@ const Services = () => {
               <div className="rating">
               <span className="star1">&#9733;</span>
               <span className="star2">4.9 (2.4k+)</span>
+             
               </div>
+              
               <Link to="/cleaningservices">
                 <button className="services-btn" id="cleaningBtn">
                   Book Now
                 </button>
+            
               </Link>
+              <div className="services">
+                <h3>pricing start at:1999/- </h3></div>
             </div>
           </div>
         </div>
