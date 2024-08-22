@@ -65,7 +65,7 @@ const Services = () => {
               <br></br>
               <div className="pricing">
                 
-                <h3>pricing Start At:4999/- </h3></div>
+                <h3>pricing Starts At:4999/- </h3></div>
             </div>
             </div>
           <div className={`custom-card`}>
