@@ -97,8 +97,7 @@ const Footer = () => {
       <hr />
       <div className="footer-details-container">
         <p className="footer-para">
-          Road No : 07, Office Backside Vijetha Warehouse, Near Coca Cola Road, Ameenpur, Miyapur - 502032
-        </p>
+        PLOT NO.3/11,YEGNESHWARA,FORTUNE,GANESH NAGAR,Ameenpur,Ramachandrapuram,Medak-502032,Telangana</p>
         <p className="footer-para">+91 9010114722</p>
         <a href="mailto:contact@homaid.in" className="contact-info-email">
           <p className="footer-para">contact@homaid.in</p>
@@ -131,7 +130,7 @@ const Footer = () => {
           </li>
         </ul>
       </div>
-      <p className="copyright-content">Copyright © 2024 Homaid - All Rights Reserved</p>
+      <p className="copyright-content">Copyright © 2024 Daryna Partners Pvt Ltd. - All Rights Reserved</p>
     </div>
   );
 };

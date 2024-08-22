@@ -6,13 +6,13 @@ const Whatsapp = () => {
   // const handleWhatsappClick = (event) => {
   //   event.preventDefault();
   //   // const message = encodeURIComponent("Hello Homaid! i need help");
-  //   window.open("https://wa.me/8125522213", "_blank");
+  //   window.open("https://wa.me/9010114722", "_blank");
   // };
 
   return (
     <div className="whatsapp_container">
       <a
-        href="https://wa.me/8125522213"
+        href="https://wa.me/9010114722"
         className="btn-whatsapp-pulse"
         target="_blank" rel="noreferrer"
       >
