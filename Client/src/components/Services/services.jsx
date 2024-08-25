@@ -65,7 +65,7 @@ const Services = () => {
               <br></br>
               <div className="pricing">
                 
-                <h3>Pricing starts At:4999/- </h3></div>
+{/*                 <h3>Pricing starts At:4999/- </h3></div> */}
             </div>
             </div>
           <div className={`custom-card`}>
@@ -91,7 +91,7 @@ const Services = () => {
             
               </Link>
               <div className="services">
-                <h3>Pricing starts at:1999/- </h3></div>
+{/*                 <h3>Pricing starts at:1999/- </h3></div> */}
             </div>
           </div>
         </div>
