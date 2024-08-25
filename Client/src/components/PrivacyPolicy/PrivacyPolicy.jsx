@@ -64,40 +64,6 @@ const PrivacyPolicy = () => {
           </a>
           .
         </p>
-
-        {/* <footer className="footer">
-          <p>&copy; 2024 HOMAID Services. All rights reserved.</p>
-          <p>
-            Follow us on
-            <a
-              href="https://twitter.com/homaidservices"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {" "}
-              Twitter
-            </a>
-            ,
-            <a
-              href="https://facebook.com/homaidservices"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {" "}
-              Facebook
-            </a>
-            , and
-            <a
-              href="https://instagram.com/homaidservices"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {" "}
-              Instagram
-            </a>
-            .
-          </p>
-        </footer> */}
       </div>
       <Whatsapp />
       <Footer/>
