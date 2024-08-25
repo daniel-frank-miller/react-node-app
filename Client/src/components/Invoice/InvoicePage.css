@@ -79,7 +79,7 @@
 }
 
 .bg-image {
-  background: url("/src/assets/background-bg.jpeg");
+  background:linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url("/src/assets/background-bg.jpeg");
   background-repeat: no-repeat;
   background-position: top;
   background-size: 65%;
@@ -94,6 +94,7 @@
 
 .service-header {
   display: flex;
+  margin: 0 30px;
   justify-content: space-between;
   font-weight: bold;
 }
@@ -102,6 +103,12 @@
   margin: 16px 30px;
   display: flex;
   justify-content: space-between;
+}
+
+.price-value {
+  display: flex;
+  justify-content: space-between;
+  flex: 1 30px;
 }
 
 .pricing-item {
@@ -317,66 +324,4 @@
   .contact a {
     font-size: small;
   }
-}
-
-/* Styling the select dropdown */
-.pricing-item select {
-  width: 100%;
-  padding: 8px;
-  font-size: 1rem;
-  border-radius: 5px;
-  border: 1px solid #c4c4c4;
-  background-color: #f8f8f8;
-  color: #333;
-  appearance: none; /* Remove default arrow */
-  -webkit-appearance: none; /* For Safari */
-  -moz-appearance: none; /* For Firefox */
-}
-
-/* Pricing container using Flexbox */
-.pricing {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 16px 30px;
-}
-
-.pricing-item {
-  flex: 1;
-  min-width: 150px; /* Ensures the columns don't get too narrow */
-  margin-top: 8px;
-  display: flex;
-  flex-direction: column;
-  font-weight: 500;
-}
-
-.pricing-item p {
-  margin-bottom: 10px;
-}
-
-.pricing-item select,
-.pricing-item input {
-  width: 100%;
-  padding: 8px;
-  font-size: 1rem;
-  border-radius: 5px;
-  border: 1px solid #c4c4c4;
-  background-color: #f8f8f8;
-  color: #333;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-  text-align: right; /* Align text to the right */
-}
-
-.pricing-item select {
-  appearance: none;
-  background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"%3E%3Cpath d="M6 9l6 6 6-6"%3E%3C/path%3E%3C/svg%3E');
-  background-repeat: no-repeat;
-  background-position: right 10px center;
-  background-size: 16px 16px;
-}
-
-.pricing-item select:focus,
-.pricing-item input:focus {
-  border-color: #38b2ac;
-  outline: none;
-  box-shadow: 0 0 3px rgba(56, 178, 172, 0.5);
 }
