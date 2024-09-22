@@ -35,8 +35,8 @@ class App extends Component {
           <Route exact path="/cookingprofile" element={<CookingProfile />} />
           <Route exact path="/cleaningservices" element={<CleaningServices />} />
           <Route exact path="/cleaningprofile" element={<CleaningProfile />} />
-          <Route exact path="/login" element={<Login />} />
-          <Route exact path="/signup" element={<Signup />} />
+{/*           <Route exact path="/login" element={<Login />} />
+          <Route exact path="/signup" element={<Signup />} /> */}
           <Route exact path="/forgot_password" element={<ForgotPassword/>}/>
           <Route exact path="/reset_password" element={<ResetPassword/>}/>
           <Route exact path="/admin_login" element={<AdminLogin/>}/>
