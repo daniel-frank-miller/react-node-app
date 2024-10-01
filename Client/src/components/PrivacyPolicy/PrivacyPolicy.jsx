@@ -39,6 +39,11 @@ const PrivacyPolicy = () => {
           All payments must be made promptly. Late payments are not tolerated
           and may result in additional fees or cessation of services.
         </p>
+        
+        <h3>Add-On Charges:</h3>
+        <p>
+          For cooking services, an additional charge of ₹120 per day will apply for each extra person beyond the agreed number.
+        </p>
 
         <h3>Code of Conduct:</h3>
         <p>
